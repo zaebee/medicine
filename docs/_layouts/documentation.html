@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'ru' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: page.nav_title | default: site.title }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ page.icon | default: '🏥' }}</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: {{ page.max_width | default: '1200px' }};
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .back-nav a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .content-card h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .content-card h2 {
+            color: #555;
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .content-card h3 {
+            color: #666;
+            margin: 25px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .content-card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .content-card ul, .content-card ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content-card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .content-card a {
+            color: #667eea;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .content-card a:hover {
+            border-bottom-color: #667eea;
+        }
+
+        .content-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        .content-card th,
+        .content-card td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .content-card th {
+            background: #f8f9ff;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .content-card tr:hover {
+            background: #f8f9ff;
+        }
+
+        .content-card blockquote {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .content-card code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+
+        .content-card pre {
+            background: #f4f4f4;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        .content-card pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .mermaid {
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .content-card {
+                padding: 20px;
+            }
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 1.4;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        /* Custom styles from page frontmatter */
+        {% if page.custom_css %}
+        {{ page.custom_css }}
+        {% endif %}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>{{ page.icon | default: '🏥' }} {{ page.nav_title | default: page.title }}</h1>
+            {% if page.description %}
+            <p>{{ page.description }}</p>
+            {% endif %}
+        </header>
+
+        {% unless page.hide_nav %}
+        <nav class="back-nav">
+            <a href="{{ '/' | relative_url }}">← Вернуться к главной</a>
+        </nav>
+        {% endunless %}
+
+        <main class="content-card">
+            {{ content }}
+        </main>
+
+        {% unless page.hide_footer %}
+        <footer class="footer">
+            <p>
+                🏠 <a href="{{ '/' | relative_url }}">Главная</a> |
+                📋 <a href="{{ '/readme' | relative_url }}">Документация</a> |
+                🏗️ <a href="{{ '/architecture-overview' | relative_url }}">Архитектура</a> |
+                🗺️ <a href="{{ '/documentation-map' | relative_url }}">Карта документов</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                {% if page.footer_text %}{{ page.footer_text }}{% else %}Документация сгенерирована Jekyll{% endif %}
+            </p>
+        </footer>
+        {% endunless %}
+    </div>
+
+    <div class="keyboard-hint" id="keyboard-hint">
+        <strong>Быстрая навигация:</strong><br>
+        Alt + 1: Документация<br>
+        Alt + 2: Архитектура<br>
+        Alt + 3: Карта документов<br>
+        Alt + 4: Рабочий процесс<br>
+        Alt + 5: Пользователи
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: '{{ page.mermaid_theme | default: "default" }}',
+            themeVariables: {
+                primaryColor: '#e3f2fd',
+                primaryTextColor: '#1976d2',
+                primaryBorderColor: '#1976d2',
+                lineColor: '#757575'
+            }
+            {% if page.mermaid_config %},{{ page.mermaid_config }}{% endif %}
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            if (event.altKey) {
+                const keyMap = {
+                    '1': '{{ "/readme" | relative_url }}',
+                    '2': '{{ "/architecture-overview" | relative_url }}',
+                    '3': '{{ "/documentation-map" | relative_url }}',
+                    '4': '{{ "/development-workflow" | relative_url }}',
+                    '5': '{{ "/user-features-map" | relative_url }}'
+                };
+
+                const target = keyMap[event.key];
+                if (target) {
+                    event.preventDefault();
+                    window.location.href = target;
+                }
+            }
+        });
+
+        // Show keyboard hint on Alt key
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey) {
+                document.getElementById('keyboard-hint').style.opacity = '1';
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (!e.altKey) {
+                document.getElementById('keyboard-hint').style.opacity = '0';
+            }
+        });
+
+        {% if page.custom_js %}
+        {{ page.custom_js }}
+        {% endif %}
+
+        console.log('{{ page.icon | default: "🏥" }} {{ page.title }} loaded successfully!');
+        console.log('💡 Use Alt + 1-5 for quick navigation');
+    </script>
+</body>
+</html>

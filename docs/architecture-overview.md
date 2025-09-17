@@ -1,149 +1,238 @@
-# 🏗️ Project Architecture Overview
+---
+layout: documentation
+title: "Системная архитектура"
+nav_title: "Системная архитектура"
+description: "Техническая архитектура медицинского портала с онлайн-записью"
+icon: "🏗️"
+permalink: /architecture-overview/
+mermaid_theme: "default"
+footer_text: "Диаграммы построены с помощью Mermaid.js"
+---
 
-> **Interactive Diagram**: Click on components to navigate to detailed documentation
+# 🏗️ Архитектура системы
+
+## 🐍 Backend
+**Django-основанная архитектура с REST API для всех интеграций**
+
+- Django 4.2+ (LTS)
+- Django REST Framework
+- Celery для задач
+- Python 3.10+
+
+## 📝 CMS
+**Wagtail CMS для управления контентом и структурой сайта**
+
+- Wagtail 5.0+
+- StreamField контент
+- Многосайтовость
+- Встроенные формы
+
+## 🗄️ База данных
+**PostgreSQL как основная база с Redis для кеширования**
+
+- PostgreSQL 14+
+- Redis 7.0+
+- Индексы для поиска
+- Бэкапы и репликация
+
+## 🎨 Frontend
+**Современный адаптивный интерфейс с прогрессивной загрузкой**
+
+- HTML5/CSS3/ES6+
+- Vue.js 3+ / Alpine.js
+- Bootstrap 5.3+ / Tailwind
+- Progressive enhancement
+
+## 🚀 Инфраструктура
+**Масштабируемая инфраструктура с мониторингом и безопасностью**
+
+- Nginx + Gunicorn
+- SSL/TLS сертификаты
+- Docker контейнеры
+- Мониторинг (Sentry)
+
+## 🔧 DevOps
+**Автоматизация развертывания и управления окружениями**
+
+- GitHub Actions CI/CD
+- Docker Compose
+- Автоматические тесты
+- Staging среда
+
+## 📊 Диаграмма архитектуры
 
 ```mermaid
 graph TB
-    %% Styling
-    classDef frontend fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
-    classDef backend fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef database fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-    classDef external fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef docs fill:#fff8e1,stroke:#f57f17,stroke-width:2px
-
-    %% Frontend Layer
     subgraph "Frontend Layer"
-        HTML[HTML5/CSS3/JS]
-        VUE[Vue.js/Alpine.js]
-        BOOT[Bootstrap/Tailwind]
-        FORMS[Appointment Forms]
+        A[Patient Web Interface] --> B[Admin Dashboard]
+        B --> C[Doctor Portal]
     end
 
-    %% Backend Layer
-    subgraph "Backend Services"
-        DJANGO[Django 4.2+]
-        DRF[Django REST API]
-        WAGTAIL[Wagtail CMS]
-        CELERY[Celery Tasks]
+    subgraph "Application Layer"
+        D[Django Application] --> E[Wagtail CMS]
+        E --> F[REST API]
+        F --> G[Authentication]
     end
 
-    %% Data Layer
-    subgraph "Data Storage"
-        POSTGRES[(PostgreSQL)]
-        REDIS[(Redis Cache)]
-        MEDIA[Media Files]
+    subgraph "Data Layer"
+        H[(PostgreSQL Database)] --> I[(Redis Cache)]
+        I --> J[File Storage]
     end
 
-    %% External Services
-    subgraph "External Integrations"
-        SMS[SMS Service<br/>SMSC.ru]
-        MAPS[Yandex Maps<br/>Google Maps]
-        PAYMENT[Payment<br/>YooKassa]
-        ANALYTICS[Analytics<br/>GA4/Metrika]
+    subgraph "External Services"
+        K[SMS Gateway] --> L[Payment Gateway]
+        L --> M[Maps API]
+        M --> N[Analytics]
     end
 
-    %% Core Data Models
-    subgraph "Core Models"
-        USER[👤 User]
-        DOCTOR[👨‍⚕️ Doctor]
-        CLINIC[🏥 Clinic]
-        SERVICE[🩺 Service]
-        APPOINTMENT[📅 Appointment]
-        REVIEW[⭐ Review]
-    end
+    A --> D
+    B --> D
+    C --> D
+    D --> H
+    D --> I
+    F --> K
+    F --> L
+    F --> M
+    F --> N
 
-    %% Infrastructure
-    subgraph "Infrastructure"
-        NGINX[Nginx]
-        GUNICORN[Gunicorn]
-        SSL[SSL/TLS]
-        MONITORING[Sentry/Monitoring]
-    end
-
-    %% Connections
-    HTML --> DRF
-    VUE --> DRF
-    FORMS --> DRF
-
-    DJANGO --> POSTGRES
-    WAGTAIL --> POSTGRES
-    DRF --> REDIS
-    CELERY --> REDIS
-
-    USER -.-> DOCTOR
-    DOCTOR -.-> CLINIC
-    APPOINTMENT -.-> USER
-    APPOINTMENT -.-> DOCTOR
-    APPOINTMENT -.-> SERVICE
-    REVIEW -.-> DOCTOR
-
-    DRF --> SMS
-    DRF --> PAYMENT
-    HTML --> MAPS
-    HTML --> ANALYTICS
-
-    NGINX --> DJANGO
-    GUNICORN --> DJANGO
-
-    %% Apply styles
-    class HTML,VUE,BOOT,FORMS frontend
-    class DJANGO,DRF,WAGTAIL,CELERY backend
-    class POSTGRES,REDIS,MEDIA database
-    class SMS,MAPS,PAYMENT,ANALYTICS external
-    class NGINX,GUNICORN,SSL,MONITORING backend
-
-    %% Click events for navigation
-    click DJANGO href "../technical/technical_architecture.md" "View Technical Architecture"
-    click WAGTAIL href "../technical/cms_comparison.md" "CMS Comparison"
-    click SSL href "../technical/security_compliance.md" "Security & Compliance"
-    click USER href "../technical/technical_architecture.md#user-пользователи" "User Model Details"
-    click DOCTOR href "../technical/technical_architecture.md#doctor-врачи" "Doctor Model Details"
-    click APPOINTMENT href "../technical/technical_architecture.md#appointment-записи-на-приём" "Appointment Model Details"
+    style A fill:#e3f2fd
+    style B fill:#e3f2fd
+    style C fill:#e3f2fd
+    style D fill:#f3e5f5
+    style E fill:#f3e5f5
+    style F fill:#f3e5f5
+    style G fill:#f3e5f5
+    style H fill:#e8f5e8
+    style I fill:#e8f5e8
+    style J fill:#e8f5e8
+    style K fill:#fff3e0
+    style L fill:#fff3e0
+    style M fill:#fff3e0
+    style N fill:#fff3e0
 ```
 
-## 🎯 Key Components Overview
+## 🔗 Внешние интеграции
 
-### Frontend Technologies
-- **HTML5/CSS3/JS**: Modern web standards with responsive design
-- **Vue.js/Alpine.js**: Interactive components for appointment booking
-- **Bootstrap/Tailwind**: CSS framework for rapid UI development
-- **Forms**: Dynamic appointment booking with real-time validation
+### 📱 SMS уведомления
+SMSC.ru, SMS.ru для отправки напоминаний
 
-### Backend Services
-- **Django 4.2+**: Main web framework with LTS support
-- **Django REST API**: RESTful endpoints for frontend interaction
-- **Wagtail CMS**: Content management for doctors, services, pages
-- **Celery**: Asynchronous tasks for SMS, email notifications
+### 💳 Онлайн-платежи
+ЮKassa, CloudPayments для приема оплаты
 
-### Data Management
-- **PostgreSQL**: Primary database for all business data
-- **Redis**: Caching, session storage, Celery message broker
-- **Media Files**: Doctor photos, clinic images, documents
+### 🗺️ Карты и геолокация
+Яндекс.Карты API для навигации
 
-### External Integrations
-- **SMS Service**: Patient appointment confirmations via SMSC.ru
-- **Maps**: Clinic location with Yandex/Google Maps integration
-- **Payments**: Online payments through YooKassa/CloudPayments
-- **Analytics**: Traffic and conversion tracking with GA4/Metrika
+### 📊 Аналитика
+Google Analytics 4 + Яндекс.Метрика
 
-## 🔗 Documentation Cross-References
+### 📧 Email маркетинг
+SendGrid, Mailchimp для рассылок
 
-| Component | Detailed Documentation |
-|-----------|----------------------|
-| 🏗️ **System Architecture** | [technical_architecture.md](./technical/technical_architecture.md) |
-| 🛡️ **Security & Compliance** | [security_compliance.md](./technical/security_compliance.md) |
-| 📊 **CMS Comparison** | [cms_comparison.md](./technical/cms_comparison.md) |
-| 🎨 **UI/UX Requirements** | [ux_design_requirements.md](./design/ux_design_requirements.md) |
-| 📋 **Project Brief** | [brief.md](./business/brief.md) |
-| ⚡ **Development Tasks** | [tasks_estimates.md](./development/tasks_estimates.md) |
+### 📞 CRM интеграция
+API для связи с внешними CRM
 
-## 🚀 Quick Navigation
+## 🏥 Модель данных
 
-- [📋 Documentation Structure](./documentation-map.md)
-- [👩‍💻 Development Workflow](./development-workflow.md)
-- [👤 User Journey & Features](./user-features-map.md)
-- [🏠 Back to Main Documentation](./README.md)
+```mermaid
+erDiagram
+    User ||--o{ Appointment : books
+    User {
+        int id PK
+        string email
+        string phone
+        string first_name
+        string last_name
+        datetime created_at
+    }
 
----
+    Doctor ||--o{ Appointment : receives
+    Doctor {
+        int id PK
+        string name
+        string specialization
+        text bio
+        string photo
+        json schedule
+        bool is_active
+    }
 
-> **Note**: This diagram provides a high-level overview. Click on components above or use the navigation links to explore detailed specifications for each area of the project.
+    Service ||--o{ Appointment : for
+    Service {
+        int id PK
+        string name
+        text description
+        decimal price
+        int duration_minutes
+        bool is_active
+    }
+
+    Clinic ||--o{ Doctor : employs
+    Clinic ||--o{ Service : offers
+    Clinic {
+        int id PK
+        string name
+        string address
+        string phone
+        json working_hours
+        coordinates location
+    }
+
+    Appointment {
+        int id PK
+        datetime scheduled_time
+        string status
+        text notes
+        decimal price
+        datetime created_at
+    }
+
+    Review ||--o{ Doctor : rates
+    Review ||--o{ User : written_by
+    Review {
+        int id PK
+        int rating
+        text comment
+        bool is_verified
+        datetime created_at
+    }
+```
+
+## 🛡️ Безопасность и соответствие
+
+### 🔒 Защита данных
+- HTTPS everywhere
+- Шифрование БД
+- Двухфакторная аутентификация
+- Регулярные бэкапы
+
+### ⚖️ Соответствие законам
+- GDPR compliance
+- 152-ФЗ "О персональных данных"
+- Cookie consent
+- Политика конфиденциальности
+
+### 👁️ Мониторинг
+- Логирование всех действий
+- Мониторинг производительности
+- Алерты о сбоях
+- Аудит безопасности
+
+### 🏥 Медицинские данные
+- Особая защита PHI
+- Согласие на обработку
+- Право на удаление
+- Аудитируемые действия
+
+## 📈 Производительность
+
+### ⚡ Целевые показатели
+- Время загрузки < 3 сек
+- Uptime 99.5%
+- PageSpeed Score 85+
+- 500+ одновременных пользователей
+
+### 🚀 Оптимизации
+- Redis кеширование
+- CDN для статики
+- Lazy loading изображений
+- Минификация CSS/JS
