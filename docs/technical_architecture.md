@@ -3,6 +3,7 @@
 ## 🏗️ Рекомендуемая архитектура
 
 ### Backend Stack
+
 ```
 Python 3.10+
 ├── Django 4.2+ (LTS)
@@ -14,6 +15,7 @@ Python 3.10+
 ```
 
 ### Frontend Stack
+
 ```
 HTML5/CSS3/JavaScript ES6+
 ├── Bootstrap 5.3+ или Tailwind CSS
@@ -23,6 +25,7 @@ HTML5/CSS3/JavaScript ES6+
 ```
 
 ### Инфраструктура
+
 ```
 Production Environment
 ├── Nginx 1.20+ (веб-сервер, proxy)
@@ -39,6 +42,7 @@ Production Environment
 ### Основные таблицы и поля
 
 #### 👤 User (Пользователи)
+
 ```python
 class User(AbstractUser):
     phone = CharField(max_length=20, unique=True)
@@ -50,6 +54,7 @@ class User(AbstractUser):
 ```
 
 #### 🏥 Clinic (Клиники/Филиалы)
+
 ```python
 class Clinic(models.Model):
     name = CharField(max_length=200)
@@ -63,6 +68,7 @@ class Clinic(models.Model):
 ```
 
 #### 👨‍⚕️ Doctor (Врачи)
+
 ```python
 class Doctor(models.Model):
     user = OneToOneField(User, on_delete=CASCADE)
@@ -80,6 +86,7 @@ class Doctor(models.Model):
 ```
 
 #### 🩺 Service (Медицинские услуги)
+
 ```python
 class Service(models.Model):
     name = CharField(max_length=200)
@@ -95,6 +102,7 @@ class Service(models.Model):
 ```
 
 #### 📅 Appointment (Записи на приём)
+
 ```python
 class Appointment(models.Model):
     patient = ForeignKey(User, on_delete=CASCADE)
@@ -114,6 +122,7 @@ class Appointment(models.Model):
 ```
 
 #### ⭐ Review (Отзывы)
+
 ```python
 class Review(models.Model):
     patient = ForeignKey(User, on_delete=CASCADE)
@@ -128,6 +137,7 @@ class Review(models.Model):
 ```
 
 #### 🏷️ Дополнительные справочники
+
 ```python
 class Specialization(models.Model):
     name = CharField(max_length=100, unique=True)
@@ -153,7 +163,9 @@ class DoctorSchedule(models.Model):
 ## 🔗 Внешние интеграции
 
 ### 1. SMS-уведомления
+
 **Рекомендуемые провайдеры:**
+
 - **SMSC.ru** - надёжность, хорошие тарифы
 - **SMS.ru** - простота интеграции
 - **SmsAero** - современный API
@@ -167,7 +179,9 @@ class SMSService:
 ```
 
 ### 2. Платёжные системы
+
 **Рекомендуемые:**
+
 - **Яндекс.Касса (ЮKassa)** - широкий функционал
 - **CloudPayments** - удобная интеграция
 - **Сбербанк Эквайринг** - надёжность
@@ -183,6 +197,7 @@ class PaymentService:
 ```
 
 ### 3. Карты и геолокация
+
 ```python
 # Яндекс.Карты API
 YANDEX_MAPS_CONFIG = {
@@ -193,6 +208,7 @@ YANDEX_MAPS_CONFIG = {
 ```
 
 ### 4. Аналитика и метрики
+
 ```python
 # Google Analytics 4 + Яндекс.Метрика
 ANALYTICS_CONFIG = {
@@ -203,6 +219,7 @@ ANALYTICS_CONFIG = {
 ```
 
 ### 5. CRM интеграция (опционально)
+
 - **amoCRM** - популярная CRM
 - **Bitrix24** - комплексное решение
 - **Salesforce** - для крупных клиник
@@ -212,6 +229,7 @@ ANALYTICS_CONFIG = {
 ## 📦 Рекомендуемые пакеты Django
 
 ### Основные пакеты
+
 ```python
 # requirements.txt
 django==4.2.*
@@ -227,6 +245,7 @@ Pillow==10.0.*
 ```
 
 ### Wagtail расширения
+
 ```python
 # Для медицинского сайта
 wagtail-seo==2.4.*          # SEO оптимизация
@@ -238,6 +257,7 @@ wagtail-modeladmin==1.0.*   # Расширенная админка
 ```
 
 ### Дополнительные пакеты
+
 ```python
 # Безопасность и утилиты
 django-environ==0.10.*      # Переменные окружения
@@ -252,6 +272,7 @@ sentry-sdk==1.28.*          # Мониторинг ошибок
 ## 🏛️ Архитектурные паттерны
 
 ### 1. Разделение по приложениям Django
+
 ```
 clinic_website/
 ├── apps/
@@ -271,6 +292,7 @@ clinic_website/
 ```
 
 ### 2. API архитектура
+
 ```python
 # REST API структура
 /api/v1/
@@ -283,6 +305,7 @@ clinic_website/
 ```
 
 ### 3. Система разрешений
+
 ```python
 class IsPatientOrReadOnly(BasePermission):
     def has_permission(self, request, view):
@@ -300,6 +323,7 @@ class IsDoctorOwner(BasePermission):
 ## 🚀 Производительность и масштабирование
 
 ### 1. Кэширование
+
 ```python
 # Redis кэширование
 CACHES = {
@@ -319,6 +343,7 @@ def doctors_list(request):
 ```
 
 ### 2. Оптимизация запросов
+
 ```python
 # Оптимизация N+1 проблем
 doctors = Doctor.objects.select_related('user', 'specialization', 'clinic')\
@@ -327,6 +352,7 @@ doctors = Doctor.objects.select_related('user', 'specialization', 'clinic')\
 ```
 
 ### 3. Асинхронные задачи
+
 ```python
 # Celery задачи
 @shared_task
@@ -345,6 +371,7 @@ def generate_daily_report():
 ## 🔧 DevOps и деплой
 
 ### Docker конфигурация
+
 ```dockerfile
 # Dockerfile
 FROM python:3.10-slim
@@ -356,6 +383,7 @@ CMD ["gunicorn", "config.wsgi:application"]
 ```
 
 ### Nginx конфигурация
+
 ```nginx
 server {
     listen 80;
@@ -380,6 +408,7 @@ server {
 ```
 
 ### Мониторинг
+
 ```python
 # Sentry для отслеживания ошибок
 import sentry_sdk
@@ -397,12 +426,14 @@ sentry_sdk.init(
 ## 📈 Масштабирование
 
 ### Горизонтальное масштабирование
+
 1. **Load Balancer** (Nginx/HAProxy)
 2. **Несколько инстансов Django** за балансировщиком
 3. **Отдельный сервер для статики** (CDN)
 4. **Отдельный сервер для Celery** задач
 
 ### Вертикальное масштабирование
+
 1. **Оптимизация базы данных** (индексы, партиционирование)
 2. **Увеличение ресурсов сервера**
 3. **Настройка connection pooling**

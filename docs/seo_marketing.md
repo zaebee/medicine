@@ -5,26 +5,43 @@
 ### Техническое SEO
 
 #### Базовые требования
+
 ```html
 <!-- Обязательные meta-теги -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Медицинский центр [Название] - современные медицинские услуги, опытные врачи, запись онлайн. ☎️ +7 (XXX) XXX-XX-XX">
-<meta name="keywords" content="медицинский центр, врачи, запись к врачу, медицинские услуги, [город]">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Медицинский центр [Название] - современные медицинские услуги, опытные врачи, запись онлайн. ☎️ +7 (XXX) XXX-XX-XX"
+/>
+<meta
+  name="keywords"
+  content="медицинский центр, врачи, запись к врачу, медицинские услуги, [город]"
+/>
 
 <!-- Open Graph для социальных сетей -->
-<meta property="og:title" content="Медицинский центр [Название] - профессиональная медицинская помощь">
-<meta property="og:description" content="Современное медицинское оборудование, опытные специалисты, удобная запись онлайн">
-<meta property="og:image" content="/static/images/clinic-preview.jpg">
-<meta property="og:type" content="website">
+<meta
+  property="og:title"
+  content="Медицинский центр [Название] - профессиональная медицинская помощь"
+/>
+<meta
+  property="og:description"
+  content="Современное медицинское оборудование, опытные специалисты, удобная запись онлайн"
+/>
+<meta property="og:image" content="/static/images/clinic-preview.jpg" />
+<meta property="og:type" content="website" />
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Медицинский центр [Название]">
-<meta name="twitter:description" content="Профессиональная медицинская помощь в [городе]">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Медицинский центр [Название]" />
+<meta
+  name="twitter:description"
+  content="Профессиональная медицинская помощь в [городе]"
+/>
 ```
 
 #### Структурированные данные (Schema.org)
+
 ```json
 {
   "@context": "https://schema.org",
@@ -48,11 +65,7 @@
     "latitude": "55.7558",
     "longitude": "37.6176"
   },
-  "openingHours": [
-    "Mo-Fr 08:00-20:00",
-    "Sa 09:00-18:00",
-    "Su 10:00-16:00"
-  ],
+  "openingHours": ["Mo-Fr 08:00-20:00", "Sa 09:00-18:00", "Su 10:00-16:00"],
   "sameAs": [
     "https://vk.com/clinic",
     "https://t.me/clinic",
@@ -78,6 +91,7 @@
 ```
 
 #### Схема для врачей
+
 ```json
 {
   "@context": "https://schema.org",
@@ -95,11 +109,7 @@
     "credentialCategory": "degree",
     "educationalLevel": "HigherEducation"
   },
-  "knowsAbout": [
-    "Кардиология",
-    "Функциональная диагностика",
-    "ЭКГ"
-  ]
+  "knowsAbout": ["Кардиология", "Функциональная диагностика", "ЭКГ"]
 }
 ```
 
@@ -108,6 +118,7 @@
 ## 🔍 Локальное SEO
 
 ### Google My Business и Яндекс.Справочник
+
 ```json
 {
   "business_profile": {
@@ -140,6 +151,7 @@
 ```
 
 ### Локальные ключевые слова
+
 ```
 Высокочастотные (ВЧ):
 - "медицинский центр [город]"
@@ -164,54 +176,57 @@
 ## 📊 Настройка аналитики
 
 ### Google Analytics 4
+
 ```javascript
 // Базовая настройка GA4
-gtag('config', 'G-XXXXXXXXXX', {
-  cookie_domain: 'clinic-website.ru',
-  cookie_flags: 'SameSite=None;Secure'
+gtag("config", "G-XXXXXXXXXX", {
+  cookie_domain: "clinic-website.ru",
+  cookie_flags: "SameSite=None;Secure",
 });
 
 // Отслеживание ключевых событий
 function trackAppointmentBooking(doctor_id, service_id) {
-  gtag('event', 'appointment_booking_started', {
-    'custom_doctor_id': doctor_id,
-    'custom_service_id': service_id,
-    'value': 1
+  gtag("event", "appointment_booking_started", {
+    custom_doctor_id: doctor_id,
+    custom_service_id: service_id,
+    value: 1,
   });
 }
 
 function trackFormSubmission(form_type) {
-  gtag('event', 'form_submission', {
-    'custom_form_type': form_type,
-    'value': 1
+  gtag("event", "form_submission", {
+    custom_form_type: form_type,
+    value: 1,
   });
 }
 
 function trackPhoneClick() {
-  gtag('event', 'phone_click', {
-    'event_category': 'contact',
-    'event_label': 'header_phone',
-    'value': 1
+  gtag("event", "phone_click", {
+    event_category: "contact",
+    event_label: "header_phone",
+    value: 1,
   });
 }
 ```
 
 ### Яндекс.Метрика
+
 ```javascript
 // Настройка целей в Яндекс.Метрике
-ym(XXXXXXXX, 'reachGoal', 'appointment_form_submit');
-ym(XXXXXXXX, 'reachGoal', 'phone_call');
-ym(XXXXXXXX, 'reachGoal', 'contact_form_submit');
+ym(XXXXXXXX, "reachGoal", "appointment_form_submit");
+ym(XXXXXXXX, "reachGoal", "phone_call");
+ym(XXXXXXXX, "reachGoal", "contact_form_submit");
 
 // Параметры визитов
-ym(XXXXXXXX, 'params', {
-  user_type: 'new_patient', // или 'returning_patient'
-  referral_source: 'google_organic',
-  landing_page: window.location.pathname
+ym(XXXXXXXX, "params", {
+  user_type: "new_patient", // или 'returning_patient'
+  referral_source: "google_organic",
+  landing_page: window.location.pathname,
 });
 ```
 
 ### Настройка конверсий
+
 ```python
 # Django view для отслеживания конверсий
 from django.shortcuts import render
@@ -235,6 +250,7 @@ def appointment_success(request):
 ## 📈 KPI и метрики для отслеживания
 
 ### Основные KPI
+
 ```json
 {
   "traffic_metrics": {
@@ -284,6 +300,7 @@ def appointment_success(request):
 ```
 
 ### Отчётность
+
 ```python
 # Еженедельный отчёт по метрикам
 WEEKLY_REPORT_METRICS = {
@@ -303,38 +320,44 @@ WEEKLY_REPORT_METRICS = {
 ### Примеры оптимизированного контента
 
 #### Hero-секция главной страницы
+
 ```html
 <section class="hero">
-    <h1>Медицинский центр «[Название]» в [Городе] — современная медицина рядом с вами</h1>
-    <p class="lead">Опытные врачи, новейшее оборудование и индивидуальный подход к каждому пациенту. Записывайтесь на приём онлайн — это быстро и удобно!</p>
+  <h1>
+    Медицинский центр «[Название]» в [Городе] — современная медицина рядом с
+    вами
+  </h1>
+  <p class="lead">
+    Опытные врачи, новейшее оборудование и индивидуальный подход к каждому
+    пациенту. Записывайтесь на приём онлайн — это быстро и удобно!
+  </p>
 
-    <div class="hero-benefits">
-        <div class="benefit">
-            <span class="icon">⏰</span>
-            <span>Запись за 30 секунд</span>
-        </div>
-        <div class="benefit">
-            <span class="icon">👨‍⚕️</span>
-            <span>15+ опытных врачей</span>
-        </div>
-        <div class="benefit">
-            <span class="icon">🏥</span>
-            <span>Современное оборудование</span>
-        </div>
+  <div class="hero-benefits">
+    <div class="benefit">
+      <span class="icon">⏰</span>
+      <span>Запись за 30 секунд</span>
     </div>
+    <div class="benefit">
+      <span class="icon">👨‍⚕️</span>
+      <span>15+ опытных врачей</span>
+    </div>
+    <div class="benefit">
+      <span class="icon">🏥</span>
+      <span>Современное оборудование</span>
+    </div>
+  </div>
 
-    <div class="cta-buttons">
-        <button class="btn btn-primary" onclick="openAppointmentForm()">
-            Записаться на приём
-        </button>
-        <a href="tel:+7XXXXXXXXXX" class="btn btn-outline">
-            Позвонить сейчас
-        </a>
-    </div>
+  <div class="cta-buttons">
+    <button class="btn btn-primary" onclick="openAppointmentForm()">
+      Записаться на приём
+    </button>
+    <a href="tel:+7XXXXXXXXXX" class="btn btn-outline"> Позвонить сейчас </a>
+  </div>
 </section>
 ```
 
 #### Meta title и description для ключевых страниц
+
 ```
 Главная страница:
 Title: Медицинский центр [Название] в [Городе] — запись к врачу онлайн
@@ -358,13 +381,16 @@ Description: 📍 Адрес: [адрес] ☎️ Телефон: +7 (XXX) XXX-X
 ## 🎨 Дизайн для конверсии
 
 ### Принципы конверсионного дизайна
+
 1. **Доверие превыше всего**
+
    - Фотографии настоящих врачей
    - Дипломы и сертификаты
    - Отзывы пациентов с фото
    - Лицензии и аккредитации
 
 2. **Простота навигации**
+
    - Максимум 3 клика до записи
    - Видимая кнопка записи на всех страницах
    - Хлебные крошки
@@ -376,25 +402,26 @@ Description: 📍 Адрес: [адрес] ☎️ Телефон: +7 (XXX) XXX-X
    - "Акция действует до конца месяца"
 
 ### CTA элементы
+
 ```html
 <!-- Основная CTA -->
 <button class="cta-primary" onclick="openBookingModal()">
-    <span class="icon">📅</span>
-    Записаться на приём
-    <small>Ответим в течение 15 минут</small>
+  <span class="icon">📅</span>
+  Записаться на приём
+  <small>Ответим в течение 15 минут</small>
 </button>
 
 <!-- Вторичная CTA -->
 <a href="tel:+7XXXXXXXXXX" class="cta-secondary">
-    <span class="icon">📞</span>
-    Позвонить сейчас
-    <small>Пн-Пт: 8:00-20:00</small>
+  <span class="icon">📞</span>
+  Позвонить сейчас
+  <small>Пн-Пт: 8:00-20:00</small>
 </a>
 
 <!-- Soft CTA -->
 <button class="cta-soft" onclick="showPriceCalculator()">
-    <span class="icon">💰</span>
-    Узнать стоимость услуг
+  <span class="icon">💰</span>
+  Узнать стоимость услуг
 </button>
 ```
 
@@ -403,66 +430,78 @@ Description: 📍 Адрес: [адрес] ☎️ Телефон: +7 (XXX) XXX-X
 ## 📱 Мобильная оптимизация
 
 ### Технические требования
+
 ```css
 /* Адаптивный дизайн */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 24px;
-        line-height: 1.3;
-    }
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
 
-    .cta-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-    .appointment-form {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-    }
+  .appointment-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
 }
 
 /* Улучшение взаимодействия на мобильных */
 .phone-link {
-    font-size: 18px;
-    padding: 12px;
-    display: block;
-    text-align: center;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    position: sticky;
-    bottom: 0;
+  font-size: 18px;
+  padding: 12px;
+  display: block;
+  text-align: center;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  position: sticky;
+  bottom: 0;
 }
 ```
 
 ### AMP для медицинских страниц (опционально)
+
 ```html
 <!doctype html>
 <html ⚡>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Кардиолог в [Городе] — консультация и диагностика</title>
-    <link rel="canonical" href="https://clinic-website.ru/doctors/cardiologist/">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>...</style>
+    <link
+      rel="canonical"
+      href="https://clinic-website.ru/doctors/cardiologist/"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <style amp-boilerplate>
+      ...
+    </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <article>
-        <h1>Врач-кардиолог [ФИО]</h1>
-        <amp-img src="/images/doctor-photo.jpg"
-                 width="300"
-                 height="200"
-                 layout="responsive"
-                 alt="Фото врача-кардиолога">
-        </amp-img>
-        <!-- Контент статьи -->
+      <h1>Врач-кардиолог [ФИО]</h1>
+      <amp-img
+        src="/images/doctor-photo.jpg"
+        width="300"
+        height="200"
+        layout="responsive"
+        alt="Фото врача-кардиолога"
+      >
+      </amp-img>
+      <!-- Контент статьи -->
     </article>
-</body>
+  </body>
 </html>
 ```
 
@@ -473,6 +512,7 @@ Description: 📍 Адрес: [адрес] ☎️ Телефон: +7 (XXX) XXX-X
 ### Рекомендуемые кампании
 
 #### Google Ads
+
 ```
 Кампания 1: Поиск по брендовым запросам
 - [название клиники]
@@ -492,6 +532,7 @@ Description: 📍 Адрес: [адрес] ☎️ Телефон: +7 (XXX) XXX-X
 ```
 
 #### Яндекс.Директ
+
 ```
 Группа 1: Общие медицинские услуги
 - медицинский центр
@@ -510,6 +551,7 @@ Description: 📍 Адрес: [адрес] ☎️ Телефон: +7 (XXX) XXX-X
 ```
 
 ### Посадочные страницы для рекламы
+
 ```python
 # URL структура для landing pages
 urls = [
@@ -533,6 +575,7 @@ urls = [
 ## 📧 Email маркетинг
 
 ### Автоматические письма
+
 ```python
 EMAIL_CAMPAIGNS = {
     'appointment_confirmation': {
@@ -559,6 +602,7 @@ EMAIL_CAMPAIGNS = {
 ```
 
 ### Сегментация пациентов
+
 ```python
 PATIENT_SEGMENTS = {
     'new_patients': 'Новые пациенты (первый визит)',
