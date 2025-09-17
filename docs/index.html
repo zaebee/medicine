@@ -283,7 +283,7 @@
         </section>
 
         <section class="navigation-grid">
-            <div class="nav-card" onclick="navigateTo('./architecture-overview.md')">
+            <div class="nav-card" onclick="navigateTo('./architecture-overview.html')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">🏗️</span>
                     <h3 class="nav-card-title">System Architecture</h3>
@@ -299,7 +299,7 @@
                 </ul>
             </div>
 
-            <div class="nav-card" onclick="navigateTo('./documentation-map.md')">
+            <div class="nav-card" onclick="navigateTo('./documentation-map.html')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">📋</span>
                     <h3 class="nav-card-title">Documentation Map</h3>
@@ -315,7 +315,7 @@
                 </ul>
             </div>
 
-            <div class="nav-card" onclick="navigateTo('./development-workflow.md')">
+            <div class="nav-card" onclick="navigateTo('./development-workflow.html')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">👩‍💻</span>
                     <h3 class="nav-card-title">Development Workflow</h3>
@@ -331,7 +331,7 @@
                 </ul>
             </div>
 
-            <div class="nav-card" onclick="navigateTo('./user-features-map.md')">
+            <div class="nav-card" onclick="navigateTo('./user-features-map.html')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">👤</span>
                     <h3 class="nav-card-title">User Journey & Features</h3>
@@ -403,7 +403,7 @@
 
         <footer class="footer">
             <p>
-                📋 <a href="./README.md">Main Documentation</a> |
+                📋 <a href="./readme.html">Main Documentation</a> |
                 🔧 <a href="./technical/technical_architecture.md">Technical Details</a> |
                 🎨 <a href="./design/ux_design_requirements.md">Design System</a> |
                 📊 <a href="./business/brief.md">Business Brief</a>
@@ -435,11 +435,11 @@
         document.addEventListener('keydown', (event) => {
             if (event.altKey) {
                 const keyMap = {
-                    '1': './README.md',
-                    '2': './architecture-overview.md',
-                    '3': './documentation-map.md',
-                    '4': './development-workflow.md',
-                    '5': './user-features-map.md'
+                    '1': './readme.html',
+                    '2': './architecture-overview.html',
+                    '3': './documentation-map.html',
+                    '4': './development-workflow.html',
+                    '5': './user-features-map.html'
                 };
 
                 const target = keyMap[event.key];

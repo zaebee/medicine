@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Map - Medical Clinic Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .back-nav a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .content-card h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .content-card h2 {
+            color: #555;
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+
+        .doc-category {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+            border: 2px solid #e3f2fd;
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .doc-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.15);
+        }
+
+        .doc-category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .doc-category-icon {
+            font-size: 2rem;
+            margin-right: 12px;
+        }
+
+        .doc-category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .doc-category-desc {
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .doc-list {
+            list-style: none;
+        }
+
+        .doc-list li {
+            margin-bottom: 8px;
+        }
+
+        .doc-link {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #555;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .doc-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .doc-link-icon {
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        .doc-link-title {
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .doc-link-badge {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+        }
+
+        .doc-link:hover .doc-link-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .diagram-container {
+            background: #f8f9ff;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .mermaid {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .team-access {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            border: 2px solid #c8e6c9;
+        }
+
+        .team-role {
+            font-weight: 600;
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+
+        .team-docs {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .search-section {
+            background: #fff3e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 16px;
+            border: 2px solid #ffb74d;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ff9800;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            padding: 8px 16px;
+            background: #ff9800;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .quick-link:hover {
+            background: #f57c00;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .content-card {
+                padding: 20px;
+            }
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+            .quick-links {
+                flex-direction: column;
+            }
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 1.4;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📋 Карта документации</h1>
+            <p>Интерактивная навигация по структуре проектной документации</p>
+        </header>
+
+        <nav class="back-nav">
+            <a href="./index.html">← Вернуться к главной</a>
+        </nav>
+
+        <main class="content-card">
+            <h1>📋 Карта документации проекта</h1>
+
+            <div class="search-section">
+                <h3 style="margin-bottom: 16px; color: #e65100;">🔍 Быстрый поиск</h3>
+                <input type="text" class="search-input" placeholder="Поиск по документации..." id="search-input">
+                <div class="quick-links">
+                    <a href="./business/brief.md" class="quick-link">Бриф</a>
+                    <a href="./technical/technical_architecture.md" class="quick-link">Архитектура</a>
+                    <a href="./development/tasks_estimates.md" class="quick-link">Задачи</a>
+                    <a href="./design/ux_design_requirements.md" class="quick-link">UX/UI</a>
+                    <a href="./deployment/testing_acceptance.md" class="quick-link">Тестирование</a>
+                </div>
+            </div>
+
+            <h2>📁 Структура документации по категориям</h2>
+
+            <div class="docs-grid">
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <span class="doc-category-icon">💼</span>
+                        <h3 class="doc-category-title">Бизнес-документация</h3>
+                    </div>
+                    <p class="doc-category-desc">
+                        Коммерческие требования, бриф и вопросы клиенту
+                    </p>
+                    <ul class="doc-list">
+                        <li>
+                            <a href="./business/brief.md" class="doc-link">
+                                <span class="doc-link-icon">📄</span>
+                                <span class="doc-link-title">Коммерческий бриф</span>
+                                <span class="doc-link-badge">Core</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./business/project_data.json" class="doc-link">
+                                <span class="doc-link-icon">📊</span>
+                                <span class="doc-link-title">Данные проекта (JSON)</span>
+                                <span class="doc-link-badge">API</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./business/client_questions.md" class="doc-link">
+                                <span class="doc-link-icon">❓</span>
+                                <span class="doc-link-title">Вопросы клиенту</span>
+                                <span class="doc-link-badge">Priority</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <span class="doc-category-icon">🔧</span>
+                        <h3 class="doc-category-title">Техническая архитектура</h3>
+                    </div>
+                    <p class="doc-category-desc">
+                        Техническое решение, стек и безопасность
+                    </p>
+                    <ul class="doc-list">
+                        <li>
+                            <a href="./technical/technical_architecture.md" class="doc-link">
+                                <span class="doc-link-icon">🏗️</span>
+                                <span class="doc-link-title">Техническая архитектура</span>
+                                <span class="doc-link-badge">Core</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./technical/cms_comparison.md" class="doc-link">
+                                <span class="doc-link-icon">📝</span>
+                                <span class="doc-link-title">Сравнение CMS</span>
+                                <span class="doc-link-badge">Analysis</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./technical/security_compliance.md" class="doc-link">
+                                <span class="doc-link-icon">🛡️</span>
+                                <span class="doc-link-title">Безопасность</span>
+                                <span class="doc-link-badge">Security</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <span class="doc-category-icon">🎨</span>
+                        <h3 class="doc-category-title">Дизайн и UX</h3>
+                    </div>
+                    <p class="doc-category-desc">
+                        Пользовательский опыт и дизайн-требования
+                    </p>
+                    <ul class="doc-list">
+                        <li>
+                            <a href="./design/ux_design_requirements.md" class="doc-link">
+                                <span class="doc-link-icon">🎨</span>
+                                <span class="doc-link-title">UX/UI требования</span>
+                                <span class="doc-link-badge">Design</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./user-features-map.html" class="doc-link">
+                                <span class="doc-link-icon">👤</span>
+                                <span class="doc-link-title">Карта пользователей</span>
+                                <span class="doc-link-badge">Interactive</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <span class="doc-category-icon">👩‍💻</span>
+                        <h3 class="doc-category-title">Разработка</h3>
+                    </div>
+                    <p class="doc-category-desc">
+                        Планирование задач и шаблоны документов
+                    </p>
+                    <ul class="doc-list">
+                        <li>
+                            <a href="./development/tasks_estimates.md" class="doc-link">
+                                <span class="doc-link-icon">📋</span>
+                                <span class="doc-link-title">Задачи и оценки</span>
+                                <span class="doc-link-badge">Planning</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./development/brd_prd_frd_templates.md" class="doc-link">
+                                <span class="doc-link-icon">📑</span>
+                                <span class="doc-link-title">Шаблоны документов</span>
+                                <span class="doc-link-badge">Templates</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./development-workflow.html" class="doc-link">
+                                <span class="doc-link-icon">🔄</span>
+                                <span class="doc-link-title">Рабочий процесс</span>
+                                <span class="doc-link-badge">Interactive</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <span class="doc-category-icon">🚀</span>
+                        <h3 class="doc-category-title">Деплой и маркетинг</h3>
+                    </div>
+                    <p class="doc-category-desc">
+                        Тестирование, развертывание и продвижение
+                    </p>
+                    <ul class="doc-list">
+                        <li>
+                            <a href="./deployment/testing_acceptance.md" class="doc-link">
+                                <span class="doc-link-icon">🧪</span>
+                                <span class="doc-link-title">Тестирование</span>
+                                <span class="doc-link-badge">QA</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./deployment/seo_marketing.md" class="doc-link">
+                                <span class="doc-link-icon">📈</span>
+                                <span class="doc-link-title">SEO и маркетинг</span>
+                                <span class="doc-link-badge">Marketing</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <span class="doc-category-icon">🌐</span>
+                        <h3 class="doc-category-title">Интерактивные страницы</h3>
+                    </div>
+                    <p class="doc-category-desc">
+                        Специальные визуализации и диаграммы
+                    </p>
+                    <ul class="doc-list">
+                        <li>
+                            <a href="./architecture-overview.html" class="doc-link">
+                                <span class="doc-link-icon">🏗️</span>
+                                <span class="doc-link-title">Обзор архитектуры</span>
+                                <span class="doc-link-badge">Visual</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./readme.html" class="doc-link">
+                                <span class="doc-link-icon">📖</span>
+                                <span class="doc-link-title">Главная документация</span>
+                                <span class="doc-link-badge">Overview</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>🗺️ Диаграмма зависимостей документов</h2>
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph TD
+                        A[📋 Главная документация] --> B[💼 Бизнес-бриф]
+                        A --> C[🔧 Техническая архитектура]
+                        A --> D[🎨 UX/UI требования]
+
+                        B --> E[❓ Вопросы клиенту]
+                        B --> F[📊 Данные проекта]
+
+                        C --> G[📝 Сравнение CMS]
+                        C --> H[🛡️ Безопасность]
+                        C --> I[🏗️ Диаграммы архитектуры]
+
+                        D --> J[👤 Карта пользователей]
+                        D --> K[🎨 Дизайн-система]
+
+                        F --> L[📋 Задачи и оценки]
+                        L --> M[📑 Шаблоны документов]
+                        L --> N[🔄 Рабочий процесс]
+
+                        H --> O[🧪 Тестирование]
+                        K --> P[📈 SEO и маркетинг]
+
+                        style A fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+                        style B fill:#f3e5f5,stroke:#7b1fa2
+                        style C fill:#e8f5e8,stroke:#388e3c
+                        style D fill:#fff3e0,stroke:#f57c00
+                        style I fill:#e3f2fd,stroke:#1976d2
+                        style J fill:#fff3e0,stroke:#f57c00
+                        style N fill:#e8f5e8,stroke:#388e3c
+                </div>
+            </div>
+
+            <h2>👥 Доступ по ролям команды</h2>
+            <div class="team-access">
+                <h3 style="text-align: center; margin-bottom: 20px; color: #2e7d32;">Распределение документации по ролям</h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-role">🏢 Project Manager</div>
+                        <div class="team-docs">Бриф, задачи, планирование, процессы</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-role">🎨 UI/UX Designer</div>
+                        <div class="team-docs">UX требования, пользователи, дизайн-система</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-role">⚙️ Backend Developer</div>
+                        <div class="team-docs">Архитектура, CMS, безопасность, API</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-role">🌐 Frontend Developer</div>
+                        <div class="team-docs">UX требования, компоненты, интеграции</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-role">🧪 QA Engineer</div>
+                        <div class="team-docs">Тестирование, acceptance criteria</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-role">🚀 DevOps Engineer</div>
+                        <div class="team-docs">Архитектура, безопасность, деплой</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-role">📈 Marketing Specialist</div>
+                        <div class="team-docs">SEO стратегия, контент-план</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>
+                🏠 <a href="./index.html">Главная</a> |
+                📋 <a href="./readme.html">Документация</a> |
+                🏗️ <a href="./architecture-overview.html">Архитектура</a> |
+                👩‍💻 <a href="./development-workflow.html">Процесс разработки</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                Интерактивная карта документации с Mermaid.js
+            </p>
+        </footer>
+    </div>
+
+    <div class="keyboard-hint" id="keyboard-hint">
+        <strong>Быстрая навигация:</strong><br>
+        Alt + 1: Документация<br>
+        Alt + 2: Архитектура<br>
+        Alt + 3: Карта документов<br>
+        Alt + 4: Рабочий процесс<br>
+        Alt + 5: Пользователи
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#e3f2fd',
+                primaryTextColor: '#1976d2',
+                primaryBorderColor: '#1976d2',
+                lineColor: '#757575'
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        const docLinks = document.querySelectorAll('.doc-link');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            docLinks.forEach(link => {
+                const title = link.querySelector('.doc-link-title').textContent.toLowerCase();
+                const category = link.closest('.doc-category').querySelector('.doc-category-title').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || category.includes(searchTerm)) {
+                    link.style.display = 'flex';
+                    link.closest('.doc-category').style.display = 'block';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+
+            // Hide empty categories
+            document.querySelectorAll('.doc-category').forEach(category => {
+                const visibleLinks = category.querySelectorAll('.doc-link[style*="flex"]');
+                if (visibleLinks.length === 0 && searchTerm !== '') {
+                    category.style.display = 'none';
+                } else {
+                    category.style.display = 'block';
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            if (event.altKey) {
+                const keyMap = {
+                    '1': './readme.html',
+                    '2': './architecture-overview.html',
+                    '3': './documentation-map.html',
+                    '4': './development-workflow.html',
+                    '5': './user-features-map.html'
+                };
+
+                const target = keyMap[event.key];
+                if (target) {
+                    event.preventDefault();
+                    window.location.href = target;
+                }
+            }
+        });
+
+        // Show keyboard hint on Alt key
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey) {
+                document.getElementById('keyboard-hint').style.opacity = '1';
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (!e.altKey) {
+                document.getElementById('keyboard-hint').style.opacity = '0';
+            }
+        });
+
+        // Add hover animations to doc links
+        docLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'translateX(8px) scale(1.02)';
+            });
+
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        console.log('📋 Documentation map loaded successfully!');
+        console.log('💡 Use Alt + 1-5 for quick navigation');
+        console.log('🔍 Use search to filter documents');
+    </script>
+</body>
+</html>
