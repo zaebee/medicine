@@ -119,11 +119,11 @@ flowchart TD
     classDef start fill:#e3f2fd,stroke:#1976d2
     classDef process fill:#f3e5f5,stroke:#7b1fa2
     classDef decision fill:#fff3e0,stroke:#f57c00
-    classDef end fill:#e8f5e8,stroke:#388e3c
+    classDef finish fill:#e8f5e8,stroke:#388e3c
 
     class START start
     class HOMEPAGE decision
-    class BOOK_APPOINTMENT,APPOINTMENT_FORM end
+    class BOOK_APPOINTMENT,APPOINTMENT_FORM finish
 ```
 
 ### 📅 Appointment Booking Flow
