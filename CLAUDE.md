@@ -4,176 +4,170 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a documentation-only repository for a medical clinic website development project. The repository contains comprehensive technical and business documentation for building a modern medical clinic website with online appointment booking system.
+This is a **Jekyll-powered documentation website** for a medical clinic development project. The site automatically generates styled HTML documentation from Markdown files using GitHub Actions and deploys to GitHub Pages at https://medicine.zae.life.
 
-**Current Status**: Planning and documentation phase - no actual code implementation yet.
+**Current Status**: Live documentation site with automated Jekyll deployment.
 
-## Repository Structure
+## Technology Stack
 
-```
-medicine/
-├── docs/                           # Complete project documentation
-│   ├── business/                   # Business requirements and planning
-│   │   ├── brief.md               # Commercial project brief
-│   │   ├── client_questions.md    # Priority client questions
-│   │   └── project_data.json      # Machine-readable specifications
-│   ├── technical/                  # Technical architecture and solutions
-│   │   ├── technical_architecture.md # Stack and data models
-│   │   ├── cms_comparison.md      # CMS technology comparison
-│   │   └── security_compliance.md # Security and compliance
-│   ├── design/                     # Design and UX specifications
-│   │   └── ux_design_requirements.md # UX/UI guidelines
-│   ├── development/                # Development planning and templates
-│   │   ├── tasks_estimates.md     # WBS and budget scenarios
-│   │   └── brd_prd_frd_templates.md # Requirements templates
-│   ├── deployment/                 # Testing, marketing and deployment
-│   │   ├── testing_acceptance.md  # Test criteria and acceptance
-│   │   └── seo_marketing.md       # SEO strategy and marketing
-│   └── README.md                   # Project overview and structure
-├── CLAUDE.md                       # This file - guidance for Claude Code
-├── .gitignore                      # Git ignore rules
-└── LICENSE                         # Project license
-```
-
-## Recommended Technical Stack
-
-Based on the documentation analysis:
-
-### Backend Architecture
-- **Framework**: Django 4.2+ (LTS) with Django REST Framework
-- **CMS**: Wagtail 5.0+ (recommended over Django CMS)
-- **Database**: PostgreSQL 14+
-- **Cache**: Redis 7.0+
-- **Task Queue**: Celery 5.3+
-- **Language**: Python 3.10+
-
-### Frontend Stack
-- **Base**: HTML5/CSS3/JavaScript ES6+
-- **Framework**: Bootstrap 5.3+ or Tailwind CSS
-- **Interactivity**: Alpine.js or Vue.js 3+
-- **Build Tool**: Webpack or Vite
-- **Preprocessor**: SCSS
-
-### Infrastructure
-- **Web Server**: Nginx 1.20+
-- **WSGI Server**: Gunicorn
-- **SSL/TLS**: Let's Encrypt certificates
-- **Containerization**: Docker + Docker Compose (optional)
-- **Monitoring**: Sentry, New Relic
-
-## Key Project Features
-
-### Must-Have Features
-- Online appointment booking system
-- Doctor profiles and schedules
-- Medical services catalog
-- Responsive design (Mobile-first)
-- SEO optimization for local search
-- Maps and SMS integration
-
-### Recommended App Structure
-```
-clinic_website/
-├── apps/
-│   ├── core/           # Base models and utilities
-│   ├── clinics/        # Clinic and branch management
-│   ├── doctors/        # Doctor profiles and specializations
-│   ├── services/       # Medical services catalog
-│   ├── appointments/   # Booking system
-│   ├── reviews/        # Reviews and ratings
-│   ├── payments/       # Payment processing
-│   ├── notifications/  # SMS/Email notifications
-│   └── cms/           # Wagtail CMS configuration
-```
-
-## External Integrations
-
-### Recommended Services
-- **SMS**: SMSC.ru, SMS.ru, or SmsAero
-- **Payments**: Яндекс.Касса (ЮKassa), CloudPayments, or Сбербанк
-- **Maps**: Яндекс.Карты API
-- **Analytics**: Google Analytics 4 + Яндекс.Метрика
-- **Monitoring**: Sentry for error tracking
-
-## Development Workflow
-
-When implementing this project:
-
-1. **Setup**: Start with Django project structure using the recommended app organization
-2. **Models**: Implement core models (User, Clinic, Doctor, Service, Appointment, Review)
-3. **API**: Build REST API endpoints for appointment booking
-4. **CMS**: Configure Wagtail for content management
-5. **Frontend**: Implement responsive design with mobile-first approach
-6. **Integrations**: Add SMS, payment, and maps integrations
-7. **Testing**: Implement comprehensive testing suite
-8. **Deployment**: Configure production environment with Nginx + Gunicorn
-
-## Security and Compliance
-
-- **Data Protection**: GDPR/152-ФЗ compliance for medical data
-- **Encryption**: SSL/TLS, bcrypt for passwords
-- **Backup**: Daily encrypted backups
-- **Audit**: Logging of all admin actions
-- **Access Control**: Role-based permissions for staff
-
-## Performance Requirements
-
-- **Page Load Time**: < 3 seconds on mobile
-- **Availability**: 99.5% uptime
-- **Concurrent Users**: Support up to 500 simultaneous users
-- **Mobile Traffic**: Optimized for 60%+ mobile users
-
-## Business Context
-
-This medical clinic website aims to:
-- Increase patient flow by 25-40% within 6 months
-- Reduce call center load by up to 60% through online booking
-- Improve site conversion to 8-12%
-- Enhance clinic's modern, tech-forward image
+- **Jekyll 4.3.0** - Static site generator with GitHub Pages compatibility
+- **Ruby 3.1+ / Bundler** - Dependency management
+- **GitHub Actions** - Automated deployment pipeline
+- **Mermaid.js** - Interactive diagrams and flowcharts
+- **Custom HTML/CSS/JavaScript** - Responsive design and navigation
+- **GitHub Pages** - Hosting with custom domain
 
 ## Development Commands
 
-Since this is currently a documentation-only repository, no build/test commands are available yet. When implementation begins, typical commands would include:
+All Jekyll commands must be run from the `docs/` directory:
 
 ```bash
-# Django development
-python manage.py runserver
-python manage.py migrate
-python manage.py collectstatic
+# Navigate to Jekyll site root
+cd docs
 
-# Testing
-python manage.py test
-pytest
+# Install Ruby dependencies (first time setup)
+bundle install
 
-# Frontend build
-bun run build
-bun run dev
+# Local development server with auto-reload
+bundle exec jekyll serve --livereload
+
+# Local development (basic)
+bundle exec jekyll serve
+
+# Build for production
+bundle exec jekyll build
+
+# Clean generated files
+bundle exec jekyll clean
+
+# Check Jekyll/GitHub Pages compatibility
+bundle exec github-pages health-check
 ```
 
-## Documentation Organization
+## Project Architecture
 
-The documentation is organized by development phase and team responsibility:
+### Directory Structure
+```
+docs/                          # Jekyll site root
+├── _config.yml               # Jekyll configuration
+├── _layouts/documentation.html  # Custom layout template
+├── Gemfile                   # Ruby dependencies
+├── index.html                # Interactive homepage
+├── {page}.md                 # Documentation pages with Jekyll frontmatter
+├── business/                 # Business documentation (markdown)
+├── technical/                # Technical documentation (markdown)
+├── design/                   # Design documentation (markdown)
+├── development/              # Development documentation (markdown)
+└── deployment/               # Deployment documentation (markdown)
+```
 
-- **`/business`**: For project managers, business analysts, and stakeholders
-- **`/technical`**: For backend developers and system architects
-- **`/design`**: For UI/UX designers and frontend developers
-- **`/development`**: For development teams and project planning
-- **`/deployment`**: For QA engineers, DevOps, and marketing teams
+### Key Components
 
-## Key Documentation Files
+**Jekyll Configuration (`_config.yml`)**
+- Site metadata and build settings
+- Plugin configuration (jekyll-feed, jekyll-sitemap, jekyll-seo-tag)
+- Custom collections and defaults
+- GitHub Pages compatibility settings
 
-When implementing this project, start with these essential files:
+**Custom Layout (`_layouts/documentation.html`)**
+- Responsive design template for all documentation pages
+- Mermaid.js integration with configurable themes
+- Keyboard navigation (Alt+1-5) support
+- Custom CSS with gradient backgrounds and interactive elements
 
-1. **`docs/business/project_data.json`** - Machine-readable project specifications
-2. **`docs/technical/technical_architecture.md`** - Complete technical stack and data models
-3. **`docs/development/tasks_estimates.md`** - Detailed work breakdown structure
-4. **`docs/business/client_questions.md`** - Critical questions that affect scope
+**Content Management Pattern**
+All documentation pages use Jekyll frontmatter:
+```yaml
+---
+layout: documentation
+title: "Page Title"
+nav_title: "Navigation Title"
+description: "Page description for SEO"
+icon: "📋"
+permalink: /page-url/
+mermaid_theme: "default"  # Optional
+footer_text: "Custom footer"  # Optional
+---
+```
+
+## Deployment Workflow
+
+**Automated GitHub Actions** (`.github/workflows/pages.yml`):
+1. Triggers on push to `main` branch
+2. Sets up Ruby 3.1 environment with bundler caching
+3. Builds Jekyll site with production settings
+4. Deploys to GitHub Pages with custom domain
+
+**Manual Deployment**:
+- Push changes to `main` branch
+- GitHub Actions automatically builds and deploys
+- Site updates at https://medicine.zae.life within 2-3 minutes
+
+## Content Development
+
+### Adding New Documentation Pages
+
+1. Create new `.md` file in appropriate directory
+2. Add Jekyll frontmatter with required fields
+3. Write content in Markdown with optional Mermaid diagrams
+4. Link from other pages using Jekyll `relative_url` filter
+
+### Interactive Features
+
+**Keyboard Navigation**:
+- Alt+1: Main Documentation (`/readme/`)
+- Alt+2: Architecture Overview (`/architecture-overview/`)
+- Alt+3: Documentation Map (`/documentation-map/`)
+- Alt+4: Development Workflow (`/development-workflow/`)
+- Alt+5: User Features Map (`/user-features-map/`)
+
+**Mermaid Diagrams**:
+```yaml
+---
+mermaid_theme: "default"
+mermaid_config: |
+  gantt: {
+    titleTopMargin: 25,
+    barHeight: 20
+  }
+---
+```
+
+```markdown
+## Diagram Title
+\`\`\`mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+\`\`\`
+```
+
+### Content Language and Conventions
+
+- **Documentation content**: Written in Russian with English technical terms
+- **Code and configurations**: English
+- **Icons**: Emoji icons used for visual navigation (🏥, 📋, 🏗️, etc.)
+- **File naming**: kebab-case for URLs, descriptive names for files
+
+## Domain and Hosting
+
+- **Live URL**: https://medicine.zae.life
+- **Custom domain**: Configured via `CNAME` file
+- **SSL**: Automatically provided by GitHub Pages
+- **CDN**: GitHub's global CDN for fast loading
 
 ## Important Notes
 
-- This repository contains planning documentation only
-- No sensitive information or actual code is present
-- All medical data handling must comply with healthcare privacy regulations
-- Focus on accessibility (WCAG 2.1 AA) for medical websites
-- Implement comprehensive logging for audit trails
-- Documentation structure follows software development lifecycle phases
+- **Never edit generated `_site/` directory** - it's overwritten on each build
+- **Always test locally** with `bundle exec jekyll serve` before pushing
+- **Mermaid diagrams require specific syntax** - test rendering locally
+- **Front matter is required** for all documentation pages
+- **GitHub Actions build logs** available in repository Actions tab for debugging
+- **Site uses custom JavaScript** for interactive navigation and Mermaid initialization
+
+## Troubleshooting
+
+**Build failures**: Check GitHub Actions logs for Ruby/Jekyll errors
+**Mermaid diagrams not rendering**: Verify syntax and frontmatter configuration
+**Navigation issues**: Ensure permalink values match navigation JavaScript
+**Local development issues**: Run `bundle install` and check Ruby version compatibility

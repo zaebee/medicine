@@ -11,9 +11,8 @@ url: "https://medicine.zae.life" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
-# Plugins
+# Plugins (GitHub Pages supported plugins only)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -27,24 +26,8 @@ kramdown:
     block:
       line_numbers: false
 
-# Collections
-collections:
-  pages:
-    output: true
-    permalink: /:name/
-
 # Default front matter
 defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "documentation"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
   - scope:
       path: ""
     values:
@@ -62,7 +45,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - "*.html" # Exclude our custom HTML files since we'll convert them to MD
 
 # Include files that start with underscore
 include:
