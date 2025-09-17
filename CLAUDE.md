@@ -146,8 +146,8 @@ python manage.py test
 pytest
 
 # Frontend build
-npm run build
-npm run dev
+bun run build
+bun run dev
 ```
 
 ## Documentation Organization
