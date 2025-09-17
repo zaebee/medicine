@@ -4,28 +4,31 @@
 
 ## 📁 Структура документации
 
-### 🎯 Основные документы
+### 💼 Бизнес-документация (`/business`)
 
-- **[brief.md](./brief.md)** - Полный коммерческий бриф проекта
-- **[project_data.json](./project_data.json)** - Машиночитаемые данные проекта
-- **[tasks_estimates.md](./tasks_estimates.md)** - Детальная WBS и 3 сценария бюджета
-- **[client_questions.md](./client_questions.md)** - 18 приоритетных вопросов клиенту
+- **[brief.md](./business/brief.md)** - Полный коммерческий бриф проекта
+- **[project_data.json](./business/project_data.json)** - Машиночитаемые данные проекта
+- **[client_questions.md](./business/client_questions.md)** - 18 приоритетных вопросов клиенту
 
-### 🔧 Технические спецификации
+### 🔧 Техническая архитектура (`/technical`)
 
-- **[technical_architecture.md](./technical_architecture.md)** - Архитектура, стек технологий, модель данных
-- **[cms_comparison.md](./cms_comparison.md)** - Сравнение Django CMS vs Wagtail vs самописное
-- **[security_compliance.md](./security_compliance.md)** - Безопасность и соответствие GDPR/152-ФЗ
+- **[technical_architecture.md](./technical/technical_architecture.md)** - Архитектура, стек технологий, модель данных
+- **[cms_comparison.md](./technical/cms_comparison.md)** - Сравнение Django CMS vs Wagtail vs самописное
+- **[security_compliance.md](./technical/security_compliance.md)** - Безопасность и соответствие GDPR/152-ФЗ
 
-### 📈 Маркетинг и UX
+### 🎨 Дизайн и UX (`/design`)
 
-- **[seo_marketing.md](./seo_marketing.md)** - SEO стратегия, аналитика, контент-план
-- **[ux_design_requirements.md](./ux_design_requirements.md)** - UX/UI требования, адаптивность, доступность
+- **[ux_design_requirements.md](./design/ux_design_requirements.md)** - UX/UI требования, адаптивность, доступность
 
-### 🧪 Тестирование и приёмка
+### 👩‍💻 Разработка (`/development`)
 
-- **[testing_acceptance.md](./testing_acceptance.md)** - Acceptance criteria, тест-кейсы, чек-лист приёмки
-- **[brd_prd_frd_templates.md](./brd_prd_frd_templates.md)** - Шаблоны BRD/PRD/FRD для дальнейшей работы
+- **[tasks_estimates.md](./development/tasks_estimates.md)** - Детальная WBS и 3 сценария бюджета
+- **[brd_prd_frd_templates.md](./development/brd_prd_frd_templates.md)** - Шаблоны BRD/PRD/FRD для дальнейшей работы
+
+### 🚀 Деплой и маркетинг (`/deployment`)
+
+- **[testing_acceptance.md](./deployment/testing_acceptance.md)** - Acceptance criteria, тест-кейсы, чек-лист приёмки
+- **[seo_marketing.md](./deployment/seo_marketing.md)** - SEO стратегия, аналитика, контент-план
 
 ## 🎯 Ключевые результаты анализа
 
@@ -48,8 +51,8 @@
 
 ### Для получения финальной сметы нужно:
 
-1. **Ответить на вопросы** из [client_questions.md](./client_questions.md) (приоритет 1-5 критичны)
-2. **Выбрать CMS решение** на основе [cms_comparison.md](./cms_comparison.md)
+1. **Ответить на вопросы** из [client_questions.md](./business/client_questions.md) (приоритет 1-5 критичны)
+2. **Выбрать CMS решение** на основе [cms_comparison.md](./technical/cms_comparison.md)
 3. **Определить scope** (MVP/Standard/Premium)
 4. **Подготовить контент** и брендинг материалы
 
