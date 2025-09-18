@@ -18,6 +18,9 @@ ui:
   user_journey:
     en: "User Journey & Features"
     ru: "Карта пользователей и функций"
+  glossary:
+    en: "Glossary"
+    ru: "Глоссарий"
   system_architecture:
     en: "System Architecture"
     ru: "Системная архитектура"

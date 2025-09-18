@@ -401,6 +401,22 @@ permalink: /
                     <li>{% include t.html term="project.business_goals" %}</li>
                 </ul>
             </div>
+
+            <div class="nav-card" onclick="navigateTo('{{ "/glossary/" | relative_url }}')">
+                <div class="nav-card-header">
+                    <span class="nav-card-icon">📚</span>
+                    <h3 class="nav-card-title">{% include t.html term="ui.glossary" %}</h3>
+                </div>
+                <p class="nav-card-description">
+                    Интерактивный билингвальный словарь технических терминов с поиском и фильтрацией по категориям.
+                </p>
+                <ul class="nav-card-features">
+                    <li>Русско-английский перевод терминов</li>
+                    <li>Поиск и фильтрация по категориям</li>
+                    <li>Копирование кода для Jekyll includes</li>
+                    <li>9 тематических категорий</li>
+                </ul>
+            </div>
         </section>
 
         <section class="features-overview">
@@ -461,7 +477,8 @@ permalink: /
                 📋 <a href="{{ "/readme/" | relative_url }}">{% include t.html term="ui.main_documentation" %}</a> |
                 🔧 <a href="./technical/technical_architecture.md">{% include t.html term="meta.technical_details" %}</a> |
                 🎨 <a href="./design/ux_design_requirements.md">{% include t.html term="meta.design_system" %}</a> |
-                📊 <a href="./business/brief.md">{% include t.html term="meta.business_brief" %}</a>
+                📊 <a href="./business/brief.md">{% include t.html term="meta.business_brief" %}</a> |
+                📚 <a href="{{ "/glossary/" | relative_url }}">Глоссарий</a>
             </p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
                 {% include t.html term="meta.diagrams_powered" %} | {% include t.html term="meta.documentation_generated" %}
