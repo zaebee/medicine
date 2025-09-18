@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: page.nav_title | default: site.title }}</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ page.icon | default: '🏥' }}</text></svg>">
 
     <style>
+        :root {
+            /* Light theme variables */
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --text-primary: #333;
+            --text-secondary: #555;
+            --text-light: #666;
+            --card-bg: white;
+            --card-shadow: rgba(0,0,0,0.1);
+            --accent-color: #667eea;
+            --border-color: #ddd;
+            --code-bg: #f4f4f4;
+            --quote-bg: #f8f9ff;
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme variables */
+            --bg-gradient-start: #2c3e50;
+            --bg-gradient-end: #34495e;
+            --text-primary: #ecf0f1;
+            --text-secondary: #bdc3c7;
+            --text-light: #95a5a6;
+            --card-bg: #34495e;
+            --card-shadow: rgba(0,0,0,0.3);
+            --accent-color: #3498db;
+            --border-color: #4a5f7a;
+            --code-bg: #2c3e50;
+            --quote-bg: #3c5670;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,9 +47,10 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             min-height: 100vh;
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -69,38 +100,39 @@
         }
 
         .content-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px var(--card-shadow);
             margin-bottom: 20px;
+            transition: all 0.3s ease;
         }
 
         .content-card h1 {
-            color: #333;
+            color: var(--text-primary);
             margin-bottom: 20px;
             font-size: 2rem;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
         }
 
         .content-card h2 {
-            color: #555;
+            color: var(--text-secondary);
             margin: 30px 0 15px 0;
             font-size: 1.5rem;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid var(--accent-color);
             padding-left: 15px;
         }
 
         .content-card h3 {
-            color: #666;
+            color: var(--text-light);
             margin: 25px 0 10px 0;
             font-size: 1.2rem;
         }
 
         .content-card p {
             margin-bottom: 15px;
-            color: #555;
+            color: var(--text-secondary);
         }
 
         .content-card ul, .content-card ol {
@@ -109,61 +141,62 @@
 
         .content-card li {
             margin-bottom: 8px;
-            color: #555;
+            color: var(--text-secondary);
         }
 
         .content-card a {
-            color: #667eea;
+            color: var(--accent-color);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s;
         }
 
         .content-card a:hover {
-            border-bottom-color: #667eea;
+            border-bottom-color: var(--accent-color);
         }
 
         .content-card table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: white;
+            background: var(--card-bg);
         }
 
         .content-card th,
         .content-card td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .content-card th {
-            background: #f8f9ff;
+            background: var(--quote-bg);
             font-weight: 600;
-            color: #333;
+            color: var(--text-primary);
         }
 
         .content-card tr:hover {
-            background: #f8f9ff;
+            background: var(--quote-bg);
         }
 
         .content-card blockquote {
-            background: #f8f9ff;
-            border-left: 4px solid #667eea;
+            background: var(--quote-bg);
+            border-left: 4px solid var(--accent-color);
             padding: 20px;
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
         }
 
         .content-card code {
-            background: #f4f4f4;
+            background: var(--code-bg);
             padding: 2px 6px;
             border-radius: 4px;
             font-family: 'Monaco', 'Courier New', monospace;
+            color: var(--text-primary);
         }
 
         .content-card pre {
-            background: #f4f4f4;
+            background: var(--code-bg);
             padding: 16px;
             border-radius: 8px;
             overflow-x: auto;
@@ -177,10 +210,32 @@
 
         .mermaid {
             text-align: center;
-            background: white;
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1000;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--card-shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--card-shadow);
         }
 
         .footer {
@@ -231,6 +286,10 @@
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему">
+        🌓 Тема
+    </button>
+
     <div class="container">
         <header class="header">
             <h1>{{ page.icon | default: '🏥' }} {{ page.nav_title | default: page.title }}</h1>
@@ -255,7 +314,7 @@
                 🏠 <a href="{{ '/' | relative_url }}">Главная</a> |
                 📋 <a href="{{ '/readme' | relative_url }}">Документация</a> |
                 🏗️ <a href="{{ '/architecture-overview' | relative_url }}">Архитектура</a> |
-                🗺️ <a href="{{ '/documentation-map' | relative_url }}">Карта документов</a>
+                🗺️ <a href="{{ '/documentation-map' | relative_url }}">Карта документации</a>
             </p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
                 {% if page.footer_text %}{{ page.footer_text }}{% else %}Документация сгенерирована Jekyll{% endif %}
@@ -266,25 +325,89 @@
 
     <div class="keyboard-hint" id="keyboard-hint">
         <strong>Быстрая навигация:</strong><br>
-        Alt + 1: Документация<br>
-        Alt + 2: Архитектура<br>
-        Alt + 3: Карта документов<br>
-        Alt + 4: Рабочий процесс<br>
-        Alt + 5: Пользователи
+        Alt + 1: Главная документация<br>
+        Alt + 2: Обзор архитектуры<br>
+        Alt + 3: Карта документации<br>
+        Alt + 4: Процесс разработки<br>
+        Alt + 5: Карта пользователей
     </div>
 
     <script>
-        // Initialize Mermaid
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: '{{ page.mermaid_theme | default: "default" }}',
-            themeVariables: {
-                primaryColor: '#e3f2fd',
-                primaryTextColor: '#1976d2',
-                primaryBorderColor: '#1976d2',
-                lineColor: '#757575'
+        // Theme management
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButton(newTheme);
+
+            // Reinitialize mermaid with new theme
+            setTimeout(initMermaid, 100);
+        }
+
+        function updateThemeButton(theme) {
+            const button = document.querySelector('.theme-toggle');
+            if (button) {
+                button.innerHTML = theme === 'dark' ? '☀️ Светлая' : '🌙 Тёмная';
             }
-            {% if page.mermaid_config %},{{ page.mermaid_config }}{% endif %}
+        }
+
+        // Initialize Mermaid with current theme
+        function initMermaid() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const mermaidTheme = currentTheme === 'dark' ? 'dark' : 'default';
+
+            const config = {
+                startOnLoad: false,
+                theme: mermaidTheme,
+                themeVariables: currentTheme === 'dark' ? {
+                    primaryColor: '#3498db',
+                    primaryTextColor: '#ecf0f1',
+                    primaryBorderColor: '#3498db',
+                    lineColor: '#95a5a6',
+                    secondaryColor: '#2c3e50',
+                    tertiaryColor: '#34495e'
+                } : {
+                    primaryColor: '#e3f2fd',
+                    primaryTextColor: '#1976d2',
+                    primaryBorderColor: '#1976d2',
+                    lineColor: '#757575'
+                }
+                {% if page.mermaid_config %}
+                ,{{ page.mermaid_config }}
+                {% endif %}
+            };
+
+            try {
+                // Clear existing mermaid content
+                document.querySelectorAll('.mermaid').forEach(el => {
+                    if (el.getAttribute('data-processed')) {
+                        el.removeAttribute('data-processed');
+                        el.innerHTML = el.getAttribute('data-original') || el.innerHTML;
+                    } else {
+                        el.setAttribute('data-original', el.innerHTML);
+                    }
+                });
+
+                mermaid.initialize(config);
+                mermaid.run();
+                console.log('✅ Mermaid диаграммы инициализированы успешно с темой:', mermaidTheme);
+            } catch (error) {
+                console.error('❌ Ошибка инициализации Mermaid:', error);
+            }
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initMermaid();
         });
 
         // Keyboard navigation
@@ -323,8 +446,9 @@
         {{ page.custom_js }}
         {% endif %}
 
-        console.log('{{ page.icon | default: "🏥" }} {{ page.title }} loaded successfully!');
-        console.log('💡 Use Alt + 1-5 for quick navigation');
+        console.log('{{ page.icon | default: "🏥" }} {{ page.title }} загружена успешно!');
+        console.log('💡 Используйте Alt + 1-5 для быстрой навигации');
+        console.log('🎨 Нажмите кнопку темы для переключения светлой/тёмной темы');
     </script>
 </body>
 </html>
