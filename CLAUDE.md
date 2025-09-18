@@ -50,8 +50,10 @@ bundle exec github-pages health-check
 ```
 docs/                          # Jekyll site root
 ├── _config.yml               # Jekyll configuration
-├── _layouts/documentation.html  # Custom layout template
-├── Gemfile                   # Ruby dependencies
+├── _layouts/
+│   ├── default.html          # Minimal layout for SEO/feed plugins
+│   └── documentation.html    # Custom layout template
+├── Gemfile                   # Ruby dependencies (GitHub Pages compatible)
 ├── index.html                # Interactive homepage
 ├── {page}.md                 # Documentation pages with Jekyll frontmatter
 ├── business/                 # Business documentation (markdown)
@@ -66,6 +68,7 @@ docs/                          # Jekyll site root
 **Jekyll Configuration (`_config.yml`)**
 - Site metadata and build settings
 - Plugin configuration (jekyll-feed, jekyll-sitemap, jekyll-seo-tag)
+- Repository configuration for GitHub Pages SEO
 - Custom collections and defaults
 - GitHub Pages compatibility settings
 
@@ -168,6 +171,15 @@ graph TD
 ## Troubleshooting
 
 **Build failures**: Check GitHub Actions logs for Ruby/Jekyll errors
+**Repository errors**: Ensure `repository: zaebee/medicine` is set in `_config.yml`
+**Layout errors**: Use `layout: documentation` for content pages, `layout: default` for index
 **Mermaid diagrams not rendering**: Verify syntax and frontmatter configuration
 **Navigation issues**: Ensure permalink values match navigation JavaScript
 **Local development issues**: Run `bundle install` and check Ruby version compatibility
+
+## Recent Fixes Applied
+
+- Added `repository: zaebee/medicine` to `_config.yml` for GitHub Pages SEO support
+- Created `_layouts/default.html` for basic layout with SEO and feed plugin support
+- Updated GitHub Actions to use Ruby 3.1 for better compatibility
+- Fixed GitHub Pages deployment issues with missing repository configuration

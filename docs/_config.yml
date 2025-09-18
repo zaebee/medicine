@@ -7,6 +7,7 @@ description: >-
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://medicine.zae.life" # the base hostname & protocol for your site
+repository: zaebee/medicine # GitHub repository for SEO and site generation
 
 # Build settings
 markdown: kramdown
