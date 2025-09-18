@@ -400,13 +400,43 @@
             }
         }
 
+        // Clean Mermaid content to remove HTML entities and problematic characters
+        function cleanMermaidContent(content) {
+            return content
+                // Remove HTML entities and tags
+                .replace(/<br\s*\/?>/gi, ' ')
+                .replace(/<[^>]*>/g, '')
+                .replace(/&nbsp;/g, ' ')
+                .replace(/&amp;/g, '&')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                // Fix line breaks and spacing
+                .replace(/\r\n/g, '\n')
+                .replace(/\r/g, '\n')
+                // Clean up problematic characters in node text
+                .replace(/(["\s])([А-Яа-я\s,"]+)(["\s])/g, (match, p1, p2, p3) => {
+                    // Replace quotes and clean Russian text in nodes
+                    return p1 + p2.replace(/"/g, '') + p3;
+                })
+                // Remove extra whitespace but preserve structure
+                .replace(/[ \t]+/g, ' ')
+                .replace(/\n[ \t]+/g, '\n')
+                .replace(/[ \t]+\n/g, '\n')
+                .trim();
+        }
+
         // Process Jekyll-generated code blocks with class "language-mermaid"
         function processJekyllMermaidBlocks() {
             let count = 0;
             document.querySelectorAll('code.language-mermaid').forEach(codeEl => {
                 if (!codeEl.hasAttribute('data-mermaid-processed')) {
-                    const content = codeEl.textContent.trim();
-                    if (content) {
+                    const rawContent = codeEl.textContent.trim();
+                    if (rawContent) {
+                        // Clean the content before processing
+                        const cleanedContent = cleanMermaidContent(rawContent);
+
                         // Create new mermaid container
                         const mermaidDiv = document.createElement('div');
                         mermaidDiv.className = 'mermaid';
@@ -414,13 +444,15 @@
 
                         // Render the diagram
                         const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
-                        mermaid.render(id, content)
+                        mermaid.render(id, cleanedContent)
                             .then(result => {
                                 mermaidDiv.innerHTML = result.svg;
                             })
                             .catch(error => {
                                 console.error('Ошибка рендеринга Mermaid:', error);
-                                mermaidDiv.innerHTML = `<pre style="background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto;">${content}</pre>`;
+                                console.warn('Исходный контент:', rawContent);
+                                console.warn('Очищенный контент:', cleanedContent);
+                                mermaidDiv.innerHTML = `<pre style="background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto; color: var(--text-primary);">${cleanedContent}</pre>`;
                             });
 
                         // Replace the code block with mermaid container
@@ -443,17 +475,20 @@
         function processExistingMermaidBlocks() {
             let count = 0;
             document.querySelectorAll('.mermaid:not([data-mermaid-processed])').forEach(el => {
-                const content = el.textContent.trim();
-                if (content) {
+                const rawContent = el.textContent.trim();
+                if (rawContent) {
+                    const cleanedContent = cleanMermaidContent(rawContent);
                     const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
-                    mermaid.render(id, content)
+                    mermaid.render(id, cleanedContent)
                         .then(result => {
                             el.innerHTML = result.svg;
                             el.setAttribute('data-mermaid-processed', 'true');
                         })
                         .catch(error => {
                             console.error('Ошибка рендеринга Mermaid:', error);
-                            el.innerHTML = `<pre style="background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto;">${content}</pre>`;
+                            console.warn('Исходный контент:', rawContent);
+                            console.warn('Очищенный контент:', cleanedContent);
+                            el.innerHTML = `<pre style="background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto; color: var(--text-primary);">${cleanedContent}</pre>`;
                         });
                     count++;
                 }
