@@ -365,9 +365,9 @@
             const mermaidTheme = currentTheme === 'dark' ? 'dark' : 'default';
 
             try {
-                // Simple and reliable initialization
+                // Initialize Mermaid with theme
                 mermaid.initialize({
-                    startOnLoad: true,
+                    startOnLoad: false,
                     theme: mermaidTheme,
                     themeVariables: currentTheme === 'dark' ? {
                         primaryColor: '#3498db',
@@ -389,34 +389,76 @@
                     {% endif %}
                 });
 
-                // Force re-render all mermaid diagrams
-                setTimeout(() => {
-                    document.querySelectorAll('.mermaid').forEach(el => {
-                        if (!el.hasAttribute('data-processed')) {
-                            const content = el.textContent.trim();
-                            if (content) {
-                                el.removeAttribute('data-processed');
-                                mermaid.render('mermaid-' + Math.random().toString(36).substr(2, 9), content)
-                                    .then(result => {
-                                        el.innerHTML = result.svg;
-                                    })
-                                    .catch(error => {
-                                        console.error('Mermaid render error:', error);
-                                        el.innerHTML = '<pre>' + content + '</pre>';
-                                    });
-                            }
-                        }
-                    });
-                }, 100);
+                // Convert Jekyll code blocks to mermaid containers and render
+                const processedCount = processJekyllMermaidBlocks();
+                const existingCount = processExistingMermaidBlocks();
 
-                console.log('✅ Mermaid диаграммы инициализированы успешно с темой:', mermaidTheme);
+                console.log(`✅ Mermaid диаграммы инициализированы успешно с темой: ${mermaidTheme}`);
+                console.log(`📊 Обработано диаграмм: ${processedCount + existingCount} (Jekyll: ${processedCount}, Existing: ${existingCount})`);
             } catch (error) {
                 console.error('❌ Ошибка инициализации Mermaid:', error);
-                // Fallback: show raw content
-                document.querySelectorAll('.mermaid').forEach(el => {
-                    el.innerHTML = '<pre>' + el.textContent + '</pre>';
-                });
             }
+        }
+
+        // Process Jekyll-generated code blocks with class "language-mermaid"
+        function processJekyllMermaidBlocks() {
+            let count = 0;
+            document.querySelectorAll('code.language-mermaid').forEach(codeEl => {
+                if (!codeEl.hasAttribute('data-mermaid-processed')) {
+                    const content = codeEl.textContent.trim();
+                    if (content) {
+                        // Create new mermaid container
+                        const mermaidDiv = document.createElement('div');
+                        mermaidDiv.className = 'mermaid';
+                        mermaidDiv.setAttribute('data-mermaid-processed', 'true');
+
+                        // Render the diagram
+                        const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
+                        mermaid.render(id, content)
+                            .then(result => {
+                                mermaidDiv.innerHTML = result.svg;
+                            })
+                            .catch(error => {
+                                console.error('Ошибка рендеринга Mermaid:', error);
+                                mermaidDiv.innerHTML = `<pre style="background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto;">${content}</pre>`;
+                            });
+
+                        // Replace the code block with mermaid container
+                        const preEl = codeEl.parentElement;
+                        if (preEl && preEl.tagName === 'PRE') {
+                            preEl.parentNode.replaceChild(mermaidDiv, preEl);
+                        } else {
+                            codeEl.parentNode.replaceChild(mermaidDiv, codeEl);
+                        }
+
+                        codeEl.setAttribute('data-mermaid-processed', 'true');
+                        count++;
+                    }
+                }
+            });
+            return count;
+        }
+
+        // Process existing .mermaid elements (backward compatibility)
+        function processExistingMermaidBlocks() {
+            let count = 0;
+            document.querySelectorAll('.mermaid:not([data-mermaid-processed])').forEach(el => {
+                const content = el.textContent.trim();
+                if (content) {
+                    const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
+                    mermaid.render(id, content)
+                        .then(result => {
+                            el.innerHTML = result.svg;
+                            el.setAttribute('data-mermaid-processed', 'true');
+                        })
+                        .catch(error => {
+                            console.error('Ошибка рендеринга Mermaid:', error);
+                            el.innerHTML = `<pre style="background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto;">${content}</pre>`;
+                        });
+                    count++;
+                }
+            });
+            return count;
         }
 
         // Initialize everything when DOM is ready
