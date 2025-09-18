@@ -1,0 +1,257 @@
+# Bilingual Glossary for Medical Clinic Documentation
+# Structure: category.term.language
+
+# UI/Navigation Terms
+ui:
+  main_documentation:
+    en: "Main Documentation"
+    ru: "Главная документация"
+  architecture_overview:
+    en: "Architecture Overview"
+    ru: "Обзор архитектуры"
+  documentation_map:
+    en: "Documentation Map"
+    ru: "Карта документации"
+  development_workflow:
+    en: "Development Workflow"
+    ru: "Процесс разработки"
+  user_journey:
+    en: "User Journey & Features"
+    ru: "Карта пользователей и функций"
+  system_architecture:
+    en: "System Architecture"
+    ru: "Системная архитектура"
+  home:
+    en: "Home"
+    ru: "Главная"
+  documentation:
+    en: "Documentation"
+    ru: "Документация"
+  architecture:
+    en: "Architecture"
+    ru: "Архитектура"
+  theme:
+    en: "Theme"
+    ru: "Тема"
+  light_theme:
+    en: "Light"
+    ru: "Светлая"
+  dark_theme:
+    en: "Dark"
+    ru: "Тёмная"
+  toggle_theme:
+    en: "Toggle Theme"
+    ru: "Переключить тему"
+  navigation:
+    en: "Quick Navigation"
+    ru: "Быстрая навигация"
+  loading:
+    en: "Loading..."
+    ru: "Загрузка..."
+
+# Project/Business Terms
+project:
+  medical_clinic:
+    en: "Medical Clinic"
+    ru: "Медицинская клиника"
+  clinic_website:
+    en: "Medical Clinic Website"
+    ru: "Сайт медицинской клиники"
+  interactive_documentation:
+    en: "Interactive Documentation & Architecture Overview"
+    ru: "Интерактивная документация и обзор архитектуры"
+  project_overview:
+    en: "Project Overview"
+    ru: "Обзор проекта"
+  online_appointment:
+    en: "Online Appointment Booking"
+    ru: "Онлайн-запись на приём"
+  patient_journey:
+    en: "Patient Journey Mapping"
+    ru: "Карта пути пациента"
+  user_flow:
+    en: "User Flow Diagrams"
+    ru: "Диаграммы пользовательских потоков"
+  business_goals:
+    en: "Business Goals Alignment"
+    ru: "Соответствие бизнес-целям"
+  feature_priority:
+    en: "Feature Priority Matrix"
+    ru: "Матрица приоритетов функций"
+  weeks_timeline:
+    en: "Weeks Timeline"
+    ru: "Недели разработки"
+  total_days:
+    en: "Total Days"
+    ru: "Общее количество дней"
+  team_roles:
+    en: "Team Roles"
+    ru: "Роли команды"
+  core_models:
+    en: "Core Models"
+    ru: "Основные модели"
+  must_have_features:
+    en: "Must-Have Features"
+    ru: "Обязательные функции"
+  external_apis:
+    en: "External APIs"
+    ru: "Внешние API"
+
+# Technical Stack Terms
+technical:
+  technical_stack:
+    en: "Technical Stack"
+    ru: "Технологический стек"
+  backend_frontend:
+    en: "Backend & Frontend Technologies"
+    ru: "Backend и Frontend технологии"
+  database_models:
+    en: "Database Models & Relationships"
+    ru: "Модели базы данных и связи"
+  external_integrations:
+    en: "External Service Integrations"
+    ru: "Интеграции внешних сервисов"
+  infrastructure:
+    en: "Infrastructure Components"
+    ru: "Компоненты инфраструктуры"
+  django:
+    en: "Django 4.2+ & DRF"
+    ru: "Django 4.2+ и DRF"
+  wagtail:
+    en: "Wagtail CMS"
+    ru: "Wagtail CMS"
+  postgresql:
+    en: "PostgreSQL 14+"
+    ru: "PostgreSQL 14+"
+  redis:
+    en: "Redis Caching"
+    ru: "Кэширование Redis"
+  vuejs:
+    en: "Vue.js/Alpine.js"
+    ru: "Vue.js/Alpine.js"
+  responsive:
+    en: "Responsive Framework"
+    ru: "Адаптивный фреймворк"
+  mobile_first:
+    en: "Mobile-First Design"
+    ru: "Mobile-First дизайн"
+  seo_local:
+    en: "SEO & Local Search"
+    ru: "SEO и локальный поиск"
+  maps_integration:
+    en: "Maps Integration"
+    ru: "Интеграция с картами"
+
+# Features
+features:
+  doctor_profiles:
+    en: "Doctor Profiles & Schedules"
+    ru: "Профили врачей и расписания"
+  medical_services:
+    en: "Medical Services Catalog"
+    ru: "Каталог медицинских услуг"
+  sms_notifications:
+    en: "SMS Notifications"
+    ru: "SMS-уведомления"
+  payment_processing:
+    en: "Payment Processing"
+    ru: "Обработка платежей"
+  maps_geolocation:
+    en: "Maps & Geolocation"
+    ru: "Карты и геолокация"
+  analytics:
+    en: "Analytics Tracking"
+    ru: "Отслеживание аналитики"
+  email_automation:
+    en: "Email Automation"
+    ru: "Автоматизация email"
+  social_media:
+    en: "Social Media"
+    ru: "Социальные сети"
+
+# Security & Compliance
+security:
+  security_compliance:
+    en: "Security & Compliance"
+    ru: "Безопасность и соответствие"
+  gdpr_compliance:
+    en: "GDPR/152-ФЗ Compliance"
+    ru: "Соответствие GDPR/152-ФЗ"
+  ssl_encryption:
+    en: "SSL/TLS Encryption"
+    ru: "SSL/TLS шифрование"
+  data_protection:
+    en: "Data Protection"
+    ru: "Защита данных"
+  audit_logging:
+    en: "Audit Logging"
+    ru: "Журналирование аудита"
+  access_control:
+    en: "Access Control"
+    ru: "Контроль доступа"
+  backup_systems:
+    en: "Backup Systems"
+    ru: "Системы резервного копирования"
+
+# Development Terms
+development:
+  epic_breakdown:
+    en: "Epic Breakdown & Dependencies"
+    ru: "Разбивка эпиков и зависимости"
+  critical_path:
+    en: "Critical Path Analysis"
+    ru: "Анализ критического пути"
+  team_coordination:
+    en: "Team Coordination Matrix"
+    ru: "Матрица координации команды"
+  sprint_planning:
+    en: "Sprint Planning & Milestones"
+    ru: "Планирование спринтов и вехи"
+  role_based_access:
+    en: "Role-Based Documentation Access"
+    ru: "Доступ к документации по ролям"
+  cross_reference:
+    en: "Cross-Reference Navigation"
+    ru: "Перекрёстная навигация"
+  document_dependencies:
+    en: "Document Dependencies"
+    ru: "Зависимости документов"
+  search_access:
+    en: "Search & Quick Access"
+    ru: "Поиск и быстрый доступ"
+
+# Console/Debug Messages
+console:
+  mermaid_success:
+    en: "Mermaid diagrams initialized successfully"
+    ru: "Диаграммы Mermaid инициализированы успешно"
+  mermaid_error:
+    en: "Mermaid initialization error"
+    ru: "Ошибка инициализации Mermaid"
+  page_loaded:
+    en: "loaded successfully!"
+    ru: "загружена успешно!"
+  keyboard_shortcuts:
+    en: "Use Alt + 1-5 for quick navigation"
+    ru: "Используйте Alt + 1-5 для быстрой навигации"
+  theme_toggle_hint:
+    en: "Click theme button to switch light/dark modes"
+    ru: "Нажмите кнопку темы для переключения светлой/тёмной темы"
+
+# Documentation Generated
+meta:
+  documentation_generated:
+    en: "Documentation generated with Jekyll"
+    ru: "Документация сгенерирована Jekyll"
+  diagrams_powered:
+    en: "Interactive diagrams powered by Mermaid.js"
+    ru: "Интерактивные диаграммы на Mermaid.js"
+  technical_details:
+    en: "Technical Details"
+    ru: "Технические детали"
+  design_system:
+    en: "Design System"
+    ru: "Дизайн-система"
+  business_brief:
+    en: "Business Brief"
+    ru: "Бизнес-бриф"

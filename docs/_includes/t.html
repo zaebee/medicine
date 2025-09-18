@@ -1,0 +1,18 @@
+{% comment %}
+Translation Helper Include
+Usage: {% include t.html term="ui.home" lang="ru" %}
+Usage: {% include t.html term="project.medical_clinic" %} (defaults to Russian)
+{% endcomment %}
+
+{% assign lang = include.lang | default: "ru" %}
+{% assign term_parts = include.term | split: "." %}
+{% assign category = term_parts[0] %}
+{% assign term_key = term_parts[1] %}
+
+{% if site.data.glossary[category][term_key][lang] %}
+  {{- site.data.glossary[category][term_key][lang] -}}
+{% elsif site.data.glossary[category][term_key]["en"] %}
+  {{- site.data.glossary[category][term_key]["en"] -}}
+{% else %}
+  {{- include.term -}}
+{% endif %}

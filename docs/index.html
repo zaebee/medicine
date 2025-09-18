@@ -12,6 +12,36 @@ permalink: /
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
     <style>
+        :root {
+            /* Light theme variables */
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --text-primary: #333;
+            --text-secondary: #555;
+            --text-light: #666;
+            --card-bg: white;
+            --card-shadow: rgba(0,0,0,0.1);
+            --accent-color: #667eea;
+            --border-color: #ddd;
+            --code-bg: #f4f4f4;
+            --quote-bg: #f8f9ff;
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme variables */
+            --bg-gradient-start: #2c3e50;
+            --bg-gradient-end: #34495e;
+            --text-primary: #ecf0f1;
+            --text-secondary: #bdc3c7;
+            --text-light: #95a5a6;
+            --card-bg: #34495e;
+            --card-shadow: rgba(0,0,0,0.3);
+            --accent-color: #3498db;
+            --border-color: #4a5f7a;
+            --code-bg: #2c3e50;
+            --quote-bg: #3c5670;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -21,9 +51,10 @@ permalink: /
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             min-height: 100vh;
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -60,19 +91,19 @@ permalink: /
         }
 
         .nav-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 24px var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s, all 0.3s ease;
             cursor: pointer;
             border: 2px solid transparent;
         }
 
         .nav-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-            border-color: #667eea;
+            box-shadow: 0 12px 32px var(--card-shadow);
+            border-color: var(--accent-color);
         }
 
         .nav-card-header {
@@ -89,11 +120,11 @@ permalink: /
         .nav-card-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #333;
+            color: var(--text-primary);
         }
 
         .nav-card-description {
-            color: #666;
+            color: var(--text-light);
             margin-bottom: 16px;
             line-height: 1.5;
         }
@@ -104,7 +135,7 @@ permalink: /
 
         .nav-card-features li {
             padding: 4px 0;
-            color: #555;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
@@ -115,11 +146,13 @@ permalink: /
         }
 
         .quick-stats {
-            background: rgba(255,255,255,0.95);
+            background: var(--card-bg);
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 40px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px var(--card-shadow);
+            transition: all 0.3s ease;
         }
 
         .stats-grid {
@@ -136,22 +169,24 @@ permalink: /
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: #667eea;
+            color: var(--accent-color);
             display: block;
         }
 
         .stat-label {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--text-light);
             margin-top: 4px;
         }
 
         .features-overview {
-            background: rgba(255,255,255,0.95);
+            background: var(--card-bg);
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 40px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px var(--card-shadow);
+            transition: all 0.3s ease;
         }
 
         .features-grid {
@@ -163,13 +198,14 @@ permalink: /
 
         .feature-category {
             padding: 16px;
-            border-left: 4px solid #667eea;
-            background: #f8f9ff;
+            border-left: 4px solid var(--accent-color);
+            background: var(--quote-bg);
             border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
         }
 
         .feature-category h4 {
-            color: #333;
+            color: var(--text-primary);
             margin-bottom: 12px;
             font-size: 1.1rem;
         }
@@ -181,7 +217,7 @@ permalink: /
         .feature-list li {
             padding: 2px 0;
             font-size: 0.9rem;
-            color: #555;
+            color: var(--text-secondary);
         }
 
         .footer {
@@ -237,41 +273,66 @@ permalink: /
             transition: opacity 0.3s;
             pointer-events: none;
         }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1000;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--card-shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--card-shadow);
+        }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему">
+        🌓 Тема
+    </button>
+
     <div class="container">
         <header class="header">
-            <h1>🏥 Medical Clinic Website</h1>
-            <p>Interactive Documentation & Architecture Overview</p>
+            <h1>🏥 {% include t.html term="project.medical_clinic" %}</h1>
+            <p>{% include t.html term="project.interactive_documentation" %}</p>
         </header>
 
         <section class="quick-stats">
-            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">📊 Project Overview</h2>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">📊 {% include t.html term="project.project_overview" %}</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number">9</span>
-                    <span class="stat-label">Weeks Timeline</span>
+                    <span class="stat-label">{% include t.html term="project.weeks_timeline" %}</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">65</span>
-                    <span class="stat-label">Total Days</span>
+                    <span class="stat-label">{% include t.html term="project.total_days" %}</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">7</span>
-                    <span class="stat-label">Team Roles</span>
+                    <span class="stat-label">{% include t.html term="project.team_roles" %}</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">5</span>
-                    <span class="stat-label">Core Models</span>
+                    <span class="stat-label">{% include t.html term="project.core_models" %}</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">6</span>
-                    <span class="stat-label">Must-Have Features</span>
+                    <span class="stat-label">{% include t.html term="project.must_have_features" %}</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">4</span>
-                    <span class="stat-label">External APIs</span>
+                    <span class="stat-label">{% include t.html term="project.external_apis" %}</span>
                 </div>
             </div>
         </section>
@@ -280,116 +341,116 @@ permalink: /
             <div class="nav-card" onclick="navigateTo('{{ "/architecture-overview/" | relative_url }}')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">🏗️</span>
-                    <h3 class="nav-card-title">System Architecture</h3>
+                    <h3 class="nav-card-title">{% include t.html term="ui.system_architecture" %}</h3>
                 </div>
                 <p class="nav-card-description">
-                    Complete technical architecture overview with Django, Wagtail, PostgreSQL stack and external integrations.
+                    Полный обзор технической архитектуры с Django, Wagtail, PostgreSQL и внешними интеграциями.
                 </p>
                 <ul class="nav-card-features">
-                    <li>Backend & Frontend Technologies</li>
-                    <li>Database Models & Relationships</li>
-                    <li>External Service Integrations</li>
-                    <li>Infrastructure Components</li>
+                    <li>{% include t.html term="technical.backend_frontend" %}</li>
+                    <li>{% include t.html term="technical.database_models" %}</li>
+                    <li>{% include t.html term="technical.external_integrations" %}</li>
+                    <li>{% include t.html term="technical.infrastructure" %}</li>
                 </ul>
             </div>
 
             <div class="nav-card" onclick="navigateTo('{{ "/documentation-map/" | relative_url }}')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">📋</span>
-                    <h3 class="nav-card-title">Documentation Map</h3>
+                    <h3 class="nav-card-title">{% include t.html term="ui.documentation_map" %}</h3>
                 </div>
                 <p class="nav-card-description">
-                    Interactive navigation through organized documentation structure with team-based access and cross-references.
+                    Интерактивная навигация по организованной структуре документации с доступом по ролям и перекрёстными ссылками.
                 </p>
                 <ul class="nav-card-features">
-                    <li>Role-Based Documentation Access</li>
-                    <li>Cross-Reference Navigation</li>
-                    <li>Document Dependencies</li>
-                    <li>Search & Quick Access</li>
+                    <li>{% include t.html term="development.role_based_access" %}</li>
+                    <li>{% include t.html term="development.cross_reference" %}</li>
+                    <li>{% include t.html term="development.document_dependencies" %}</li>
+                    <li>{% include t.html term="development.search_access" %}</li>
                 </ul>
             </div>
 
             <div class="nav-card" onclick="navigateTo('{{ "/development-workflow/" | relative_url }}')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">👩‍💻</span>
-                    <h3 class="nav-card-title">Development Workflow</h3>
+                    <h3 class="nav-card-title">{% include t.html term="ui.development_workflow" %}</h3>
                 </div>
                 <p class="nav-card-description">
-                    Detailed work breakdown structure with Gantt timeline, epic dependencies, and team coordination matrix.
+                    Детальная структура декомпозиции работ с Gantt-диаграммой, зависимостями эпиков и матрицей координации команды.
                 </p>
                 <ul class="nav-card-features">
-                    <li>Epic Breakdown & Dependencies</li>
-                    <li>Critical Path Analysis</li>
-                    <li>Team Coordination Matrix</li>
-                    <li>Sprint Planning & Milestones</li>
+                    <li>{% include t.html term="development.epic_breakdown" %}</li>
+                    <li>{% include t.html term="development.critical_path" %}</li>
+                    <li>{% include t.html term="development.team_coordination" %}</li>
+                    <li>{% include t.html term="development.sprint_planning" %}</li>
                 </ul>
             </div>
 
             <div class="nav-card" onclick="navigateTo('{{ "/user-features-map/" | relative_url }}')">
                 <div class="nav-card-header">
                     <span class="nav-card-icon">👤</span>
-                    <h3 class="nav-card-title">User Journey & Features</h3>
+                    <h3 class="nav-card-title">{% include t.html term="ui.user_journey" %}</h3>
                 </div>
                 <p class="nav-card-description">
-                    Complete patient journey visualization with feature priority matrix and detailed user flow diagrams.
+                    Полная визуализация пути пациента с матрицей приоритетов функций и детальными диаграммами пользовательских потоков.
                 </p>
                 <ul class="nav-card-features">
-                    <li>Patient Journey Mapping</li>
-                    <li>Feature Priority Matrix</li>
-                    <li>User Flow Diagrams</li>
-                    <li>Business Goals Alignment</li>
+                    <li>{% include t.html term="project.patient_journey" %}</li>
+                    <li>{% include t.html term="project.feature_priority" %}</li>
+                    <li>{% include t.html term="project.user_flow" %}</li>
+                    <li>{% include t.html term="project.business_goals" %}</li>
                 </ul>
             </div>
         </section>
 
         <section class="features-overview">
-            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">🎯 Key Project Features</h2>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">🎯 Ключевые функции проекта</h2>
             <div class="features-grid">
                 <div class="feature-category">
-                    <h4>📅 Must-Have Features</h4>
+                    <h4>📅 {% include t.html term="project.must_have_features" %}</h4>
                     <ul class="feature-list">
-                        <li>Online Appointment Booking</li>
-                        <li>Doctor Profiles & Schedules</li>
-                        <li>Medical Services Catalog</li>
-                        <li>Mobile-First Design</li>
-                        <li>SEO & Local Search</li>
-                        <li>Maps Integration</li>
+                        <li>{% include t.html term="project.online_appointment" %}</li>
+                        <li>{% include t.html term="features.doctor_profiles" %}</li>
+                        <li>{% include t.html term="features.medical_services" %}</li>
+                        <li>{% include t.html term="technical.mobile_first" %}</li>
+                        <li>{% include t.html term="technical.seo_local" %}</li>
+                        <li>{% include t.html term="technical.maps_integration" %}</li>
                     </ul>
                 </div>
 
                 <div class="feature-category">
-                    <h4>⚙️ Technical Stack</h4>
+                    <h4>⚙️ {% include t.html term="technical.technical_stack" %}</h4>
                     <ul class="feature-list">
-                        <li>Django 4.2+ & DRF</li>
-                        <li>Wagtail CMS</li>
-                        <li>PostgreSQL 14+</li>
-                        <li>Redis Caching</li>
-                        <li>Vue.js/Alpine.js</li>
-                        <li>Responsive Framework</li>
+                        <li>{% include t.html term="technical.django" %}</li>
+                        <li>{% include t.html term="technical.wagtail" %}</li>
+                        <li>{% include t.html term="technical.postgresql" %}</li>
+                        <li>{% include t.html term="technical.redis" %}</li>
+                        <li>{% include t.html term="technical.vuejs" %}</li>
+                        <li>{% include t.html term="technical.responsive" %}</li>
                     </ul>
                 </div>
 
                 <div class="feature-category">
-                    <h4>🔗 Integrations</h4>
+                    <h4>🔗 Интеграции</h4>
                     <ul class="feature-list">
-                        <li>SMS Notifications</li>
-                        <li>Payment Processing</li>
-                        <li>Maps & Geolocation</li>
-                        <li>Analytics Tracking</li>
-                        <li>Email Automation</li>
-                        <li>Social Media</li>
+                        <li>{% include t.html term="features.sms_notifications" %}</li>
+                        <li>{% include t.html term="features.payment_processing" %}</li>
+                        <li>{% include t.html term="features.maps_geolocation" %}</li>
+                        <li>{% include t.html term="features.analytics" %}</li>
+                        <li>{% include t.html term="features.email_automation" %}</li>
+                        <li>{% include t.html term="features.social_media" %}</li>
                     </ul>
                 </div>
 
                 <div class="feature-category">
-                    <h4>🛡️ Security & Compliance</h4>
+                    <h4>🛡️ {% include t.html term="security.security_compliance" %}</h4>
                     <ul class="feature-list">
-                        <li>GDPR/152-ФЗ Compliance</li>
-                        <li>SSL/TLS Encryption</li>
-                        <li>Data Protection</li>
-                        <li>Audit Logging</li>
-                        <li>Access Control</li>
-                        <li>Backup Systems</li>
+                        <li>{% include t.html term="security.gdpr_compliance" %}</li>
+                        <li>{% include t.html term="security.ssl_encryption" %}</li>
+                        <li>{% include t.html term="security.data_protection" %}</li>
+                        <li>{% include t.html term="security.audit_logging" %}</li>
+                        <li>{% include t.html term="security.access_control" %}</li>
+                        <li>{% include t.html term="security.backup_systems" %}</li>
                     </ul>
                 </div>
             </div>
@@ -397,31 +458,74 @@ permalink: /
 
         <footer class="footer">
             <p>
-                📋 <a href="{{ "/readme/" | relative_url }}">Main Documentation</a> |
-                🔧 <a href="./technical/technical_architecture.md">Technical Details</a> |
-                🎨 <a href="./design/ux_design_requirements.md">Design System</a> |
-                📊 <a href="./business/brief.md">Business Brief</a>
+                📋 <a href="{{ "/readme/" | relative_url }}">{% include t.html term="ui.main_documentation" %}</a> |
+                🔧 <a href="./technical/technical_architecture.md">{% include t.html term="meta.technical_details" %}</a> |
+                🎨 <a href="./design/ux_design_requirements.md">{% include t.html term="meta.design_system" %}</a> |
+                📊 <a href="./business/brief.md">{% include t.html term="meta.business_brief" %}</a>
             </p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
-                Interactive diagrams powered by Mermaid.js | Documentation generated with Jekyll
+                {% include t.html term="meta.diagrams_powered" %} | {% include t.html term="meta.documentation_generated" %}
             </p>
         </footer>
     </div>
 
     <div class="keyboard-hint" id="keyboard-hint">
-        <strong>Keyboard Shortcuts:</strong><br>
-        Alt + 1: Main Documentation<br>
-        Alt + 2: Architecture Overview<br>
-        Alt + 3: Documentation Map<br>
-        Alt + 4: Development Workflow<br>
-        Alt + 5: User Journey
+        <strong>Клавиатурные сокращения:</strong><br>
+        Alt + 1: {% include t.html term="ui.main_documentation" %}<br>
+        Alt + 2: {% include t.html term="ui.architecture_overview" %}<br>
+        Alt + 3: {% include t.html term="ui.documentation_map" %}<br>
+        Alt + 4: {% include t.html term="ui.development_workflow" %}<br>
+        Alt + 5: {% include t.html term="ui.user_journey" %}
     </div>
 
     <script>
-        // Initialize Mermaid
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'default'
+        // Theme management
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButton(newTheme);
+
+            // Reinitialize mermaid with new theme
+            setTimeout(initMermaid, 100);
+        }
+
+        function updateThemeButton(theme) {
+            const button = document.querySelector('.theme-toggle');
+            if (button) {
+                button.innerHTML = theme === 'dark' ? '☀️ Светлая' : '🌙 Тёмная';
+            }
+        }
+
+        // Initialize Mermaid with current theme
+        function initMermaid() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const mermaidTheme = currentTheme === 'dark' ? 'dark' : 'default';
+
+            try {
+                mermaid.initialize({
+                    startOnLoad: false,
+                    theme: mermaidTheme
+                });
+                mermaid.run();
+                console.log('✅ Mermaid диаграммы инициализированы успешно с темой:', mermaidTheme);
+            } catch (error) {
+                console.error('❌ Ошибка инициализации Mermaid:', error);
+            }
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initMermaid();
         });
 
         // Navigation function
@@ -472,8 +576,9 @@ permalink: /
             });
         });
 
-        console.log('🏥 Medical Clinic Documentation Portal loaded successfully!');
-        console.log('💡 Use Alt + 1-5 for quick navigation');
+        console.log('🏥 Портал документации медицинской клиники загружен успешно!');
+        console.log('💡 Используйте Alt + 1-5 для быстрой навигации');
+        console.log('🎨 Нажмите кнопку темы для переключения светлой/тёмной темы');
     </script>
 </body>
 </html>
