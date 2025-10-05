@@ -6,10 +6,30 @@
 (function() {
     'use strict';
 
+    // ===== PERFORMANCE & ACCESSIBILITY DETECTION =====
+    const PERFORMANCE = {
+        // Check for reduced motion preference
+        prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+        
+        // Detect mobile devices
+        isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+        
+        // Detect low-end devices
+        isLowEnd: navigator.hardwareConcurrency < 4 || navigator.deviceMemory < 4,
+        
+        // Check if touch device
+        isTouch: 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    };
+
+    // Disable heavy effects if needed
+    const EFFECTS_ENABLED = !PERFORMANCE.prefersReducedMotion && !PERFORMANCE.isLowEnd;
+    const CURSOR_ENABLED = EFFECTS_ENABLED && !PERFORMANCE.isTouch;
+    const PARTICLES_ENABLED = EFFECTS_ENABLED;
+
     // ===== CONFIGURATION =====
     const CONFIG = {
         particles: {
-            count: 50,
+            count: PERFORMANCE.isMobile ? 20 : (PERFORMANCE.isLowEnd ? 30 : 50),
             maxSize: 3,
             minSize: 1,
             speed: 0.5,
@@ -510,6 +530,73 @@
         }
     }
 
+    // ===== EFFECTS TOGGLE =====
+    class EffectsToggle {
+        constructor() {
+            this.button = document.querySelector('.effects-toggle');
+            if (!this.button) return;
+
+            // Load saved preference
+            const effectsDisabled = localStorage.getItem('effectsDisabled') === 'true';
+            if (effectsDisabled) {
+                document.body.classList.add('effects-disabled');
+                this.button.setAttribute('aria-label', 'Включить эффекты');
+                this.button.setAttribute('title', 'Включить анимации и эффекты');
+            }
+
+            this.button.addEventListener('click', () => {
+                const isDisabled = document.body.classList.toggle('effects-disabled');
+                localStorage.setItem('effectsDisabled', isDisabled);
+                
+                if (isDisabled) {
+                    this.button.setAttribute('aria-label', 'Включить эффекты');
+                    this.button.setAttribute('title', 'Включить анимации и эффекты');
+                } else {
+                    this.button.setAttribute('aria-label', 'Отключить эффекты');
+                    this.button.setAttribute('title', 'Отключить анимации и эффекты');
+                    // Reload page to reinitialize effects
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    // ===== KEYBOARD NAVIGATION DETECTION =====
+    class KeyboardNavigation {
+        constructor() {
+            // Detect keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-nav');
+                }
+            });
+
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-nav');
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                // Escape to close modals
+                if (e.key === 'Escape') {
+                    window.closeAppointmentModal();
+                }
+
+                // T to toggle theme (Ctrl/Cmd + T)
+                if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+                    e.preventDefault();
+                    document.querySelector('.theme-toggle')?.click();
+                }
+
+                // E to toggle effects (Ctrl/Cmd + E)
+                if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
+                    e.preventDefault();
+                    document.querySelector('.effects-toggle')?.click();
+                }
+            });
+        }
+    }
+
     // ===== GLOBAL MODAL FUNCTIONS =====
     window.openAppointmentModal = function() {
         window.modalInstance?.open();
@@ -521,16 +608,38 @@
 
     // ===== INITIALIZATION =====
     function init() {
-        // Initialize particle system
-        const canvas = document.getElementById('particles-canvas');
-        if (canvas) {
-            new ParticleSystem(canvas);
+        // Initialize particle system (only if enabled)
+        if (PARTICLES_ENABLED) {
+            const canvas = document.getElementById('particles-canvas');
+            if (canvas) {
+                new ParticleSystem(canvas);
+            }
+        } else {
+            // Hide canvas if particles disabled
+            const canvas = document.getElementById('particles-canvas');
+            if (canvas) canvas.style.display = 'none';
         }
 
-        // Initialize all features
-        new CustomCursor();
-        new MagneticEffect();
-        new TiltEffect();
+        // Initialize cursor effects (only if enabled)
+        if (CURSOR_ENABLED) {
+            new CustomCursor();
+            new MagneticEffect();
+        } else {
+            // Hide cursor elements
+            document.querySelectorAll('.cursor-dot, .cursor-outline').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.body.style.cursor = 'auto';
+        }
+
+        // Initialize tilt effect (only if effects enabled)
+        if (EFFECTS_ENABLED) {
+            new TiltEffect();
+        }
+
+        // Always initialize essential features
+        new EffectsToggle();
+        new KeyboardNavigation();
         new ScrollAnimations();
         new AnimatedCounter();
         new HeaderScroll();
