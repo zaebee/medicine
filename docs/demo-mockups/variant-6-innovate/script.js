@@ -518,6 +518,7 @@
             this.toggle.addEventListener('click', () => {
                 const isOpen = this.toggle.getAttribute('aria-expanded') === 'true';
                 this.toggle.setAttribute('aria-expanded', !isOpen);
+                this.toggle.classList.toggle('open');
                 this.nav.classList.toggle('open');
             });
 
@@ -525,6 +526,7 @@
             this.nav.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     this.toggle.setAttribute('aria-expanded', 'false');
+                    this.toggle.classList.remove('open');
                     this.nav.classList.remove('open');
                 });
             });
