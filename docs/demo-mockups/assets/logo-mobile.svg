@@ -1,0 +1,53 @@
+<svg width="280" height="100" viewBox="0 0 280 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mobile Optimized Logo - Compact horizontal layout -->
+
+  <g transform="translate(50, 50)">
+    <!-- Compact Circle -->
+    <circle cx="0" cy="0" r="40" stroke="#C9A961" stroke-width="2" fill="none" opacity="0.9"/>
+
+    <!-- Simplified Bee for Mobile -->
+    <g id="bee-mobile">
+      <!-- Head -->
+      <circle cx="0" cy="-17" r="6" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-2" y1="-17" x2="2" y2="-17" stroke="#C9A961" stroke-width="1.5"/>
+
+      <!-- Antennae -->
+      <line x1="-4" y1="-20" x2="-6" y2="-27" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="4" y1="-20" x2="6" y2="-27" stroke="#C9A961" stroke-width="1.5"/>
+      <circle cx="-6" cy="-27" r="1.5" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <circle cx="6" cy="-27" r="1.5" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+
+      <!-- Body -->
+      <path d="M -6,-10 L 6,-10 L 7,0 L -7,0 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-6" y1="-7" x2="6" y2="-7" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-6.5" y1="-3.5" x2="6.5" y2="-3.5" stroke="#C9A961" stroke-width="1.5"/>
+
+      <path d="M -7,0 L 7,0 L 6,10 L -6,10 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-6.5" y1="3.5" x2="6.5" y2="3.5" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-6" y1="7" x2="6" y2="7" stroke="#C9A961" stroke-width="1.5"/>
+
+      <!-- Stinger -->
+      <path d="M -4,10 L 0,17 L 4,10" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="0" y1="17" x2="0" y2="20" stroke="#C9A961" stroke-width="1.5"/>
+
+      <!-- Wings - Simplified -->
+      <path d="M -7,-7 L -30,-3 L -23,7 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-7" y1="-7" x2="-23" y2="7" stroke="#C9A961" stroke-width="1"/>
+
+      <path d="M 7,-7 L 30,-3 L 23,7 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="7" y1="-7" x2="23" y2="7" stroke="#C9A961" stroke-width="1"/>
+
+      <!-- Legs - Simplified to 4 -->
+      <line x1="-6" y1="3" x2="-13" y2="13" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-13" y1="13" x2="-17" y2="20" stroke="#C9A961" stroke-width="1.5"/>
+
+      <line x1="6" y1="3" x2="13" y2="13" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="13" y1="13" x2="17" y2="20" stroke="#C9A961" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Text "Пчёлка" - Larger for mobile -->
+  <text x="140" y="60" font-family="'Montserrat', Arial, sans-serif" font-size="32" fill="#C9A961" text-anchor="start" font-weight="700" letter-spacing="2">
+    Пчёлка
+  </text>
+</svg>

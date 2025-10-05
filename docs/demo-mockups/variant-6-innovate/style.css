@@ -391,7 +391,7 @@ body.effects-disabled * {
 }
 
 .logo-image {
-    height: 60px;
+    height: 70px;
     width: auto;
     filter: drop-shadow(0 4px 8px rgba(201, 169, 97, 0.3));
     transition: all var(--transition-normal);
@@ -399,12 +399,21 @@ body.effects-disabled * {
 
 .logo-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* Logo mobile version - hidden by default */
+.logo-mobile {
+    display: none;
+}
+
+.logo-desktop {
+    display: inline-block;
 }
 
 /* === NAVIGATION === */
@@ -2140,6 +2149,36 @@ section {
 }
 
 @media (max-width: 768px) {
+    /* Logo - Mobile optimized */
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: inline-block;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+
+    .logo-text {
+        display: none; /* Hide text on mobile, using logo-mobile.svg with built-in text */
+    }
+
+    /* Header - Adjust padding for mobile */
+    .header-content {
+        gap: 20px;
+    }
+
+    .header-actions {
+        gap: 12px;
+    }
+
+    .header-phone span {
+        display: none; /* Hide phone text, show only icon */
+    }
+
     /* Theme and Effects toggles - move to bottom on mobile */
     .theme-toggle {
         top: auto;
