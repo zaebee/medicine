@@ -28,6 +28,22 @@ body {
     padding: 0 var(--spacing);
 }
 
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--gold);
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* Header */
 .header {
     background: var(--white);
