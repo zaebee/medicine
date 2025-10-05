@@ -541,7 +541,99 @@
         </div>
     </section>
 
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-backdrop" onclick="closeAppointmentModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAppointmentModal()" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+
+            <div class="modal-header">
+                <h2 id="modalTitle">Записаться на консультацию</h2>
+                <p>Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+            </div>
+
+            <form class="appointment-form" onsubmit="handleAppointmentSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Ваше имя *</label>
+                    <input type="text" id="name" name="name" class="glass-input" required placeholder="Иван Иванов">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" class="glass-input" required placeholder="+7 (___) ___-__-__">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="glass-input" placeholder="example@mail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Услуга</label>
+                    <select id="service" name="service" class="glass-input">
+                        <option value="rehabilitation" selected>Реабилитация ОДА</option>
+                        <option value="physiotherapy">Физиотерапия</option>
+                        <option value="massage">Массаж</option>
+                        <option value="lfk">ЛФК</option>
+                        <option value="consultation">Консультация</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Комментарий</label>
+                    <textarea id="message" name="message" class="glass-input" rows="4" placeholder="Опишите вашу проблему или вопрос"></textarea>
+                </div>
+
+                <div class="form-consent">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Отправить заявку
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="../script.js"></script>
+    <script>
+        // Modal functions
+        function openAppointmentModal() {
+            const modal = document.getElementById('appointmentModal');
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAppointmentModal() {
+            const modal = document.getElementById('appointmentModal');
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function handleAppointmentSubmit(event) {
+            event.preventDefault();
+            alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+            closeAppointmentModal();
+            event.target.reset();
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAppointmentModal();
+            }
+        });
+    </script>
 </body>
 </html>
