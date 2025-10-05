@@ -196,40 +196,56 @@
     <!-- Hero Section with Video Background -->
     <section class="hero" id="main-content">
         <div class="hero-bg">
-            <!-- Video Background with multiple sources -->
+            <!-- Video Background -->
             <video class="hero-video" autoplay muted loop playsinline>
-                <!-- Primary video: Medical professional -->
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-reviewing-medical-records-4273-large.mp4" type="video/mp4">
-                <!-- Alternative: Medical consultation -->
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-a-patient-4236-large.mp4" type="video/mp4">
+                <!-- Primary video: Doctor talking to patient -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-his-patient-6573-large.mp4" type="video/mp4">
             </video>
             
-            <!-- Fallback illustration for browsers without video support -->
+            <!-- Video Overlay -->
+            <div class="hero-video-overlay"></div>
+            
+            <!-- Medical Illustration Fallback -->
             <div class="hero-illustration">
-                <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Medical cross background -->
-                    <g opacity="0.1">
-                        <rect x="380" y="100" width="40" height="400" fill="currentColor"/>
-                        <rect x="200" y="280" width="400" height="40" fill="currentColor"/>
-                    </g>
-                    <!-- Abstract medical shapes -->
-                    <circle cx="200" cy="200" r="80" fill="url(#gradient1)" opacity="0.3"/>
-                    <circle cx="600" cy="400" r="100" fill="url(#gradient2)" opacity="0.3"/>
-                    <circle cx="400" cy="300" r="60" fill="url(#gradient3)" opacity="0.3"/>
+                <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#C9A961;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A961;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0.2" />
                         </linearGradient>
-                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
+                        <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.3" />
+                            <stop offset="100%" style="stop-color:#B8935A;stop-opacity:0.2" />
                         </linearGradient>
-                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#B8935A;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
+                        <linearGradient id="grad3" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A961;stop-opacity:0.35" />
+                            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0.15" />
                         </linearGradient>
+                        <filter id="blur">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+                        </filter>
                     </defs>
+                    
+                    <!-- Animated gradient blobs -->
+                    <circle cx="200" cy="150" r="180" fill="url(#grad1)" filter="url(#blur)">
+                        <animate attributeName="cx" values="200;250;200" dur="20s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="150;200;150" dur="15s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <circle cx="900" cy="600" r="220" fill="url(#grad2)" filter="url(#blur)">
+                        <animate attributeName="cx" values="900;850;900" dur="18s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="600;550;600" dur="22s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <circle cx="600" cy="400" r="150" fill="url(#grad3)" filter="url(#blur)">
+                        <animate attributeName="r" values="150;180;150" dur="12s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <!-- Medical cross subtle background -->
+                    <g opacity="0.05">
+                        <rect x="580" y="150" width="40" height="500" fill="#C9A961" rx="5"/>
+                        <rect x="350" y="380" width="500" height="40" fill="#C9A961" rx="5"/>
+                    </g>
                 </svg>
             </div>
             

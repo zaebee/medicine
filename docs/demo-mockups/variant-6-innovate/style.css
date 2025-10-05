@@ -626,24 +626,28 @@ body.effects-disabled * {
 /* Hero Illustration Fallback */
 .hero-illustration {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: none;
     z-index: 0;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.9) 100%);
 }
 
 .hero-illustration svg {
     width: 100%;
     height: 100%;
-    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .hero-illustration {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(26, 26, 26, 0.95) 100%);
 }
 
 /* Show illustration if video fails to load */
 .hero-video:not([src]) ~ .hero-illustration,
-video:not([src]) + .hero-illustration {
+.hero-video[src=""] ~ .hero-illustration {
     display: block;
 }
 
