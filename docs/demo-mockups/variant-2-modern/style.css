@@ -1,8 +1,9 @@
 /* ===================================
-   VARIANT 2: MODERN DESIGN
+   VARIANT 2: MODERN DESIGN - SHARP CORNERS
    Brand: Clinic Pchelka (Bee)
    Colors: White + Dark Gold Accents (#C9A961)
    Fonts: Montserrat + Open Sans
+   Style: Clean geometric design with sharp corners
    =================================== */
 
 /* CSS Variables */
@@ -38,10 +39,10 @@
     --spacing-lg: 40px;
     --spacing-xl: 60px;
     
-    /* Border Radius */
-    --radius-sm: 5px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    /* Border Radius - Sharp Corners */
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
     
     /* Typography */
     --font-heading: 'Montserrat', sans-serif;
@@ -118,7 +119,7 @@ a:hover {
     text-decoration: none;
     font-weight: 600;
     z-index: 100;
-    border-radius: 0 0 var(--radius-sm) 0;
+    border-radius: 0;
 }
 
 .skip-link:focus {
@@ -307,7 +308,7 @@ section {
     width: 24px;
     height: 3px;
     background: var(--text-primary);
-    border-radius: 2px;
+    border-radius: 0;
     transition: all var(--transition-normal);
 }
 
@@ -456,7 +457,7 @@ section {
     width: 60px;
     height: 60px;
     background: #25D366;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -672,7 +673,7 @@ section {
 .author-avatar {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
+    border-radius: 0;
     background: var(--primary-color);
     display: flex;
     align-items: center;
