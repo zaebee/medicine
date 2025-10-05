@@ -216,15 +216,22 @@ body {
     height: 50px;
     border: none;
     border-radius: 50%;
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    border: 2px solid var(--primary-color);
     cursor: pointer;
-    z-index: 1000;
+    z-index: 10001;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-normal);
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .theme-toggle:hover {
@@ -264,15 +271,22 @@ body {
     height: 50px;
     border: none;
     border-radius: 50%;
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    border: 2px solid var(--primary-color);
     cursor: pointer;
-    z-index: 1000;
+    z-index: 10001;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-normal);
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+
+[data-theme="dark"] .effects-toggle {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .effects-toggle:hover {
