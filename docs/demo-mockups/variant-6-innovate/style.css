@@ -2307,7 +2307,52 @@ section {
     }
 
     .modal-content {
-        padding: 32px 24px;
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-header {
+        padding: 24px 20px 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .modal-header p {
+        font-size: 14px;
+    }
+
+    .modal-close {
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .modal-close svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .appointment-form {
+        padding: 24px 20px 28px;
+        gap: 20px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .glass-input {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+
+    .appointment-form .btn-primary {
+        padding: 16px;
+        font-size: 15px;
     }
 }
 
