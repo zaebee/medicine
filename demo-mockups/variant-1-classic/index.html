@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Клиника Пчёлка Медик - современный медицинский центр. Опытные врачи, современное оборудование, индивидуальный подход.">
+    <title>Клиника «Пчёлка Медик» — Медицинский центр</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../logo1.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../logo1.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="../../logo1.png" alt="Клиника Пчёлка Медик" class="logo-image" width="120" height="auto">
+                </a>
+                
+                <nav class="nav" id="mainNav">
+                    <a href="#services" class="nav-link">Услуги</a>
+                    <a href="#doctors" class="nav-link">Врачи</a>
+                    <a href="#about" class="nav-link">О клинике</a>
+                    <a href="#reviews" class="nav-link">Отзывы</a>
+                    <a href="#contacts" class="nav-link">Контакты</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="tel:+79991234567" class="phone-link">
+                        <span class="phone-icon">📞</span>
+                        <span class="phone-number">+7 (999) 123-45-67</span>
+                    </a>
+                    <button class="btn btn-primary" onclick="openCallbackModal()" aria-label="Открыть форму заказа звонка">
+                        Заказать звонок
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-content" role="banner" aria-labelledby="hero-title">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" id="hero-title">Клиника «Пчёлка» — ваше здоровье в надежных руках</h1>
+                    <p class="hero-subtitle">
+                        Реабилитация и физиотерапия для восстановления опорно-двигательного аппарата. 
+                        Опытные врачи, индивидуальный подход, современное оборудование.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large" onclick="openCallbackModal()" aria-label="Открыть форму заказа звонка">
+                            📞 Заказать звонок
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="openQuestionModal()" aria-label="Открыть форму вопроса">
+                            ✉️ Задать вопрос
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        <div class="image-icon">🏥</div>
+                        <p>Фото клиники</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают наш медицинский центр?</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏰</div>
+                    <h3 class="benefit-title">Быстрая запись</h3>
+                    <p class="benefit-text">Запишитесь на приём за 30 секунд через сайт или по телефону</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">👨‍⚕️</div>
+                    <h3 class="benefit-title">Опытные врачи</h3>
+                    <p class="benefit-text">Специалисты высшей категории со стажем от 10 лет</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏥</div>
+                    <h3 class="benefit-title">Современное оборудование</h3>
+                    <p class="benefit-text">Новейшие аппараты для точной диагностики и эффективного лечения</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🕐</div>
+                    <h3 class="benefit-title">Удобное время работы</h3>
+                    <p class="benefit-text">Работаем 7 дней в неделю, включая выходные и праздники</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <p class="section-subtitle">Полный спектр услуг по реабилитации и физиотерапии</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3 class="service-title">Диагностика</h3>
+                    <ul class="service-list">
+                        <li>УЗИ суставов и мягких тканей</li>
+                        <li>МРТ и КТ исследования</li>
+                        <li>Рентгенография</li>
+                    </ul>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💆</div>
+                    <h3 class="service-title">Физиотерапия</h3>
+                    <ul class="service-list">
+                        <li>Лечебная физкультура (ЛФК)</li>
+                        <li>Массаж и мануальная терапия</li>
+                        <li>Электрофорез и магнитотерапия</li>
+                    </ul>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏃</div>
+                    <h3 class="service-title">Реабилитация</h3>
+                    <ul class="service-list">
+                        <li>После травм и операций</li>
+                        <li>Восстановление двигательных функций</li>
+                        <li>Индивидуальные программы</li>
+                    </ul>
+                    <a href="#" class="service-link">Подробнее →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <h2 class="section-title">Наши специалисты</h2>
+            <p class="section-subtitle">Команда опытных врачей высшей категории</p>
+            
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-photo">
+                        <div class="doctor-photo-placeholder">
+                            <div class="photo-icon">👨‍⚕️</div>
+                        </div>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-value">4.9</span>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Петров Пётр Петрович</h3>
+                        <p class="doctor-specialty">Врач-реабилитолог высшей категории</p>
+                        <p class="doctor-experience">Стаж: 15 лет</p>
+                        <div class="doctor-price">
+                            <span class="price-label">Консультация:</span>
+                            <span class="price-value">3 500 ₽</span>
+                        </div>
+                        <button class="btn btn-primary btn-small" onclick="openAppointmentModal('petrov')">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-photo">
+                        <div class="doctor-photo-placeholder">
+                            <div class="photo-icon">👩‍⚕️</div>
+                        </div>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-value">4.8</span>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Иванова Анна Сергеевна</h3>
+                        <p class="doctor-specialty">Врач-физиотерапевт</p>
+                        <p class="doctor-experience">Стаж: 12 лет</p>
+                        <div class="doctor-price">
+                            <span class="price-label">Консультация:</span>
+                            <span class="price-value">3 000 ₽</span>
+                        </div>
+                        <button class="btn btn-primary btn-small" onclick="openAppointmentModal('ivanova')">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-photo">
+                        <div class="doctor-photo-placeholder">
+                            <div class="photo-icon">👨‍⚕️</div>
+                        </div>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Сидоров Игорь Владимирович</h3>
+                        <p class="doctor-specialty">Врач-ортопед</p>
+                        <p class="doctor-experience">Стаж: 18 лет</p>
+                        <div class="doctor-price">
+                            <span class="price-label">Консультация:</span>
+                            <span class="price-value">4 000 ₽</span>
+                        </div>
+                        <button class="btn btn-primary btn-small" onclick="openAppointmentModal('sidorov')">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших пациентов</h2>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">А</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Анна М.</h4>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">15 сентября 2025</span>
+                    </div>
+                    <p class="review-text">
+                        Отличная клиника! Проходила курс реабилитации после травмы колена. 
+                        Врачи очень внимательные, все объясняют понятно. Результат превзошёл ожидания!
+                    </p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">М</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Михаил К.</h4>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">10 сентября 2025</span>
+                    </div>
+                    <p class="review-text">
+                        Современное оборудование, профессиональный подход. Особенно понравилась 
+                        возможность записи онлайн - очень удобно для занятых людей.
+                    </p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">Е</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Елена В.</h4>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">5 сентября 2025</span>
+                    </div>
+                    <p class="review-text">
+                        Прекрасная клиника! Чистота, порядок, доброжелательный персонал. 
+                        Цены адекватные. Рекомендую всем своим знакомым!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contacts">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Остались вопросы?</h2>
+                    <p class="contact-description">
+                        Оставьте заявку, и наш администратор свяжется с вами в течение 15 минут
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h4>Телефон</h4>
+                                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@pchelka-clinic.ru">info@pchelka-clinic.ru</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Адрес</h4>
+                                <p>г. Москва, ул. Примерная, д. 123</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-text">
+                                <h4>Режим работы</h4>
+                                <p>Пн-Вс: 8:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm" aria-label="Форма обратной связи">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван Иванов" aria-describedby="name-help">
+                        <small id="name-help" class="form-help">Введите ваше полное имя</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[+]7[0-9]{10}" aria-describedby="phone-help">
+                        <small id="phone-help" class="form-help">Формат: +7 (999) 123-45-67</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="question">Ваш вопрос</label>
+                        <textarea id="question" name="question" rows="4" placeholder="Опишите ваш вопрос или уточнение" aria-describedby="question-help"></textarea>
+                        <small id="question-help" class="form-help">Опишите ваш вопрос подробно</small>
+                    </div>
+                    
+                    <div class="form-consent">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <span>Согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Отправить заявку</button>
+                    
+                    <p class="form-note">* Обязательные поля. Мы не передаём ваши данные третьим лицам.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🐝</div>
+                        <div class="logo-text">
+                            <span class="logo-name">Пчёлка</span>
+                            <span class="logo-tagline">Медицинский центр</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Современный медицинский центр реабилитации и физиотерапии
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#doctors">Врачи</a></li>
+                        <li><a href="#about">О клинике</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li><a href="mailto:info@pchelka-clinic.ru">info@pchelka-clinic.ru</a></li>
+                        <li>г. Москва, ул. Примерная, д. 123</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Режим работы</h4>
+                    <p class="footer-schedule">
+                        Понедельник - Воскресенье<br>
+                        8:00 - 21:00
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Клиника Пчёлка. Все права защищены.</p>
+                <div class="footer-legal">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-backdrop" onclick="closeAppointmentModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Заказать звонок</h2>
+                <button class="modal-close" onclick="closeAppointmentModal()" aria-label="Закрыть модальное окно">✕</button>
+            </div>
+            
+            <div class="modal-body">
+                <p class="modal-description">Оставьте свой номер телефона, и наш администратор свяжется с вами в течение 15 минут</p>
+                
+                <form class="appointment-form" id="appointmentForm" aria-label="Форма заказа звонка">
+                    <div class="form-group">
+                        <label for="patient-name">Ваше имя *</label>
+                        <input type="text" id="patient-name" name="patient-name" required placeholder="Иван Иванов" aria-describedby="patient-name-help">
+                        <small id="patient-name-help" class="form-help">Введите ваше полное имя</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-phone">Телефон *</label>
+                        <input type="tel" id="patient-phone" name="patient-phone" required placeholder="+7 (___) ___-__-__" pattern="[+]7[0-9]{10}" aria-describedby="patient-phone-help">
+                        <small id="patient-phone-help" class="form-help">Формат: +7 (999) 123-45-67</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="callback-time">Удобное время для звонка</label>
+                        <select id="callback-time" name="callback-time" aria-describedby="callback-time-help">
+                            <option value="">Любое время</option>
+                            <option value="morning">Утро (9:00 - 12:00)</option>
+                            <option value="afternoon">День (12:00 - 15:00)</option>
+                            <option value="evening">Вечер (15:00 - 18:00)</option>
+                        </select>
+                        <small id="callback-time-help" class="form-help">Выберите удобное время</small>
+                    </div>
+                    
+                    <div class="form-consent">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <span>Согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Заказать звонок</button>
+                    
+                    <p class="form-note">* Обязательные поля. Мы не передаём ваши данные третьим лицам.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/79991234567" class="whatsapp-float" target="_blank" aria-label="Написать в WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485c0 7.435-6.050 13.485-13.485 13.485zM21.960 18.828c-0.305-0.153-1.802-0.890-2.082-0.992s-0.483-0.153-0.686 0.153c-0.203 0.305-0.788 0.992-0.966 1.195s-0.356 0.229-0.661 0.076c-0.305-0.153-1.288-0.475-2.453-1.513-0.906-0.809-1.518-1.807-1.696-2.112s-0.018-0.470 0.134-0.622c0.137-0.137 0.305-0.356 0.458-0.534s0.203-0.305 0.305-0.509c0.102-0.203 0.051-0.381-0.025-0.534s-0.686-1.653-0.940-2.263c-0.248-0.594-0.499-0.513-0.686-0.522-0.178-0.008-0.381-0.010-0.584-0.010s-0.533 0.076-0.813 0.381c-0.279 0.305-1.067 1.043-1.067 2.543s1.093 2.951 1.245 3.155c0.153 0.203 2.109 3.230 5.109 4.528 0.714 0.309 1.271 0.494 1.704 0.632 0.717 0.228 1.369 0.195 1.884 0.118 0.575-0.086 1.802-0.736 2.056-1.447s0.254-1.321 0.178-1.447c-0.076-0.127-0.279-0.203-0.584-0.356z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
