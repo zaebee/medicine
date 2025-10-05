@@ -1,0 +1,96 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (optional, can be removed for transparent) -->
+  <!-- <rect width="400" height="560" fill="#000000"/> -->
+  
+  <!-- МЕДИЦИНСКАЯ КЛИНИКА -->
+  <text x="200" y="60" font-family="Arial, sans-serif" font-size="14" fill="#C9A961" text-anchor="middle" letter-spacing="6">
+    МЕДИЦИНСКАЯ КЛИНИКА
+  </text>
+  
+  <!-- Geometric Bee in Circle -->
+  <g transform="translate(200, 260)">
+    <!-- Outer Circle -->
+    <circle cx="0" cy="0" r="120" stroke="#C9A961" stroke-width="2" fill="none"/>
+    
+    <!-- Bee Body - Geometric Design -->
+    <g id="bee">
+      <!-- Head -->
+      <circle cx="0" cy="-50" r="16" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-6" y1="-50" x2="6" y2="-50" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <!-- Antennae -->
+      <line x1="-10" y1="-60" x2="-16" y2="-80" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="10" y1="-60" x2="16" y2="-80" stroke="#C9A961" stroke-width="1.5"/>
+      <circle cx="-16" cy="-80" r="4" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <circle cx="16" cy="-80" r="4" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      
+      <!-- Upper Body Segment -->
+      <path d="M -16,-30 L 16,-30 L 20,0 L -20,0 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-16" y1="-20" x2="16" y2="-20" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-18" y1="-10" x2="18" y2="-10" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <!-- Middle Body Segment -->
+      <path d="M -20,0 L 20,0 L 16,30 L -16,30 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="-18" y1="10" x2="18" y2="10" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-16" y1="20" x2="16" y2="20" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <!-- Stinger -->
+      <path d="M -10,30 L 0,50 L 10,30" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+      <line x1="0" y1="50" x2="0" y2="60" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <!-- Left Wing - Geometric Pattern -->
+      <g id="left-wing">
+        <!-- Main wing shape -->
+        <path d="M -20,-20 L -90,-10 L -70,20 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <line x1="-20" y1="-20" x2="-70" y2="20" stroke="#C9A961" stroke-width="1.5"/>
+        <line x1="-45" y1="-14" x2="-60" y2="10" stroke="#C9A961" stroke-width="1.5"/>
+        
+        <!-- Secondary wing segment -->
+        <path d="M -70,20 L -100,10 L -90,-10 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <line x1="-70" y1="20" x2="-90" y2="-10" stroke="#C9A961" stroke-width="1.5"/>
+        <line x1="-80" y1="15" x2="-95" y2="0" stroke="#C9A961" stroke-width="1.5"/>
+      </g>
+      
+      <!-- Right Wing - Geometric Pattern -->
+      <g id="right-wing">
+        <!-- Main wing shape -->
+        <path d="M 20,-20 L 90,-10 L 70,20 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <line x1="20" y1="-20" x2="70" y2="20" stroke="#C9A961" stroke-width="1.5"/>
+        <line x1="45" y1="-14" x2="60" y2="10" stroke="#C9A961" stroke-width="1.5"/>
+        
+        <!-- Secondary wing segment -->
+        <path d="M 70,20 L 100,10 L 90,-10 Z" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <line x1="70" y1="20" x2="90" y2="-10" stroke="#C9A961" stroke-width="1.5"/>
+        <line x1="80" y1="15" x2="95" y2="0" stroke="#C9A961" stroke-width="1.5"/>
+      </g>
+      
+      <!-- Legs - 6 legs total -->
+      <!-- Front legs -->
+      <line x1="-16" y1="10" x2="-40" y2="40" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-40" y1="40" x2="-50" y2="60" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <line x1="16" y1="10" x2="40" y2="40" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="40" y1="40" x2="50" y2="60" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <!-- Middle legs -->
+      <line x1="-10" y1="24" x2="-30" y2="56" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="-30" y1="56" x2="-36" y2="76" stroke="#C9A961" stroke-width="1.5"/>
+      
+      <line x1="10" y1="24" x2="30" y2="56" stroke="#C9A961" stroke-width="1.5"/>
+      <line x1="30" y1="56" x2="36" y2="76" stroke="#C9A961" stroke-width="1.5"/>
+    </g>
+  </g>
+  
+  <!-- ПЧЕЛА -->
+  <text x="200" y="440" font-family="Arial, sans-serif" font-size="48" fill="#C9A961" text-anchor="middle" letter-spacing="16" font-weight="300">
+    ПЧЕЛА
+  </text>
+  
+  <!-- Horizontal line -->
+  <line x1="60" y1="470" x2="340" y2="470" stroke="#C9A961" stroke-width="1.5"/>
+  
+  <!-- МЕДИК -->
+  <text x="200" y="530" font-family="Arial, sans-serif" font-size="48" fill="#C9A961" text-anchor="middle" letter-spacing="16" font-weight="300">
+    МЕДИК
+  </text>
+</svg>
