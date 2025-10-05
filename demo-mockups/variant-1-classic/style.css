@@ -1,14 +1,14 @@
 /* ===================================
    VARIANT 1: CLASSIC MEDICAL DESIGN
    Brand: Clinic Pchelka (Bee)
-   Colors: Gold Yellow (#FFD700) + Professional
+   Colors: Dark Gold (#C9A961) + Professional
    =================================== */
 
 /* CSS Variables */
 :root {
     /* Brand Colors */
-    --primary-color: #FFD700;
-    --primary-dark: #FFA500;
+    --primary-color: #C9A961;
+    --primary-dark: #D4AF37;
     --secondary-color: #333333;
     
     /* Text Colors */
@@ -19,7 +19,7 @@
     /* Background Colors */
     --bg-white: #FFFFFF;
     --bg-light: #F5F5F5;
-    --bg-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    --bg-gradient: linear-gradient(135deg, #C9A961 0%, #D4AF37 100%);
     
     /* Semantic Colors */
     --success: #28a745;

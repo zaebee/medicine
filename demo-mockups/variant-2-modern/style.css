@@ -1,15 +1,15 @@
 /* ===================================
    VARIANT 2: MODERN DESIGN
    Brand: Clinic Pchelka (Bee)
-   Colors: White + Yellow Accents
+   Colors: White + Dark Gold Accents (#C9A961)
    Fonts: Montserrat + Open Sans
    =================================== */
 
 /* CSS Variables */
 :root {
     /* Brand Colors */
-    --primary-color: #FFD700;
-    --primary-dark: #FFA500;
+    --primary-color: #C9A961;
+    --primary-dark: #D4AF37;
     --secondary-color: #333333;
     
     /* Text Colors */
