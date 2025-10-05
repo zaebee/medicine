@@ -535,6 +535,288 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* === DOCTORS === */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.doctor-card {
+    padding: 32px;
+    text-align: center;
+}
+
+.doctor-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+}
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.doctor-badge {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+
+.doctor-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .doctor-info h3 {
+    color: #ffffff;
+}
+
+.doctor-position {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.doctor-specialization {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(201, 169, 97, 0.05);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.doctor-specialization svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.doctor-specialization span {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .doctor-specialization span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.doctor-education {
+    text-align: left;
+    margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px solid rgba(201, 169, 97, 0.1);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.doctor-education p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.doctor-education p:last-child {
+    margin-bottom: 0;
+}
+
+[data-theme="dark"] .doctor-education p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.doctor-education strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .doctor-education strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.doctors-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: rgba(201, 169, 97, 0.05);
+    border-radius: var(--border-radius);
+}
+
+.doctors-cta p {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .doctors-cta p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* === PRICES === */
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.price-card {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.price-card.featured {
+    border: 2px solid var(--primary-color);
+}
+
+.price-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+
+.price-header {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.price-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .price-header h3 {
+    color: #ffffff;
+}
+
+.price-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.price-amount {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.price-currency {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.price-note {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+[data-theme="dark"] .price-note {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+}
+
+.price-features li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+}
+
+.price-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+[data-theme="dark"] .price-features li {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.prices-note {
+    margin-top: 60px;
+    padding: 32px;
+    background: rgba(201, 169, 97, 0.05);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.prices-note p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+[data-theme="dark"] .prices-note p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.prices-note strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .prices-note strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     .service-hero {
