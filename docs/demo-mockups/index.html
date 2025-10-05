@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Демо-версии дизайна сайта клиники Пчёлка Медик - выберите подходящий вариант">
+    <title>Демо-макеты сайта | Клиника Пчёлка Медик</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #C9A961;
+            --primary-dark: #D4AF37;
+            --text-dark: #2C3E50;
+            --text-gray: #6C757D;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        /* Variants Grid */
+        .variants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .variant-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .variant-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .variant-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .variant-preview {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .variant-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .variant-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .variant-description {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .variant-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .variant-features li {
+            padding: 8px 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .variant-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .variant-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #E9ECEF;
+            margin-bottom: 20px;
+        }
+
+        .variant-rating {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .variant-size {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Recommended badge */
+        .recommended {
+            position: relative;
+        }
+
+        .recommended::after {
+            content: "⭐ Рекомендуем";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-gray);
+            background: var(--white);
+            margin-top: 60px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .variants {
+                grid-template-columns: 1fr;
+            }
+
+            .variant-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="Клиника Пчёлка Медик">
+            </div>
+            <h1>Демо-версии сайта клиники</h1>
+            <p class="subtitle">Выберите подходящий вариант дизайна</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="variants">
+            <!-- Variant 1: Classic -->
+            <div class="variant-card">
+                <div class="variant-preview">
+                    🏥
+                </div>
+                <div class="variant-content">
+                    <h2 class="variant-title">Variant 1: Classic</h2>
+                    <p class="variant-description">
+                        Классический медицинский дизайн с акцентом на простоту и понятность.
+                        Идеален для широкой аудитории, включая старшее поколение.
+                    </p>
+
+                    <ul class="variant-features">
+                        <li>Простая структура (9 секций)</li>
+                        <li>Крупные элементы</li>
+                        <li>Быстрая загрузка (55KB)</li>
+                        <li>Минимум анимаций</li>
+                    </ul>
+
+                    <div class="variant-meta">
+                        <span class="variant-rating">⭐ 7/10</span>
+                        <span class="variant-size">Размер: 55KB</span>
+                    </div>
+
+                    <a href="variant-1-classic/" class="btn">Посмотреть демо</a>
+                </div>
+            </div>
+
+            <!-- Variant 2: Modern -->
+            <div class="variant-card">
+                <div class="variant-preview">
+                    ✨
+                </div>
+                <div class="variant-content">
+                    <h2 class="variant-title">Variant 2: Modern</h2>
+                    <p class="variant-description">
+                        Современный дизайн с карточками, SVG-иконками и плавными анимациями.
+                        Баланс между функциональностью и эстетикой.
+                    </p>
+
+                    <ul class="variant-features">
+                        <li>Современный визуал (9 секций)</li>
+                        <li>SVG-иконки</li>
+                        <li>Секция Licenses</li>
+                        <li>WCAG 2.1 AA</li>
+                    </ul>
+
+                    <div class="variant-meta">
+                        <span class="variant-rating">⭐ 9/10</span>
+                        <span class="variant-size">Размер: 71KB</span>
+                    </div>
+
+                    <a href="variant-2-modern/" class="btn">Посмотреть демо</a>
+                </div>
+            </div>
+
+            <!-- Variant 3: Premium -->
+            <div class="variant-card recommended">
+                <div class="variant-preview">
+                    💎
+                </div>
+                <div class="variant-content">
+                    <h2 class="variant-title">Variant 3: Premium</h2>
+                    <p class="variant-description">
+                        Премиальная версия с максимальной функциональностью. Видео/слайдер в hero,
+                        программы лояльности, прозрачное ценообразование, галерея оборудования.
+                    </p>
+
+                    <ul class="variant-features">
+                        <li>Максимальный функционал (14 секций)</li>
+                        <li>Видео/Слайдер в Hero</li>
+                        <li>Программы лояльности (6 программ)</li>
+                        <li>Прозрачные цены с вкладками</li>
+                        <li>Галерея оборудования</li>
+                    </ul>
+
+                    <div class="variant-meta">
+                        <span class="variant-rating">⭐ 10/10</span>
+                        <span class="variant-size">Размер: 172KB</span>
+                    </div>
+
+                    <a href="variant-3-premium/" class="btn">Посмотреть демо</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p><strong>Все варианты обновлены с корректными цветами брендбука:</strong></p>
+            <p>Основной: <span style="color: #C9A961; font-weight: 600;">#C9A961</span> (темное золото) •
+               Дополнительный: <span style="color: #D4AF37; font-weight: 600;">#D4AF37</span> (металлическое золото)</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                <a href="../">← Вернуться к документации</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
