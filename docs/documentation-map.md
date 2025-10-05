@@ -15,35 +15,35 @@ footer_text: "Интерактивная карта документации с 
 ### 💼 Бизнес-документация
 **Коммерческие требования, бриф и вопросы клиенту**
 
-- 📄 [Коммерческий бриф](./business/brief.md) - Core
-- 📊 [Данные проекта (JSON)](./business/project_data.json) - API
-- ❓ [Вопросы клиенту](./business/client_questions.md) - Priority
+- 📄 [Коммерческий бриф]({{ '/business/brief/' | relative_url }}) - Core
+- 📊 [Данные проекта (JSON)]({{ '/business/project_data.json' | relative_url }}) - API
+- ❓ [Вопросы клиенту]({{ '/business/client_questions.html' | relative_url }}) - Priority
 
 ### 🔧 Техническая архитектура
 **Техническое решение, стек и безопасность**
 
-- 🏗️ [Техническая архитектура](./technical/technical_architecture.md) - Core
-- 📝 [Сравнение CMS](./technical/cms_comparison.md) - Analysis
-- 🛡️ [Безопасность](./technical/security_compliance.md) - Security
+- 🏗️ [Техническая архитектура]({{ '/technical/technical-architecture/' | relative_url }}) - Core
+- 📝 [Сравнение CMS]({{ '/technical/cms_comparison.html' | relative_url }}) - Analysis
+- 🛡️ [Безопасность]({{ '/technical/security_compliance.html' | relative_url }}) - Security
 
 ### 🎨 Дизайн и UX
 **Пользовательский опыт и дизайн-требования**
 
-- 🎨 [UX/UI требования](./design/ux_design_requirements.md) - Design
+- 🎨 [UX/UI требования]({{ '/design/ux-design-requirements/' | relative_url }}) - Design
 - 👤 [Карта пользователей]({{ '/user-features-map' | relative_url }}) - Interactive
 
 ### 👩‍💻 Разработка
 **Планирование задач и шаблоны документов**
 
-- 📋 [Задачи и оценки](./development/tasks_estimates.md) - Planning
-- 📑 [Шаблоны документов](./development/brd_prd_frd_templates.md) - Templates
+- 📋 [Задачи и оценки]({{ '/development/tasks_estimates.html' | relative_url }}) - Planning
+- 📑 [Шаблоны документов]({{ '/development/brd_prd_frd_templates.html' | relative_url }}) - Templates
 - 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }}) - Interactive
 
 ### 🚀 Деплой и маркетинг
 **Тестирование, развертывание и продвижение**
 
-- 🧪 [Тестирование](./deployment/testing_acceptance.md) - QA
-- 📈 [SEO и маркетинг](./deployment/seo_marketing.md) - Marketing
+- 🧪 [Тестирование]({{ '/deployment/testing_acceptance.html' | relative_url }}) - QA
+- 📈 [SEO и маркетинг]({{ '/deployment/seo_marketing.html' | relative_url }}) - Marketing
 
 ### 🌐 Интерактивные страницы
 **Специальные визуализации и диаграммы**
