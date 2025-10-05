@@ -36,14 +36,14 @@ footer_text: "Интерактивная карта документации с 
 **Планирование задач и шаблоны документов**
 
 - 📋 [Задачи и оценки]({{ '/development/tasks_estimates.html' | relative_url }}) - Planning
-- 📑 [Шаблоны документов]({{ '/development/brd_prd_frd_templates.html' | relative_url }}) - Templates
+- 📑 [Шаблоны документов]({{ '/development/brd-prd-frd-templates/' | relative_url }}) - Templates
 - 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }}) - Interactive
 
 ### 🚀 Деплой и маркетинг
 **Тестирование, развертывание и продвижение**
 
-- 🧪 [Тестирование]({{ '/deployment/testing_acceptance.html' | relative_url }}) - QA
-- 📈 [SEO и маркетинг]({{ '/deployment/seo_marketing.html' | relative_url }}) - Marketing
+- 🧪 [Тестирование]({{ '/deployment/testing-acceptance/' | relative_url }}) - QA
+- 📈 [SEO и маркетинг]({{ '/deployment/seo-marketing/' | relative_url }}) - Marketing
 
 ### 🌐 Интерактивные страницы
 **Специальные визуализации и диаграммы**
