@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Клиника «Пчёлка» — премиальная медицинская клиника с современным оборудованием и опытными врачами. Программы лояльности, прозрачные цены, индивидуальный подход.">
+    <meta name="keywords" content="клиника, медицинский центр, врачи, лечение, диагностика, премиум">
+    <title>Клиника «Пчёлка Медик» — Премиальная медицина с заботой о каждом</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="../assets/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/logo-compact.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="#" class="logo" aria-label="Клиника Пчёлка Медик - На главную">
+                    <img src="../assets/logo.svg" alt="Клиника Пчёлка Медик" class="logo-image" width="120" height="auto">
+                </a>
+
+                <!-- Navigation -->
+                <nav class="nav" role="navigation" aria-label="Основная навигация">
+                    <button class="mobile-menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="#services" class="nav-link">Услуги</a></li>
+                        <li><a href="#doctors" class="nav-link">Врачи</a></li>
+                        <li><a href="#equipment" class="nav-link">Оборудование</a></li>
+                        <li><a href="#loyalty" class="nav-link">Программы</a></li>
+                        <li><a href="#pricing" class="nav-link">Цены</a></li>
+                        <li><a href="#contact" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Header actions -->
+                <div class="header-actions">
+                    <a href="tel:+74951234567" class="header-phone">+7 (495) 123-45-67</a>
+                    <button onclick="openCallbackModal()" class="btn btn-primary btn-sm">
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video/Slider -->
+    <section class="hero" id="main-content">
+        <!-- Video Background (can be replaced with slider) -->
+        <div class="hero-media">
+            <!-- Option 1: Video background -->
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-writing-on-a-clipboard-5883-large.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Option 2: Image Slider (hidden by default, can be toggled) -->
+            <div class="hero-slider" style="display: none;">
+                <div class="slider-track">
+                    <div class="slide active">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920" alt="Современная клиника" loading="eager">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920" alt="Медицинское оборудование" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1920" alt="Команда врачей" loading="lazy">
+                    </div>
+                </div>
+                <button class="slider-btn slider-prev" aria-label="Предыдущий слайд">‹</button>
+                <button class="slider-btn slider-next" aria-label="Следующий слайд">›</button>
+                <div class="slider-dots">
+                    <button class="dot active" aria-label="Слайд 1"></button>
+                    <button class="dot" aria-label="Слайд 2"></button>
+                    <button class="dot" aria-label="Слайд 3"></button>
+                </div>
+            </div>
+            
+            <!-- Overlay -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">Клиника «Пчёлка»</h1>
+                <p class="hero-subtitle">Премиальная медицина с индивидуальным подходом к каждому пациенту</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Современное оборудование</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Опытные специалисты</span>
+                    </div>
+                    <div class="hero-feature">
+                        <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Программы лояльности</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions Block -->
+    <section class="quick-actions">
+        <div class="container">
+            <div class="quick-actions-grid">
+                <!-- Action 1: Book Appointment -->
+                <button onclick="openAppointmentModal()" class="action-card">
+                    <svg class="action-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="10" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 6v8M32 6v8M8 18h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="26" r="1.5" fill="currentColor"/>
+                        <circle cx="24" cy="26" r="1.5" fill="currentColor"/>
+                        <circle cx="32" cy="26" r="1.5" fill="currentColor"/>
+                        <circle cx="16" cy="34" r="1.5" fill="currentColor"/>
+                        <circle cx="24" cy="34" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <h3 class="action-title">Записаться на прием</h3>
+                    <p class="action-description">Выберите удобное время и специалиста</p>
+                </button>
+
+                <!-- Action 2: Call Doctor Home -->
+                <button onclick="openHomeDoctorModal()" class="action-card">
+                    <svg class="action-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 4L6 16v20a4 4 0 004 4h28a4 4 0 004-4V16L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M18 42V26h12v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="30" cy="18" r="6" fill="#FFD700"/>
+                        <path d="M30 15v3l2 2" stroke="#2C3E50" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="action-title">Вызвать врача на дом</h3>
+                    <p class="action-description">Медицинская помощь у вас дома</p>
+                </button>
+
+                <!-- Action 3: Ask Question -->
+                <button onclick="openQuestionModal()" class="action-card">
+                    <svg class="action-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M42 24c0 9.941-8.059 18-18 18-2.652 0-5.16-.574-7.425-1.605L6 42l1.605-10.575C6.574 29.16 6 26.652 6 24 6 14.059 14.059 6 24 6s18 8.059 18 18z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="24" cy="24" r="2" fill="currentColor"/>
+                        <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                        <circle cx="32" cy="24" r="2" fill="currentColor"/>
+                    </svg>
+                    <h3 class="action-title">Задать вопрос врачу</h3>
+                    <p class="action-description">Получите консультацию онлайн</p>
+                </button>
+
+                <!-- Action 4: Loyalty Program -->
+                <a href="#loyalty" class="action-card">
+                    <svg class="action-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 6l6 12 13 2-9.5 9 2.5 13-12-6-12 6 2.5-13L6 20l13-2 6-12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="24" cy="24" r="6" fill="#FFD700"/>
+                        <path d="M24 21v6M21 24h6" stroke="#2C3E50" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="action-title">Программы лояльности</h3>
+                    <p class="action-description">Скидки и бонусы для постоянных клиентов</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">О клинике «Пчёлка»</h2>
+                    <p class="about-description">
+                        Мы создали медицинский центр нового поколения, где современные технологии сочетаются с индивидуальным подходом к каждому пациенту. Наша миссия — сделать качественную медицину доступной и комфортной.
+                    </p>
+                    <p class="about-description">
+                        В клинике работают врачи высшей категории с многолетним опытом. Мы используем только проверенные методики лечения и новейшее диагностическое оборудование экспертного класса.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2024</div>
+                            <div class="stat-label">Год основания</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Специалистов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Направлений</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Поддержка</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800" alt="Клиника Пчёлка" loading="lazy">
+                    <div class="about-badge">
+                        <svg width="80" height="80" viewBox="0 0 80 80">
+                            <circle cx="40" cy="40" r="38" fill="#FFD700"/>
+                            <text x="40" y="35" text-anchor="middle" font-size="24" font-weight="bold" fill="#2C3E50">100%</text>
+                            <text x="40" y="52" text-anchor="middle" font-size="12" fill="#2C3E50">Качество</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title text-center">Почему выбирают нас</h2>
+            <p class="section-subtitle text-center">Мы создали все условия для вашего комфорта и здоровья</p>
+            
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg class="benefit-icon" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="30" fill="#FFF8E1"/>
+                            <path d="M32 16l4 8 9 1-6.5 6.5 1.5 9-8-4-8 4 1.5-9L19 25l9-1 4-8z" fill="#FFD700"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Опытные врачи</h3>
+                    <p class="benefit-text">Специалисты высшей категории с опытом работы от 10 лет в ведущих клиниках</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg class="benefit-icon" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="30" fill="#FFF8E1"/>
+                            <rect x="20" y="24" width="24" height="20" rx="2" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M26 24v-4a6 6 0 0112 0v4" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="32" cy="34" r="3" fill="#FFD700"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Современное оборудование</h3>
+                    <p class="benefit-text">Диагностическое оборудование экспертного класса от мировых производителей</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg class="benefit-icon" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="30" fill="#FFF8E1"/>
+                            <path d="M32 20v24M20 32h24" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="32" cy="32" r="14" stroke="#FFD700" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Комплексный подход</h3>
+                    <p class="benefit-text">Индивидуальные программы лечения и профилактики для каждого пациента</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg class="benefit-icon" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="30" fill="#FFF8E1"/>
+                            <circle cx="32" cy="32" r="16" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M32 20v12l8 4" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Удобный график</h3>
+                    <p class="benefit-text">Работаем без выходных с 8:00 до 21:00, экстренная помощь 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Наши услуги</h2>
+            <p class="section-subtitle text-center">Полный спектр медицинских услуг с прозрачным ценообразованием</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600" alt="Терапия" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Терапия</h3>
+                        <p class="service-description">Диагностика и лечение заболеваний внутренних органов</p>
+                        <div class="service-price">
+                            <span class="price-label">Прием от</span>
+                            <span class="price-value">2 500 ₽</span>
+                        </div>
+                        <button onclick="openAppointmentModal('therapy')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600" alt="Кардиология" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Кардиология</h3>
+                        <p class="service-description">Диагностика и лечение заболеваний сердечно-сосудистой системы</p>
+                        <div class="service-price">
+                            <span class="price-label">Прием от</span>
+                            <span class="price-value">3 500 ₽</span>
+                        </div>
+                        <button onclick="openAppointmentModal('cardiology')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="Неврология" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Неврология</h3>
+                        <p class="service-description">Лечение заболеваний нервной системы</p>
+                        <div class="service-price">
+                            <span class="price-label">Прием от</span>
+                            <span class="price-value">3 000 ₽</span>
+                        </div>
+                        <button onclick="openAppointmentModal('neurology')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Эндокринология" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Эндокринология</h3>
+                        <p class="service-description">Диагностика и лечение эндокринных заболеваний</p>
+                        <div class="service-price">
+                            <span class="price-label">Прием от</span>
+                            <span class="price-value">3 200 ₽</span>
+                        </div>
+                        <button onclick="openAppointmentModal('endocrinology')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600" alt="Педиатрия" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Педиатрия</h3>
+                        <p class="service-description">Медицинская помощь детям от 0 до 18 лет</p>
+                        <div class="service-price">
+                            <span class="price-label">Прием от</span>
+                            <span class="price-value">2 800 ₽</span>
+                        </div>
+                        <button onclick="openAppointmentModal('pediatrics')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600" alt="Диагностика" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Диагностика</h3>
+                        <p class="service-description">УЗИ, ЭКГ, лабораторные исследования</p>
+                        <div class="service-price">
+                            <span class="price-label">Услуги от</span>
+                            <span class="price-value">1 500 ₽</span>
+                        </div>
+                        <button onclick="openAppointmentModal('diagnostics')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-footer">
+                <p class="services-note">* Точная стоимость определяется после консультации врача</p>
+                <a href="#pricing" class="btn btn-outline">Посмотреть полный прайс-лист</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <h2 class="section-title text-center">Наши врачи</h2>
+            <p class="section-subtitle text-center">Команда профессионалов с многолетним опытом</p>
+            
+            <div class="doctors-grid">
+                <!-- Doctor 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400" alt="Иванова Елена Сергеевна" loading="lazy">
+                        <div class="doctor-badge">
+                            <svg width="40" height="40" viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="18" fill="#FFD700"/>
+                                <path d="M20 10l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L12 17l6-1 2-6z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Иванова Елена Сергеевна</h3>
+                        <p class="doctor-specialty">Терапевт, врач высшей категории</p>
+                        <p class="doctor-experience">Опыт работы: 15 лет</p>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-value">4.9</span>
+                        </div>
+                        <ul class="doctor-achievements">
+                            <li>Кандидат медицинских наук</li>
+                            <li>Стажировка в Германии</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('ivanova')" class="btn btn-secondary btn-block">
+                            Записаться на прием
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400" alt="Петров Михаил Александрович" loading="lazy">
+                        <div class="doctor-badge">
+                            <svg width="40" height="40" viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="18" fill="#FFD700"/>
+                                <path d="M20 10l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L12 17l6-1 2-6z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Петров Михаил Александрович</h3>
+                        <p class="doctor-specialty">Кардиолог, врач высшей категории</p>
+                        <p class="doctor-experience">Опыт работы: 20 лет</p>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                        <ul class="doctor-achievements">
+                            <li>Доктор медицинских наук</li>
+                            <li>Автор 30+ научных работ</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('petrov')" class="btn btn-secondary btn-block">
+                            Записаться на прием
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400" alt="Смирнова Анна Викторовна" loading="lazy">
+                        <div class="doctor-badge">
+                            <svg width="40" height="40" viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="18" fill="#FFD700"/>
+                                <path d="M20 10l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L12 17l6-1 2-6z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Смирнова Анна Викторовна</h3>
+                        <p class="doctor-specialty">Педиатр, врач первой категории</p>
+                        <p class="doctor-experience">Опыт работы: 12 лет</p>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-value">4.8</span>
+                        </div>
+                        <ul class="doctor-achievements">
+                            <li>Специалист по детской неврологии</li>
+                            <li>Сертификат по вакцинации</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('smirnova')" class="btn btn-secondary btn-block">
+                            Записаться на прием
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor 4 -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400" alt="Козлов Дмитрий Игоревич" loading="lazy">
+                        <div class="doctor-badge">
+                            <svg width="40" height="40" viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="18" fill="#FFD700"/>
+                                <path d="M20 10l2 6 6 1-4.5 4 1 6-4.5-3-4.5 3 1-6L12 17l6-1 2-6z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Козлов Дмитрий Игоревич</h3>
+                        <p class="doctor-specialty">Невролог, врач высшей категории</p>
+                        <p class="doctor-experience">Опыт работы: 18 лет</p>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-value">4.9</span>
+                        </div>
+                        <ul class="doctor-achievements">
+                            <li>Специалист по мигреням</li>
+                            <li>Стажировка в Швейцарии</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('kozlov')" class="btn btn-secondary btn-block">
+                            Записаться на прием
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section (NEW - Premium Feature) -->
+    <section class="equipment" id="equipment">
+        <div class="container">
+            <h2 class="section-title text-center">Современное оборудование</h2>
+            <p class="section-subtitle text-center">Диагностическая техника экспертного класса от мировых производителей</p>
+            
+            <div class="equipment-grid">
+                <!-- Equipment 1 -->
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600" alt="УЗИ аппарат" loading="lazy">
+                        <div class="equipment-badge">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+                                <path d="M16 8l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L9 14l5-1 2-5z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="equipment-content">
+                        <h3 class="equipment-title">УЗИ аппарат экспертного класса</h3>
+                        <p class="equipment-manufacturer">Производитель: GE Healthcare</p>
+                        <p class="equipment-description">Высокоточная диагностика с 4D визуализацией. Позволяет выявлять патологии на ранних стадиях.</p>
+                        <ul class="equipment-features">
+                            <li>Разрешение до 0.1 мм</li>
+                            <li>Допплерография</li>
+                            <li>Эластография</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Equipment 2 -->
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="ЭКГ аппарат" loading="lazy">
+                        <div class="equipment-badge">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+                                <path d="M16 8l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L9 14l5-1 2-5z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="equipment-content">
+                        <h3 class="equipment-title">Электрокардиограф 12-канальный</h3>
+                        <p class="equipment-manufacturer">Производитель: Philips</p>
+                        <p class="equipment-description">Цифровой ЭКГ с автоматической интерпретацией результатов и выявлением аритмий.</p>
+                        <ul class="equipment-features">
+                            <li>12 отведений</li>
+                            <li>Автоматический анализ</li>
+                            <li>Архив результатов</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Equipment 3 -->
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600" alt="Лабораторное оборудование" loading="lazy">
+                        <div class="equipment-badge">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+                                <path d="M16 8l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L9 14l5-1 2-5z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="equipment-content">
+                        <h3 class="equipment-title">Автоматический анализатор крови</h3>
+                        <p class="equipment-manufacturer">Производитель: Sysmex</p>
+                        <p class="equipment-description">Полный анализ крови за 60 секунд с точностью 99.9%. Результаты в день обращения.</p>
+                        <ul class="equipment-features">
+                            <li>30+ параметров</li>
+                            <li>Результат за 1 минуту</li>
+                            <li>Высокая точность</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Equipment 4 -->
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?w=600" alt="Рентген аппарат" loading="lazy">
+                        <div class="equipment-badge">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+                                <path d="M16 8l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L9 14l5-1 2-5z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="equipment-content">
+                        <h3 class="equipment-title">Цифровой рентген-аппарат</h3>
+                        <p class="equipment-manufacturer">Производитель: Siemens</p>
+                        <p class="equipment-description">Минимальная лучевая нагрузка, мгновенные результаты в цифровом формате.</p>
+                        <ul class="equipment-features">
+                            <li>Низкая доза облучения</li>
+                            <li>Цифровая обработка</li>
+                            <li>Высокое разрешение</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Equipment 5 -->
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600" alt="Эндоскоп" loading="lazy">
+                        <div class="equipment-badge">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+                                <path d="M16 8l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L9 14l5-1 2-5z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="equipment-content">
+                        <h3 class="equipment-title">Видеоэндоскопическая система</h3>
+                        <p class="equipment-manufacturer">Производитель: Olympus</p>
+                        <p class="equipment-description">HD-визуализация для точной диагностики заболеваний ЖКТ.</p>
+                        <ul class="equipment-features">
+                            <li>Full HD качество</li>
+                            <li>Узкоспектральная визуализация</li>
+                            <li>Биопсия под контролем</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Equipment 6 -->
+                <div class="equipment-card">
+                    <div class="equipment-image">
+                        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600" alt="Стоматологическое оборудование" loading="lazy">
+                        <div class="equipment-badge">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" fill="#FFD700"/>
+                                <path d="M16 8l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L9 14l5-1 2-5z" fill="#2C3E50"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="equipment-content">
+                        <h3 class="equipment-title">Стерилизационное оборудование</h3>
+                        <p class="equipment-manufacturer">Производитель: Melag</p>
+                        <p class="equipment-description">Автоклавы класса B для полной стерилизации инструментов.</p>
+                        <ul class="equipment-features">
+                            <li>Класс B (высший)</li>
+                            <li>Автоматический цикл</li>
+                            <li>Контроль качества</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="equipment-footer">
+                <p class="equipment-note">Все оборудование сертифицировано и проходит регулярное техническое обслуживание</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Section (NEW - Premium Feature) -->
+    <section class="loyalty" id="loyalty">
+        <div class="container">
+            <h2 class="section-title text-center">Программы лояльности</h2>
+            <p class="section-subtitle text-center">Выгодные условия для постоянных пациентов и их семей</p>
+            
+            <div class="loyalty-grid">
+                <!-- Program 1: Накопительная система -->
+                <div class="loyalty-card loyalty-card-featured">
+                    <div class="loyalty-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
+                            <path d="M40 16l6 12 13 2-9.5 9 2.5 13-12-6-12 6 2.5-13L21 30l13-2 6-12z" fill="#FFD700" stroke="#FFC700" stroke-width="2"/>
+                            <text x="40" y="48" text-anchor="middle" font-size="20" font-weight="bold" fill="#2C3E50">%</text>
+                        </svg>
+                    </div>
+                    <h3 class="loyalty-title">Накопительная система скидок</h3>
+                    <p class="loyalty-description">Получайте скидки от 5% до 20% в зависимости от суммы визитов</p>
+                    <ul class="loyalty-benefits">
+                        <li><strong>5%</strong> — при сумме визитов от 10 000 ₽</li>
+                        <li><strong>10%</strong> — при сумме визитов от 30 000 ₽</li>
+                        <li><strong>15%</strong> — при сумме визитов от 50 000 ₽</li>
+                        <li><strong>20%</strong> — при сумме визитов от 100 000 ₽</li>
+                    </ul>
+                    <button onclick="openLoyaltyModal('accumulative')" class="btn btn-primary btn-block">
+                        Подключить программу
+                    </button>
+                </div>
+
+                <!-- Program 2: Семейная программа -->
+                <div class="loyalty-card">
+                    <div class="loyalty-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
+                            <circle cx="30" cy="32" r="8" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="50" cy="32" r="8" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="40" cy="50" r="6" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M22 48c0-4 4-8 8-8M58 48c0-4-4-8-8-8M34 60c0-3 3-6 6-6M46 60c0-3-3-6-6-6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="loyalty-title">Семейная программа</h3>
+                    <p class="loyalty-description">Скидка 15% для всех членов семьи при оформлении семейной карты</p>
+                    <ul class="loyalty-benefits">
+                        <li>Единая скидка для всей семьи</li>
+                        <li>Общий накопительный счет</li>
+                        <li>Приоритетная запись</li>
+                        <li>Семейный врач-куратор</li>
+                    </ul>
+                    <button onclick="openLoyaltyModal('family')" class="btn btn-secondary btn-block">
+                        Узнать подробнее
+                    </button>
+                </div>
+
+                <!-- Program 3: Корпоративное обслуживание -->
+                <div class="loyalty-card">
+                    <div class="loyalty-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
+                            <rect x="24" y="28" width="32" height="28" rx="2" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M32 28v-4a8 8 0 0116 0v4" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="40" cy="42" r="4" fill="#FFD700"/>
+                            <path d="M40 46v6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="loyalty-title">Корпоративное обслуживание</h3>
+                    <p class="loyalty-description">Специальные условия для сотрудников компаний</p>
+                    <ul class="loyalty-benefits">
+                        <li>Скидка от 20% для сотрудников</li>
+                        <li>Выездные медосмотры</li>
+                        <li>Корпоративные программы ДМС</li>
+                        <li>Персональный менеджер</li>
+                    </ul>
+                    <button onclick="openLoyaltyModal('corporate')" class="btn btn-secondary btn-block">
+                        Оставить заявку
+                    </button>
+                </div>
+
+                <!-- Program 4: Подарочные сертификаты -->
+                <div class="loyalty-card">
+                    <div class="loyalty-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
+                            <rect x="20" y="32" width="40" height="24" rx="2" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M32 24c0-4 2-8 8-8s8 4 8 8M40 16v16" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M28 40h24M28 48h16" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="loyalty-title">Подарочные сертификаты</h3>
+                    <p class="loyalty-description">Подарите здоровье своим близким</p>
+                    <ul class="loyalty-benefits">
+                        <li>Номинал от 5 000 до 50 000 ₽</li>
+                        <li>Срок действия 12 месяцев</li>
+                        <li>Можно использовать на любые услуги</li>
+                        <li>Красивое оформление в подарочной упаковке</li>
+                    </ul>
+                    <button onclick="openLoyaltyModal('certificate')" class="btn btn-secondary btn-block">
+                        Купить сертификат
+                    </button>
+                </div>
+
+                <!-- Program 5: Программа "Друг рекомендует" -->
+                <div class="loyalty-card">
+                    <div class="loyalty-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
+                            <circle cx="32" cy="36" r="10" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="52" cy="36" r="10" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M24 56c0-6 4-12 8-12M60 56c0-6-4-12-8-12" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M38 36h8M42 32v8" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="loyalty-title">Программа "Друг рекомендует"</h3>
+                    <p class="loyalty-description">Получайте бонусы за каждого приведенного друга</p>
+                    <ul class="loyalty-benefits">
+                        <li>1 000 ₽ на счет за каждого друга</li>
+                        <li>Ваш друг получает скидку 10%</li>
+                        <li>Бонусы суммируются</li>
+                        <li>Можно использовать на любые услуги</li>
+                    </ul>
+                    <button onclick="openLoyaltyModal('referral')" class="btn btn-secondary btn-block">
+                        Пригласить друга
+                    </button>
+                </div>
+
+                <!-- Program 6: Программа "Здоровье круглый год" -->
+                <div class="loyalty-card">
+                    <div class="loyalty-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
+                            <circle cx="40" cy="40" r="20" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M40 24v16l12 6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="40" cy="40" r="3" fill="#FFD700"/>
+                        </svg>
+                    </div>
+                    <h3 class="loyalty-title">Программа "Здоровье круглый год"</h3>
+                    <p class="loyalty-description">Годовое обслуживание с фиксированной стоимостью</p>
+                    <ul class="loyalty-benefits">
+                        <li>Безлимитные консультации терапевта</li>
+                        <li>4 комплексных обследования в год</li>
+                        <li>Скидка 25% на все услуги</li>
+                        <li>Приоритетная запись 24/7</li>
+                    </ul>
+                    <button onclick="openLoyaltyModal('annual')" class="btn btn-secondary btn-block">
+                        Рассчитать стоимость
+                    </button>
+                </div>
+            </div>
+
+            <div class="loyalty-footer">
+                <div class="loyalty-cta">
+                    <h3>Не нашли подходящую программу?</h3>
+                    <p>Мы разработаем индивидуальное предложение специально для вас</p>
+                    <button onclick="openQuestionModal()" class="btn btn-primary">
+                        Получить консультацию
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Licenses Section -->
+    <section class="licenses">
+        <div class="container">
+            <h2 class="section-title text-center">Лицензии и сертификаты</h2>
+            <p class="section-subtitle text-center">Вся наша деятельность лицензирована и сертифицирована</p>
+            
+            <div class="licenses-grid">
+                <!-- License 1 -->
+                <div class="license-card">
+                    <div class="license-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="12" width="48" height="56" rx="4" fill="#FFF8E1" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="40" cy="28" r="8" fill="#FFD700"/>
+                            <path d="M40 22l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1 2-4z" fill="#2C3E50"/>
+                            <rect x="24" y="44" width="32" height="4" rx="2" fill="#FFD700"/>
+                            <rect x="24" y="52" width="24" height="3" rx="1.5" fill="#E0E0E0"/>
+                            <rect x="24" y="58" width="28" height="3" rx="1.5" fill="#E0E0E0"/>
+                        </svg>
+                    </div>
+                    <h3 class="license-title">Лицензия на медицинскую деятельность</h3>
+                    <p class="license-number">№ ЛО-77-01-012345 от 15.01.2024</p>
+                    <p class="license-issuer">Выдана Департаментом здравоохранения г. Москвы</p>
+                    <button onclick="openLicenseModal('medical')" class="btn btn-outline btn-sm">
+                        Посмотреть документ
+                    </button>
+                </div>
+
+                <!-- License 2 -->
+                <div class="license-card">
+                    <div class="license-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="12" width="48" height="56" rx="4" fill="#FFF8E1" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M40 20l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" fill="#FFD700"/>
+                            <rect x="24" y="44" width="32" height="4" rx="2" fill="#FFD700"/>
+                            <rect x="24" y="52" width="24" height="3" rx="1.5" fill="#E0E0E0"/>
+                            <rect x="24" y="58" width="28" height="3" rx="1.5" fill="#E0E0E0"/>
+                        </svg>
+                    </div>
+                    <h3 class="license-title">Сертификат ISO 9001:2015</h3>
+                    <p class="license-number">Система менеджмента качества</p>
+                    <p class="license-issuer">Международный стандарт качества медицинских услуг</p>
+                    <button onclick="openLicenseModal('iso')" class="btn btn-outline btn-sm">
+                        Посмотреть документ
+                    </button>
+                </div>
+
+                <!-- License 3 -->
+                <div class="license-card">
+                    <div class="license-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="12" width="48" height="56" rx="4" fill="#FFF8E1" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="40" cy="30" r="10" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M35 30l3 3 7-7" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="24" y="48" width="32" height="4" rx="2" fill="#FFD700"/>
+                            <rect x="24" y="56" width="24" height="3" rx="1.5" fill="#E0E0E0"/>
+                        </svg>
+                    </div>
+                    <h3 class="license-title">Членство в СРО</h3>
+                    <p class="license-number">Саморегулируемая организация</p>
+                    <p class="license-issuer">Национальная медицинская палата</p>
+                    <button onclick="openLicenseModal('sro')" class="btn btn-outline btn-sm">
+                        Посмотреть документ
+                    </button>
+                </div>
+
+                <!-- License 4 -->
+                <div class="license-card">
+                    <div class="license-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="12" width="48" height="56" rx="4" fill="#FFF8E1" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M40 24v12M40 36l-8 8M40 36l8 8" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="40" cy="36" r="4" fill="#FFD700"/>
+                            <rect x="24" y="52" width="32" height="4" rx="2" fill="#FFD700"/>
+                            <rect x="24" y="60" width="24" height="3" rx="1.5" fill="#E0E0E0"/>
+                        </svg>
+                    </div>
+                    <h3 class="license-title">Санитарно-эпидемиологическое заключение</h3>
+                    <p class="license-number">№ 77.01.16.000.М.000123.01.24</p>
+                    <p class="license-issuer">Роспотребнадзор по г. Москве</p>
+                    <button onclick="openLicenseModal('sanitary')" class="btn btn-outline btn-sm">
+                        Посмотреть документ
+                    </button>
+                </div>
+            </div>
+
+            <div class="licenses-footer">
+                <p class="licenses-note">
+                    Все документы доступны для ознакомления в клинике. Копии лицензий и сертификатов размещены на информационных стендах.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title text-center">Отзывы наших пациентов</h2>
+            <p class="section-subtitle text-center">Нам доверяют тысячи пациентов</p>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://i.pravatar.cc/100?img=1" alt="Мария К." loading="lazy">
+                        </div>
+                        <div class="review-author">
+                            <h4 class="review-name">Мария К.</h4>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-value">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Отличная клиника! Обратилась к терапевту Ивановой Е.С. — очень внимательный и профессиональный врач. Провели полное обследование, все объяснили, назначили лечение. Через две недели почувствовала себя намного лучше. Спасибо большое!
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-date">15 января 2024</span>
+                        <span class="review-verified">✓ Проверенный отзыв</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Алексей П." loading="lazy">
+                        </div>
+                        <div class="review-author">
+                            <h4 class="review-name">Алексей П.</h4>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-value">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Проходил обследование у кардиолога Петрова М.А. Современное оборудование, быстрая диагностика, подробная консультация. Врач уделил много времени, ответил на все вопросы. Рекомендую эту клинику!
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-date">22 января 2024</span>
+                        <span class="review-verified">✓ Проверенный отзыв</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://i.pravatar.cc/100?img=5" alt="Елена С." loading="lazy">
+                        </div>
+                        <div class="review-author">
+                            <h4 class="review-name">Елена С.</h4>
+                            <div class="review-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-value">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Водила ребенка к педиатру Смирновой А.В. Очень довольна! Врач нашла подход к ребенку, все прошло спокойно. Клиника чистая, персонал вежливый. Оформили семейную карту — очень выгодно!
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-date">28 января 2024</span>
+                        <span class="review-verified">✓ Проверенный отзыв</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-footer">
+                <div class="reviews-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Средняя оценка</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Отзывов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Рекомендуют</div>
+                    </div>
+                </div>
+                <button onclick="openReviewModal()" class="btn btn-secondary">
+                    Оставить отзыв
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (NEW - Premium Feature) -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title text-center">Прозрачное ценообразование</h2>
+            <p class="section-subtitle text-center">Честные цены без скрытых платежей</p>
+            
+            <!-- Price Categories Tabs -->
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" data-category="consultations">Консультации</button>
+                <button class="pricing-tab" data-category="diagnostics">Диагностика</button>
+                <button class="pricing-tab" data-category="procedures">Процедуры</button>
+                <button class="pricing-tab" data-category="programs">Программы</button>
+            </div>
+
+            <!-- Consultations Prices -->
+            <div class="pricing-content active" data-category="consultations">
+                <div class="pricing-table">
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Прием терапевта (первичный)</h4>
+                            <p>Осмотр, сбор анамнеза, назначение обследований</p>
+                        </div>
+                        <div class="pricing-price">2 500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Прием терапевта (повторный)</h4>
+                            <p>Контрольный осмотр, коррекция лечения</p>
+                        </div>
+                        <div class="pricing-price">2 000 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Прием кардиолога</h4>
+                            <p>Консультация с ЭКГ и расшифровкой</p>
+                        </div>
+                        <div class="pricing-price">3 500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Прием невролога</h4>
+                            <p>Неврологический осмотр, назначение лечения</p>
+                        </div>
+                        <div class="pricing-price">3 000 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Прием эндокринолога</h4>
+                            <p>Консультация по эндокринным заболеваниям</p>
+                        </div>
+                        <div class="pricing-price">3 200 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Прием педиатра</h4>
+                            <p>Осмотр ребенка, консультация родителей</p>
+                        </div>
+                        <div class="pricing-price">2 800 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostics Prices -->
+            <div class="pricing-content" data-category="diagnostics">
+                <div class="pricing-table">
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>ЭКГ (электрокардиограмма)</h4>
+                            <p>12 отведений с расшифровкой</p>
+                        </div>
+                        <div class="pricing-price">1 500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>УЗИ органов брюшной полости</h4>
+                            <p>Печень, желчный пузырь, поджелудочная, селезенка</p>
+                        </div>
+                        <div class="pricing-price">3 000 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>УЗИ сердца (ЭхоКГ)</h4>
+                            <p>С допплерографией и заключением кардиолога</p>
+                        </div>
+                        <div class="pricing-price">4 500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Общий анализ крови</h4>
+                            <p>Развернутый, результат в день обращения</p>
+                        </div>
+                        <div class="pricing-price">800 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Биохимический анализ крови</h4>
+                            <p>Базовый профиль (12 показателей)</p>
+                        </div>
+                        <div class="pricing-price">2 500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Рентгенография</h4>
+                            <p>Цифровая, 1 проекция</p>
+                        </div>
+                        <div class="pricing-price">2 000 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Procedures Prices -->
+            <div class="pricing-content" data-category="procedures">
+                <div class="pricing-table">
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Внутривенная инъекция</h4>
+                            <p>Без стоимости препарата</p>
+                        </div>
+                        <div class="pricing-price">500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Внутримышечная инъекция</h4>
+                            <p>Без стоимости препарата</p>
+                        </div>
+                        <div class="pricing-price">300 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Капельница (инфузионная терапия)</h4>
+                            <p>Без стоимости препаратов, до 400 мл</p>
+                        </div>
+                        <div class="pricing-price">1 500 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Забор крови из вены</h4>
+                            <p>Для лабораторных исследований</p>
+                        </div>
+                        <div class="pricing-price">300 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Измерение артериального давления</h4>
+                            <p>С консультацией медсестры</p>
+                        </div>
+                        <div class="pricing-price">200 ₽</div>
+                    </div>
+                    <div class="pricing-row">
+                        <div class="pricing-service">
+                            <h4>Перевязка</h4>
+                            <p>Без стоимости материалов</p>
+                        </div>
+                        <div class="pricing-price">800 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programs Prices -->
+            <div class="pricing-content" data-category="programs">
+                <div class="pricing-packages">
+                    <div class="package-card">
+                        <div class="package-badge">Популярно</div>
+                        <h3 class="package-title">Базовое обследование</h3>
+                        <div class="package-price">
+                            <span class="price-value">12 000 ₽</span>
+                            <span class="price-old">15 000 ₽</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>Прием терапевта</li>
+                            <li>ЭКГ с расшифровкой</li>
+                            <li>Общий анализ крови</li>
+                            <li>Биохимический анализ крови</li>
+                            <li>Общий анализ мочи</li>
+                            <li>УЗИ органов брюшной полости</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('basic')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+
+                    <div class="package-card package-card-featured">
+                        <div class="package-badge">Рекомендуем</div>
+                        <h3 class="package-title">Комплексное обследование</h3>
+                        <div class="package-price">
+                            <span class="price-value">25 000 ₽</span>
+                            <span class="price-old">32 000 ₽</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>Все из базового пакета</li>
+                            <li>Прием кардиолога</li>
+                            <li>ЭхоКГ (УЗИ сердца)</li>
+                            <li>УЗИ щитовидной железы</li>
+                            <li>Гормоны щитовидной железы</li>
+                            <li>Рентген грудной клетки</li>
+                            <li>Консультация эндокринолога</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('complex')" class="btn btn-primary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-badge">Premium</div>
+                        <h3 class="package-title">VIP Check-up</h3>
+                        <div class="package-price">
+                            <span class="price-value">45 000 ₽</span>
+                            <span class="price-old">60 000 ₽</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>Все из комплексного пакета</li>
+                            <li>Прием невролога</li>
+                            <li>МРТ головного мозга</li>
+                            <li>Расширенный онкоскрининг</li>
+                            <li>Генетическое тестирование</li>
+                            <li>Консультация диетолога</li>
+                            <li>Индивидуальная программа здоровья</li>
+                        </ul>
+                        <button onclick="openAppointmentModal('vip')" class="btn btn-secondary btn-block">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-footer">
+                <div class="pricing-calculator">
+                    <h3>Рассчитайте стоимость вашего обследования</h3>
+                    <p>Выберите необходимые услуги и получите точную стоимость с учетом скидок</p>
+                    <button onclick="openCalculatorModal()" class="btn btn-primary">
+                        Открыть калькулятор
+                    </button>
+                </div>
+                <div class="pricing-note">
+                    <p><strong>Важно:</strong> Цены актуальны на январь 2024 года. Для держателей карт лояльности действуют дополнительные скидки.</p>
+                    <a href="#" onclick="downloadPriceList(); return false;" class="btn btn-outline">
+                        Скачать полный прайс-лист (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Свяжитесь с нами</h2>
+            <p class="section-subtitle text-center">Мы всегда рады ответить на ваши вопросы</p>
+            
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Контактная информация</h3>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <div class="contact-details">
+                            <h4>Адрес</h4>
+                            <p>г. Москва, ул. Примерная, д. 123</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <div class="contact-details">
+                            <h4>Телефон</h4>
+                            <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                            <p class="contact-note">Ежедневно с 8:00 до 21:00</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@pchelka-clinic.ru">info@pchelka-clinic.ru</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <div class="contact-details">
+                            <h4>Режим работы</h4>
+                            <p>Пн-Вс: 8:00 — 21:00</p>
+                            <p class="contact-note">Экстренная помощь 24/7</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Мы в социальных сетях</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="ВКонтакте">
+                                <svg width="32" height="32" viewBox="0 0 32 32">
+                                    <circle cx="16" cy="16" r="15" fill="#4680C2"/>
+                                    <path d="M16.8 22h-1.2c-4.8 0-7.6-3.3-7.7-8.8h2.4c.1 4 1.8 5.7 3.2 6v-6h2.2v3.5c1.4-.2 2.8-1.7 3.3-3.5h2.2c-.4 2.1-1.9 3.7-3 4.3 1.1.5 2.8 1.9 3.5 4.5h-2.4c-.5-1.7-1.8-3-3.5-3.2V22z" fill="white"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Telegram">
+                                <svg width="32" height="32" viewBox="0 0 32 32">
+                                    <circle cx="16" cy="16" r="15" fill="#0088cc"/>
+                                    <path d="M22.5 10.5l-2.8 13.2c-.2.9-.7 1.1-1.4.7l-3.9-2.9-1.9 1.8c-.2.2-.4.4-.8.4l.3-4 7.5-6.8c.3-.3-.1-.4-.5-.2l-9.3 5.8-4-1.2c-.9-.3-.9-.9.2-1.3l15.6-6c.7-.3 1.4.2 1.1 1.3z" fill="white"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <svg width="32" height="32" viewBox="0 0 32 32">
+                                    <circle cx="16" cy="16" r="15" fill="#25D366"/>
+                                    <path d="M23 13.5c0 3.9-3.1 7-7 7-.9 0-1.8-.2-2.6-.5l-3.4.9.9-3.3c-.4-.8-.6-1.7-.6-2.6 0-3.9 3.1-7 7-7s7 3.1 7 7zm-7-5.5c-3 0-5.5 2.5-5.5 5.5 0 1 .3 2 .8 2.8l-.5 1.9 2-.5c.8.5 1.7.8 2.7.8 3 0 5.5-2.5 5.5-5.5S19 8 16 8z" fill="white"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3 class="contact-form-title">Задайте вопрос</h3>
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">Ваше имя *</label>
+                            <input 
+                                type="text" 
+                                id="contact-name" 
+                                name="name" 
+                                class="form-input" 
+                                placeholder="Иван Иванов" 
+                                required
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-phone" class="form-label">Телефон *</label>
+                            <input 
+                                type="tel" 
+                                id="contact-phone" 
+                                name="phone" 
+                                class="form-input" 
+                                placeholder="+7 (___) ___-__-__" 
+                                required
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                id="contact-email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="example@mail.ru"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Ваш вопрос *</label>
+                            <textarea 
+                                id="contact-message" 
+                                name="message" 
+                                class="form-textarea" 
+                                rows="5" 
+                                placeholder="Опишите ваш вопрос..." 
+                                required
+                                aria-required="true"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-checkbox">
+                                <input type="checkbox" name="consent" required>
+                                <span>Я согласен на обработку персональных данных *</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Отправить вопрос
+                        </button>
+
+                        <p class="form-note">* Обязательные поля</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.!2d37.6173!3d55.7558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIwLjkiTiAzN8KwMzcnMDIuMyJF!5e0!3m2!1sru!2sru!4v1234567890123!5m2!1sru!2sru" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Карта расположения клиники Пчёлка"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Column 1: About -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../assets/logo.svg" alt="Клиника Пчёлка Медик" class="footer-logo-image" width="100" height="auto">
+                    </div>
+                    <p class="footer-description">
+                        Премиальная медицинская клиника с индивидуальным подходом к каждому пациенту. Современное оборудование и опытные врачи.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="ВКонтакте">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="15" fill="#4680C2"/>
+                                <path d="M16.8 22h-1.2c-4.8 0-7.6-3.3-7.7-8.8h2.4c.1 4 1.8 5.7 3.2 6v-6h2.2v3.5c1.4-.2 2.8-1.7 3.3-3.5h2.2c-.4 2.1-1.9 3.7-3 4.3 1.1.5 2.8 1.9 3.5 4.5h-2.4c-.5-1.7-1.8-3-3.5-3.2V22z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="15" fill="#0088cc"/>
+                                <path d="M22.5 10.5l-2.8 13.2c-.2.9-.7 1.1-1.4.7l-3.9-2.9-1.9 1.8c-.2.2-.4.4-.8.4l.3-4 7.5-6.8c.3-.3-.1-.4-.5-.2l-9.3 5.8-4-1.2c-.9-.3-.9-.9.2-1.3l15.6-6c.7-.3 1.4.2 1.1 1.3z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="15" fill="#25D366"/>
+                                <path d="M23 13.5c0 3.9-3.1 7-7 7-.9 0-1.8-.2-2.6-.5l-3.4.9.9-3.3c-.4-.8-.6-1.7-.6-2.6 0-3.9 3.1-7 7-7s7 3.1 7 7zm-7-5.5c-3 0-5.5 2.5-5.5 5.5 0 1 .3 2 .8 2.8l-.5 1.9 2-.5c.8.5 1.7.8 2.7.8 3 0 5.5-2.5 5.5-5.5S19 8 16 8z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Column 2: Navigation -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#doctors">Врачи</a></li>
+                        <li><a href="#equipment">Оборудование</a></li>
+                        <li><a href="#loyalty">Программы лояльности</a></li>
+                        <li><a href="#pricing">Цены</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 3: Services -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Терапия</a></li>
+                        <li><a href="#services">Кардиология</a></li>
+                        <li><a href="#services">Неврология</a></li>
+                        <li><a href="#services">Эндокринология</a></li>
+                        <li><a href="#services">Педиатрия</a></li>
+                        <li><a href="#services">Диагностика</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 4: Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M14 6.67c0 4.67-6 8.67-6 8.67s-6-4-6-8.67a6 6 0 0112 0z"/>
+                                <circle cx="8" cy="6.67" r="2"/>
+                            </svg>
+                            <span>г. Москва, ул. Примерная, д. 123</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M14.67 11.28v2a1.33 1.33 0 01-1.45 1.33 13.19 13.19 0 01-5.75-2.05 13 13 0 01-4-4 13.19 13.19 0 01-2.05-5.78A1.33 1.33 0 012.74 1.33h2a1.33 1.33 0 011.33 1.15c.08.64.24 1.27.47 1.87a1.33 1.33 0 01-.3 1.41l-.85.84a10.67 10.67 0 004 4l.85-.85a1.33 1.33 0 011.4-.3c.61.23 1.24.39 1.88.47a1.33 1.33 0 011.14 1.35z"/>
+                            </svg>
+                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M2.67 2.67h10.66c.74 0 1.34.6 1.34 1.33v8c0 .74-.6 1.33-1.34 1.33H2.67c-.74 0-1.34-.59-1.34-1.33V4c0-.73.6-1.33 1.34-1.33z"/>
+                                <path d="M14.67 4L8 8.67 1.33 4" stroke="white" stroke-width="1.5" fill="none"/>
+                            </svg>
+                            <a href="mailto:info@pchelka-clinic.ru">info@pchelka-clinic.ru</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <circle cx="8" cy="8" r="6.67"/>
+                                <path d="M8 4v4l2.67 1.33" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                            </svg>
+                            <span>Пн-Вс: 8:00 — 21:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        © 2024 Клиника «Пчёлка». Все права защищены.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#" onclick="openPrivacyModal(); return false;">Политика конфиденциальности</a>
+                        <span class="separator">|</span>
+                        <a href="#" onclick="openTermsModal(); return false;">Пользовательское соглашение</a>
+                        <span class="separator">|</span>
+                        <a href="#" onclick="openLicenseModal('medical'); return false;">Лицензии</a>
+                    </div>
+                </div>
+                <div class="footer-disclaimer">
+                    <p>Имеются противопоказания. Необходима консультация специалиста.</p>
+                    <p>Лицензия № ЛО-77-01-012345 от 15.01.2024</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal: Callback -->
+    <div id="callbackModal" class="modal" role="dialog" aria-labelledby="callback-title" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeModal('callbackModal')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('callbackModal')" aria-label="Закрыть">×</button>
+            <h3 id="callback-title" class="modal-title">Заказать звонок</h3>
+            <p class="modal-description">Оставьте свой номер телефона, и мы перезвоним вам в течение 15 минут</p>
+            <form class="modal-form" onsubmit="handleCallbackSubmit(event)">
+                <div class="form-group">
+                    <label for="callback-name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="callback-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="callback-phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="callback-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="callback-time" class="form-label">Удобное время для звонка</label>
+                    <select id="callback-time" name="time" class="form-select">
+                        <option value="">Любое время</option>
+                        <option value="morning">Утро (9:00 - 12:00)</option>
+                        <option value="afternoon">День (12:00 - 15:00)</option>
+                        <option value="evening">Вечер (15:00 - 18:00)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Appointment -->
+    <div id="appointmentModal" class="modal" role="dialog" aria-labelledby="appointment-title" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeModal('appointmentModal')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('appointmentModal')" aria-label="Закрыть">×</button>
+            <h3 id="appointment-title" class="modal-title">Записаться на прием</h3>
+            <p class="modal-description">Выберите специалиста и удобное время для визита</p>
+            <form class="modal-form" onsubmit="handleAppointmentSubmit(event)">
+                <div class="form-group">
+                    <label for="appointment-name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="appointment-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="appointment-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-doctor" class="form-label">Специалист *</label>
+                    <select id="appointment-doctor" name="doctor" class="form-select" required>
+                        <option value="">Выберите специалиста</option>
+                        <option value="ivanova">Иванова Е.С. - Терапевт</option>
+                        <option value="petrov">Петров М.А. - Кардиолог</option>
+                        <option value="smirnova">Смирнова А.В. - Педиатр</option>
+                        <option value="kozlov">Козлов Д.И. - Невролог</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date" class="form-label">Дата *</label>
+                    <input type="date" id="appointment-date" name="date" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time" class="form-label">Время *</label>
+                    <select id="appointment-time" name="time" class="form-select" required>
+                        <option value="">Выберите время</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-comment" class="form-label">Комментарий</label>
+                    <textarea id="appointment-comment" name="comment" class="form-textarea" rows="3" placeholder="Опишите причину обращения..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Записаться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Question -->
+    <div id="questionModal" class="modal" role="dialog" aria-labelledby="question-title" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeModal('questionModal')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('questionModal')" aria-label="Закрыть">×</button>
+            <h3 id="question-title" class="modal-title">Задать вопрос врачу</h3>
+            <p class="modal-description">Опишите ваш вопрос, и врач ответит вам в течение 24 часов</p>
+            <form class="modal-form" onsubmit="handleQuestionSubmit(event)">
+                <div class="form-group">
+                    <label for="question-name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="question-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="question-email" class="form-label">Email *</label>
+                    <input type="email" id="question-email" name="email" class="form-input" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="question-specialty" class="form-label">Специализация врача</label>
+                    <select id="question-specialty" name="specialty" class="form-select">
+                        <option value="">Любой специалист</option>
+                        <option value="therapy">Терапия</option>
+                        <option value="cardiology">Кардиология</option>
+                        <option value="neurology">Неврология</option>
+                        <option value="endocrinology">Эндокринология</option>
+                        <option value="pediatrics">Педиатрия</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question-text" class="form-label">Ваш вопрос *</label>
+                    <textarea id="question-text" name="question" class="form-textarea" rows="5" placeholder="Опишите ваш вопрос подробно..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить вопрос</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Home Doctor -->
+    <div id="homeDoctorModal" class="modal" role="dialog" aria-labelledby="home-doctor-title" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeModal('homeDoctorModal')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('homeDoctorModal')" aria-label="Закрыть">×</button>
+            <h3 id="home-doctor-title" class="modal-title">Вызвать врача на дом</h3>
+            <p class="modal-description">Врач приедет к вам в течение 2 часов</p>
+            <form class="modal-form" onsubmit="handleHomeDoctorSubmit(event)">
+                <div class="form-group">
+                    <label for="home-name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="home-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="home-phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="home-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="home-address" class="form-label">Адрес *</label>
+                    <input type="text" id="home-address" name="address" class="form-input" placeholder="Улица, дом, квартира" required>
+                </div>
+                <div class="form-group">
+                    <label for="home-symptoms" class="form-label">Симптомы *</label>
+                    <textarea id="home-symptoms" name="symptoms" class="form-textarea" rows="4" placeholder="Опишите симптомы и жалобы..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="home-time" class="form-label">Желаемое время визита</label>
+                    <select id="home-time" name="time" class="form-select">
+                        <option value="asap">Как можно скорее</option>
+                        <option value="morning">Утро (9:00 - 12:00)</option>
+                        <option value="afternoon">День (12:00 - 15:00)</option>
+                        <option value="evening">Вечер (15:00 - 18:00)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Вызвать врача</button>
+                <p class="form-note">Стоимость вызова: от 5 000 ₽</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Loyalty Program -->
+    <div id="loyaltyModal" class="modal" role="dialog" aria-labelledby="loyalty-title" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeModal('loyaltyModal')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loyaltyModal')" aria-label="Закрыть">×</button>
+            <h3 id="loyalty-title" class="modal-title">Подключить программу лояльности</h3>
+            <p class="modal-description">Заполните форму, и мы свяжемся с вами для оформления карты</p>
+            <form class="modal-form" onsubmit="handleLoyaltySubmit(event)">
+                <div class="form-group">
+                    <label for="loyalty-name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="loyalty-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="loyalty-phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="loyalty-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="loyalty-email" class="form-label">Email *</label>
+                    <input type="email" id="loyalty-email" name="email" class="form-input" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="loyalty-program" class="form-label">Программа *</label>
+                    <select id="loyalty-program" name="program" class="form-select" required>
+                        <option value="">Выберите программу</option>
+                        <option value="accumulative">Накопительная система</option>
+                        <option value="family">Семейная программа</option>
+                        <option value="corporate">Корпоративное обслуживание</option>
+                        <option value="certificate">Подарочный сертификат</option>
+                        <option value="referral">Друг рекомендует</option>
+                        <option value="annual">Здоровье круглый год</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
