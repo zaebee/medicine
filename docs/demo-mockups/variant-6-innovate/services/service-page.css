@@ -3,6 +3,12 @@
    Styles for internal service pages
    ============================================ */
 
+/* === BUTTONS === */
+.btn-small {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
 /* === BREADCRUMBS === */
 .breadcrumbs {
     padding: 20px 0;
