@@ -1,3 +1,12 @@
+---
+layout: documentation
+title: "Обоснование выбора WordPress"
+nav_title: "Выбор WordPress"
+description: "Сравнительный анализ и обоснование выбора WordPress вместо Django для клиники Пчёлка"
+icon: "⚙️"
+permalink: /technical/wordpress-solution/
+---
+
 # ОБОСНОВАНИЕ ВЫБОРА WORDPRESS ДЛЯ КЛИНИКИ "ПЧЁЛКА"
 
 **Дата:** 5 октября 2025
