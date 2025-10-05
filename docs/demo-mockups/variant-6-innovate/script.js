@@ -25,6 +25,40 @@
     const EFFECTS_ENABLED = !PERFORMANCE.prefersReducedMotion && !PERFORMANCE.isLowEnd;
     const CURSOR_ENABLED = EFFECTS_ENABLED && !PERFORMANCE.isTouch;
     const PARTICLES_ENABLED = EFFECTS_ENABLED;
+    const VIDEO_ENABLED = !PERFORMANCE.isMobile && !PERFORMANCE.isLowEnd;
+
+    // ===== HERO VIDEO OPTIMIZATION =====
+    function initHeroVideo() {
+        const video = document.querySelector('.hero-video');
+        if (!video) return;
+
+        // Disable video on mobile or low-end devices
+        if (!VIDEO_ENABLED) {
+            video.style.display = 'none';
+            return;
+        }
+
+        // Pause video when not in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {
+                        // Video autoplay failed, hide video
+                        video.style.display = 'none';
+                    });
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+
+        observer.observe(video);
+
+        // Handle video load errors
+        video.addEventListener('error', () => {
+            video.style.display = 'none';
+        });
+    }
 
     // ===== CONFIGURATION =====
     const CONFIG = {
@@ -649,6 +683,9 @@
         new FormHandler();
         new SmoothScroll();
         new MobileMenu();
+
+        // Initialize hero video
+        initHeroVideo();
 
         // Add loaded class to body
         document.body.classList.add('loaded');

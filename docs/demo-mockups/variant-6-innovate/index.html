@@ -193,10 +193,50 @@
         </div>
     </header>
 
-    <!-- Hero Section with 3D Parallax -->
+    <!-- Hero Section with Video Background -->
     <section class="hero" id="main-content">
         <div class="hero-bg">
-            <!-- Animated blob -->
+            <!-- Video Background with multiple sources -->
+            <video class="hero-video" autoplay muted loop playsinline>
+                <!-- Primary video: Medical professional -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-reviewing-medical-records-4273-large.mp4" type="video/mp4">
+                <!-- Alternative: Modern medical facility -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-female-doctor-working-at-her-desk-4235-large.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Fallback illustration for browsers without video support -->
+            <div class="hero-illustration">
+                <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Medical cross background -->
+                    <g opacity="0.1">
+                        <rect x="380" y="100" width="40" height="400" fill="currentColor"/>
+                        <rect x="200" y="280" width="400" height="40" fill="currentColor"/>
+                    </g>
+                    <!-- Abstract medical shapes -->
+                    <circle cx="200" cy="200" r="80" fill="url(#gradient1)" opacity="0.3"/>
+                    <circle cx="600" cy="400" r="100" fill="url(#gradient2)" opacity="0.3"/>
+                    <circle cx="400" cy="300" r="60" fill="url(#gradient3)" opacity="0.3"/>
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A961;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#B8935A;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <!-- Video Overlay -->
+            <div class="hero-video-overlay"></div>
+            
+            <!-- Animated blob overlay for extra effect -->
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
             <div class="blob blob-3"></div>
