@@ -10,11 +10,11 @@
     --primary-dark: #B8935A;
     --primary-light: #D4AF37;
 
-    /* Neutral Colors */
+    /* Neutral Colors - Light theme by default */
     --text-dark: #1a1a1a;
     --text-light: #666666;
-    --bg-color: #0a0a0a;
-    --bg-light: #ffffff;
+    --bg-color: #ffffff;
+    --bg-light: #f8f9fa;
 
     /* Glass Effect - Light theme optimized */
     --glass-bg: rgba(255, 255, 255, 0.7);
@@ -23,7 +23,7 @@
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.9) 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
 
     /* Sizes */
     --border-radius: 16px;
@@ -44,6 +44,7 @@
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --gradient-hero: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.9) 100%);
 }
 
 /* === ACCESSIBILITY: REDUCED MOTION === */
