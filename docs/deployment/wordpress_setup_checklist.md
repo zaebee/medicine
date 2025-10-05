@@ -1,3 +1,12 @@
+---
+layout: documentation
+title: "Чек-лист установки WordPress"
+nav_title: "Установка WordPress"
+description: "Пошаговый чек-лист установки и настройки WordPress на Sprinthost для клиники Пчёлка"
+icon: "✅"
+permalink: /deployment/wordpress-setup-checklist/
+---
+
 # ЧЕК-ЛИСТ УСТАНОВКИ И НАСТРОЙКИ WORDPRESS
 
 **Проект:** Сайт медицинской клиники «Пчёлка»

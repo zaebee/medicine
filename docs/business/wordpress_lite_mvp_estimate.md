@@ -1,3 +1,12 @@
+---
+layout: documentation
+title: "Смета WordPress Lite MVP"
+nav_title: "Смета WordPress MVP"
+description: "Детальная смета разработки WordPress Lite MVP для клиники Пчёлка - 18 дней"
+icon: "💰"
+permalink: /business/wordpress-lite-mvp-estimate/
+---
+
 # ДЕТАЛЬНАЯ СМЕТА: WORDPRESS LITE MVP
 
 **Проект:** Сайт медицинской клиники «Пчёлка»
