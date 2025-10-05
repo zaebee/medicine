@@ -208,6 +208,15 @@ document.querySelectorAll('.benefit-card, .service-card, .doctor-card, .review-c
     observer.observe(el);
 });
 
+// Modal Functions (Callback & Question)
+function openCallbackModal() {
+    alert('Форма заказа звонка\n\nВ полной версии здесь будет модальное окно с формой для заказа обратного звонка.');
+}
+
+function openQuestionModal() {
+    alert('Форма вопроса\n\nВ полной версии здесь будет модальное окно с формой для отправки вопроса.');
+}
+
 // Console welcome message
 console.log('%c🐝 Клиника Пчёлка - Variant 1: Classic Design', 'color: #FFD700; font-size: 16px; font-weight: bold;');
 console.log('%cДемо-макет главной страницы', 'color: #666; font-size: 12px;');
