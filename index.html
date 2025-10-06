@@ -261,6 +261,28 @@
             transition: opacity 0.3s;
             pointer-events: none;
         }
+
+        .nav-card-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav-card-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid #667eea;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .nav-card-links a:hover {
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -363,6 +385,32 @@
                     <li>User Flow Diagrams</li>
                     <li>Business Goals Alignment</li>
                 </ul>
+            </div>
+
+            <div class="nav-card" style="cursor: default;">
+                <div class="nav-card-header">
+                    <span class="nav-card-icon">👩‍💻</span>
+                    <h3 class="nav-card-title">Developer Guide</h3>
+                </div>
+                <p class="nav-card-description">
+                    A step-by-step guide for developers to set up and build the WordPress site, from environment setup to final launch checks.
+                </p>
+                <div class="nav-card-links">
+                    <a href="/developer-guide/">Read in English</a> | <a href="/ru/developer-guide/">Читать на русском</a>
+                </div>
+            </div>
+
+            <div class="nav-card" style="cursor: default;">
+                <div class="nav-card-header">
+                    <span class="nav-card-icon">👤</span>
+                    <h3 class="nav-card-title">User Guide</h3>
+                </div>
+                <p class="nav-card-description">
+                    A simple guide for clinic administrators to manage the website content, including adding services, doctors, and editing pages.
+                </p>
+                <div class="nav-card-links">
+                    <a href="/user-guide/">Read in English</a> | <a href="/ru/user-guide/">Читать на русском</a>
+                </div>
             </div>
         </section>
 

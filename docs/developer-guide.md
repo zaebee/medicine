@@ -1,25 +1,14 @@
-# Developer Guide and Project Analysis
-
-## Part 1: Project Analysis and Feedback
-
-**Overall Assessment:**
-
-The project documentation for the "ПЧЕЛА МЕДИК" (Pchyolka Medic) clinic website is exceptionally thorough, well-structured, and professional. It provides a comprehensive foundation for development, leaving very little ambiguity. The decision-making process is transparent, and the technical planning is detailed and sound. This is a model example of how to prepare for a web development project.
-
-**Key Strengths:**
-
-*   **Clear Rationale for Technology Stack:** The shift from a complex Django solution to a more practical WordPress implementation is brilliantly justified in the `docs/technical/wordpress_solution.md` document. The analysis correctly identifies the client's non-technical background, budget constraints, and core requirements as the primary drivers for this decision. This client-centric approach is crucial for project success.
-*   **Detailed and Actionable Architecture:** The `docs/technical/wordpress_architecture.md` file is a robust technical blueprint. It covers everything from server setup and database structure to a precise list of plugins, security measures, and SEO best practices. A developer can use this document as a definitive checklist to build the site.
-*   **Comprehensive Scope Definition:** The documentation clearly outlines what is included in the "WordPress Lite MVP" and, just as importantly, what is excluded (e.g., online booking, patient portals). This clarity is vital for managing client expectations and preventing scope creep.
-*   **Beginner-Friendly Resources:** The inclusion of recommended themes (like MediPlus) and a detailed implementation plan makes the project accessible even to developers who are not WordPress experts.
-
-**Conclusion:**
-
-The planning phase of this project is complete and has been executed to a very high standard. The existing documentation is more than sufficient to move forward with development. The plan is logical, the technology choice is appropriate, and the success criteria are clearly defined.
-
+---
+layout: documentation
+title: "Developer Guide"
+nav_title: "Developer Guide"
+description: "A step-by-step guide for developers to set up and build the WordPress site for the 'Pchyolka' clinic."
+icon: "👩‍💻"
+permalink: /developer-guide/
+lang: en
 ---
 
-## Part 2: WordPress Development & Setup Guide (Beginner-Friendly)
+# 👩‍💻 WordPress Development & Setup Guide (Beginner-Friendly)
 
 **Welcome, developer!** This guide is your step-by-step manual for building the "Пчёлка" clinic website. It's based on the excellent documentation provided and is designed to be easy to follow, even if you're new to WordPress.
 
@@ -33,7 +22,7 @@ The planning phase of this project is complete and has been executed to a very h
 
 ---
 
-### Phase 1: Initial Server and WordPress Setup
+## Phase 1: Initial Server and WordPress Setup
 
 This phase is about getting your foundation ready.
 
@@ -52,7 +41,7 @@ This phase is about getting your foundation ready.
 
 ---
 
-### Phase 2: Installing the Theme and Essential Plugins
+## Phase 2: Installing the Theme and Essential Plugins
 
 Now we add the core functionality and look-and-feel.
 
@@ -88,7 +77,7 @@ Now we add the core functionality and look-and-feel.
 
 ---
 
-### Phase 3: Creating the Custom Content Structure
+## Phase 3: Creating the Custom Content Structure
 
 This is the most important part of organizing the site's information. We will create dedicated sections for "Services" and "Doctors" so the client can easily manage them.
 
@@ -125,7 +114,7 @@ This is the most important part of organizing the site's information. We will cr
 
 ---
 
-### Phase 4: Adding Content and Building the Site
+## Phase 4: Adding Content and Building the Site
 
 With the structure in place, you can now add content and design the pages.
 
@@ -135,10 +124,10 @@ With the structure in place, you can now add content and design the pages.
 
 2.  **Create the Main Pages:**
     *   Go to **Pages > Add New** and create the essential pages:
-        *   `Главная` (Home)
-        *   `О клинике` (About)
-        *   `Контакты` (Contacts)
-        *   `Политика конфиденциальности` (Privacy Policy)
+        *   `Home`
+        *   `About Us`
+        *   `Contact`
+        *   `Privacy Policy`
 
 3.  **Design the Home Page with Elementor:**
     *   Go to **Pages**, hover over the Home page, and click **Edit with Elementor**.
@@ -149,11 +138,11 @@ With the structure in place, you can now add content and design the pages.
     *   Edit it or create a new one. Name it "Contact Form".
     *   Go to the **Mail** tab and configure where the email notifications should be sent.
     *   Save the form. It will give you a **shortcode** (like `[contact-form-7 id="123" title="Contact form 1"]`).
-    *   Edit your "Contacts" page and paste this shortcode into the text area. The form will appear on the page.
+    *   Edit your "Contact" page and paste this shortcode into the text area. The form will appear on the page.
 
 ---
 
-### Phase 5: Final Configuration and Launch Checks
+## Phase 5: Final Configuration and Launch Checks
 
 The final polish before the site is ready.
 
