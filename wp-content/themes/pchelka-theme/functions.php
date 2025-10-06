@@ -328,5 +328,18 @@ function pchelka_customize_register( $wp_customize ) {
         'section'    => 'pchelka_section_titles',
         'type'       => 'text',
     ) );
+
+    // Add setting for Services section subtitle
+    $wp_customize->add_setting( 'services_section_subtitle', array(
+        'default'   => __( 'Реабилитация и лечение опорно-двигательного аппарата, флебология', 'pchelka' ),
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'services_section_subtitle', array(
+        'label'      => __( 'Services Section Subtitle', 'pchelka' ),
+        'section'    => 'pchelka_section_titles',
+        'type'       => 'textarea',
+    ) );
 }
 add_action( 'customize_register', 'pchelka_customize_register' );
