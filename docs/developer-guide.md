@@ -22,6 +22,19 @@ lang: en
 
 ---
 
+## 📚 Related Documentation
+
+Before you start, familiarize yourself with these key documents:
+
+- **[WordPress Architecture](/technical/wordpress-architecture/)** - Detailed technical architecture and plugin specifications
+- **[WordPress Solution](/technical/wordpress-solution/)** - Why WordPress was chosen over Django
+- **[WordPress Setup Checklist](/deployment/wordpress-setup-checklist/)** - Detailed deployment checklist for Sprinthost
+- **[Pricing & Packages](/business/wordpress-pricing-simple/)** - Commercial proposal and pricing
+- **[Services Catalog](/business/services-catalog/)** - Complete list of clinic services to add
+- **[User Guide](/user-guide/)** - Guide for clinic administrators (show this to the client)
+
+---
+
 ## Phase 1: Initial Server and WordPress Setup
 
 This phase is about getting your foundation ready.
@@ -140,9 +153,56 @@ With the structure in place, you can now add content and design the pages.
     *   Save the form. It will give you a **shortcode** (like `[contact-form-7 id="123" title="Contact form 1"]`).
     *   Edit your "Contact" page and paste this shortcode into the text area. The form will appear on the page.
 
+5.  **Configure Email Sending (WP Mail SMTP):**
+    *   **Critical:** WordPress default email often goes to spam!
+    *   Go to **Settings > WP Mail SMTP**.
+    *   Choose a mailer (recommended: Gmail, SendGrid, or Mailgun).
+    *   Follow the setup wizard to connect your email account.
+    *   Send a test email to verify it works.
+    *   **Without this, contact forms won't work properly!**
+
 ---
 
-## Phase 5: Final Configuration and Launch Checks
+## Phase 5: Security Best Practices
+
+**Important:** Security is critical for a medical website handling patient data.
+
+1.  **Strong Passwords:**
+    *   Use passwords with 12+ characters
+    *   Include uppercase, lowercase, numbers, and symbols
+    *   Never use "admin" as username
+    *   Change default passwords immediately
+
+2.  **Disable File Editing:**
+    *   Add to `wp-config.php`: `define('DISALLOW_FILE_EDIT', true);`
+    *   This prevents hackers from editing theme/plugin files through admin panel
+
+3.  **Change Database Prefix:**
+    *   During installation, change `wp_` to something unique (e.g., `pchelka_`)
+    *   This makes SQL injection attacks harder
+
+4.  **SSL/HTTPS:**
+    *   **Mandatory:** Enable SSL certificate (Let's Encrypt is free)
+    *   Go to **Settings > General** and change URLs to `https://`
+    *   Install "Really Simple SSL" plugin to force HTTPS everywhere
+
+5.  **Limit Login Attempts:**
+    *   Install "Limit Login Attempts Reloaded" plugin
+    *   Blocks brute-force attacks after 3-5 failed attempts
+
+6.  **Two-Factor Authentication:**
+    *   Install "Two Factor Authentication" plugin
+    *   Enable 2FA for all admin accounts
+    *   Use Google Authenticator or similar app
+
+7.  **Regular Updates:**
+    *   Update WordPress core, themes, and plugins weekly
+    *   Enable automatic updates for security patches
+    *   Test updates on staging site first
+
+---
+
+## Phase 6: Final Configuration and Launch Checks
 
 The final polish before the site is ready.
 

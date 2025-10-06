@@ -46,6 +46,13 @@ permalink: /readme/
 - **[tasks_estimates.md](./development/tasks_estimates.md)** - Детальная WBS и 4 сценария бюджета (добавлен WordPress Lite MVP) ⭐ **ОБНОВЛЕНО**
 - **[brd_prd_frd_templates.md](./development/brd_prd_frd_templates.md)** - Шаблоны BRD/PRD/FRD для дальнейшей работы
 
+### 📚 Руководства (`/`)
+
+- **[developer-guide.md](./developer-guide.md)** - Пошаговое руководство для разработчиков (EN) ⭐ **НОВОЕ**
+- **[developer-guide.ru.md](./developer-guide.ru.md)** - Руководство для разработчиков (RU) ⭐ **НОВОЕ**
+- **[user-guide.md](./user-guide.md)** - Руководство для администраторов клиники (EN) ⭐ **НОВОЕ**
+- **[user-guide.ru.md](./user-guide.ru.md)** - Руководство для администраторов (RU) ⭐ **НОВОЕ**
+
 ### 🚀 Деплой и маркетинг (`/deployment`)
 
 - **[wordpress_setup_checklist.md](./deployment/wordpress_setup_checklist.md)** - Чек-лист установки WordPress на Sprinthost ⭐ **НОВОЕ**

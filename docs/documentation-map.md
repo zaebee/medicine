@@ -10,6 +10,46 @@ footer_text: "Интерактивная карта документации с 
 
 # 📋 Карта документации проекта
 
+**Статус проекта:** ✅ WordPress MVP (8 дней)  
+**Последнее обновление:** 6 октября 2025
+
+## 📊 Статистика документации
+
+| Категория | Документов | Статус |
+|-----------|------------|--------|
+| 💼 Бизнес | 9 | ✅ Актуально |
+| 🔧 Техническая | 5 | ✅ Актуально (WordPress) |
+| 🎨 Дизайн | 3 | ✅ Актуально |
+| 👩‍💻 Разработка | 2 | ✅ Актуально |
+| 🚀 Деплой | 4 | ✅ Актуально |
+| 📚 Руководства | 4 | ✅ Новое |
+| 🔍 Ревью | 1 | ✅ Новое |
+| 🌐 Интерактивные | 5 | ✅ Актуально |
+| **Всего** | **33** | **100% актуально** |
+
+⭐ - Ключевые документы для WordPress проекта
+
+---
+
+## 🚀 Быстрый старт
+
+### Для разработчика (начать работу):
+1. 📋 [Главная документация]({{ '/readme/' | relative_url }}) - обзор проекта
+2. 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }}) - пошаговая установка
+3. 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }}) - технические детали
+4. ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }}) - проверка перед запуском
+
+### Для администратора клиники:
+1. 👤 [User Guide (RU)]({{ '/ru/user-guide/' | relative_url }}) - управление контентом
+2. 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }}) - список услуг для добавления
+
+### Для менеджера проекта:
+1. 💰 [Цены WordPress]({{ '/business/wordpress-pricing-simple/' | relative_url }}) - коммерческое предложение
+2. 📋 [Задачи и оценки]({{ '/development/tasks-estimates/' | relative_url }}) - планирование
+3. 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }}) - workflow
+
+---
+
 ## 🔍 Быстрый доступ к документам
 
 ### 💼 Бизнес-документация
@@ -17,93 +57,175 @@ footer_text: "Интерактивная карта документации с 
 
 - 📄 [Коммерческий бриф]({{ '/business/brief/' | relative_url }}) - Core
 - 📊 [Данные проекта (JSON)]({{ '/business/project_data.json' | relative_url }}) - API
-- ❓ [Вопросы клиенту]({{ '/business/client_questions.html' | relative_url }}) - Priority
+- ❓ [Вопросы клиенту]({{ '/business/client-questions/' | relative_url }}) - Priority
+- 📋 [Анализ ответов клиента]({{ '/business/client-analysis/' | relative_url }}) - Analysis
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }}) - Content
+- 💰 [Цены WordPress (кратко)]({{ '/business/wordpress-pricing-simple/' | relative_url }}) - Pricing ⭐
+- 📊 [Расчет стоимости WordPress]({{ '/business/wordpress-pricing-calculation/' | relative_url }}) - Detailed
+- 🔍 [Анализ бюджетного пакета]({{ '/business/wordpress-budget-analysis/' | relative_url }}) - Analysis ⭐
+- 📝 [Смета WordPress MVP]({{ '/business/wordpress-lite-mvp-estimate/' | relative_url }}) - Estimate
 
 ### 🔧 Техническая архитектура
 **Техническое решение, стек и безопасность**
 
-- 🏗️ [Техническая архитектура]({{ '/technical/technical-architecture/' | relative_url }}) - Core
-- 📝 [Сравнение CMS]({{ '/technical/cms_comparison.html' | relative_url }}) - Analysis
-- 🛡️ [Безопасность]({{ '/technical/security_compliance.html' | relative_url }}) - Security
+- 🏗️ [Архитектура WordPress]({{ '/technical/wordpress-architecture/' | relative_url }}) - Core ⭐
+- ⚙️ [Обоснование выбора WordPress]({{ '/technical/wordpress-solution/' | relative_url }}) - Decision ⭐
+- 🏛️ [Архитектура Django]({{ '/technical/technical-architecture/' | relative_url }}) - Reference
+- 📝 [Сравнение CMS]({{ '/technical/cms-comparison/' | relative_url }}) - Analysis
+- 🛡️ [Безопасность и соответствие]({{ '/technical/security-compliance/' | relative_url }}) - Security
 
 ### 🎨 Дизайн и UX
 **Пользовательский опыт и дизайн-требования**
 
 - 🎨 [UX/UI требования]({{ '/design/ux-design-requirements/' | relative_url }}) - Design
-- 👤 [Карта пользователей]({{ '/user-features-map' | relative_url }}) - Interactive
+- 🎨 [Гайд по брендингу]({{ '/design/branding-guidelines/' | relative_url }}) - Branding ⭐
+- 👤 [Карта пользователей]({{ '/user-features-map/' | relative_url }}) - Interactive
 
 ### 👩‍💻 Разработка
 **Планирование задач и шаблоны документов**
 
-- 📋 [Задачи и оценки]({{ '/development/tasks_estimates.html' | relative_url }}) - Planning
+- 📋 [Задачи и оценки]({{ '/development/tasks-estimates/' | relative_url }}) - Planning
 - 📑 [Шаблоны документов]({{ '/development/brd-prd-frd-templates/' | relative_url }}) - Templates
-- 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }}) - Interactive
+- 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }}) - Interactive
 
 ### 🚀 Деплой и маркетинг
 **Тестирование, развертывание и продвижение**
 
-- 🧪 [Тестирование]({{ '/deployment/testing-acceptance/' | relative_url }}) - QA
+- ✅ [Чек-лист установки WordPress]({{ '/deployment/wordpress-setup-checklist/' | relative_url }}) - Setup ⭐
+- 🧪 [Тестирование и приемка]({{ '/deployment/testing-acceptance/' | relative_url }}) - QA
 - 📈 [SEO и маркетинг]({{ '/deployment/seo-marketing/' | relative_url }}) - Marketing
+- 🗺️ [SEO Sitemap]({{ '/deployment/seo-sitemap/' | relative_url }}) - SEO
+
+### 📚 Руководства
+**Пошаговые инструкции для разработчиков и пользователей**
+
+- 👩‍💻 [Developer Guide (EN)]({{ '/developer-guide/' | relative_url }}) - Setup ⭐
+- 👩‍💻 [Руководство разработчика (RU)]({{ '/ru/developer-guide/' | relative_url }}) - Setup ⭐
+- 👤 [User Guide (EN)]({{ '/user-guide/' | relative_url }}) - Admin ⭐
+- 👤 [Руководство пользователя (RU)]({{ '/ru/user-guide/' | relative_url }}) - Admin ⭐
+
+### 🔍 Ревью и анализ
+**Code review и технический анализ**
+
+- 📝 [PR #8 Code Review]({{ '/reviews/pr-8/' | relative_url }}) - Review
 
 ### 🌐 Интерактивные страницы
 **Специальные визуализации и диаграммы**
 
-- 🏗️ [Обзор архитектуры]({{ '/architecture-overview' | relative_url }}) - Visual
-- 📖 [Главная документация]({{ '/readme' | relative_url }}) - Overview
+- 🏗️ [Обзор архитектуры]({{ '/architecture-overview/' | relative_url }}) - Visual ⭐
+- 📖 [Главная документация]({{ '/readme/' | relative_url }}) - Overview
+- 📋 [Карта документации]({{ '/documentation-map/' | relative_url }}) - Navigation
+- 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }}) - Workflow
+- 📚 [Глоссарий]({{ '/glossary/' | relative_url }}) - Terms
 
 ## 🗺️ Диаграмма зависимостей документов
 
 ```mermaid
 graph TD
     A[📋 Главная документация] --> B[💼 Бизнес-бриф]
-    A --> C[🔧 Техническая архитектура]
+    A --> C[🏗️ WordPress Архитектура]
     A --> D[🎨 UX/UI требования]
+    A --> E[👩‍💻 Developer Guide]
+    A --> F[👤 User Guide]
 
-    B --> E[❓ Вопросы клиенту]
-    B --> F[📊 Данные проекта]
+    B --> G[❓ Вопросы клиенту]
+    B --> H[📊 Анализ ответов]
+    B --> I[💰 Цены WordPress]
+    B --> J[🏥 Каталог услуг]
 
-    C --> G[📝 Сравнение CMS]
-    C --> H[🛡️ Безопасность]
-    C --> I[🏗️ Диаграммы архитектуры]
+    C --> K[⚙️ Обоснование WordPress]
+    C --> L[📝 Сравнение CMS]
+    C --> M[🛡️ Безопасность]
+    C --> N[🏗️ Обзор архитектуры]
 
-    D --> J[👤 Карта пользователей]
-    D --> K[🎨 Дизайн-система]
+    D --> O[👤 Карта пользователей]
+    D --> P[🎨 Гайд по брендингу]
 
-    F --> L[📋 Задачи и оценки]
-    L --> M[📑 Шаблоны документов]
-    L --> N[🔄 Рабочий процесс]
+    I --> Q[📋 Задачи и оценки]
+    Q --> R[📑 Шаблоны документов]
+    Q --> S[🔄 Рабочий процесс]
 
-    H --> O[🧪 Тестирование]
-    K --> P[📈 SEO и маркетинг]
+    E --> T[✅ Чек-лист установки]
+    T --> U[🧪 Тестирование]
+    
+    M --> U
+    P --> V[📈 SEO и маркетинг]
+    
+    E --> W[🔍 PR #8 Review]
+    F --> W
 
     style A fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
     style B fill:#f3e5f5,stroke:#7b1fa2
-    style C fill:#e8f5e8,stroke:#388e3c
+    style C fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
     style D fill:#fff3e0,stroke:#f57c00
-    style I fill:#e3f2fd,stroke:#1976d2
-    style J fill:#fff3e0,stroke:#f57c00
-    style N fill:#e8f5e8,stroke:#388e3c
+    style E fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    style F fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style I fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style K fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    style N fill:#e3f2fd,stroke:#1976d2
+    style O fill:#fff3e0,stroke:#f57c00
+    style S fill:#e8f5e8,stroke:#388e3c
+    style W fill:#fff9c4,stroke:#f57f17
 ```
 
 ## 👥 Доступ по ролям команды
 
 ### 🏢 Project Manager
-Бриф, задачи, планирование, процессы
+**Ключевые документы:**
+- 📋 [Главная документация]({{ '/readme/' | relative_url }})
+- 💼 [Бизнес-бриф]({{ '/business/brief/' | relative_url }})
+- 💰 [Цены WordPress]({{ '/business/wordpress-pricing-simple/' | relative_url }})
+- 📋 [Задачи и оценки]({{ '/development/tasks-estimates/' | relative_url }})
+- 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }})
 
 ### 🎨 UI/UX Designer
-UX требования, пользователи, дизайн-система
+**Ключевые документы:**
+- 🎨 [UX/UI требования]({{ '/design/ux-design-requirements/' | relative_url }})
+- 🎨 [Гайд по брендингу]({{ '/design/branding-guidelines/' | relative_url }})
+- 👤 [Карта пользователей]({{ '/user-features-map/' | relative_url }})
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }})
 
-### ⚙️ Backend Developer
-Архитектура, CMS, безопасность, API
+### 👩‍💻 WordPress Developer
+**Ключевые документы:**
+- 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }}) ⭐
+- 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }}) ⭐
+- ⚙️ [Обоснование WordPress]({{ '/technical/wordpress-solution/' | relative_url }})
+- ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }})
+- 🛡️ [Безопасность]({{ '/technical/security-compliance/' | relative_url }})
+
+### ⚙️ Backend Developer (Django - reference)
+**Ключевые документы:**
+- 🏛️ [Архитектура Django]({{ '/technical/technical-architecture/' | relative_url }})
+- 📝 [Сравнение CMS]({{ '/technical/cms-comparison/' | relative_url }})
+- 🛡️ [Безопасность]({{ '/technical/security-compliance/' | relative_url }})
 
 ### 🌐 Frontend Developer
-UX требования, компоненты, интеграции
+**Ключевые документы:**
+- 🎨 [UX/UI требования]({{ '/design/ux-design-requirements/' | relative_url }})
+- 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }})
+- 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }})
 
 ### 🧪 QA Engineer
-Тестирование, acceptance criteria
+**Ключевые документы:**
+- 🧪 [Тестирование]({{ '/deployment/testing-acceptance/' | relative_url }})
+- ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }})
+- 🔍 [PR #8 Review]({{ '/reviews/pr-8/' | relative_url }})
 
 ### 🚀 DevOps Engineer
-Архитектура, безопасность, деплой
+**Ключевые документы:**
+- 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }})
+- ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }})
+- 🛡️ [Безопасность]({{ '/technical/security-compliance/' | relative_url }})
+- 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }})
 
 ### 📈 Marketing Specialist
-SEO стратегия, контент-план
+**Ключевые документы:**
+- 📈 [SEO и маркетинг]({{ '/deployment/seo-marketing/' | relative_url }})
+- 🗺️ [SEO Sitemap]({{ '/deployment/seo-sitemap/' | relative_url }})
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }})
+
+### 👤 Clinic Administrator
+**Ключевые документы:**
+- 👤 [User Guide]({{ '/user-guide/' | relative_url }}) ⭐
+- 👤 [Руководство пользователя (RU)]({{ '/ru/user-guide/' | relative_url }}) ⭐
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }})

@@ -14,6 +14,14 @@ lang: en
 
 ---
 
+## 📚 Additional Resources
+
+- **[Developer Guide](/developer-guide/)** - Technical guide for developers (if you need technical help)
+- **[Services Catalog](/business/services-catalog/)** - Complete list of clinic services
+- **[WordPress Architecture](/technical/wordpress-architecture/)** - Technical details about your website
+
+---
+
 ## 1. How to Log In to the Admin Panel
 
 Your website is powered by WordPress. To make any changes, you first need to log in to the admin area.
