@@ -926,6 +926,7 @@ img {
 .service-image {
     height: 200px;
     overflow: hidden;
+    position: relative;
 }
 
 .service-image img {
@@ -937,6 +938,41 @@ img {
 
 .service-card:hover .service-image img {
     transform: scale(1.1);
+}
+
+/* Hexagon иконка поверх изображения */
+.service-image .icon-hexagon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 92px;
+    z-index: 2;
+}
+
+.service-image .icon-hexagon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card:hover .service-image .icon-hexagon::before {
+    transform: rotate(15deg) scale(1.15);
+    box-shadow: var(--shadow-gold);
+}
+
+.service-image .icon-hexagon svg {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    color: var(--text-light);
 }
 
 .service-content {
