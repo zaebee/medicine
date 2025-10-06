@@ -16,7 +16,11 @@
     <meta property="og:title" content="Клиника «Пчёлка» в Мытищах — Инновационная медицина">
     <meta property="og:description" content="Реабилитация и физиотерапия в Мытищах. Передовые технологии, опытные врачи, индивидуальный подход.">
     <meta property="og:image" content="https://medicine.zae.life/assets/client/logo1.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Клиника Пчёлка в Мытищах - Реабилитация и физиотерапия">
     <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Клиника «Пчёлка»">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -27,6 +31,20 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://medicine.zae.life/demo-mockups/variant-6-innovate/">
+    
+    <!-- Geo-targeting для локального SEO -->
+    <meta name="geo.region" content="RU-MOS">
+    <meta name="geo.placename" content="Мытищи">
+    <meta name="geo.position" content="55.9116;37.7307">
+    <meta name="ICBM" content="55.9116, 37.7307">
+    
+    <!-- Keywords для локального поиска -->
+    <meta name="keywords" content="клиника мытищи, реабилитация мытищи, физиотерапия мытищи, лфк мытищи, узи мытищи, медицинский центр мытищи, клиника рядом с метро, частная клиника мытищи">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#C9A961">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -112,6 +130,127 @@
             "https://vk.com/pchelka_clinic",
             "https://t.me/pchelka_clinic",
             "https://instagram.com/pchelka_clinic"
+        ]
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://medicine.zae.life/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Услуги",
+                "item": "https://medicine.zae.life/services/"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Service Schema - Физиотерапия -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Физиотерапия",
+        "provider": {
+            "@type": "MedicalClinic",
+            "name": "Клиника «Пчёлка»",
+            "telephone": "+7-495-123-45-67"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Мытищи"
+        },
+        "description": "Современные методы физиотерапии для эффективного восстановления и лечения опорно-двигательного аппарата",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "1500",
+            "priceValidUntil": "2025-12-31"
+        }
+    }
+    </script>
+    
+    <!-- Service Schema - Реабилитация -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Реабилитация опорно-двигательного аппарата",
+        "provider": {
+            "@type": "MedicalClinic",
+            "name": "Клиника «Пчёлка»"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Мытищи"
+        },
+        "description": "Комплексная реабилитация после травм и операций с использованием передовых методик",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "5000",
+            "priceValidUntil": "2025-12-31"
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Как записаться на прием в клинику Пчёлка?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Вы можете записаться онлайн через форму на сайте, по телефону +7 (495) 123-45-67 или через WhatsApp. Запись доступна 24/7."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие услуги предоставляет клиника в Мытищах?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы предоставляем услуги реабилитации опорно-двигательного аппарата, физиотерапии, ЛФК, УЗИ-диагностики, ЭКГ, флебологии и травматологии. Все услуги оказываются на современном оборудовании."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Где находится клиника Пчёлка?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Клиника находится в Мытищах по адресу: ул. Примерная, 123. Мы расположены в 5 минутах от метро. Удобная транспортная доступность."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какой график работы клиники?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы работаем: Пн-Пт с 08:00 до 20:00, Сб с 09:00 до 18:00, Вс с 10:00 до 16:00. Запись на прием доступна круглосуточно через сайт."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько стоят услуги реабилитации?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Стоимость услуг зависит от выбранной программы. Консультация врача от 2500₽, сеанс физиотерапии от 1500₽, курс ЛФК от 5000₽. Точную стоимость уточняйте по телефону."
+                }
+            }
         ]
     }
     </script>
