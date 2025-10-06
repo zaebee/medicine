@@ -15,9 +15,23 @@
     <meta property="og:title" content="Реабилитация ОДА в Мытищах — Клиника «Пчёлка»">
     <meta property="og:description" content="Профессиональная реабилитация опорно-двигательного аппарата. Современные методы, опытные врачи.">
     <meta property="og:url" content="https://medicine.zae.life/demo-mockups/variant-6-innovate/services/rehabilitation.html">
+    <meta property="og:image" content="https://medicine.zae.life/assets/client/logo1.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Клиника «Пчёлка»">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://medicine.zae.life/demo-mockups/variant-6-innovate/services/rehabilitation.html">
+    
+    <!-- Geo-targeting -->
+    <meta name="geo.region" content="RU-MOS">
+    <meta name="geo.placename" content="Мытищи">
+    <meta name="geo.position" content="55.9116;37.7307">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#C9A961">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -76,6 +90,56 @@
             "@type": "MedicalProcedure",
             "name": "Реабилитация ОДА"
         }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Сколько длится курс реабилитации ОДА?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Длительность курса реабилитации индивидуальна и зависит от сложности случая. В среднем базовый курс составляет 10-15 сеансов (2-4 недели). После первичной консультации врач составит персональную программу с точными сроками."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие методы используются в реабилитации?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы используем комплексный подход: лечебная физкультура (ЛФК), физиотерапия, массаж, мануальная терапия. Программа подбирается индивидуально с учетом диагноза, возраста и физической подготовки пациента."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько стоит реабилитация в Мытищах?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Стоимость зависит от программы: разовое занятие ЛФК - 1800₽, массаж - 2000₽, физиотерапия - 1500₽. Курс из 10 сеансов - 25000₽. Окончательная цена определяется после консультации врача."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Нужно ли направление от врача?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Направление не обязательно. Вы можете записаться на первичную консультацию к нашему врачу-реабилитологу, который проведет осмотр, оценит состояние и составит индивидуальную программу восстановления."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Есть ли противопоказания к реабилитации?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Противопоказания определяются индивидуально. Общие ограничения: острые воспалительные процессы, высокая температура, онкология в активной фазе, тяжелые сердечно-сосудистые заболевания. Врач оценит ваше состояние на консультации."
+                }
+            }
+        ]
     }
     </script>
 </head>
@@ -147,22 +211,26 @@
     </header>
 
     <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
+    <div class="breadcrumbs-section">
         <div class="container">
-            <nav aria-label="Хлебные крошки">
-                <ol class="breadcrumb-list">
-                    <li>
-                        <a href="../index.html" class="magnetic-element">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
-                            </svg>
-                            Главная
-                        </a>
-                    </li>
-                    <li><a href="../index.html#services" class="magnetic-element">Услуги</a></li>
-                    <li aria-current="page">Реабилитация ОДА</li>
-                </ol>
+            <nav class="breadcrumbs" aria-label="Навигация">
+                <div class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-link magnetic-element">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                        Главная
+                    </a>
+                </div>
+                <span class="breadcrumb-separator">/</span>
+                <div class="breadcrumb-item">
+                    <a href="../index.html#services" class="breadcrumb-link magnetic-element">Услуги</a>
+                </div>
+                <span class="breadcrumb-separator">/</span>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">Реабилитация ОДА</span>
+                </div>
             </nav>
         </div>
     </div>
@@ -177,9 +245,9 @@
 
         <div class="container">
             <div class="service-hero-content fade-in">
-                <div class="hero-label glass">
-                    <span class="pulse-dot"></span>
-                    Ключевая услуга
+                <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <span class="badge badge-primary">Популярная услуга</span>
+                    <span class="badge badge-success">Высокая эффективность</span>
                 </div>
 
                 <h1 class="service-hero-title">
@@ -278,6 +346,21 @@
                         </div>
                         <h3>Быстрое восстановление</h3>
                         <p>Сокращение сроков реабилитации на 30-40% благодаря современным методикам</p>
+                        <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+                            <span class="tag">
+                                <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                2-4 недели
+                            </span>
+                            <span class="tag">
+                                <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Эффективно
+                            </span>
+                        </div>
                     </div>
 
                     <div class="benefit-card glass-card magnetic-element fade-in">
@@ -735,6 +818,24 @@
                     <div class="doctor-info">
                         <h3>Иванов Иван Иванович</h3>
                         <p class="doctor-position">Врач-реабилитолог, кандидат медицинских наук</p>
+                        <div class="doctor-rating">
+                            <svg viewBox="0 0 24 24" fill="#ffc107" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="#ffc107" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="#ffc107" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="#ffc107" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="#ffc107" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <span style="margin-left: 8px; color: var(--text-light); font-size: 14px;">5.0</span>
+                        </div>
                         <div class="doctor-specialization">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -1184,13 +1285,17 @@
     </footer>
 
     <!-- Appointment Modal -->
+    <!-- Alert Container -->
+    <div class="alert-container" id="alertContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Modal: Appointment Booking -->
     <div class="modal" id="appointmentModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal-backdrop" onclick="closeAppointmentModal()"></div>
+        <div class="modal-overlay" data-modal-close></div>
         <div class="modal-content">
-            <button class="modal-close" onclick="closeAppointmentModal()" aria-label="Закрыть">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <line x1="18" y1="6" x2="6" y2="18"/>
-                    <line x1="6" y1="6" x2="18" y2="18"/>
+            <button class="modal-close" data-modal-close aria-label="Закрыть">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
 
