@@ -242,23 +242,98 @@ p {
 ### Иконки
 
 **Стиль:**
-- Линейные (outline) иконки OR полигональные (в стиле логотипа)
-- Толщина линии: 2px
+- Линейные (outline) иконки в минималистичном стиле
+- Толщина линии: 2px (regular) или 1.5px (light) для премиального вида
 - Цвет: #C9A961 (темно-золотой) или #333333 (темно-серый)
 - Для премиальных секций: #D4AF37 на черном фоне
+- Размеры: 24px (стандарт), 32px (акценты), 48px (hero-секции)
 
-**Рекомендуемые библиотеки:**
-- Font Awesome (бесплатно)
-- Feather Icons (минималистичные)
-- Material Icons (Google)
+**Рекомендуемые библиотеки (в порядке приоритета):**
 
-**Примеры использования:**
-- 📞 Телефон
-- 📧 Email
-- 📍 Адрес
-- ⏰ Время работы
-- 💉 Медицинские услуги
-- 👨‍⚕️ Врачи
+<div class="icon-recommendations">
+  <div class="icon-library-card">
+    <h4>🏆 Lucide Icons (Рекомендуется)</h4>
+    <p><strong>Сайт:</strong> <a href="https://lucide.dev" target="_blank">lucide.dev</a></p>
+    <p><strong>Лицензия:</strong> MIT (бесплатно)</p>
+    <p><strong>Преимущества:</strong></p>
+    <ul>
+      <li>Современная форк Feather Icons с большим набором</li>
+      <li>Минималистичный, премиальный стиль</li>
+      <li>SVG формат - легко менять цвет и размер</li>
+      <li>Отличная медицинская коллекция</li>
+      <li>React, Vue, Angular компоненты</li>
+    </ul>
+    <p><strong>Примеры для клиники:</strong></p>
+    <div class="icon-examples">
+      <code>phone</code>, <code>mail</code>, <code>map-pin</code>, <code>clock</code>, 
+      <code>heart-pulse</code>, <code>stethoscope</code>, <code>activity</code>, 
+      <code>user-round</code>, <code>calendar</code>
+    </div>
+  </div>
+
+  <div class="icon-library-card">
+    <h4>Heroicons</h4>
+    <p><strong>Сайт:</strong> <a href="https://heroicons.com" target="_blank">heroicons.com</a></p>
+    <p><strong>Лицензия:</strong> MIT (бесплатно)</p>
+    <p><strong>Преимущества:</strong></p>
+    <ul>
+      <li>От создателей Tailwind CSS</li>
+      <li>Два стиля: outline (линейные) и solid (заливка)</li>
+      <li>Профессиональный, чистый дизайн</li>
+      <li>Меньший набор, но качественный</li>
+    </ul>
+  </div>
+
+  <div class="icon-library-card">
+    <h4>Phosphor Icons</h4>
+    <p><strong>Сайт:</strong> <a href="https://phosphoricons.com" target="_blank">phosphoricons.com</a></p>
+    <p><strong>Лицензия:</strong> MIT (бесплатно)</p>
+    <p><strong>Преимущества:</strong></p>
+    <ul>
+      <li>6 весов линий (thin, light, regular, bold, fill, duotone)</li>
+      <li>Очень гибкие для разных контекстов</li>
+      <li>Большая медицинская коллекция</li>
+      <li>Duotone стиль для акцентов</li>
+    </ul>
+  </div>
+</div>
+
+**Примеры использования иконок на сайте:**
+
+<div class="icon-usage-examples">
+  <div class="icon-usage-item">
+    <div class="icon-demo" style="color: #C9A961;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </div>
+    <p><strong>Телефон</strong><br>+7 (999) 123-45-67</p>
+  </div>
+
+  <div class="icon-usage-item">
+    <div class="icon-demo" style="color: #C9A961;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+    </div>
+    <p><strong>Адрес</strong><br>г. Мытищи, ул. Примерная, 1</p>
+  </div>
+
+  <div class="icon-usage-item">
+    <div class="icon-demo" style="color: #C9A961;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    </div>
+    <p><strong>Время работы</strong><br>Пн-Пт: 8:00-20:00</p>
+  </div>
+
+  <div class="icon-usage-item">
+    <div class="icon-demo" style="color: #C9A961;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+    </div>
+    <p><strong>Услуги</strong><br>Физиотерапия, ЛФК, УВТ</p>
+  </div>
+</div>
+
+**Не рекомендуется:**
+- ❌ Font Awesome (слишком распространенный, не уникальный)
+- ❌ Material Icons (ассоциируется с Google, не премиальный вид)
+- ❌ Emoji иконки (не профессионально для медицинского сайта)
 
 ### Изображения
 
@@ -898,26 +973,180 @@ textarea.form-input {
 /* Code Example Styles */
 .code-example {
   margin: 20px 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 .code-example h5 {
-  color: #333;
+  color: #C9A961;
   font-size: 16px;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .code-example pre {
-  background: #2d2d2d;
-  color: #f8f8f2;
-  padding: 15px;
+  background: #f8f9fa;
+  color: #2d2d2d;
+  padding: 20px;
   border-radius: 5px;
   overflow-x: auto;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.6;
+  border: 1px solid #e9ecef;
+  margin: 0;
 }
 
 .code-example code {
-  font-family: 'Courier New', monospace;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+  color: #2d2d2d;
+}
+
+/* Syntax highlighting for CSS properties */
+.code-example pre code {
+  display: block;
+}
+
+.code-example pre code::before {
+  content: '';
+  display: block;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #dee2e6;
+}
+
+/* Icon Recommendations Styles */
+.icon-recommendations {
+  display: grid;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.icon-library-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s;
+}
+
+.icon-library-card:first-child {
+  border-color: #C9A961;
+  background: linear-gradient(135deg, #fffbf5 0%, #ffffff 100%);
+}
+
+.icon-library-card:hover {
+  border-color: #C9A961;
+  box-shadow: 0 4px 16px rgba(201,169,97,0.2);
+  transform: translateY(-3px);
+}
+
+.icon-library-card h4 {
+  color: #333;
+  font-size: 18px;
+  margin: 0 0 15px 0;
+}
+
+.icon-library-card ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.icon-library-card li {
+  margin: 5px 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.icon-library-card a {
+  color: #C9A961;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.icon-library-card a:hover {
+  color: #D4AF37;
+  text-decoration: underline;
+}
+
+.icon-examples {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 13px;
+  color: #2d2d2d;
+  line-height: 1.8;
+}
+
+.icon-examples code {
+  background: #fff;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  color: #C9A961;
+  font-weight: 600;
+}
+
+/* Icon Usage Examples */
+.icon-usage-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.icon-usage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.icon-usage-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.icon-demo {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201,169,97,0.1);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.icon-usage-item:hover .icon-demo {
+  background: rgba(201,169,97,0.2);
+  transform: scale(1.1);
+}
+
+.icon-usage-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.icon-usage-item strong {
+  display: block;
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 
 /* Responsive Design */
@@ -936,6 +1165,10 @@ textarea.form-input {
   
   .service-card {
     max-width: 100%;
+  }
+  
+  .icon-usage-examples {
+    grid-template-columns: 1fr;
   }
 }
 </style>
