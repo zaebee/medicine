@@ -1,0 +1,82 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C9A961" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#C9A961" stop-opacity=".1"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(100,100)">
+    <!-- Removed outer circle for transparent background -->
+    <!-- Bee scaled to 1.2 (was 0.75) for larger size -->
+    <g transform="scale(1.2)">
+      <!-- Head -->
+      <g id="h">
+        <circle cy="-45" r="12" stroke="#C9A961" stroke-width="2" fill="url(#g)"/>
+        <circle cx="-5" cy="-47" r="2.5" fill="#C9A961"/>
+        <circle cx="5" cy="-47" r="2.5" fill="#C9A961"/>
+        <circle cx="-4" cy="-48" r="1" fill="#fff" opacity=".6"/>
+        <circle cx="6" cy="-48" r="1" fill="#fff" opacity=".6"/>
+        <path d="M-3-42Q0-40 3-42" stroke="#C9A961" fill="none"/>
+      </g>
+      <!-- Antennae -->
+      <g id="a">
+        <path d="M-8-55Q-15-65-18-72" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="-18" cy="-72" r="2" fill="#C9A961"/>
+        <path d="M8-55Q15-65 18-72" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="18" cy="-72" r="2" fill="#C9A961"/>
+      </g>
+      <!-- Thorax -->
+      <g id="t">
+        <path d="M-25-35L25-35 35-10-35-10Z" stroke="#C9A961" stroke-width="2" fill="url(#g)"/>
+        <line x1="-30" y1="-28" x2="30" y2="-28" stroke="#C9A961" stroke-width="1.5" opacity=".5"/>
+        <line x1="-32" y1="-20" x2="32" y2="-20" stroke="#C9A961" stroke-width="1.5" opacity=".5"/>
+      </g>
+      <!-- Body -->
+      <g id="b">
+        <path d="M-35-10L35-10 20 30 0 45-20 30Z" stroke="#C9A961" stroke-width="2" fill="url(#g)"/>
+        <line x1="-35" y1="-10" x2="35" y2="-10" stroke="#C9A961" stroke-width="3"/>
+        <line x1="-30" y2="0" x2="30" stroke="#C9A961" stroke-width="2.5"/>
+        <line x1="-26" y1="10" x2="26" y2="10" stroke="#C9A961" stroke-width="2.5"/>
+        <line x1="-20" y1="20" x2="20" y2="20" stroke="#C9A961" stroke-width="2"/>
+        <line x1="-12" y1="30" x2="12" y2="30" stroke="#C9A961" stroke-width="1.5"/>
+        <path d="M0 45L0 52" stroke="#C9A961" stroke-width="2"/>
+        <path d="M-2 52L0 56 2 52" fill="#C9A961"/>
+      </g>
+      <!-- Left Wing -->
+      <g id="lw">
+        <path d="M-25-30Q-70-45-90-50-85-30-80-10-60 5-28-5Z" stroke="#C9A961" stroke-width="2" fill="url(#g)" opacity=".3"/>
+        <path d="M-30-25Q-55-35-75-42" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <path d="M-35-20Q-60-25-78-28" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <path d="M-38-12Q-62-10-75-15" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <path d="M-35-5Q-55 0-68-5" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <line x1="-50" y1="-38" x2="-55" y2="-25" stroke="#C9A961" opacity=".6"/>
+        <line x1="-65" y1="-30" x2="-68" y2="-18" stroke="#C9A961" opacity=".6"/>
+      </g>
+      <!-- Right Wing -->
+      <g id="rw">
+        <path d="M25-30Q70-45 90-50 85-30 80-10 60 5 28-5Z" stroke="#C9A961" stroke-width="2" fill="url(#g)" opacity=".3"/>
+        <path d="M30-25Q55-35 75-42" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <path d="M35-20Q60-25 78-28" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <path d="M38-12Q62-10 75-15" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <path d="M35-5Q55 0 68-5" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+        <line x1="50" y1="-38" x2="55" y2="-25" stroke="#C9A961" opacity=".6"/>
+        <line x1="65" y1="-30" x2="68" y2="-18" stroke="#C9A961" opacity=".6"/>
+      </g>
+      <!-- Legs -->
+      <g id="l">
+        <path d="M-28-15L-50-8-58-2" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="-50" cy="-8" r="1.5" fill="#C9A961"/>
+        <path d="M-30-5L-52 8-58 18" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="-52" cy="8" r="1.5" fill="#C9A961"/>
+        <path d="M-25 5L-42 22-45 35" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="-42" cy="22" r="1.5" fill="#C9A961"/>
+        <path d="M28-15L50-8 58-2" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="50" cy="-8" r="1.5" fill="#C9A961"/>
+        <path d="M30-5L52 8 58 18" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="52" cy="8" r="1.5" fill="#C9A961"/>
+        <path d="M25 5L42 22 45 35" stroke="#C9A961" stroke-width="2" fill="none"/>
+        <circle cx="42" cy="22" r="1.5" fill="#C9A961"/>
+      </g>
+    </g>
+  </g>
+</svg>
