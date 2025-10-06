@@ -414,222 +414,8 @@
         </div>
     </section>
 
-    <!-- Interactive Hexagon Services Map -->
-    <section class="hexagon-services" id="services" style="position: relative;">
-        <div class="container">
-            <h2 class="section-title text-center">Интерактивная карта услуг</h2>
-            <p class="section-subtitle text-center">Нажмите на услугу, чтобы узнать подробности</p>
-            
-            <div class="hexagon-grid">
-                <!-- Service Hexagon 1 -->
-                <div class="hex-item" data-service="lfk">
-                    <div class="hex-shape">
-                        <svg viewBox="0 0 100 100" class="hex-svg">
-                            <defs>
-                                <linearGradient id="hexService1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
-                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-                                     fill="url(#hexService1)" stroke="#2C3E50" stroke-width="2"/>
-                        </svg>
-                        <div class="hex-content">
-                            <svg class="hex-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
-                            </svg>
-                            <h3 class="hex-title">ЛФК</h3>
-                            <p class="hex-price">от 1 500 ₽</p>
-                        </div>
-                    </div>
-                    <div class="hex-details">
-                        <h4>Лечебная физкультура (ЛФК)</h4>
-                        <p>Индивидуальные программы восстановления функций опорно-двигательного аппарата</p>
-                        <ul>
-                            <li>Персональный подход</li>
-                            <li>Опытные инструкторы</li>
-                            <li>Современные методики</li>
-                        </ul>
-                        <button onclick="openAppointmentModal('lfk')" class="btn btn-secondary">Записаться</button>
-                    </div>
-                </div>
-
-                <!-- Service Hexagon 2 -->
-                <div class="hex-item" data-service="physiotherapy">
-                    <div class="hex-shape">
-                        <svg viewBox="0 0 100 100" class="hex-svg">
-                            <defs>
-                                <linearGradient id="hexService2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
-                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-                                     fill="url(#hexService2)" stroke="#2C3E50" stroke-width="2"/>
-                        </svg>
-                        <div class="hex-content">
-                            <svg class="hex-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                            </svg>
-                            <h3 class="hex-title">Физиотерапия</h3>
-                            <p class="hex-price">от 800 ₽</p>
-                        </div>
-                    </div>
-                    <div class="hex-details">
-                        <h4>Физиотерапия</h4>
-                        <p>Магнитотерапия, лазеротерапия, электрофорез, УВЧ-терапия</p>
-                        <ul>
-                            <li>Современное оборудование</li>
-                            <li>Безболезненные процедуры</li>
-                            <li>Быстрый эффект</li>
-                        </ul>
-                        <button onclick="openAppointmentModal('physiotherapy')" class="btn btn-secondary">Записаться</button>
-                    </div>
-                </div>
-
-                <!-- Service Hexagon 3 -->
-                <div class="hex-item" data-service="uvt">
-                    <div class="hex-shape">
-                        <svg viewBox="0 0 100 100" class="hex-svg">
-                            <defs>
-                                <linearGradient id="hexService3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
-                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-                                     fill="url(#hexService3)" stroke="#2C3E50" stroke-width="2"/>
-                        </svg>
-                        <div class="hex-content">
-                            <svg class="hex-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M8 12h8"/>
-                                <path d="M12 8v8"/>
-                            </svg>
-                            <h3 class="hex-title">УВТ</h3>
-                            <p class="hex-price">от 2 500 ₽</p>
-                        </div>
-                    </div>
-                    <div class="hex-details">
-                        <h4>Ударно-волновая терапия (УВТ)</h4>
-                        <p>Современный метод лечения суставов и связок без операции</p>
-                        <ul>
-                            <li>Без хирургического вмешательства</li>
-                            <li>Эффективно при хронических болях</li>
-                            <li>Быстрое восстановление</li>
-                        </ul>
-                        <button onclick="openAppointmentModal('uvt')" class="btn btn-secondary">Записаться</button>
-                    </div>
-                </div>
-
-                <!-- Service Hexagon 4 -->
-                <div class="hex-item" data-service="phlebology">
-                    <div class="hex-shape">
-                        <svg viewBox="0 0 100 100" class="hex-svg">
-                            <defs>
-                                <linearGradient id="hexService4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
-                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-                                     fill="url(#hexService4)" stroke="#2C3E50" stroke-width="2"/>
-                        </svg>
-                        <div class="hex-content">
-                            <svg class="hex-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
-                                <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
-                                <circle cx="20" cy="10" r="2"/>
-                            </svg>
-                            <h3 class="hex-title">Флебология</h3>
-                            <p class="hex-price">от 3 500 ₽</p>
-                        </div>
-                    </div>
-                    <div class="hex-details">
-                        <h4>Флебология</h4>
-                        <p>Лечение варикоза, тромбофлебита, венозной недостаточности</p>
-                        <ul>
-                            <li>Современные методы лечения</li>
-                            <li>Безоперационные технологии</li>
-                            <li>Опытные флебологи</li>
-                        </ul>
-                        <button onclick="openAppointmentModal('phlebology')" class="btn btn-secondary">Записаться</button>
-                    </div>
-                </div>
-
-                <!-- Service Hexagon 5 -->
-                <div class="hex-item" data-service="traumatology">
-                    <div class="hex-shape">
-                        <svg viewBox="0 0 100 100" class="hex-svg">
-                            <defs>
-                                <linearGradient id="hexService5" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
-                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-                                     fill="url(#hexService5)" stroke="#2C3E50" stroke-width="2"/>
-                        </svg>
-                        <div class="hex-content">
-                            <svg class="hex-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2v20M2 12h20"/>
-                            </svg>
-                            <h3 class="hex-title">Травматология</h3>
-                            <p class="hex-price">от 3 000 ₽</p>
-                        </div>
-                    </div>
-                    <div class="hex-details">
-                        <h4>Травматология-ортопедия</h4>
-                        <p>Лечение травм и заболеваний опорно-двигательного аппарата</p>
-                        <ul>
-                            <li>Экстренная помощь 24/7</li>
-                            <li>Современная диагностика</li>
-                            <li>Комплексное лечение</li>
-                        </ul>
-                        <button onclick="openAppointmentModal('traumatology')" class="btn btn-secondary">Записаться</button>
-                    </div>
-                </div>
-
-                <!-- Service Hexagon 6 -->
-                <div class="hex-item" data-service="diagnostics">
-                    <div class="hex-shape">
-                        <svg viewBox="0 0 100 100" class="hex-svg">
-                            <defs>
-                                <linearGradient id="hexService6" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
-                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
-                                     fill="url(#hexService6)" stroke="#2C3E50" stroke-width="2"/>
-                        </svg>
-                        <div class="hex-content">
-                            <svg class="hex-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8"/>
-                                <path d="m21 21-4.35-4.35"/>
-                            </svg>
-                            <h3 class="hex-title">Диагностика</h3>
-                            <p class="hex-price">от 1 200 ₽</p>
-                        </div>
-                    </div>
-                    <div class="hex-details">
-                        <h4>Диагностика</h4>
-                        <p>УЗИ суставов и мягких тканей, МРТ, КТ</p>
-                        <ul>
-                            <li>Оборудование экспертного класса</li>
-                            <li>Результаты в день обращения</li>
-                            <li>Опытные диагносты</li>
-                        </ul>
-                        <button onclick="openAppointmentModal('diagnostics')" class="btn btn-secondary">Записаться</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section (Old - Keep for reference) -->
-    <section class="services honeycomb-bg d-none" id="services-old" style="position: relative;">
+    <!-- Services Section -->
+    <section class="services honeycomb-bg" id="services" style="position: relative;">
         <!-- Декоративные hexagons -->
         <div class="hexagon-decoration" style="top: 5%; right: 10%; animation-delay: 0.5s;"></div>
         <div class="hexagon-decoration small" style="bottom: 5%; left: 8%; animation-delay: 1.5s;"></div>
@@ -638,146 +424,6 @@
             <p class="section-subtitle text-center">Реабилитация и лечение опорно-двигательного аппарата, флебология</p>
             
             <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600" alt="Лечебная физкультура (ЛФК)" loading="lazy">
-                        <div class="icon-hexagon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Лечебная физкультура (ЛФК)</h3>
-                        <p class="service-description">Индивидуальные программы восстановления функций опорно-двигательного аппарата</p>
-                        <div class="service-price">
-                            <span class="price-label">Занятие от</span>
-                            <span class="price-value">1 500 ₽</span>
-                        </div>
-                        <button onclick="openAppointmentModal('lfk')" class="btn btn-secondary btn-block">
-                            Записаться
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600" alt="Физиотерапия" loading="lazy">
-                        <div class="icon-hexagon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Физиотерапия</h3>
-                        <p class="service-description">Магнитотерапия, лазеротерапия, электрофорез, УВЧ-терапия</p>
-                        <div class="service-price">
-                            <span class="price-label">Процедура от</span>
-                            <span class="price-value">800 ₽</span>
-                        </div>
-                        <button onclick="openAppointmentModal('physiotherapy')" class="btn btn-secondary btn-block">
-                            Записаться
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=600" alt="Ударно-волновая терапия" loading="lazy">
-                        <div class="icon-hexagon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M8 12h8"/>
-                                <path d="M12 8v8"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Ударно-волновая терапия (УВТ)</h3>
-                        <p class="service-description">Современный метод лечения суставов и связок без операции</p>
-                        <div class="service-price">
-                            <span class="price-label">Сеанс от</span>
-                            <span class="price-value">2 500 ₽</span>
-                        </div>
-                        <button onclick="openAppointmentModal('uvt')" class="btn btn-secondary btn-block">
-                            Записаться
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600" alt="Флебология" loading="lazy">
-                        <div class="icon-hexagon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
-                                <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
-                                <circle cx="20" cy="10" r="2"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Флебология</h3>
-                        <p class="service-description">Лечение варикоза, тромбофлебита, венозной недостаточности</p>
-                        <div class="service-price">
-                            <span class="price-label">Прием от</span>
-                            <span class="price-value">3 500 ₽</span>
-                        </div>
-                        <button onclick="openAppointmentModal('phlebology')" class="btn btn-secondary btn-block">
-                            Записаться
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="Травматология-ортопедия" loading="lazy">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Травматология-ортопедия</h3>
-                        <p class="service-description">Лечение травм и заболеваний опорно-двигательного аппарата</p>
-                        <div class="service-price">
-                            <span class="price-label">Прием от</span>
-                            <span class="price-value">3 000 ₽</span>
-                        </div>
-                        <button onclick="openAppointmentModal('traumatology')" class="btn btn-secondary btn-block">
-                            Записаться
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600" alt="Диагностика" loading="lazy">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Диагностика</h3>
-                        <p class="service-description">УЗИ суставов и мягких тканей, МРТ, КТ</p>
-                        <div class="service-price">
-                            <span class="price-label">Услуги от</span>
-                            <span class="price-value">2 000 ₽</span>
-                        </div>
-                        <button onclick="openAppointmentModal('diagnostics')" class="btn btn-secondary btn-block">
-                            Записаться
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-footer">
-                <p class="services-note">* Точная стоимость определяется после консультации врача</p>
-                <a href="#pricing" class="btn btn-outline">Посмотреть полный прайс-лист</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Doctors Section -->
     <section class="doctors" id="doctors">
@@ -1083,10 +729,16 @@
                 <!-- Program 1: Накопительная система -->
                 <div class="loyalty-card loyalty-card-featured">
                     <div class="loyalty-icon">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
-                            <path d="M40 16l6 12 13 2-9.5 9 2.5 13-12-6-12 6 2.5-13L21 30l13-2 6-12z" fill="#FFD700" stroke="#FFC700" stroke-width="2"/>
-                            <text x="40" y="48" text-anchor="middle" font-size="20" font-weight="bold" fill="#2C3E50">%</text>
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                                <linearGradient id="hexLoyalty1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.3" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="url(#hexLoyalty1)" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M50 24l6 12 13 2-9.5 9 2.5 13-12-6-12 6 2.5-13L31 38l13-2 6-12z" fill="#FFD700" stroke="#FFC700" stroke-width="2"/>
+                            <text x="50" y="68" text-anchor="middle" font-size="24" font-weight="bold" fill="#2C3E50">%</text>
                         </svg>
                     </div>
                     <h3 class="loyalty-title">Накопительная система скидок</h3>
@@ -1105,12 +757,18 @@
                 <!-- Program 2: Семейная программа -->
                 <div class="loyalty-card">
                     <div class="loyalty-icon">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
-                            <circle cx="30" cy="32" r="8" stroke="#FFD700" stroke-width="2"/>
-                            <circle cx="50" cy="32" r="8" stroke="#FFD700" stroke-width="2"/>
-                            <circle cx="40" cy="50" r="6" stroke="#FFD700" stroke-width="2"/>
-                            <path d="M22 48c0-4 4-8 8-8M58 48c0-4-4-8-8-8M34 60c0-3 3-6 6-6M46 60c0-3-3-6-6-6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                                <linearGradient id="hexLoyalty2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.3" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="url(#hexLoyalty2)" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="38" cy="38" r="8" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="62" cy="38" r="8" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="50" cy="58" r="6" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M30 54c0-4 4-8 8-8M70 54c0-4-4-8-8-8M42 70c0-3 3-6 6-6M58 70c0-3-3-6-6-6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <h3 class="loyalty-title">Семейная программа</h3>
@@ -1129,12 +787,18 @@
                 <!-- Program 3: Корпоративное обслуживание -->
                 <div class="loyalty-card">
                     <div class="loyalty-icon">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
-                            <rect x="24" y="28" width="32" height="28" rx="2" stroke="#FFD700" stroke-width="2"/>
-                            <path d="M32 28v-4a8 8 0 0116 0v4" stroke="#FFD700" stroke-width="2"/>
-                            <circle cx="40" cy="42" r="4" fill="#FFD700"/>
-                            <path d="M40 46v6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                                <linearGradient id="hexLoyalty3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.3" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="url(#hexLoyalty3)" stroke="#FFD700" stroke-width="2"/>
+                            <rect x="32" y="36" width="36" height="32" rx="2" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M42 36v-4a8 8 0 0116 0v4" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="50" cy="52" r="4" fill="#FFD700"/>
+                            <path d="M50 56v6" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <h3 class="loyalty-title">Корпоративное обслуживание</h3>
@@ -1153,11 +817,17 @@
                 <!-- Program 4: Подарочные сертификаты -->
                 <div class="loyalty-card">
                     <div class="loyalty-icon">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="36" fill="#FFF8E1"/>
-                            <rect x="20" y="32" width="40" height="24" rx="2" stroke="#FFD700" stroke-width="2"/>
-                            <path d="M32 24c0-4 2-8 8-8s8 4 8 8M40 16v16" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M28 40h24M28 48h16" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                                <linearGradient id="hexLoyalty4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.3" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="url(#hexLoyalty4)" stroke="#FFD700" stroke-width="2"/>
+                            <rect x="28" y="42" width="44" height="26" rx="2" stroke="#FFD700" stroke-width="2"/>
+                            <path d="M42 32c0-4 2-8 8-8s8 4 8 8M50 24v18" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M36 52h28M36 60h20" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <h3 class="loyalty-title">Подарочные сертификаты</h3>
