@@ -303,3 +303,30 @@ require_once get_template_directory() . '/inc/acf-fields.php';
  * Include AJAX handlers.
  */
 require_once get_template_directory() . '/inc/ajax-handlers.php';
+
+/**
+ * Add theme customization options to the Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function pchelka_customize_register( $wp_customize ) {
+    // Add a section for section titles
+    $wp_customize->add_section( 'pchelka_section_titles', array(
+        'title'      => __( 'Section Titles', 'pchelka' ),
+        'priority'   => 30,
+    ) );
+
+    // Add setting for Services section title
+    $wp_customize->add_setting( 'services_section_title', array(
+        'default'   => __( 'Наши услуги', 'pchelka' ),
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'services_section_title', array(
+        'label'      => __( 'Services Section Title', 'pchelka' ),
+        'section'    => 'pchelka_section_titles',
+        'type'       => 'text',
+    ) );
+}
+add_action( 'customize_register', 'pchelka_customize_register' );

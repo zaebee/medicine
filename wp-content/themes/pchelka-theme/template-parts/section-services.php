@@ -14,7 +14,7 @@ $services_query = new WP_Query( $args );
 
 <section class="services" id="services">
     <div class="container">
-        <h2 class="section-title text-center">Наши услуги</h2>
+        <h2 class="section-title text-center"><?php echo esc_html( get_theme_mod( 'services_section_title', __( 'Наши услуги', 'pchelka' ) ) ); ?></h2>
         <p class="section-subtitle text-center">Полный спектр медицинских услуг с прозрачным ценообразованием</p>
 
         <?php if ( $services_query->have_posts() ) : ?>
