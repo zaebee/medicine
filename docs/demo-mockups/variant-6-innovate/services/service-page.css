@@ -11,7 +11,7 @@
 
 /* === BREADCRUMBS === */
 .breadcrumbs {
-    margin-top: 80px;
+    margin-top: 100px;
     padding: 20px 0;
     background: var(--bg-light);
     border-bottom: 1px solid rgba(201, 169, 97, 0.1);
@@ -842,7 +842,7 @@
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     .breadcrumbs {
-        margin-top: 70px;
+        margin-top: 90px;
     }
 
     .service-hero {
