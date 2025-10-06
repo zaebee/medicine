@@ -34,19 +34,19 @@ footer_text: "Интерактивная карта документации с 
 ## 🚀 Быстрый старт
 
 ### Для разработчика (начать работу):
-1. 📋 [Главная документация]({{ '/readme' | relative_url }}) - обзор проекта
+1. 📋 [Главная документация]({{ '/readme/' | relative_url }}) - обзор проекта
 2. 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }}) - пошаговая установка
 3. 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }}) - технические детали
-4. ✅ [Чек-лист установки]({{ '/deployment/wordpress_setup_checklist.html' | relative_url }}) - проверка перед запуском
+4. ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }}) - проверка перед запуском
 
 ### Для администратора клиники:
 1. 👤 [User Guide (RU)]({{ '/ru/user-guide/' | relative_url }}) - управление контентом
-2. 🏥 [Каталог услуг]({{ '/business/services_catalog.html' | relative_url }}) - список услуг для добавления
+2. 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }}) - список услуг для добавления
 
 ### Для менеджера проекта:
 1. 💰 [Цены WordPress]({{ '/business/wordpress-pricing-simple/' | relative_url }}) - коммерческое предложение
-2. 📋 [Задачи и оценки]({{ '/development/tasks_estimates.html' | relative_url }}) - планирование
-3. 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }}) - workflow
+2. 📋 [Задачи и оценки]({{ '/development/tasks-estimates/' | relative_url }}) - планирование
+3. 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }}) - workflow
 
 ---
 
@@ -57,13 +57,13 @@ footer_text: "Интерактивная карта документации с 
 
 - 📄 [Коммерческий бриф]({{ '/business/brief/' | relative_url }}) - Core
 - 📊 [Данные проекта (JSON)]({{ '/business/project_data.json' | relative_url }}) - API
-- ❓ [Вопросы клиенту]({{ '/business/client_questions.html' | relative_url }}) - Priority
-- 📋 [Анализ ответов клиента]({{ '/business/client_analysis.html' | relative_url }}) - Analysis
-- 🏥 [Каталог услуг]({{ '/business/services_catalog.html' | relative_url }}) - Content
+- ❓ [Вопросы клиенту]({{ '/business/client-questions/' | relative_url }}) - Priority
+- 📋 [Анализ ответов клиента]({{ '/business/client-analysis/' | relative_url }}) - Analysis
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }}) - Content
 - 💰 [Цены WordPress (кратко)]({{ '/business/wordpress-pricing-simple/' | relative_url }}) - Pricing ⭐
-- 📊 [Расчет стоимости WordPress]({{ '/business/wordpress_pricing_calculation.html' | relative_url }}) - Detailed
+- 📊 [Расчет стоимости WordPress]({{ '/business/wordpress-pricing-calculation/' | relative_url }}) - Detailed
 - 🔍 [Анализ бюджетного пакета]({{ '/business/wordpress-budget-analysis/' | relative_url }}) - Analysis ⭐
-- 📝 [Смета WordPress MVP]({{ '/business/wordpress_lite_mvp_estimate.html' | relative_url }}) - Estimate
+- 📝 [Смета WordPress MVP]({{ '/business/wordpress-lite-mvp-estimate/' | relative_url }}) - Estimate
 
 ### 🔧 Техническая архитектура
 **Техническое решение, стек и безопасность**
@@ -71,30 +71,30 @@ footer_text: "Интерактивная карта документации с 
 - 🏗️ [Архитектура WordPress]({{ '/technical/wordpress-architecture/' | relative_url }}) - Core ⭐
 - ⚙️ [Обоснование выбора WordPress]({{ '/technical/wordpress-solution/' | relative_url }}) - Decision ⭐
 - 🏛️ [Архитектура Django]({{ '/technical/technical-architecture/' | relative_url }}) - Reference
-- 📝 [Сравнение CMS]({{ '/technical/cms_comparison.html' | relative_url }}) - Analysis
-- 🛡️ [Безопасность и соответствие]({{ '/technical/security_compliance.html' | relative_url }}) - Security
+- 📝 [Сравнение CMS]({{ '/technical/cms-comparison/' | relative_url }}) - Analysis
+- 🛡️ [Безопасность и соответствие]({{ '/technical/security-compliance/' | relative_url }}) - Security
 
 ### 🎨 Дизайн и UX
 **Пользовательский опыт и дизайн-требования**
 
 - 🎨 [UX/UI требования]({{ '/design/ux-design-requirements/' | relative_url }}) - Design
-- 🎨 [Гайд по брендингу]({{ '/design/branding_guidelines.html' | relative_url }}) - Branding ⭐
-- 👤 [Карта пользователей]({{ '/user-features-map' | relative_url }}) - Interactive
+- 🎨 [Гайд по брендингу]({{ '/design/branding-guidelines/' | relative_url }}) - Branding ⭐
+- 👤 [Карта пользователей]({{ '/user-features-map/' | relative_url }}) - Interactive
 
 ### 👩‍💻 Разработка
 **Планирование задач и шаблоны документов**
 
-- 📋 [Задачи и оценки]({{ '/development/tasks_estimates.html' | relative_url }}) - Planning
+- 📋 [Задачи и оценки]({{ '/development/tasks-estimates/' | relative_url }}) - Planning
 - 📑 [Шаблоны документов]({{ '/development/brd-prd-frd-templates/' | relative_url }}) - Templates
-- 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }}) - Interactive
+- 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }}) - Interactive
 
 ### 🚀 Деплой и маркетинг
 **Тестирование, развертывание и продвижение**
 
-- ✅ [Чек-лист установки WordPress]({{ '/deployment/wordpress_setup_checklist.html' | relative_url }}) - Setup ⭐
+- ✅ [Чек-лист установки WordPress]({{ '/deployment/wordpress-setup-checklist/' | relative_url }}) - Setup ⭐
 - 🧪 [Тестирование и приемка]({{ '/deployment/testing-acceptance/' | relative_url }}) - QA
 - 📈 [SEO и маркетинг]({{ '/deployment/seo-marketing/' | relative_url }}) - Marketing
-- 🗺️ [SEO Sitemap]({{ '/deployment/seo_sitemap.html' | relative_url }}) - SEO
+- 🗺️ [SEO Sitemap]({{ '/deployment/seo-sitemap/' | relative_url }}) - SEO
 
 ### 📚 Руководства
 **Пошаговые инструкции для разработчиков и пользователей**
@@ -112,11 +112,11 @@ footer_text: "Интерактивная карта документации с 
 ### 🌐 Интерактивные страницы
 **Специальные визуализации и диаграммы**
 
-- 🏗️ [Обзор архитектуры]({{ '/architecture-overview' | relative_url }}) - Visual ⭐
-- 📖 [Главная документация]({{ '/readme' | relative_url }}) - Overview
+- 🏗️ [Обзор архитектуры]({{ '/architecture-overview/' | relative_url }}) - Visual ⭐
+- 📖 [Главная документация]({{ '/readme/' | relative_url }}) - Overview
 - 📋 [Карта документации]({{ '/documentation-map/' | relative_url }}) - Navigation
-- 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }}) - Workflow
-- 📚 [Глоссарий]({{ '/glossary.html' | relative_url }}) - Terms
+- 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }}) - Workflow
+- 📚 [Глоссарий]({{ '/glossary/' | relative_url }}) - Terms
 
 ## 🗺️ Диаграмма зависимостей документов
 
@@ -172,32 +172,32 @@ graph TD
 
 ### 🏢 Project Manager
 **Ключевые документы:**
-- 📋 [Главная документация]({{ '/readme' | relative_url }})
+- 📋 [Главная документация]({{ '/readme/' | relative_url }})
 - 💼 [Бизнес-бриф]({{ '/business/brief/' | relative_url }})
 - 💰 [Цены WordPress]({{ '/business/wordpress-pricing-simple/' | relative_url }})
-- 📋 [Задачи и оценки]({{ '/development/tasks_estimates.html' | relative_url }})
-- 🔄 [Рабочий процесс]({{ '/development-workflow' | relative_url }})
+- 📋 [Задачи и оценки]({{ '/development/tasks-estimates/' | relative_url }})
+- 🔄 [Рабочий процесс]({{ '/development-workflow/' | relative_url }})
 
 ### 🎨 UI/UX Designer
 **Ключевые документы:**
 - 🎨 [UX/UI требования]({{ '/design/ux-design-requirements/' | relative_url }})
-- 🎨 [Гайд по брендингу]({{ '/design/branding_guidelines.html' | relative_url }})
-- 👤 [Карта пользователей]({{ '/user-features-map' | relative_url }})
-- 🏥 [Каталог услуг]({{ '/business/services_catalog.html' | relative_url }})
+- 🎨 [Гайд по брендингу]({{ '/design/branding-guidelines/' | relative_url }})
+- 👤 [Карта пользователей]({{ '/user-features-map/' | relative_url }})
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }})
 
 ### 👩‍💻 WordPress Developer
 **Ключевые документы:**
 - 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }}) ⭐
 - 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }}) ⭐
 - ⚙️ [Обоснование WordPress]({{ '/technical/wordpress-solution/' | relative_url }})
-- ✅ [Чек-лист установки]({{ '/deployment/wordpress_setup_checklist.html' | relative_url }})
-- 🛡️ [Безопасность]({{ '/technical/security_compliance.html' | relative_url }})
+- ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }})
+- 🛡️ [Безопасность]({{ '/technical/security-compliance/' | relative_url }})
 
 ### ⚙️ Backend Developer (Django - reference)
 **Ключевые документы:**
 - 🏛️ [Архитектура Django]({{ '/technical/technical-architecture/' | relative_url }})
-- 📝 [Сравнение CMS]({{ '/technical/cms_comparison.html' | relative_url }})
-- 🛡️ [Безопасность]({{ '/technical/security_compliance.html' | relative_url }})
+- 📝 [Сравнение CMS]({{ '/technical/cms-comparison/' | relative_url }})
+- 🛡️ [Безопасность]({{ '/technical/security-compliance/' | relative_url }})
 
 ### 🌐 Frontend Developer
 **Ключевые документы:**
@@ -208,24 +208,24 @@ graph TD
 ### 🧪 QA Engineer
 **Ключевые документы:**
 - 🧪 [Тестирование]({{ '/deployment/testing-acceptance/' | relative_url }})
-- ✅ [Чек-лист установки]({{ '/deployment/wordpress_setup_checklist.html' | relative_url }})
+- ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }})
 - 🔍 [PR #8 Review]({{ '/reviews/pr-8/' | relative_url }})
 
 ### 🚀 DevOps Engineer
 **Ключевые документы:**
 - 🏗️ [WordPress Архитектура]({{ '/technical/wordpress-architecture/' | relative_url }})
-- ✅ [Чек-лист установки]({{ '/deployment/wordpress_setup_checklist.html' | relative_url }})
-- 🛡️ [Безопасность]({{ '/technical/security_compliance.html' | relative_url }})
+- ✅ [Чек-лист установки]({{ '/deployment/wordpress-setup-checklist/' | relative_url }})
+- 🛡️ [Безопасность]({{ '/technical/security-compliance/' | relative_url }})
 - 👩‍💻 [Developer Guide]({{ '/developer-guide/' | relative_url }})
 
 ### 📈 Marketing Specialist
 **Ключевые документы:**
 - 📈 [SEO и маркетинг]({{ '/deployment/seo-marketing/' | relative_url }})
-- 🗺️ [SEO Sitemap]({{ '/deployment/seo_sitemap.html' | relative_url }})
-- 🏥 [Каталог услуг]({{ '/business/services_catalog.html' | relative_url }})
+- 🗺️ [SEO Sitemap]({{ '/deployment/seo-sitemap/' | relative_url }})
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }})
 
 ### 👤 Clinic Administrator
 **Ключевые документы:**
 - 👤 [User Guide]({{ '/user-guide/' | relative_url }}) ⭐
 - 👤 [Руководство пользователя (RU)]({{ '/ru/user-guide/' | relative_url }}) ⭐
-- 🏥 [Каталог услуг]({{ '/business/services_catalog.html' | relative_url }})
+- 🏥 [Каталог услуг]({{ '/business/services-catalog/' | relative_url }})
