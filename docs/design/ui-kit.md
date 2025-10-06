@@ -2421,4 +2421,102 @@ document.body.setAttribute('data-theme', savedTheme);</code></pre>
     margin: 0 auto;
   }
 }
+
+/* Dark Theme Support */
+[data-theme="dark"] .component-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .component-section h4 {
+  color: #C9A961;
+  border-bottom-color: #C9A961;
+}
+
+[data-theme="dark"] .button-example,
+[data-theme="dark"] .form-example-item,
+[data-theme="dark"] .code-block {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .component-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .ui-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ui-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] .code-block pre {
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .code-block code {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-hero-title,
+[data-theme="dark"] .ui-hero-subtitle,
+[data-theme="dark"] .ui-section-title,
+[data-theme="dark"] .ui-section-subtitle {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .layout-example {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+[data-theme="dark"] .ui-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .ui-card-title,
+[data-theme="dark"] .ui-card-specialty,
+[data-theme="dark"] .ui-card-info-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ui-card-text,
+[data-theme="dark"] .ui-card-info-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .ui-badge {
+  background: rgba(201, 169, 97, 0.2);
+  color: #D4AF37;
+}
+
+[data-theme="dark"] .ui-alert {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-list-icon li,
+[data-theme="dark"] .ui-list-numbered li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-feature-content h4 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ui-feature-content p {
+  color: rgba(255, 255, 255, 0.7);
+}
 </style>
