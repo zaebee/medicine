@@ -1950,7 +1950,7 @@ img {
 
 .modal-content {
     position: relative;
-    background: var(--bg-white);
+    background: var(--background);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     max-width: 600px;
@@ -1959,6 +1959,61 @@ img {
     overflow-y: auto;
     z-index: calc(var(--z-modal) + 1);
     box-shadow: var(--shadow-xl);
+    
+    /* Скругление углов со скроллом */
+    overflow: hidden;
+}
+
+/* Внутренний контейнер для скролла */
+.modal-content > * {
+    /* Контент внутри модалки */
+}
+
+/* Добавляем скролл только для контента */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-title,
+.modal-description {
+    flex-shrink: 0;
+}
+
+.modal-form {
+    overflow-y: auto;
+    padding-right: 8px;
+    max-height: calc(90vh - 200px);
+}
+
+/* Стилизация скроллбара */
+.modal-content::-webkit-scrollbar,
+.modal-form::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track,
+.modal-form::-webkit-scrollbar-track {
+    background: var(--background-light);
+    border-radius: var(--radius-sm);
+}
+
+.modal-content::-webkit-scrollbar-thumb,
+.modal-form::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-sm);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover,
+.modal-form::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+/* Firefox scrollbar */
+.modal-content,
+.modal-form {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--background-light);
 }
 
 .modal-close {
