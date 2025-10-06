@@ -13,8 +13,8 @@ $loyalty_query = new WP_Query( $args );
 ?>
 <section class="loyalty" id="loyalty">
     <div class="container">
-        <h2 class="section-title text-center">Программы лояльности</h2>
-        <p class="section-subtitle text-center">Выгодные условия для постоянных пациентов и их семей</p>
+        <h2 class="section-title text-center"><?php esc_html_e( 'Программы лояльности', 'pchelka' ); ?></h2>
+        <p class="section-subtitle text-center"><?php esc_html_e( 'Выгодные условия для постоянных пациентов и их семей', 'pchelka' ); ?></p>
 
         <?php if ( $loyalty_query->have_posts() ) : ?>
             <div class="loyalty-grid">
@@ -24,7 +24,7 @@ $loyalty_query = new WP_Query( $args );
                             <?php if ( has_post_thumbnail() ) {
                                 the_post_thumbnail('thumbnail');
                             } else { ?>
-                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="36" fill="#FFF8E1"/><path d="M40 16l6 12 13 2-9.5 9 2.5 13-12-6-12 6 2.5-13L21 30l13-2 6-12z" fill="#FFD700" stroke="#FFC700" stroke-width="2"/><text x="40" y="48" text-anchor="middle" font-size="20" font-weight="bold" fill="#2C3E50">%</text></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M12 22l-2-13-2-13"/><path d="M12 22l2-13 2-13"/><path d="M2 9h20"/></svg>
                             <?php } ?>
                         </div>
                         <h3 class="loyalty-title"><?php the_title(); ?></h3>
@@ -41,22 +41,22 @@ $loyalty_query = new WP_Query( $args );
                         <?php endif; ?>
 
                         <button onclick="openLoyaltyModal('<?php echo esc_attr(get_post_field( 'post_name', get_post() )); ?>')" class="btn <?php if (has_tag('featured')) { echo 'btn-primary'; } else { echo 'btn-secondary'; } ?> btn-block">
-                           Подключить программу
+                           <?php esc_html_e( 'Подключить программу', 'pchelka' ); ?>
                         </button>
                     </div>
                 <?php endwhile; ?>
             </div>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>No loyalty programs found.</p>
+            <p><?php esc_html_e( 'Программы лояльности не найдены.', 'pchelka' ); ?></p>
         <?php endif; ?>
 
         <div class="loyalty-footer">
             <div class="loyalty-cta">
-                <h3>Не нашли подходящую программу?</h3>
-                <p>Мы разработаем индивидуальное предложение специально для вас</p>
+                <h3><?php esc_html_e( 'Не нашли подходящую программу?', 'pchelka' ); ?></h3>
+                <p><?php esc_html_e( 'Мы разработаем индивидуальное предложение специально для вас', 'pchelka' ); ?></p>
                 <button onclick="openQuestionModal()" class="btn btn-primary">
-                    Получить консультацию
+                    <?php esc_html_e( 'Получить консультацию', 'pchelka' ); ?>
                 </button>
             </div>
         </div>

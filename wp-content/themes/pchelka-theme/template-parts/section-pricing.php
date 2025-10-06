@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying the pricing section
+ * Template part for displaying the dynamic pricing section
  *
  * @package Pchelka
  */
@@ -8,13 +8,119 @@
 ?>
 <section class="pricing" id="pricing">
     <div class="container">
-        <h2 class="section-title text-center">Прозрачное ценообразование</h2>
-        <p class="section-subtitle text-center">Честные цены без скрытых платежей</p>
-        <div class="pricing-tabs"><button class="pricing-tab active" data-category="consultations">Консультации</button><button class="pricing-tab" data-category="diagnostics">Диагностика</button><button class="pricing-tab" data-category="procedures">Процедуры</button><button class="pricing-tab" data-category="programs">Программы</button></div>
-        <div class="pricing-content active" data-category="consultations"><div class="pricing-table"><div class="pricing-row"><div class="pricing-service"><h4>Прием терапевта (первичный)</h4><p>Осмотр, сбор анамнеза, назначение обследований</p></div><div class="pricing-price">2 500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Прием терапевта (повторный)</h4><p>Контрольный осмотр, коррекция лечения</p></div><div class="pricing-price">2 000 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Прием кардиолога</h4><p>Консультация с ЭКГ и расшифровкой</p></div><div class="pricing-price">3 500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Прием невролога</h4><p>Неврологический осмотр, назначение лечения</p></div><div class="pricing-price">3 000 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Прием эндокринолога</h4><p>Консультация по эндокринным заболеваниям</p></div><div class="pricing-price">3 200 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Прием педиатра</h4><p>Осмотр ребенка, консультация родителей</p></div><div class="pricing-price">2 800 ₽</div></div></div></div>
-        <div class="pricing-content" data-category="diagnostics"><div class="pricing-table"><div class="pricing-row"><div class="pricing-service"><h4>ЭКГ (электрокардиограмма)</h4><p>12 отведений с расшифровкой</p></div><div class="pricing-price">1 500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>УЗИ органов брюшной полости</h4><p>Печень, желчный пузырь, поджелудочная, селезенка</p></div><div class="pricing-price">3 000 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>УЗИ сердца (ЭхоКГ)</h4><p>С допплерографией и заключением кардиолога</p></div><div class="pricing-price">4 500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Общий анализ крови</h4><p>Развернутый, результат в день обращения</p></div><div class="pricing-price">800 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Биохимический анализ крови</h4><p>Базовый профиль (12 показателей)</p></div><div class="pricing-price">2 500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Рентгенография</h4><p>Цифровая, 1 проекция</p></div><div class="pricing-price">2 000 ₽</div></div></div></div>
-        <div class="pricing-content" data-category="procedures"><div class="pricing-table"><div class="pricing-row"><div class="pricing-service"><h4>Внутривенная инъекция</h4><p>Без стоимости препарата</p></div><div class="pricing-price">500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Внутримышечная инъекция</h4><p>Без стоимости препарата</p></div><div class="pricing-price">300 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Капельница (инфузионная терапия)</h4><p>Без стоимости препаратов, до 400 мл</p></div><div class="pricing-price">1 500 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Забор крови из вены</h4><p>Для лабораторных исследований</p></div><div class="pricing-price">300 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Измерение артериального давления</h4><p>С консультацией медсестры</p></div><div class="pricing-price">200 ₽</div></div><div class="pricing-row"><div class="pricing-service"><h4>Перевязка</h4><p>Без стоимости материалов</p></div><div class="pricing-price">800 ₽</div></div></div></div>
-        <div class="pricing-content" data-category="programs"><div class="pricing-packages"><div class="package-card"><div class="package-badge">Популярно</div><h3 class="package-title">Базовое обследование</h3><div class="package-price"><span class="price-value">12 000 ₽</span><span class="price-old">15 000 ₽</span></div><ul class="package-includes"><li>Прием терапевта</li><li>ЭКГ с расшифровкой</li><li>Общий анализ крови</li><li>Биохимический анализ крови</li><li>Общий анализ мочи</li><li>УЗИ органов брюшной полости</li></ul><button onclick="openAppointmentModal('basic')" class="btn btn-secondary btn-block">Записаться</button></div><div class="package-card package-card-featured"><div class="package-badge">Рекомендуем</div><h3 class="package-title">Комплексное обследование</h3><div class="package-price"><span class="price-value">25 000 ₽</span><span class="price-old">32 000 ₽</span></div><ul class="package-includes"><li>Все из базового пакета</li><li>Прием кардиолога</li><li>ЭхоКГ (УЗИ сердца)</li><li>УЗИ щитовидной железы</li><li>Гормоны щитовидной железы</li><li>Рентген грудной клетки</li><li>Консультация эндокринолога</li></ul><button onclick="openAppointmentModal('complex')" class="btn btn-primary btn-block">Записаться</button></div><div class="package-card"><div class="package-badge">Premium</div><h3 class="package-title">VIP Check-up</h3><div class="package-price"><span class="price-value">45 000 ₽</span><span class="price-old">60 000 ₽</span></div><ul class="package-includes"><li>Все из комплексного пакета</li><li>Прием невролога</li><li>МРТ головного мозга</li><li>Расширенный онкоскрининг</li><li>Генетическое тестирование</li><li>Консультация диетолога</li><li>Индивидуальная программа здоровья</li></ul><button onclick="openAppointmentModal('vip')" class="btn btn-secondary btn-block">Записаться</button></div></div></div>
-        <div class="pricing-footer"><div class="pricing-calculator"><h3>Рассчитайте стоимость вашего обследования</h3><p>Выберите необходимые услуги и получите точную стоимость с учетом скидок</p><button onclick="openCalculatorModal()" class="btn btn-primary">Открыть калькулятор</button></div><div class="pricing-note"><p><strong>Важно:</strong> Цены актуальны на январь 2024 года. Для держателей карт лояльности действуют дополнительные скидки.</p><a href="#" onclick="downloadPriceList(); return false;" class="btn btn-outline">Скачать полный прайс-лист (PDF)</a></div></div>
+        <h2 class="section-title text-center"><?php esc_html_e( 'Прозрачное ценообразование', 'pchelka' ); ?></h2>
+        <p class="section-subtitle text-center"><?php esc_html_e( 'Честные цены без скрытых платежей', 'pchelka' ); ?></p>
+
+        <?php
+        $price_categories = get_terms( array(
+            'taxonomy' => 'price_category',
+            'hide_empty' => true,
+        ) );
+        $price_packages_query = new WP_Query(array(
+            'post_type' => 'price_package',
+            'posts_per_page' => 3, // Limit to 3 packages
+        ));
+
+        if ( ! empty( $price_categories ) || $price_packages_query->have_posts() ) :
+        ?>
+            <div class="pricing-tabs">
+                <?php
+                $first = true;
+                foreach ( $price_categories as $category ) :
+                ?>
+                    <button class="pricing-tab <?php if ($first) { echo 'active'; $first = false; } ?>" data-category="<?php echo esc_attr( $category->slug ); ?>">
+                        <?php echo esc_html( $category->name ); ?>
+                    </button>
+                <?php endforeach; ?>
+
+                <?php if ( $price_packages_query->have_posts() ) : ?>
+                    <button class="pricing-tab" data-category="programs"><?php esc_html_e( 'Программы', 'pchelka' ); ?></button>
+                <?php endif; ?>
+            </div>
+
+            <?php
+            $first = true;
+            foreach ( $price_categories as $category ) :
+                $args = array(
+                    'post_type' => 'price_item',
+                    'posts_per_page' => -1,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'price_category',
+                            'field'    => 'slug',
+                            'terms'    => $category->slug,
+                        ),
+                    ),
+                );
+                $price_items_query = new WP_Query( $args );
+            ?>
+                <div class="pricing-content <?php if ($first) { echo 'active'; $first = false; } ?>" data-category="<?php echo esc_attr( $category->slug ); ?>">
+                    <?php if ( $price_items_query->have_posts() ) : ?>
+                        <div class="pricing-table">
+                            <?php while ( $price_items_query->have_posts() ) : $price_items_query->the_post(); ?>
+                                <div class="pricing-row">
+                                    <div class="pricing-service">
+                                        <h4><?php the_title(); ?></h4>
+                                        <?php if(get_the_content()): ?>
+                                            <p><?php the_content(); ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="pricing-price">
+                                        <?php if ( get_field('price') ) : ?>
+                                            <?php the_field('price'); ?> ₽
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                        <?php wp_reset_postdata(); ?>
+                    <?php else:
+                        esc_html_e( 'В этой категории пока нет услуг.', 'pchelka' );
+                    endif; ?>
+                </div>
+            <?php endforeach; ?>
+
+            <?php if ( $price_packages_query->have_posts() ) : ?>
+                <div class="pricing-content" data-category="programs">
+                    <div class="pricing-packages">
+                        <?php while ( $price_packages_query->have_posts() ) : $price_packages_query->the_post(); ?>
+                            <div class="package-card <?php if (has_tag('featured')) { echo 'package-card-featured'; } ?>">
+                                <?php if (has_tag('popular')) : ?><div class="package-badge"><?php esc_html_e( 'Популярно', 'pchelka' ); ?></div><?php endif; ?>
+                                <?php if (has_tag('recommended')) : ?><div class="package-badge"><?php esc_html_e( 'Рекомендуем', 'pchelka' ); ?></div><?php endif; ?>
+                                <h3 class="package-title"><?php the_title(); ?></h3>
+                                <div class="package-price">
+                                    <?php if ( get_field('price') ) : ?><span class="price-value"><?php the_field('price'); ?> ₽</span><?php endif; ?>
+                                    <?php if ( get_field('old_price') ) : ?><span class="price-old"><?php the_field('old_price'); ?> ₽</span><?php endif; ?>
+                                </div>
+                                <?php if( have_rows('included_services') ): ?>
+                                    <ul class="package-includes">
+                                    <?php while( have_rows('included_services') ) : the_row(); ?>
+                                        <li><?php echo esc_html(get_sub_field('service_item')); ?></li>
+                                    <?php endwhile; ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <button onclick="openAppointmentModal('<?php echo esc_attr(get_post_field( 'post_name', get_post() )); ?>')" class="btn btn-secondary btn-block"><?php esc_html_e( 'Записаться', 'pchelka' ); ?></button>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                    <?php wp_reset_postdata(); ?>
+                </div>
+            <?php endif; ?>
+
+        <?php else : ?>
+            <p><?php esc_html_e( 'Прайс-лист в данный момент обновляется.', 'pchelka' ); ?></p>
+        <?php endif; ?>
+
+        <div class="pricing-footer">
+            <div class="pricing-calculator">
+                <h3><?php esc_html_e( 'Рассчитайте стоимость вашего обследования', 'pchelka' ); ?></h3>
+                <p><?php esc_html_e( 'Выберите необходимые услуги и получите точную стоимость с учетом скидок', 'pchelka' ); ?></p>
+                <button onclick="openCalculatorModal()" class="btn btn-primary"><?php esc_html_e( 'Открыть калькулятор', 'pchelka' ); ?></button>
+            </div>
+            <div class="pricing-note">
+                <p><strong><?php esc_html_e( 'Важно:', 'pchelka' ); ?></strong> <?php esc_html_e( 'Цены актуальны на январь 2024 года. Для держателей карт лояльности действуют дополнительные скидки.', 'pchelka' ); ?></p>
+                <a href="#" onclick="downloadPriceList(); return false;" class="btn btn-outline"><?php esc_html_e( 'Скачать полный прайс-лист (PDF)', 'pchelka' ); ?></a>
+            </div>
+        </div>
     </div>
 </section>

@@ -13,8 +13,8 @@ $doctors_query = new WP_Query( $args );
 ?>
 <section class="doctors" id="doctors">
     <div class="container">
-        <h2 class="section-title text-center">Наши врачи</h2>
-        <p class="section-subtitle text-center">Команда профессионалов с многолетним опытом</p>
+        <h2 class="section-title text-center"><?php esc_html_e( 'Наши врачи', 'pchelka' ); ?></h2>
+        <p class="section-subtitle text-center"><?php esc_html_e( 'Команда профессионалов с многолетним опытом', 'pchelka' ); ?></p>
 
         <?php if ( $doctors_query->have_posts() ) : ?>
             <div class="doctors-grid">
@@ -57,7 +57,7 @@ $doctors_query = new WP_Query( $args );
                             <?php endif; ?>
 
                             <button onclick="openAppointmentModal('<?php echo esc_attr(get_post_field( 'post_name', get_post() )); ?>')" class="btn btn-secondary btn-block">
-                                Записаться на прием
+                                <?php esc_html_e( 'Записаться на прием', 'pchelka' ); ?>
                             </button>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ $doctors_query = new WP_Query( $args );
             </div>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>No doctors found.</p>
+            <p><?php esc_html_e( 'Врачи не найдены.', 'pchelka' ); ?></p>
         <?php endif; ?>
     </div>
 </section>

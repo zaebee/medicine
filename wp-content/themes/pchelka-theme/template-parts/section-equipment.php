@@ -13,8 +13,8 @@ $equipment_query = new WP_Query( $args );
 ?>
 <section class="equipment" id="equipment">
     <div class="container">
-        <h2 class="section-title text-center">Современное оборудование</h2>
-        <p class="section-subtitle text-center">Диагностическая техника экспертного класса от мировых производителей</p>
+        <h2 class="section-title text-center"><?php esc_html_e( 'Современное оборудование', 'pchelka' ); ?></h2>
+        <p class="section-subtitle text-center"><?php esc_html_e( 'Диагностическая техника экспертного класса от мировых производителей', 'pchelka' ); ?></p>
 
         <?php if ( $equipment_query->have_posts() ) : ?>
             <div class="equipment-grid">
@@ -32,7 +32,7 @@ $equipment_query = new WP_Query( $args );
                             <h3 class="equipment-title"><?php the_title(); ?></h3>
 
                             <?php if ( get_field('manufacturer') ) : ?>
-                                <p class="equipment-manufacturer">Производитель: <?php the_field('manufacturer'); ?></p>
+                                <p class="equipment-manufacturer"><?php esc_html_e( 'Производитель:', 'pchelka' ); ?> <?php the_field('manufacturer'); ?></p>
                             <?php endif; ?>
 
                             <div class="equipment-description"><?php the_content(); ?></div>
@@ -52,11 +52,11 @@ $equipment_query = new WP_Query( $args );
             </div>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>No equipment found.</p>
+            <p><?php esc_html_e( 'Оборудование не найдено.', 'pchelka' ); ?></p>
         <?php endif; ?>
 
         <div class="equipment-footer">
-            <p class="equipment-note">Все оборудование сертифицировано и проходит регулярное техническое обслуживание</p>
+            <p class="equipment-note"><?php esc_html_e( 'Все оборудование сертифицировано и проходит регулярное техническое обслуживание', 'pchelka' ); ?></p>
         </div>
     </div>
 </section>

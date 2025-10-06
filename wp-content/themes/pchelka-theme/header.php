@@ -45,16 +45,15 @@
                         <span class="hamburger"></span>
                     </button>
                     <?php
-                    // We will replace this with a dynamic wp_nav_menu() later.
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_class'     => 'nav-list',
+                            'container'      => false,
+                            'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        )
+                    );
                     ?>
-                    <ul class="nav-list">
-                        <li><a href="#services" class="nav-link">Услуги</a></li>
-                        <li><a href="#doctors" class="nav-link">Врачи</a></li>
-                        <li><a href="#equipment" class="nav-link">Оборудование</a></li>
-                        <li><a href="#loyalty" class="nav-link">Программы</a></li>
-                        <li><a href="#pricing" class="nav-link">Цены</a></li>
-                        <li><a href="#contact" class="nav-link">Контакты</a></li>
-                    </ul>
                 </nav>
 
                 <!-- Header actions -->

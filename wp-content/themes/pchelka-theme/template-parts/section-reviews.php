@@ -13,8 +13,8 @@ $reviews_query = new WP_Query( $args );
 ?>
 <section class="reviews" id="reviews">
     <div class="container">
-        <h2 class="section-title text-center">Отзывы наших пациентов</h2>
-        <p class="section-subtitle text-center">Нам доверяют тысячи пациентов</p>
+        <h2 class="section-title text-center"><?php esc_html_e( 'Отзывы наших пациентов', 'pchelka' ); ?></h2>
+        <p class="section-subtitle text-center"><?php esc_html_e( 'Нам доверяют тысячи пациентов', 'pchelka' ); ?></p>
 
         <?php if ( $reviews_query->have_posts() ) : ?>
             <div class="reviews-grid">
@@ -44,7 +44,7 @@ $reviews_query = new WP_Query( $args );
                                 <span class="review-date"><?php the_field('date'); ?></span>
                             <?php endif; ?>
                             <?php if ( get_field('is_verified') ) : ?>
-                                <span class="review-verified">✓ Проверенный отзыв</span>
+                                <span class="review-verified">✓ <?php esc_html_e( 'Проверенный отзыв', 'pchelka' ); ?></span>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -52,26 +52,35 @@ $reviews_query = new WP_Query( $args );
             </div>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>No reviews found.</p>
+            <p><?php esc_html_e( 'Отзывы не найдены.', 'pchelka' ); ?></p>
         <?php endif; ?>
 
         <div class="reviews-footer">
+            <?php
+            // Placeholder for dynamic review statistics.
+            // In a real project, this data would be calculated or come from theme options.
+            $review_stats = array(
+                'average_rating' => get_theme_mod( 'pchelka_avg_rating', '4.9' ),
+                'total_reviews' => get_theme_mod( 'pchelka_total_reviews', '500+' ),
+                'recommend_percentage' => get_theme_mod( 'pchelka_recommend_percent', '98%' ),
+            );
+            ?>
             <div class="reviews-stats">
                 <div class="stat-item">
-                    <div class="stat-number">4.9</div>
-                    <div class="stat-label">Средняя оценка</div>
+                    <div class="stat-number"><?php echo esc_html( $review_stats['average_rating'] ); ?></div>
+                    <div class="stat-label"><?php esc_html_e( 'Средняя оценка', 'pchelka' ); ?></div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Отзывов</div>
+                    <div class="stat-number"><?php echo esc_html( $review_stats['total_reviews'] ); ?></div>
+                    <div class="stat-label"><?php esc_html_e( 'Отзывов', 'pchelka' ); ?></div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Рекомендуют</div>
+                    <div class="stat-number"><?php echo esc_html( $review_stats['recommend_percentage'] ); ?></div>
+                    <div class="stat-label"><?php esc_html_e( 'Рекомендуют', 'pchelka' ); ?></div>
                 </div>
             </div>
             <button onclick="openReviewModal()" class="btn btn-secondary">
-                Оставить отзыв
+                <?php esc_html_e( 'Оставить отзыв', 'pchelka' ); ?>
             </button>
         </div>
     </div>

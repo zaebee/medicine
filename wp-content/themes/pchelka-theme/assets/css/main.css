@@ -40,10 +40,9 @@
     --spacing-2xl: 96px;
 
     /* Border Radius */
-    --radius-sm: 5px;
-    --radius-md: 10px;
-    --radius-lg: 15px;
-    --radius-xl: 20px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
     --radius-full: 50%;
 
     /* Shadows */
@@ -206,7 +205,7 @@ img {
 
 .btn-primary {
     background: var(--primary-color);
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 .btn-primary:hover {
@@ -284,6 +283,7 @@ img {
 .form-textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
 }
 
 .form-textarea {

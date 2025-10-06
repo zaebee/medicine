@@ -247,6 +247,50 @@ function pchelka_register_post_types() {
         'menu_icon'          => 'dashicons-format-quote',
 	);
 	register_post_type( 'review', $reviews_args );
+
+    // CPT: Price List Items
+    $price_item_labels = array(
+        'name'                  => _x( 'Price Items', 'Post type general name', 'pchelka' ),
+        'singular_name'         => _x( 'Price Item', 'Post type singular name', 'pchelka' ),
+    );
+    $price_item_args = array(
+        'labels'             => $price_item_labels,
+        'public'             => false,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'menu_icon'          => 'dashicons-money-alt',
+        'supports'           => array( 'title', 'editor' ),
+    );
+    register_post_type( 'price_item', $price_item_args );
+
+    // CPT: Price Packages
+    $price_package_labels = array(
+        'name'                  => _x( 'Price Packages', 'Post type general name', 'pchelka' ),
+        'singular_name'         => _x( 'Price Package', 'Post type singular name', 'pchelka' ),
+    );
+    $price_package_args = array(
+        'labels'             => $price_package_labels,
+        'public'             => false,
+        'show_ui'            => true,
+        'show_in_menu'       => 'edit.php?post_type=price_item',
+        'supports'           => array( 'title', 'editor', 'thumbnail' ),
+    );
+    register_post_type( 'price_package', $price_package_args );
+
+    // Taxonomy: Price Categories
+    $price_category_labels = array(
+        'name'              => _x( 'Price Categories', 'taxonomy general name', 'pchelka' ),
+        'singular_name'     => _x( 'Price Category', 'taxonomy singular name', 'pchelka' ),
+    );
+    $price_category_args = array(
+        'hierarchical'      => true,
+        'labels'            => $price_category_labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'price-category' ),
+    );
+    register_taxonomy( 'price_category', array( 'price_item' ), $price_category_args );
 }
 add_action( 'init', 'pchelka_register_post_types' );
 
