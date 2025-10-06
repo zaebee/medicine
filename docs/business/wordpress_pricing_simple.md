@@ -190,6 +190,6 @@ permalink: /business/wordpress-pricing-simple/
 
 **Готовы начать?** Свяжитесь с нами!
 
-📧 Email: [ваш email]  
-📱 Телефон: [ваш телефон]  
-💬 Telegram: [ваш telegram]
+📧 Email: sinezub@yandex.ru  
+📱 Телефон: +7 953 510-53-59  
+💬 Telegram: @zaebuntu
