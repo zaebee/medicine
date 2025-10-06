@@ -49,11 +49,20 @@
 
         .logo {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .logo img {
-            height: 80px;
+            height: 120px;
             width: auto;
+            max-width: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         h1 {
@@ -233,6 +242,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .logo img {
+                height: 80px;
+            }
+            
             h1 {
                 font-size: 2rem;
             }
@@ -245,13 +258,27 @@
                 font-size: 1.5rem;
             }
         }
+        
+        @media (max-width: 480px) {
+            .logo img {
+                height: 60px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="container">
             <div class="logo">
-                <img src="assets/logo-optimized.svg" alt="Клиника Пчёлка Медик">
+                <img src="../assets/client/logo-bee-large.svg" alt="Клиника Пчёлка Медик">
             </div>
             <h1>Демо-версии сайта клиники</h1>
             <p class="subtitle">Выберите подходящий вариант дизайна</p>
@@ -259,6 +286,36 @@
     </div>
 
     <div class="container">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 24px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #C9A961;">
+            <h3 style="margin: 0 0 12px 0; color: #2C3E50; font-size: 1.25rem;">
+                📄 Внутренние страницы
+            </h3>
+            <p style="margin: 0 0 16px 0; color: #6C757D; line-height: 1.6;">
+                Каждый вариант теперь включает примеры внутренних страниц с полной SEO-оптимизацией, 
+                Schema.org разметкой и адаптивным дизайном. Посмотрите, как выглядят страницы услуг и специалистов.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+                <div style="padding: 12px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <strong style="color: #C9A961;">Variant 2: Modern</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                        <li><a href="variant-2-modern/phlebologist.html" style="color: #4A90E2;">Флеболог</a></li>
+                    </ul>
+                </div>
+                <div style="padding: 12px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <strong style="color: #C9A961;">Variant 3: Premium</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                        <li><a href="variant-3-premium/uvt.html" style="color: #4A90E2;">УВТ</a></li>
+                    </ul>
+                </div>
+                <div style="padding: 12px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <strong style="color: #C9A961;">Variant 6: Innovate</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                        <li><a href="variant-6-innovate/services/rehabilitation.html" style="color: #4A90E2;">Реабилитация</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
         <div class="variants">
             <!-- Variant 2: Modern -->
             <div class="variant-card">
@@ -285,6 +342,13 @@
                     </div>
 
                     <a href="variant-2-modern/" class="btn">Посмотреть демо</a>
+                    
+                    <div style="margin-top: 16px; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #C9A961;">
+                        <strong style="color: #C9A961;">📄 Внутренние страницы:</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                            <li><a href="variant-2-modern/phlebologist.html" style="color: #4A90E2;">Флеболог</a> - SEO-оптимизированная страница услуги</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -314,6 +378,13 @@
                     </div>
 
                     <a href="variant-3-premium/" class="btn">Посмотреть демо</a>
+                    
+                    <div style="margin-top: 16px; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #C9A961;">
+                        <strong style="color: #C9A961;">📄 Внутренние страницы:</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                            <li><a href="variant-3-premium/uvt.html" style="color: #4A90E2;">Ударно-волновая терапия (УВТ)</a> - полная страница услуги с ценами</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -345,6 +416,13 @@
                     </div>
 
                     <a href="variant-6-innovate/" class="btn">Посмотреть демо</a>
+                    
+                    <div style="margin-top: 16px; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #C9A961;">
+                        <strong style="color: #C9A961;">📄 Внутренние страницы:</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                            <li><a href="variant-6-innovate/services/rehabilitation.html" style="color: #4A90E2;">Реабилитация</a> - футуристический дизайн страницы услуги</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

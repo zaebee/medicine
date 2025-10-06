@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Клиника «Пчёлка» — премиальная медицинская клиника с современным оборудованием и опытными врачами. Программы лояльности, прозрачные цены, индивидуальный подход.">
-    <meta name="keywords" content="клиника, медицинский центр, врачи, лечение, диагностика, премиум">
-    <title>Клиника «Пчёлка Медик» — Премиальная медицина с заботой о каждом</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Клиника Пчёлка в Мытищах - реабилитация и лечение опорно-двигательного аппарата, флебология. ЛФК, физиотерапия, УВТ. Опытные врачи, современное оборудование, программы лояльности.">
+    <meta name="keywords" content="клиника Мытищи, реабилитация, физиотерапия, ЛФК, флеболог, травматолог-ортопед, УВТ, лечение суставов, варикоз, медицинский центр">
+    <meta name="author" content="Клиника Пчёлка">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pchelka-clinic.ru/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pchelka-clinic.ru/">
+    <meta property="og:title" content="Клиника Пчёлка в Мытищах - Реабилитация и Физиотерапия">
+    <meta property="og:description" content="Медицинский центр реабилитации и лечения опорно-двигательного аппарата. ЛФК, физиотерапия, флебология. Опытные врачи, современное оборудование.">
+    <meta property="og:image" content="https://pchelka-clinic.ru/images/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pchelka-clinic.ru/">
+    <meta property="twitter:title" content="Клиника Пчёлка в Мытищах - Реабилитация и Физиотерапия">
+    <meta property="twitter:description" content="Медицинский центр реабилитации и лечения опорно-двигательного аппарата. ЛФК, физиотерапия, флебология.">
+    <meta property="twitter:image" content="https://pchelka-clinic.ru/images/twitter-image.jpg">
+    
+    <title>Клиника Пчёлка в Мытищах - Реабилитация и Физиотерапия | Медицинский центр</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -19,6 +40,71 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Клиника Пчёлка",
+      "description": "Медицинский центр реабилитации и физиотерапии в Мытищах",
+      "url": "https://pchelka-clinic.ru",
+      "logo": "https://pchelka-clinic.ru/assets/client/logo1.svg",
+      "image": "https://pchelka-clinic.ru/images/clinic-photo.jpg",
+      "telephone": "+7-999-123-45-67",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Примерная, д. 1",
+        "addressLocality": "Мытищи",
+        "addressRegion": "Московская область",
+        "postalCode": "141000",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "55.9116",
+        "longitude": "37.7307"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "₽₽",
+      "medicalSpecialty": ["Rehabilitation", "Physiotherapy", "Phlebology", "Orthopedics"],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Лечебная физкультура (ЛФК)",
+          "description": "Индивидуальные программы восстановления функций опорно-двигательного аппарата"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Физиотерапия",
+          "description": "Магнитотерапия, лазеротерапия, электрофорез, УВЧ-терапия"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Ударно-волновая терапия",
+          "description": "Современный метод лечения суставов и связок без операции"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Флебология",
+          "description": "Лечение варикоза, тромбофлебита, венозной недостаточности"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip link for accessibility -->
@@ -30,14 +116,11 @@
             <div class="header-content">
                 <!-- Logo -->
                 <a href="#" class="logo" aria-label="Клиника Пчёлка Медик - На главную">
-                    <img src="../assets/logo-detailed.svg" alt="Клиника Пчёлка Медик" class="logo-image" width="120" height="auto">
+                    <img src="../../assets/client/logo-bee-large.svg" alt="Клиника Пчёлка Медик" class="logo-image" width="120" height="auto">
                 </a>
 
                 <!-- Navigation -->
                 <nav class="nav" role="navigation" aria-label="Основная навигация">
-                    <button class="mobile-menu-toggle" aria-label="Открыть меню" aria-expanded="false">
-                        <span class="hamburger"></span>
-                    </button>
                     <ul class="nav-list">
                         <li><a href="#services" class="nav-link">Услуги</a></li>
                         <li><a href="#doctors" class="nav-link">Врачи</a></li>
@@ -47,6 +130,11 @@
                         <li><a href="#contact" class="nav-link">Контакты</a></li>
                     </ul>
                 </nav>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
 
                 <!-- Header actions -->
                 <div class="header-actions">
@@ -294,22 +382,22 @@
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title text-center">Наши услуги</h2>
-            <p class="section-subtitle text-center">Полный спектр медицинских услуг с прозрачным ценообразованием</p>
+            <p class="section-subtitle text-center">Реабилитация и лечение опорно-двигательного аппарата, флебология</p>
             
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600" alt="Терапия" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600" alt="Лечебная физкультура (ЛФК)" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Терапия</h3>
-                        <p class="service-description">Диагностика и лечение заболеваний внутренних органов</p>
+                        <h3 class="service-title">Лечебная физкультура (ЛФК)</h3>
+                        <p class="service-description">Индивидуальные программы восстановления функций опорно-двигательного аппарата</p>
                         <div class="service-price">
-                            <span class="price-label">Прием от</span>
-                            <span class="price-value">2 500 ₽</span>
+                            <span class="price-label">Занятие от</span>
+                            <span class="price-value">1 500 ₽</span>
                         </div>
-                        <button onclick="openAppointmentModal('therapy')" class="btn btn-secondary btn-block">
+                        <button onclick="openAppointmentModal('lfk')" class="btn btn-secondary btn-block">
                             Записаться
                         </button>
                     </div>
@@ -318,16 +406,16 @@
                 <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600" alt="Кардиология" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600" alt="Физиотерапия" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Кардиология</h3>
-                        <p class="service-description">Диагностика и лечение заболеваний сердечно-сосудистой системы</p>
+                        <h3 class="service-title">Физиотерапия</h3>
+                        <p class="service-description">Магнитотерапия, лазеротерапия, электрофорез, УВЧ-терапия</p>
                         <div class="service-price">
-                            <span class="price-label">Прием от</span>
-                            <span class="price-value">3 500 ₽</span>
+                            <span class="price-label">Процедура от</span>
+                            <span class="price-value">800 ₽</span>
                         </div>
-                        <button onclick="openAppointmentModal('cardiology')" class="btn btn-secondary btn-block">
+                        <button onclick="openAppointmentModal('physiotherapy')" class="btn btn-secondary btn-block">
                             Записаться
                         </button>
                     </div>
@@ -336,16 +424,16 @@
                 <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="Неврология" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=600" alt="Ударно-волновая терапия" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Неврология</h3>
-                        <p class="service-description">Лечение заболеваний нервной системы</p>
+                        <h3 class="service-title">Ударно-волновая терапия (УВТ)</h3>
+                        <p class="service-description">Современный метод лечения суставов и связок без операции</p>
                         <div class="service-price">
-                            <span class="price-label">Прием от</span>
-                            <span class="price-value">3 000 ₽</span>
+                            <span class="price-label">Сеанс от</span>
+                            <span class="price-value">2 500 ₽</span>
                         </div>
-                        <button onclick="openAppointmentModal('neurology')" class="btn btn-secondary btn-block">
+                        <button onclick="openAppointmentModal('uvt')" class="btn btn-secondary btn-block">
                             Записаться
                         </button>
                     </div>
@@ -354,16 +442,16 @@
                 <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Эндокринология" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600" alt="Флебология" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Эндокринология</h3>
-                        <p class="service-description">Диагностика и лечение эндокринных заболеваний</p>
+                        <h3 class="service-title">Флебология</h3>
+                        <p class="service-description">Лечение варикоза, тромбофлебита, венозной недостаточности</p>
                         <div class="service-price">
                             <span class="price-label">Прием от</span>
-                            <span class="price-value">3 200 ₽</span>
+                            <span class="price-value">3 500 ₽</span>
                         </div>
-                        <button onclick="openAppointmentModal('endocrinology')" class="btn btn-secondary btn-block">
+                        <button onclick="openAppointmentModal('phlebology')" class="btn btn-secondary btn-block">
                             Записаться
                         </button>
                     </div>
@@ -372,16 +460,16 @@
                 <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600" alt="Педиатрия" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="Травматология-ортопедия" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Педиатрия</h3>
-                        <p class="service-description">Медицинская помощь детям от 0 до 18 лет</p>
+                        <h3 class="service-title">Травматология-ортопедия</h3>
+                        <p class="service-description">Лечение травм и заболеваний опорно-двигательного аппарата</p>
                         <div class="service-price">
                             <span class="price-label">Прием от</span>
-                            <span class="price-value">2 800 ₽</span>
+                            <span class="price-value">3 000 ₽</span>
                         </div>
-                        <button onclick="openAppointmentModal('pediatrics')" class="btn btn-secondary btn-block">
+                        <button onclick="openAppointmentModal('traumatology')" class="btn btn-secondary btn-block">
                             Записаться
                         </button>
                     </div>
@@ -394,10 +482,10 @@
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Диагностика</h3>
-                        <p class="service-description">УЗИ, ЭКГ, лабораторные исследования</p>
+                        <p class="service-description">УЗИ суставов и мягких тканей, МРТ, КТ</p>
                         <div class="service-price">
                             <span class="price-label">Услуги от</span>
-                            <span class="price-value">1 500 ₽</span>
+                            <span class="price-value">2 000 ₽</span>
                         </div>
                         <button onclick="openAppointmentModal('diagnostics')" class="btn btn-secondary btn-block">
                             Записаться
@@ -1460,7 +1548,7 @@
                 <!-- Footer Column 1: About -->
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/logo-detailed.svg" alt="Клиника Пчёлка Медик" class="footer-logo-image" width="100" height="auto">
+                        <img src="../../assets/client/logo-bee-large.svg" alt="Клиника Пчёлка Медик" class="footer-logo-image" width="100" height="auto">
                     </div>
                     <p class="footer-description">
                         Премиальная медицинская клиника с индивидуальным подходом к каждому пациенту. Современное оборудование и опытные врачи.
@@ -1504,11 +1592,11 @@
                 <div class="footer-column">
                     <h4 class="footer-title">Услуги</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">Терапия</a></li>
-                        <li><a href="#services">Кардиология</a></li>
-                        <li><a href="#services">Неврология</a></li>
-                        <li><a href="#services">Эндокринология</a></li>
-                        <li><a href="#services">Педиатрия</a></li>
+                        <li><a href="#services">Лечебная физкультура (ЛФК)</a></li>
+                        <li><a href="#services">Физиотерапия</a></li>
+                        <li><a href="#services">Ударно-волновая терапия</a></li>
+                        <li><a href="#services">Флебология</a></li>
+                        <li><a href="#services">Травматология-ортопедия</a></li>
                         <li><a href="#services">Диагностика</a></li>
                     </ul>
                 </div>

@@ -161,10 +161,10 @@
                 <!-- Logo -->
                 <a href="#" class="logo magnetic-element" aria-label="Клиника Пчёлка Медик - На главную">
                     <!-- Desktop version - Enhanced professional logo -->
-                    <img src="../assets/logo-detailed-compact.svg" alt="Клиника Пчёлка Медик" class="logo-image logo-desktop" width="70" height="70">
+                    <img src="../../assets/client/logo-bee-large.svg" alt="Клиника Пчёлка Медик" class="logo-image logo-desktop" width="70" height="70">
                     <span class="logo-text">Пчёлка</span>
                     <!-- Mobile version - Horizontal compact logo with text -->
-                    <img src="../assets/logo-mobile.svg" alt="Клиника Пчёлка Медик" class="logo-image logo-mobile" width="140" height="50">
+                    <img src="../../assets/client/logo-bee-large.svg" alt="Клиника Пчёлка Медик" class="logo-image logo-mobile" width="140" height="50">
                 </a>
 
                 <!-- Navigation -->
@@ -276,6 +276,23 @@
     <!-- Services Section with Glassmorphism Cards -->
     <section class="services" id="services">
         <div class="container">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Навигация">
+                <div class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                        Главная
+                    </a>
+                </div>
+                <span class="breadcrumb-separator">/</span>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">Услуги</span>
+                </div>
+            </nav>
+            
             <div class="section-header fade-in">
                 <span class="section-label glass">Наши услуги</span>
                 <h2 class="section-title">
@@ -291,6 +308,7 @@
             <div class="services-grid">
                 <!-- Service Card 1 -->
                 <div class="service-card glass-card magnetic-card fade-in" data-tilt>
+                    <span class="badge badge-new" style="position: absolute; top: 20px; right: 20px;">Новинка</span>
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -305,6 +323,21 @@
                         <li>ЭКГ и холтер</li>
                         <li>Лабораторные анализы</li>
                     </ul>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <span class="tag">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            30 мин
+                        </span>
+                        <span class="tag">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M2 12h20"/>
+                            </svg>
+                            Без боли
+                        </span>
+                    </div>
                     <button class="btn btn-glass magnetic-element">
                         Подробнее
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -316,6 +349,7 @@
 
                 <!-- Service Card 2 -->
                 <div class="service-card glass-card magnetic-card fade-in" data-tilt>
+                    <span class="badge badge-primary" style="position: absolute; top: 20px; right: 20px;">Популярно</span>
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -848,7 +882,7 @@
         <div class="container">
             <div class="footer-minimal-content">
                 <div class="footer-minimal-left">
-                    <img src="../assets/logo-detailed-compact.svg" alt="Клиника Пчёлка" class="footer-minimal-logo" width="40" height="40">
+                    <img src="../../assets/client/logo-bee-large.svg" alt="Клиника Пчёлка" class="footer-minimal-logo" width="40" height="40">
                     <p>&copy; 2025 Клиника «Пчёлка». Все права защищены.</p>
                 </div>
                 <div class="footer-minimal-right">
@@ -861,6 +895,66 @@
             </div>
         </div>
     </footer>
+
+    <!-- Alert Container -->
+    <div class="alert-container" id="alertContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Modal: Appointment Booking -->
+    <div class="modal" id="appointmentModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-overlay" data-modal-close></div>
+        <div class="modal-content">
+            <button class="modal-close" data-modal-close aria-label="Закрыть">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <h2 class="modal-title" id="modalTitle">Записаться на прием</h2>
+            <p class="modal-subtitle">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+            
+            <form class="modal-form" id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modal-name" class="form-label">Ваше имя *</label>
+                        <input type="text" id="modal-name" name="name" class="form-input" placeholder="Иван" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modal-phone" class="form-label">Телефон *</label>
+                        <input type="tel" id="modal-phone" name="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-service" class="form-label">Услуга *</label>
+                    <select id="modal-service" name="service" class="form-input" required>
+                        <option value="">Выберите услугу</option>
+                        <option value="lfk">ЛФК (Лечебная физкультура)</option>
+                        <option value="physio">Физиотерапия</option>
+                        <option value="uvt">УВТ (Ударно-волновая терапия)</option>
+                        <option value="phlebology">Флебология</option>
+                        <option value="traumatology">Травматология</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modal-comment" class="form-label">Комментарий</label>
+                    <textarea id="modal-comment" name="comment" class="form-input form-textarea" rows="4" placeholder="Дополнительная информация"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="privacy" required>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Согласен с <a href="#" class="link-primary">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large btn-block">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
