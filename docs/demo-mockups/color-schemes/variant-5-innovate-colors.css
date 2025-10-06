@@ -1,0 +1,128 @@
+/* ============================================
+   VARIANT 5 - INNOVATE COLOR SCHEME
+   Saved for future use in other mockups
+   Theme: Futuristic, Tech-forward, Neon
+   ============================================ */
+
+:root {
+    /* ============================================
+       NEON ACCENT COLORS
+       Use for highlights, CTAs, interactive elements
+       ============================================ */
+    --v5-neon-blue: #00f3ff;
+    --v5-neon-purple: #b537f2;
+    --v5-neon-cyan: #00ffff;
+    --v5-neon-green: #39ff14;
+    --v5-neon-pink: #ff006e;
+    
+    /* ============================================
+       BASE COLORS
+       ============================================ */
+    --v5-gold: #C9A961;
+    --v5-dark: #0a0e27;
+    --v5-dark-blue: #1a1f3a;
+    --v5-white: #ffffff;
+    
+    /* ============================================
+       GLASSMORPHISM EFFECTS
+       Use for cards, modals, overlays
+       ============================================ */
+    --v5-glass-bg: rgba(255, 255, 255, 0.05);
+    --v5-glass-border: rgba(255, 255, 255, 0.1);
+    --v5-glass-bg-dark: rgba(10, 14, 39, 0.8);
+    
+    /* ============================================
+       GRADIENTS
+       ============================================ */
+    --v5-gradient-bg: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    --v5-gradient-neon: linear-gradient(135deg, #00f3ff 0%, #b537f2 100%);
+    --v5-gradient-cyber: linear-gradient(135deg, #00ffff 0%, #39ff14 100%);
+    
+    /* ============================================
+       SHADOWS & GLOWS
+       ============================================ */
+    --v5-glow-cyan: 0 0 20px rgba(0, 255, 255, 0.5);
+    --v5-glow-purple: 0 0 20px rgba(181, 55, 242, 0.5);
+    --v5-glow-green: 0 0 20px rgba(57, 255, 20, 0.5);
+    --v5-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   USAGE EXAMPLES
+   ============================================ */
+
+/* Example: Neon Button */
+.btn-neon-example {
+    background: var(--v5-gradient-neon);
+    color: var(--v5-white);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    box-shadow: var(--v5-glow-cyan);
+    transition: all 0.3s ease;
+}
+
+.btn-neon-example:hover {
+    box-shadow: var(--v5-glow-purple);
+    transform: translateY(-2px);
+}
+
+/* Example: Glass Card */
+.card-glass-example {
+    background: var(--v5-glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--v5-glass-border);
+    border-radius: 20px;
+    box-shadow: var(--v5-shadow-glass);
+    padding: 24px;
+}
+
+/* Example: Neon Text */
+.text-neon-example {
+    color: var(--v5-neon-cyan);
+    text-shadow: var(--v5-glow-cyan);
+}
+
+/* Example: Dark Background Section */
+.section-dark-example {
+    background: var(--v5-gradient-bg);
+    color: var(--v5-white);
+}
+
+/* ============================================
+   COLOR PALETTE REFERENCE
+   ============================================ */
+
+/*
+NEON COLORS:
+- Neon Blue (#00f3ff): Primary CTAs, links
+- Neon Purple (#b537f2): Secondary accents, highlights
+- Neon Cyan (#00ffff): Interactive elements, hover states
+- Neon Green (#39ff14): Success states, positive feedback
+- Neon Pink (#ff006e): Alerts, special offers
+
+BASE COLORS:
+- Gold (#C9A961): Premium elements, badges
+- Dark (#0a0e27): Main background
+- Dark Blue (#1a1f3a): Secondary background
+- White (#ffffff): Text, icons
+
+GLASSMORPHISM:
+- Glass BG: rgba(255, 255, 255, 0.05) - Light glass effect
+- Glass Border: rgba(255, 255, 255, 0.1) - Subtle borders
+- Glass BG Dark: rgba(10, 14, 39, 0.8) - Dark glass effect
+
+BEST PRACTICES:
+1. Use neon colors sparingly for maximum impact
+2. Combine with glassmorphism for modern look
+3. Add glow effects to interactive elements
+4. Maintain high contrast for readability
+5. Use dark backgrounds to make neon colors pop
+
+ACCESSIBILITY NOTES:
+- Neon colors may be too bright for some users
+- Always provide sufficient contrast ratios
+- Consider adding a "reduce brightness" option
+- Test with color blindness simulators
+*/
