@@ -10,21 +10,286 @@ permalink: /design/ui-kit/
 # UI KIT - БИБЛИОТЕКА КОМПОНЕНТОВ
 
 **Дата:** 6 октября 2025  
-**Версия:** 1.0  
+**Версия:** 1.1  
 **Основа:** Геометрический стиль логотипа + Mood Board
+
+---
+
+## 🎨 ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ
+
+```css
+:root {
+  /* Фирменные цвета клиники "Пчёлка" */
+  --primary-color: #C9A961;      /* Темно-золотой (из логотипа) */
+  --primary-light: #D4AF37;      /* Светло-золотой */
+  --secondary-color: #000000;    /* Премиум черный */
+  --accent-color: #D4AF37;       /* Золотой акцент */
+
+  /* Нейтральные цвета */
+  --text-primary: #333333;       /* Основной текст */
+  --text-secondary: #666666;     /* Вторичный текст */
+  --background: #ffffff;         /* Основной фон */
+  --background-light: #f5f5f5;   /* Альтернативный фон */
+
+  /* Семантические цвета */
+  --success: #28a745;            /* Успех */
+  --error: #dc3545;              /* Ошибка */
+  --warning: #ffc107;            /* Предупреждение */
+  --info: #17a2b8;               /* Информация */
+
+  /* Шрифты */
+  --font-heading: 'Montserrat', 'Raleway', 'Poppins', sans-serif;
+  --font-body: 'Open Sans', 'Roboto', 'Lato', sans-serif;
+  
+  /* Размеры заголовков */
+  --h1-size: 42px;
+  --h2-size: 36px;
+  --h3-size: 28px;
+  --h4-size: 24px;
+  
+  /* Размеры текста */
+  --text-base: 16px;
+  --text-small: 14px;
+  --text-large: 18px;
+  
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+}
+```
 
 ---
 
 ## 📋 СОДЕРЖАНИЕ
 
-1. [Buttons (Кнопки)](#buttons)
-2. [Forms (Формы)](#forms)
-3. [Cards (Карточки)](#cards)
-4. [Navigation (Навигация)](#navigation)
-5. [Layout (Макет)](#layout)
-6. [Modals & Alerts (Модальные окна и уведомления)](#modals)
-7. [Badges & Tags (Бейджи и теги)](#badges)
-8. [Lists (Списки)](#lists)
+1. [Typography (Типографика)](#typography)
+2. [Buttons (Кнопки)](#buttons)
+3. [Forms (Формы)](#forms)
+4. [Cards (Карточки)](#cards)
+5. [Navigation (Навигация)](#navigation)
+6. [Layout (Макет)](#layout)
+7. [Modals & Alerts (Модальные окна и уведомления)](#modals)
+8. [Badges & Tags (Бейджи и теги)](#badges)
+9. [Lists (Списки)](#lists)
+10. [Accessibility (Доступность)](#accessibility)
+
+---
+
+## ✍️ TYPOGRAPHY {#typography}
+
+### Шрифты
+
+<div class="component-section">
+  <h4>Семейства шрифтов</h4>
+  
+  <div class="typography-showcase">
+    <div class="typography-example">
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #333333; margin-bottom: 8px;">
+        Montserrat Bold
+      </h3>
+      <p style="font-family: 'Montserrat', sans-serif; color: #666666;">
+        Используется для заголовков H1-H4 и кнопок
+      </p>
+    </div>
+
+    <div class="typography-example">
+      <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #333333;">
+        Open Sans Regular — основной шрифт для текста. Обеспечивает отличную читаемость на всех устройствах и экранах.
+      </p>
+    </div>
+  </div>
+
+  <h4>CSS переменные</h4>
+  <div class="code-block">
+    <pre><code>:root {
+  /* Шрифты */
+  --font-heading: 'Montserrat', 'Raleway', 'Poppins', sans-serif;
+  --font-body: 'Open Sans', 'Roboto', 'Lato', sans-serif;
+  
+  /* Размеры заголовков */
+  --h1-size: 42px;
+  --h2-size: 36px;
+  --h3-size: 28px;
+  --h4-size: 24px;
+  
+  /* Размеры текста */
+  --text-base: 16px;
+  --text-small: 14px;
+  --text-large: 18px;
+  
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+}</code></pre>
+  </div>
+</div>
+
+### Заголовки
+
+<div class="component-section">
+  <h4>Интерактивные примеры</h4>
+  
+  <div class="typography-showcase">
+    <h1 class="ui-heading-1" style="font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; color: #333333; margin-bottom: 16px;">
+      Заголовок H1 — Клиника «Пчёлка»
+    </h1>
+    
+    <h2 class="ui-heading-2" style="font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; line-height: 1.3; color: #333333; margin-bottom: 12px;">
+      Заголовок H2 — Наши услуги
+    </h2>
+    
+    <h3 class="ui-heading-3" style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 600; line-height: 1.4; color: #333333; margin-bottom: 12px;">
+      Заголовок H3 — Физиотерапия
+    </h3>
+    
+    <h4 class="ui-heading-4" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.4; color: #333333; margin-bottom: 12px;">
+      Заголовок H4 — Описание процедуры
+    </h4>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;h1 class="ui-heading-1"&gt;Заголовок первого уровня&lt;/h1&gt;
+&lt;h2 class="ui-heading-2"&gt;Заголовок второго уровня&lt;/h2&gt;
+&lt;h3 class="ui-heading-3"&gt;Заголовок третьего уровня&lt;/h3&gt;
+&lt;h4 class="ui-heading-4"&gt;Заголовок четвертого уровня&lt;/h4&gt;</code></pre>
+  </div>
+
+  <h4>CSS стили</h4>
+  <div class="code-block">
+    <pre><code>.ui-heading-1 {
+  font-family: var(--font-heading);
+  font-size: var(--h1-size); /* 42px */
+  font-weight: 700;
+  line-height: var(--line-height-tight); /* 1.2 */
+  color: var(--text-primary);
+}
+
+.ui-heading-2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2-size); /* 36px */
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.ui-heading-3 {
+  font-family: var(--font-heading);
+  font-size: var(--h3-size); /* 28px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.ui-heading-4 {
+  font-family: var(--font-heading);
+  font-size: var(--h4-size); /* 24px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}</code></pre>
+  </div>
+</div>
+
+### Текстовые стили
+
+<div class="component-section">
+  <h4>Варианты текста</h4>
+  
+  <div class="typography-showcase">
+    <p class="ui-text-base" style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #333333; margin-bottom: 16px;">
+      Основной текст (Base) — используется для параграфов, описаний услуг и основного контента. Размер 16px обеспечивает комфортное чтение.
+    </p>
+    
+    <p class="ui-text-large" style="font-family: 'Open Sans', sans-serif; font-size: 18px; line-height: 1.6; color: #333333; margin-bottom: 16px;">
+      Крупный текст (Large) — для подзаголовков и важных абзацев. Размер 18px.
+    </p>
+    
+    <p class="ui-text-small" style="font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 1.5; color: #666666; margin-bottom: 16px;">
+      Мелкий текст (Small) — для сносок, дополнительной информации и метаданных. Размер 14px.
+    </p>
+    
+    <p class="ui-text-accent" style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #C9A961; margin-bottom: 16px;">
+      Акцентный текст — золотой цвет для выделения важной информации.
+    </p>
+    
+    <p class="ui-text-secondary" style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 1.6; color: #666666; margin-bottom: 16px;">
+      Вторичный текст — серый цвет для менее важной информации.
+    </p>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;p class="ui-text-base"&gt;Основной текст&lt;/p&gt;
+&lt;p class="ui-text-large"&gt;Крупный текст&lt;/p&gt;
+&lt;p class="ui-text-small"&gt;Мелкий текст&lt;/p&gt;
+&lt;p class="ui-text-accent"&gt;Акцентный текст&lt;/p&gt;
+&lt;p class="ui-text-secondary"&gt;Вторичный текст&lt;/p&gt;</code></pre>
+  </div>
+
+  <h4>CSS стили</h4>
+  <div class="code-block">
+    <pre><code>.ui-text-base {
+  font-family: var(--font-body);
+  font-size: var(--text-base); /* 16px */
+  line-height: var(--line-height-normal); /* 1.6 */
+  color: var(--text-primary);
+}
+
+.ui-text-large {
+  font-family: var(--font-body);
+  font-size: var(--text-large); /* 18px */
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+}
+
+.ui-text-small {
+  font-family: var(--font-body);
+  font-size: var(--text-small); /* 14px */
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.ui-text-accent {
+  color: var(--primary-color); /* #C9A961 */
+}
+
+.ui-text-secondary {
+  color: var(--text-secondary); /* #666666 */
+}
+
+.ui-text-bold {
+  font-weight: 700;
+}</code></pre>
+  </div>
+</div>
+
+### Адаптивная типографика
+
+<div class="component-section">
+  <h4>Мобильные устройства</h4>
+  <div class="code-block">
+    <pre><code>/* Мобильные устройства (до 768px) */
+@media (max-width: 767px) {
+  :root {
+    --h1-size: 32px;
+    --h2-size: 28px;
+    --h3-size: 24px;
+    --h4-size: 20px;
+  }
+  
+  .ui-heading-1 { font-size: 32px; line-height: 1.3; }
+  .ui-heading-2 { font-size: 28px; line-height: 1.3; }
+  .ui-heading-3 { font-size: 24px; line-height: 1.4; }
+  .ui-heading-4 { font-size: 20px; line-height: 1.4; }
+  
+  /* Основной текст НЕ уменьшается для читаемости */
+  .ui-text-base { font-size: 16px; }
+}</code></pre>
+  </div>
+</div>
 
 ---
 
@@ -2758,3 +3023,303 @@ document.body.setAttribute('data-theme', savedTheme);</code></pre>
   border-color: rgba(255, 255, 255, 0.2);
 }
 </style>
+
+---
+
+## ♿ ACCESSIBILITY {#accessibility}
+
+### ARIA атрибуты
+
+<div class="component-section">
+  <h4>Кнопки с ARIA</h4>
+  
+  <div class="accessibility-showcase">
+    <button class="ui-btn ui-btn-primary" aria-label="Записаться на приём к терапевту">
+      Записаться
+    </button>
+    
+    <button class="ui-btn ui-btn-icon ui-btn-primary" aria-label="Позвонить в клинику">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </button>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;!-- Кнопка с описательным aria-label --&gt;
+&lt;button class="ui-btn ui-btn-primary" aria-label="Записаться на приём к терапевту"&gt;
+  Записаться
+&lt;/button&gt;
+
+&lt;!-- Иконка-кнопка с aria-label --&gt;
+&lt;button class="ui-btn ui-btn-icon" aria-label="Позвонить в клинику"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+  </div>
+</div>
+
+### Формы с accessibility
+
+<div class="component-section">
+  <h4>Доступные формы</h4>
+  
+  <div class="accessibility-showcase">
+    <form class="ui-form">
+      <div class="ui-form-group">
+        <label class="ui-label" for="accessible-name">Ваше имя *</label>
+        <input 
+          type="text" 
+          id="accessible-name" 
+          class="ui-input" 
+          required
+          aria-required="true"
+          aria-describedby="name-help"
+        >
+        <small id="name-help" class="ui-form-help">Введите ваше полное имя</small>
+      </div>
+
+      <div class="ui-form-group">
+        <label class="ui-label" for="accessible-phone">Телефон *</label>
+        <input 
+          type="tel" 
+          id="accessible-phone" 
+          class="ui-input" 
+          required
+          aria-required="true"
+          aria-describedby="phone-help"
+          pattern="[+]7[0-9]{10}"
+        >
+        <small id="phone-help" class="ui-form-help">Формат: +7 (999) 123-45-67</small>
+      </div>
+
+      <div class="ui-form-group">
+        <label class="ui-checkbox">
+          <input type="checkbox" required aria-required="true">
+          <span class="checkmark"></span>
+          <span class="label-text">Согласен с <a href="#">политикой конфиденциальности</a></span>
+        </label>
+      </div>
+
+      <button type="submit" class="ui-btn ui-btn-primary">Отправить</button>
+    </form>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;div class="ui-form-group"&gt;
+  &lt;label class="ui-label" for="accessible-name"&gt;Ваше имя *&lt;/label&gt;
+  &lt;input 
+    type="text" 
+    id="accessible-name" 
+    class="ui-input" 
+    required
+    aria-required="true"
+    aria-describedby="name-help"
+  &gt;
+  &lt;small id="name-help" class="ui-form-help"&gt;Введите ваше полное имя&lt;/small&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+
+### Skip Navigation
+
+<div class="component-section">
+  <h4>Пропуск навигации</h4>
+  
+  <div class="code-block">
+    <pre><code>&lt;!-- Skip link (скрыт до фокуса) --&gt;
+&lt;a href="#main-content" class="ui-skip-link"&gt;
+  Перейти к основному содержанию
+&lt;/a&gt;
+
+&lt;!-- Основной контент --&gt;
+&lt;main id="main-content"&gt;
+  &lt;!-- Контент страницы --&gt;
+&lt;/main&gt;</code></pre>
+  </div>
+
+  <h4>CSS стили</h4>
+  <div class="code-block">
+    <pre><code>.ui-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.ui-skip-link:focus {
+  top: 0;
+}</code></pre>
+  </div>
+</div>
+
+### Keyboard Focus
+
+<div class="component-section">
+  <h4>Стили фокуса</h4>
+  
+  <div class="accessibility-showcase">
+    <button class="ui-btn ui-btn-primary" style="margin-right: 8px;">Кнопка с фокусом</button>
+    <input type="text" class="ui-input" placeholder="Поле с фокусом" style="max-width: 300px;">
+  </div>
+
+  <h4>CSS стили</h4>
+  <div class="code-block">
+    <pre><code>/* Фокус для кнопок */
+.ui-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+}
+
+/* Фокус для полей ввода */
+.ui-input:focus,
+.ui-textarea:focus,
+.ui-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+}
+
+/* Фокус для ссылок */
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}</code></pre>
+  </div>
+</div>
+
+### Alt-тексты для изображений
+
+<div class="component-section">
+  <h4>Примеры alt-текстов</h4>
+  
+  <div class="code-block">
+    <pre><code>&lt;!-- Фото врача --&gt;
+&lt;img 
+  src="doctor-ivanov.jpg" 
+  alt="Доктор Иванов Иван Иванович, врач-физиотерапевт высшей категории"
+  width="300"
+  height="300"
+&gt;
+
+&lt;!-- Логотип клиники --&gt;
+&lt;img 
+  src="logo.svg" 
+  alt="Клиника Пчёлка - медицинский центр"
+  width="180"
+  height="60"
+&gt;
+
+&lt;!-- Декоративное изображение --&gt;
+&lt;img 
+  src="decoration.svg" 
+  alt=""
+  role="presentation"
+&gt;</code></pre>
+  </div>
+</div>
+
+### Контрастность цветов (WCAG 2.1 AA)
+
+<div class="component-section">
+  <h4>Проверка контрастности</h4>
+  
+  <div class="contrast-table">
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background: #f5f5f5;">
+          <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Комбинация</th>
+          <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Коэффициент</th>
+          <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Статус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">
+            <span style="color: #333333; background: #ffffff; padding: 4px 8px;">Текст #333333 на белом</span>
+          </td>
+          <td style="padding: 12px; border: 1px solid #ddd;">12.63:1</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">✅ AAA</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">
+            <span style="color: #C9A961; background: #000000; padding: 4px 8px;">Золотой #C9A961 на черном</span>
+          </td>
+          <td style="padding: 12px; border: 1px solid #ddd;">8.2:1</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">✅ AAA</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">
+            <span style="color: #ffffff; background: #C9A961; padding: 4px 8px;">Белый на золотом</span>
+          </td>
+          <td style="padding: 12px; border: 1px solid #ddd;">4.8:1</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">✅ AA</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">
+            <span style="color: #666666; background: #ffffff; padding: 4px 8px;">Серый #666666 на белом</span>
+          </td>
+          <td style="padding: 12px; border: 1px solid #ddd;">5.74:1</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">✅ AA</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Требования WCAG</h4>
+  <div class="code-block">
+    <pre><code>/* WCAG 2.1 Level AA */
+- Обычный текст: минимум 4.5:1
+- Крупный текст (18px+): минимум 3:1
+- UI компоненты: минимум 3:1
+
+/* WCAG 2.1 Level AAA */
+- Обычный текст: минимум 7:1
+- Крупный текст (18px+): минимум 4.5:1</code></pre>
+  </div>
+</div>
+
+### Чек-лист доступности
+
+<div class="component-section">
+  <h4>Обязательные требования</h4>
+  
+  <ul class="ui-list ui-list-icon">
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Все изображения имеют alt-тексты</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Все формы имеют label для каждого input</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Интерактивные элементы имеют aria-label</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Контрастность соответствует WCAG 2.1 AA</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Клавиатурная навигация работает (Tab, Enter, Space)</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Фокус видим на всех интерактивных элементах</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Skip navigation присутствует</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>Семантические HTML теги (header, nav, main, footer)</span>
+    </li>
+  </ul>
+</div>

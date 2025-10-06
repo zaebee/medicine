@@ -108,6 +108,15 @@ permalink: /design/branding-guidelines/
   </div>
 
   <div class="color-card">
+    <div class="color-preview" style="background: #ffc107;"></div>
+    <div class="color-info">
+      <h4>Предупреждение</h4>
+      <p><strong>HEX:</strong> #ffc107</p>
+      <p class="color-description">Предупреждения и важные уведомления</p>
+    </div>
+  </div>
+
+  <div class="color-card">
     <div class="color-preview" style="background: #17a2b8;"></div>
     <div class="color-info">
       <h4>Информация</h4>
