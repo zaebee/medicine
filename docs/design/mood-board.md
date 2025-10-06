@@ -93,6 +93,38 @@ permalink: /design/mood-board/
 
 ---
 
+## ✍️ ТИПОГРАФИКА
+
+<div class="mood-section">
+  <h3>Шрифты</h3>
+  
+  <div class="typography-showcase">
+    <div class="typography-card">
+      <h4 class="font-display" style="font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #333; margin: 0;">Montserrat</h4>
+      <p style="font-family: 'Montserrat', sans-serif; color: #666; margin: 10px 0 0 0;">Заголовочный шрифт</p>
+      <p style="font-family: 'Montserrat', sans-serif; color: #999; font-size: 14px; margin: 5px 0 0 0;">SemiBold (600), Bold (700)</p>
+    </div>
+    
+    <div class="typography-card">
+      <h4 class="font-display" style="font-family: 'Open Sans', sans-serif; font-size: 24px; font-weight: 400; color: #333; margin: 0;">Open Sans</h4>
+      <p style="font-family: 'Open Sans', sans-serif; color: #666; margin: 10px 0 0 0;">Основной шрифт для текста</p>
+      <p style="font-family: 'Open Sans', sans-serif; color: #999; font-size: 14px; margin: 5px 0 0 0;">Regular (400), Medium (500), Bold (700)</p>
+    </div>
+  </div>
+
+  <h3>Размеры и иерархия</h3>
+  
+  <div class="typography-hierarchy">
+    <h1 style="font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 700; color: #333; margin: 0 0 10px 0;">H1: 42px / Bold</h1>
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; color: #333; margin: 0 0 10px 0;">H2: 36px / Bold</h2>
+    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 600; color: #333; margin: 0 0 10px 0;">H3: 28px / SemiBold</h3>
+    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 600; color: #C9A961; margin: 0 0 10px 0;">H4: 24px / SemiBold (с золотым акцентом)</h4>
+    <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #333; line-height: 1.6; margin: 0;">Основной текст: 16px / Regular / line-height 1.6</p>
+  </div>
+</div>
+
+---
+
 ## 📐 ГЕОМЕТРИЧЕСКИЕ ФОРМЫ
 
 <div class="mood-section">
@@ -945,6 +977,49 @@ permalink: /design/mood-board/
   border-bottom: none;
 }
 
+/* Typography Showcase */
+.typography-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.typography-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.typography-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(201,169,97,0.2);
+}
+
+.typography-hierarchy {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  margin: 30px 0;
+}
+
+.typography-hierarchy h1,
+.typography-hierarchy h2,
+.typography-hierarchy h3,
+.typography-hierarchy h4,
+.typography-hierarchy p {
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.typography-hierarchy p:last-child {
+  border-bottom: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .concept-intro {
@@ -959,6 +1034,18 @@ permalink: /design/mood-board/
   
   .keywords-cloud {
     justify-content: center;
+  }
+  
+  .typography-showcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .typography-hierarchy h1 {
+    font-size: 32px !important;
+  }
+  
+  .typography-hierarchy h2 {
+    font-size: 28px !important;
   }
 }
 </style>

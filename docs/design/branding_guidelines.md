@@ -9,9 +9,9 @@ permalink: /design/branding-guidelines/
 
 # ГАЙД ПО БРЕНДИНГУ КЛИНИКИ "ПЧЁЛКА"
 
-**Дата:** 5 октября 2025
-**Версия:** 2.0 (Обновлено на основе реального логотипа)
-**Статус:** Актуализировано с реальными цветами логотипа
+**Дата:** 6 октября 2025
+**Версия:** 2.1 (Синхронизировано с Mood Board и UI Kit)
+**Статус:** Актуализировано с реальными цветами логотипа, иконками Lucide
 
 ---
 
@@ -53,15 +53,6 @@ permalink: /design/branding-guidelines/
     </div>
   </div>
 
-  <div class="color-card">
-    <div class="color-preview" style="background: #CC8833;"></div>
-    <div class="color-info">
-      <h4>Дополнительный: Теплый оранжевый</h4>
-      <p><strong>HEX:</strong> #CC8833</p>
-      <p><strong>RGB:</strong> 204, 136, 51</p>
-      <p class="color-description">Гармонирует с темно-золотым, для hover-эффектов.</p>
-    </div>
-  </div>
 </div>
 
 ### Нейтральные цвета
