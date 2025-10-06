@@ -2653,4 +2653,108 @@ document.body.setAttribute('data-theme', savedTheme);</code></pre>
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
+
+/* Outline Button Dark Theme */
+[data-theme="dark"] .ui-btn-outline {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .ui-btn-outline:hover {
+  color: #C9A961;
+  border-color: #C9A961;
+  background: rgba(201, 169, 97, 0.1);
+}
+
+/* Checkbox Dark Theme */
+[data-theme="dark"] .ui-checkbox .checkmark {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .ui-checkbox:hover .checkmark {
+  border-color: #C9A961;
+}
+
+[data-theme="dark"] .ui-checkbox .label-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-checkbox .label-text a {
+  color: #C9A961;
+}
+
+/* Radio Dark Theme */
+[data-theme="dark"] .ui-radio .radiomark {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .ui-radio:hover .radiomark {
+  border-color: #C9A961;
+}
+
+[data-theme="dark"] .ui-radio input:checked ~ .radiomark {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #C9A961;
+}
+
+[data-theme="dark"] .ui-radio .label-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Form Complete Example Dark Theme */
+[data-theme="dark"] .form-complete-example {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tags Showcase Dark Theme */
+[data-theme="dark"] .tags-showcase {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Notification Badge - already visible on dark backgrounds */
+
+/* Content Section Dark Theme */
+[data-theme="dark"] .ui-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="dark"] .ui-section-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ui-section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .ui-section-content {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-section-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Grid Layout Dark Theme */
+[data-theme="dark"] .ui-grid-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .ui-grid-item h3,
+[data-theme="dark"] .ui-grid-item h4 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ui-grid-item p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Layout Example Border Dark Theme */
+[data-theme="dark"] .layout-example {
+  border-color: rgba(255, 255, 255, 0.2);
+}
 </style>
