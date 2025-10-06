@@ -138,8 +138,8 @@
 
                 <!-- Header actions -->
                 <div class="header-actions">
-                    <a href="tel:+74951234567" class="header-phone">+7 (495) 123-45-67</a>
-                    <button onclick="openCallbackModal()" class="btn btn-primary btn-sm">
+                    <a href="tel:+74951234567" class="header-phone" aria-label="Позвонить по телефону +7 (495) 123-45-67">+7 (495) 123-45-67</a>
+                    <button onclick="openCallbackModal()" class="btn btn-primary btn-sm" aria-label="Заказать обратный звонок">
                         Заказать звонок
                     </button>
                 </div>
@@ -152,8 +152,9 @@
         <!-- Video Background (can be replaced with slider) -->
         <div class="hero-media">
             <!-- Option 1: Video background -->
-            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920" aria-label="Видео о клинике Пчёлка">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-writing-on-a-clipboard-5883-large.mp4" type="video/mp4">
+                <p>Ваш браузер не поддерживает видео. Пожалуйста, обновите браузер.</p>
             </video>
             
             <!-- Option 2: Image Slider (hidden by default, can be toggled) -->
