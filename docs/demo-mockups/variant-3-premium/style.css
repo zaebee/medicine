@@ -1067,10 +1067,7 @@ img {
     position: absolute;
     top: var(--spacing-sm);
     right: var(--spacing-sm);
-    background: var(--bg-white);
-    border-radius: var(--radius-full);
-    padding: var(--spacing-xs);
-    box-shadow: var(--shadow-md);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .doctor-info {
