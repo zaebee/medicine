@@ -1,0 +1,62 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Compact version of the detailed bee logo -->
+  <g transform="translate(100, 100)">
+    <!-- Outer Circle -->
+    <circle cx="0" cy="0" r="90" stroke="#C9A961" stroke-width="2" fill="none"/>
+    
+    <!-- Detailed Bee Body (scaled) -->
+    <g transform="scale(0.75)">
+        <!-- Detailed Bee Body -->
+        <g id="bee-detailed">
+          <!-- Head -->
+          <path d="M 0 -62 L 18 -50 L -18 -50 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          <circle cx="0" cy="-48" r="12" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          
+          <!-- Antennae -->
+          <line x1="-12" y1="-58" x2="-22" y2="-75" stroke="#C9A961" stroke-width="2.66"/>
+          <line x1="12" y1="-58" x2="22" y2="-75" stroke="#C9A961" stroke-width="2.66"/>
+          <circle cx="-22" cy="-75" r="3" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          <circle cx="22" cy="-75" r="3" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          
+          <!-- Thorax (Upper Body) -->
+          <path d="M -28 -36 L 28 -36 L 38 -8 L -38 -8 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          <line x1="-32" y1="-22" x2="32" y2="-22" stroke="#C9A961" stroke-width="2.66"/>
+          
+          <!-- Abdomen (Lower Body) -->
+          <path d="M -38 -8 L 38 -8 L 25 35 L 0 50 L -25 35 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          <line x1="-30" y1="10" x2="30" y2="10" stroke="#C9A961" stroke-width="2.66"/>
+          <line x1="-28" y1="25" x2="28" y2="25" stroke="#C9A961" stroke-width="2.66"/>
+
+          <!-- Left Wing - More Detailed -->
+          <g id="left-wing-very-detailed">
+            <path d="M -30, -25 L -100, -45 L -85, -5 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M -85, -5 L -75, 15 L -32, -2 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <line x1="-45" y1="-20" x2="-80" y2="-30" stroke="#C9A961" stroke-width="2"/>
+            <line x1="-80" y1="-30" x2="-88" y2="-15" stroke="#C9A961" stroke-width="2"/>
+            <line x1="-50" y1="-10" x2="-75" y2="5" stroke="#C9A961" stroke-width="2"/>
+            <line x1="-35" y1="-10" x2="-60" y2="10" stroke="#C9A961" stroke-width="1.33"/>
+          </g>
+          
+          <!-- Right Wing - More Detailed -->
+          <g id="right-wing-very-detailed">
+            <path d="M 30, -25 L 100, -45 L 85, -5 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M 85, -5 L 75, 15 L 32, -2 Z" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <line x1="45" y1="-20" x2="80" y2="-30" stroke="#C9A961" stroke-width="2"/>
+            <line x1="80" y1="-30" x2="88" y2="-15" stroke="#C9A961" stroke-width="2"/>
+            <line x1="50" y1="-10" x2="75" y2="5" stroke="#C9A961" stroke-width="2"/>
+            <line x1="35" y1="-10" x2="60" y2="10" stroke="#C9A961" stroke-width="1.33"/>
+          </g>
+          
+          <!-- Legs - More Detailed -->
+          <g id="legs-detailed">
+            <path d="M -25,5 L -45, 25 L -40, 45" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M -30,-2 L -55, 15 L -50, 35" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M -32,-12 L -65, 0 L -60, 20" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M 25,5 L 45, 25 L 40, 45" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M 30,-2 L 55, 15 L 50, 35" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+            <path d="M 32,-12 L 65, 0 L 60, 20" stroke="#C9A961" stroke-width="2.66" fill="none"/>
+          </g>
+        </g>
+    </g>
+  </g>
+</svg>
