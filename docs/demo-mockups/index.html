@@ -49,11 +49,20 @@
 
         .logo {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .logo img {
-            height: 80px;
+            height: 120px;
             width: auto;
+            max-width: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         h1 {
@@ -233,6 +242,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .logo img {
+                height: 80px;
+            }
+            
             h1 {
                 font-size: 2rem;
             }
@@ -245,13 +258,27 @@
                 font-size: 1.5rem;
             }
         }
+        
+        @media (max-width: 480px) {
+            .logo img {
+                height: 60px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="container">
             <div class="logo">
-                <img src="assets/logo-optimized.svg" alt="Клиника Пчёлка Медик">
+                <img src="../assets/client/logo1.svg" alt="Клиника Пчёлка Медик">
             </div>
             <h1>Демо-версии сайта клиники</h1>
             <p class="subtitle">Выберите подходящий вариант дизайна</p>
