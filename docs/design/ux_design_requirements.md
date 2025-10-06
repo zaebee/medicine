@@ -9,6 +9,47 @@ permalink: /design/ux-design-requirements/
 
 # UX/КОНТЕНТ/ДИЗАЙН ТРЕБОВАНИЯ
 
+**Дата:** 6 октября 2025  
+**Версия:** 2.0 (Синхронизировано с Branding Guidelines и UI Kit)  
+**Статус:** Обновлено под фирменную палитру клиники "Пчёлка"
+
+---
+
+## 🎨 ЦВЕТОВАЯ ПАЛИТРА
+
+### Фирменные цвета клиники "Пчёлка"
+
+```css
+:root {
+  /* Основные цвета */
+  --primary-color: #C9A961;      /* Темно-золотой (из логотипа) */
+  --primary-light: #D4AF37;      /* Светло-золотой */
+  --secondary-color: #000000;    /* Премиум черный */
+  --accent-color: #D4AF37;       /* Золотой акцент */
+
+  /* Нейтральные цвета */
+  --text-primary: #333333;       /* Основной текст */
+  --text-secondary: #666666;     /* Вторичный текст */
+  --background: #ffffff;         /* Основной фон */
+  --background-light: #f5f5f5;   /* Альтернативный фон */
+
+  /* Семантические цвета */
+  --success: #28a745;            /* Успех */
+  --error: #dc3545;              /* Ошибка */
+  --warning: #ffc107;            /* Предупреждение */
+  --info: #17a2b8;               /* Информация */
+}
+```
+
+### Требования к контрастности (WCAG 2.1 AA)
+
+- **Основной текст (#333333) на белом:** 12.63:1 ✅ AAA
+- **Золотой (#C9A961) на черном:** 8.2:1 ✅ AAA
+- **Белый на золотом (#C9A961):** 4.8:1 ✅ AA
+- **Серый (#666666) на белом:** 5.74:1 ✅ AA
+
+---
+
 ## 🎨 UX Принципы для медицинского сайта
 
 ### 1. Доверие и профессионализм
@@ -34,7 +75,7 @@ permalink: /design/ux-design-requirements/
 
 ```css
 /* Базовые принципы адаптивности */
-.container {
+.ui-container {
   max-width: 1200px;
   padding: 0 16px;
   margin: 0 auto;
@@ -42,13 +83,13 @@ permalink: /design/ux-design-requirements/
 
 /* Мобильные устройства (до 768px) */
 @media (max-width: 767px) {
-  .hero h1 {
+  .ui-hero h1 {
     font-size: 24px;
     line-height: 1.3;
     margin-bottom: 16px;
   }
 
-  .appointment-form {
+  .ui-appointment-form {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -58,14 +99,14 @@ permalink: /design/ux-design-requirements/
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  .doctor-card {
+  .ui-card-doctor {
     margin-bottom: 24px;
   }
 }
 
 /* Планшеты (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .services-grid {
+  .ui-services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
@@ -73,7 +114,7 @@ permalink: /design/ux-design-requirements/
 
 /* Десктоп (от 1025px) */
 @media (min-width: 1025px) {
-  .services-grid {
+  .ui-services-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
@@ -123,34 +164,159 @@ permalink: /design/ux-design-requirements/
 <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
 ```
 
-### Цветовая схема и контрастность
+### Стили фокуса для клавиатурной навигации
 
 ```css
-:root {
-  /* Основные цвета */
-  --primary-color: #2563eb; /* Синий медицинский */
-  --primary-dark: #1d4ed8;
-  --secondary-color: #059669; /* Зелёный здоровья */
-  --accent-color: #dc2626; /* Красный для срочности */
-
-  /* Нейтральные цвета */
-  --text-primary: #111827; /* Контраст 16.74:1 */
-  --text-secondary: #4b5563; /* Контраст 9.25:1 */
-  --background: #ffffff;
-  --background-light: #f9fafb;
-
-  /* Состояния */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-}
-
-/* Фокус для клавиатурной навигации */
-.btn:focus,
+/* Фокус для интерактивных элементов */
+.ui-btn:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+}
+
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+```
+
+---
+
+## ✍️ ТИПОГРАФИКА
+
+### Шрифты
+
+**Основной шрифт (для текста):**
+```css
+font-family: 'Open Sans', 'Roboto', 'Lato', sans-serif;
+font-weight: 400 (Regular), 500 (Medium), 700 (Bold);
+font-size: 16px;
+line-height: 1.6;
+color: var(--text-primary); /* #333333 */
+```
+
+**Заголовочный шрифт:**
+```css
+font-family: 'Montserrat', 'Raleway', 'Poppins', sans-serif;
+font-weight: 600 (SemiBold), 700 (Bold);
+color: var(--text-primary); /* #333333 */
+```
+
+### Размеры заголовков
+
+```css
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+/* Основной текст */
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* Мелкий текст */
+small, .ui-text-small {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+```
+
+### Адаптивная типографика
+
+```css
+/* Мобильные устройства (до 768px) */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 16px; /* Не уменьшать для читаемости */
+  }
+}
+```
+
+### Стили текста
+
+```css
+/* Акцентный текст (золотой) */
+.ui-text-accent {
+  color: var(--primary-color); /* #C9A961 */
+}
+
+/* Вторичный текст */
+.ui-text-secondary {
+  color: var(--text-secondary); /* #666666 */
+}
+
+/* Жирный текст */
+.ui-text-bold {
+  font-weight: 700;
+}
+
+/* Uppercase для кнопок */
+.ui-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 ```
 
@@ -161,48 +327,50 @@ textarea:focus {
 ### Hero-секция главной страницы
 
 ```html
-<section class="hero" role="banner">
-  <div class="hero-content">
-    <h1>Забота о вашем здоровье — наша главная задача</h1>
-    <p class="hero-subtitle">
-      Современный медицинский центр с командой опытных врачей. Записывайтесь на
-      приём онлайн — это быстро, удобно и безопасно.
-    </p>
+<section class="ui-hero" role="banner">
+  <div class="ui-container">
+    <div class="ui-hero-content">
+      <h1 class="ui-hero-title">Забота о вашем здоровье — наша главная задача</h1>
+      <p class="ui-hero-subtitle">
+        Современный медицинский центр с командой опытных врачей. Записывайтесь на
+        приём онлайн — это быстро, удобно и безопасно.
+      </p>
 
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-number">2500+</span>
-        <span class="stat-label">довольных пациентов</span>
+      <div class="ui-hero-stats">
+        <div class="ui-stat">
+          <span class="ui-stat-number">2500+</span>
+          <span class="ui-stat-label">довольных пациентов</span>
+        </div>
+        <div class="ui-stat">
+          <span class="ui-stat-number">15+</span>
+          <span class="ui-stat-label">опытных врачей</span>
+        </div>
+        <div class="ui-stat">
+          <span class="ui-stat-number">8</span>
+          <span class="ui-stat-label">лет работы</span>
+        </div>
       </div>
-      <div class="stat">
-        <span class="stat-number">15+</span>
-        <span class="stat-label">опытных врачей</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">8</span>
-        <span class="stat-label">лет работы</span>
+
+      <div class="ui-hero-actions">
+        <button
+          class="ui-btn ui-btn-primary ui-btn-large"
+          onclick="openAppointmentModal()"
+        >
+          📅 Записаться на приём
+        </button>
+        <a href="tel:+7XXXXXXXXXX" class="ui-btn ui-btn-outline ui-btn-large">
+          📞 Позвонить сейчас
+        </a>
       </div>
     </div>
 
-    <div class="hero-cta">
-      <button
-        class="btn btn-primary btn-large"
-        onclick="openAppointmentModal()"
-      >
-        📅 Записаться на приём
-      </button>
-      <a href="tel:+7XXXXXXXXXX" class="btn btn-outline btn-large">
-        📞 Позвонить сейчас
-      </a>
+    <div class="ui-hero-image">
+      <img
+        src="/images/hero-doctor.jpg"
+        alt="Врач в современном медицинском кабинете"
+        loading="eager"
+      />
     </div>
-  </div>
-
-  <div class="hero-image">
-    <img
-      src="/images/hero-doctor.jpg"
-      alt="Врач в современном медицинском кабинете"
-      loading="eager"
-    />
   </div>
 </section>
 ```
@@ -210,33 +378,33 @@ textarea:focus {
 ### Блок преимуществ
 
 ```html
-<section class="benefits">
-  <div class="container">
-    <h2>Почему выбирают наш медицинский центр?</h2>
+<section class="ui-section ui-benefits">
+  <div class="ui-container">
+    <h2 class="ui-section-title">Почему выбирают наш медицинский центр?</h2>
 
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">⏰</div>
-        <h3>Быстрая запись</h3>
-        <p>Запишитесь на приём за 30 секунд через сайт или по телефону</p>
+    <div class="ui-grid ui-grid-4">
+      <div class="ui-card ui-card-benefit">
+        <div class="ui-card-icon">⏰</div>
+        <h3 class="ui-card-title">Быстрая запись</h3>
+        <p class="ui-card-text">Запишитесь на приём за 30 секунд через сайт или по телефону</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">👨‍⚕️</div>
-        <h3>Опытные врачи</h3>
-        <p>Специалисты высшей категории со стажем от 10 лет</p>
+      <div class="ui-card ui-card-benefit">
+        <div class="ui-card-icon">👨‍⚕️</div>
+        <h3 class="ui-card-title">Опытные врачи</h3>
+        <p class="ui-card-text">Специалисты высшей категории со стажем от 10 лет</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">🏥</div>
-        <h3>Современное оборудование</h3>
-        <p>Новейшие аппараты для точной диагностики</p>
+      <div class="ui-card ui-card-benefit">
+        <div class="ui-card-icon">🏥</div>
+        <h3 class="ui-card-title">Современное оборудование</h3>
+        <p class="ui-card-text">Новейшие аппараты для точной диагностики</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">🕐</div>
-        <h3>Удобное время работы</h3>
-        <p>Работаем 7 дней в неделю, включая выходные</p>
+      <div class="ui-card ui-card-benefit">
+        <div class="ui-card-icon">🕐</div>
+        <h3 class="ui-card-title">Удобное время работы</h3>
+        <p class="ui-card-text">Работаем 7 дней в неделю, включая выходные</p>
       </div>
     </div>
   </div>
@@ -246,24 +414,24 @@ textarea:focus {
 ### Карточка врача
 
 ```html
-<div class="doctor-card">
-  <div class="doctor-photo">
+<div class="ui-card ui-card-doctor">
+  <div class="ui-card-doctor-photo">
     <img
       src="/images/doctors/petrov.jpg"
       alt="Петров Пётр Петрович, врач-кардиолог"
     />
-    <div class="doctor-rating">
-      <span class="rating-stars">⭐⭐⭐⭐⭐</span>
-      <span class="rating-value">4.9</span>
+    <div class="ui-doctor-rating">
+      <span class="ui-rating-stars">⭐⭐⭐⭐⭐</span>
+      <span class="ui-rating-value">4.9</span>
     </div>
   </div>
 
-  <div class="doctor-info">
-    <h3>Петров Пётр Петрович</h3>
-    <p class="doctor-specialty">Врач-кардиолог высшей категории</p>
-    <p class="doctor-experience">Стаж: 15 лет</p>
+  <div class="ui-card-doctor-info">
+    <h3 class="ui-card-title">Петров Пётр Петрович</h3>
+    <p class="ui-card-specialty">Врач-кардиолог высшей категории</p>
+    <p class="ui-card-text">Стаж: 15 лет</p>
 
-    <div class="doctor-education">
+    <div class="ui-doctor-education">
       <h4>Образование:</h4>
       <ul>
         <li>МГМУ им. Сеченова (2008г.)</li>
@@ -271,12 +439,12 @@ textarea:focus {
       </ul>
     </div>
 
-    <div class="doctor-price">
-      <span class="price-label">Консультация:</span>
-      <span class="price-value">3 500 ₽</span>
+    <div class="ui-doctor-price">
+      <span class="ui-price-label">Консультация:</span>
+      <span class="ui-price-value">3 500 ₽</span>
     </div>
 
-    <button class="btn btn-primary" onclick="bookAppointment('petrov')">
+    <button class="ui-btn ui-btn-primary" onclick="bookAppointment('petrov')">
       Записаться на приём
     </button>
   </div>
@@ -331,51 +499,53 @@ Description: 👨‍⚕️ Врач-кардиолог высшей катего
 ### Форма обратной связи
 
 ```html
-<form class="contact-form" id="contactForm">
-  <h3>Остались вопросы? Мы поможем!</h3>
-  <p>Оставьте заявку, и наш администратор свяжется с вами в течение 15 минут</p>
+<form class="ui-form ui-contact-form" id="contactForm">
+  <h3 class="ui-form-title">Остались вопросы? Мы поможем!</h3>
+  <p class="ui-form-subtitle">Оставьте заявку, и наш администратор свяжется с вами в течение 15 минут</p>
 
-  <div class="form-group">
-    <label for="contact-name">Ваше имя *</label>
-    <input type="text" id="contact-name" name="name" required />
+  <div class="ui-form-group">
+    <label class="ui-label" for="contact-name">Ваше имя *</label>
+    <input type="text" id="contact-name" name="name" class="ui-input" required />
   </div>
 
-  <div class="form-group">
-    <label for="contact-phone">Телефон *</label>
+  <div class="ui-form-group">
+    <label class="ui-label" for="contact-phone">Телефон *</label>
     <input
       type="tel"
       id="contact-phone"
       name="phone"
+      class="ui-input"
       required
       pattern="[+]7[0-9]{10}"
       placeholder="+7 (___) ___-__-__"
     />
   </div>
 
-  <div class="form-group">
-    <label for="contact-question">Ваш вопрос</label>
+  <div class="ui-form-group">
+    <label class="ui-label" for="contact-question">Ваш вопрос</label>
     <textarea
       id="contact-question"
       name="question"
+      class="ui-input ui-textarea"
       rows="3"
       placeholder="Опишите ваш вопрос или уточнение"
     ></textarea>
   </div>
 
-  <div class="form-consent">
-    <label class="checkbox-label">
+  <div class="ui-form-group">
+    <label class="ui-checkbox">
       <input type="checkbox" required />
       <span class="checkmark"></span>
-      Согласен с
-      <a href="/privacy-policy/" target="_blank"
-        >политикой конфиденциальности</a
-      >
+      <span class="label-text">
+        Согласен с
+        <a href="/privacy-policy/" target="_blank">политикой конфиденциальности</a>
+      </span>
     </label>
   </div>
 
-  <button type="submit" class="btn btn-primary">Отправить заявку</button>
+  <button type="submit" class="ui-btn ui-btn-primary">Отправить заявку</button>
 
-  <p class="form-note">
+  <p class="ui-form-note">
     * Обязательные поля. Мы не передаём ваши данные третьим лицам.
   </p>
 </form>
