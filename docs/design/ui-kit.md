@@ -356,19 +356,25 @@ permalink: /design/ui-kit/
   
   <div class="cards-showcase">
     <div class="ui-card ui-card-info">
-      <div class="ui-card-info-icon">📞</div>
+      <div class="ui-card-info-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </div>
       <h4 class="ui-card-info-title">Телефон</h4>
       <p class="ui-card-info-text">+7 (999) 123-45-67</p>
     </div>
 
     <div class="ui-card ui-card-info">
-      <div class="ui-card-info-icon">📍</div>
+      <div class="ui-card-info-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
       <h4 class="ui-card-info-title">Адрес</h4>
       <p class="ui-card-info-text">г. Мытищи, ул. Примерная, 1</p>
     </div>
 
     <div class="ui-card ui-card-info">
-      <div class="ui-card-info-icon">⏰</div>
+      <div class="ui-card-info-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
       <h4 class="ui-card-info-title">Время работы</h4>
       <p class="ui-card-info-text">Пн-Пт: 8:00-20:00<br>Сб-Вс: 9:00-18:00</p>
     </div>
@@ -455,7 +461,9 @@ permalink: /design/ui-kit/
 
 &lt;!-- Info Card --&gt;
 &lt;div class="ui-card ui-card-info"&gt;
-  &lt;div class="ui-card-info-icon"&gt;📞&lt;/div&gt;
+  &lt;div class="ui-card-info-icon"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
   &lt;h4 class="ui-card-info-title"&gt;Телефон&lt;/h4&gt;
   &lt;p class="ui-card-info-text"&gt;+7 (999) 123-45-67&lt;/p&gt;
 &lt;/div&gt;
@@ -480,8 +488,428 @@ permalink: /design/ui-kit/
 
 ---
 
-**Статус:** UI Kit v1.0 - Часть 3: Cards  
-**Следующая часть:** Navigation, Modals, Badges
+## 🧭 NAVIGATION {#navigation}
+
+### Header Navigation
+
+<div class="component-section">
+  <h4>Desktop Navigation</h4>
+  
+  <div class="nav-example">
+    <nav class="ui-nav">
+      <a href="#" class="ui-nav-link ui-nav-link-active">Главная</a>
+      <a href="#" class="ui-nav-link">Услуги</a>
+      <a href="#" class="ui-nav-link">Врачи</a>
+      <a href="#" class="ui-nav-link">О клинике</a>
+      <a href="#" class="ui-nav-link">Контакты</a>
+    </nav>
+  </div>
+
+  <h4>Breadcrumbs</h4>
+  
+  <div class="nav-example">
+    <nav class="ui-breadcrumbs">
+      <a href="#" class="ui-breadcrumb-link">Главная</a>
+      <span class="ui-breadcrumb-separator">/</span>
+      <a href="#" class="ui-breadcrumb-link">Услуги</a>
+      <span class="ui-breadcrumb-separator">/</span>
+      <span class="ui-breadcrumb-current">Физиотерапия</span>
+    </nav>
+  </div>
+
+  <h4>Pagination</h4>
+  
+  <div class="nav-example">
+    <nav class="ui-pagination">
+      <button class="ui-pagination-btn ui-pagination-prev" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="ui-pagination-btn ui-pagination-active">1</button>
+      <button class="ui-pagination-btn">2</button>
+      <button class="ui-pagination-btn">3</button>
+      <button class="ui-pagination-btn">4</button>
+      <button class="ui-pagination-btn">5</button>
+      <button class="ui-pagination-btn ui-pagination-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </nav>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;!-- Navigation --&gt;
+&lt;nav class="ui-nav"&gt;
+  &lt;a href="#" class="ui-nav-link ui-nav-link-active"&gt;Главная&lt;/a&gt;
+  &lt;a href="#" class="ui-nav-link"&gt;Услуги&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;!-- Breadcrumbs --&gt;
+&lt;nav class="ui-breadcrumbs"&gt;
+  &lt;a href="#" class="ui-breadcrumb-link"&gt;Главная&lt;/a&gt;
+  &lt;span class="ui-breadcrumb-separator"&gt;/&lt;/span&gt;
+  &lt;span class="ui-breadcrumb-current"&gt;Физиотерапия&lt;/span&gt;
+&lt;/nav&gt;
+
+&lt;!-- Pagination --&gt;
+&lt;nav class="ui-pagination"&gt;
+  &lt;button class="ui-pagination-btn ui-pagination-prev"&gt;...&lt;/button&gt;
+  &lt;button class="ui-pagination-btn ui-pagination-active"&gt;1&lt;/button&gt;
+  &lt;button class="ui-pagination-btn"&gt;2&lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+  </div>
+</div>
+
+---
+
+## 🔔 MODALS & ALERTS {#modals}
+
+### Modal Window
+
+<div class="component-section">
+  <h4>Modal Example</h4>
+  
+  <div class="modal-demo-container">
+    <button class="ui-btn ui-btn-primary" onclick="document.getElementById('demo-modal').style.display='flex'">Открыть модальное окно</button>
+  </div>
+
+  <div id="demo-modal" class="ui-modal" style="display: none;">
+    <div class="ui-modal-overlay" onclick="document.getElementById('demo-modal').style.display='none'"></div>
+    <div class="ui-modal-content">
+      <button class="ui-modal-close" onclick="document.getElementById('demo-modal').style.display='none'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 class="ui-modal-title">Запись на прием</h3>
+      <p class="ui-modal-text">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
+      <form class="ui-modal-form">
+        <input type="text" class="ui-input" placeholder="Ваше имя">
+        <input type="tel" class="ui-input" placeholder="Телефон">
+        <button type="submit" class="ui-btn ui-btn-primary">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <h4>Alert Messages</h4>
+  
+  <div class="alerts-showcase">
+    <div class="ui-alert ui-alert-success">
+      <div class="ui-alert-icon">✓</div>
+      <div class="ui-alert-content">
+        <strong>Успешно!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+      </div>
+    </div>
+
+    <div class="ui-alert ui-alert-error">
+      <div class="ui-alert-icon">✕</div>
+      <div class="ui-alert-content">
+        <strong>Ошибка!</strong> Не удалось отправить форму. Проверьте введенные данные.
+      </div>
+    </div>
+
+    <div class="ui-alert ui-alert-warning">
+      <div class="ui-alert-icon">⚠</div>
+      <div class="ui-alert-content">
+        <strong>Внимание!</strong> Клиника будет закрыта 1 января.
+      </div>
+    </div>
+
+    <div class="ui-alert ui-alert-info">
+      <div class="ui-alert-icon">ℹ</div>
+      <div class="ui-alert-content">
+        <strong>Информация:</strong> Запись на прием доступна онлайн 24/7.
+      </div>
+    </div>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;!-- Modal --&gt;
+&lt;div class="ui-modal"&gt;
+  &lt;div class="ui-modal-overlay"&gt;&lt;/div&gt;
+  &lt;div class="ui-modal-content"&gt;
+    &lt;button class="ui-modal-close"&gt;×&lt;/button&gt;
+    &lt;h3 class="ui-modal-title"&gt;Заголовок&lt;/h3&gt;
+    &lt;p class="ui-modal-text"&gt;Текст...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Alert --&gt;
+&lt;div class="ui-alert ui-alert-success"&gt;
+  &lt;div class="ui-alert-icon"&gt;✓&lt;/div&gt;
+  &lt;div class="ui-alert-content"&gt;
+    &lt;strong&gt;Успешно!&lt;/strong&gt; Сообщение...
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+
+---
+
+## 🏷️ BADGES & TAGS {#badges}
+
+### Status Badges
+
+<div class="component-section">
+  <h4>Badge Styles</h4>
+  
+  <div class="badges-showcase">
+    <span class="ui-badge ui-badge-primary">Новинка</span>
+    <span class="ui-badge ui-badge-success">Доступно</span>
+    <span class="ui-badge ui-badge-warning">Ограничено</span>
+    <span class="ui-badge ui-badge-error">Недоступно</span>
+    <span class="ui-badge ui-badge-info">Популярное</span>
+  </div>
+
+  <h4>Category Tags</h4>
+  
+  <div class="tags-showcase">
+    <span class="ui-tag">Физиотерапия</span>
+    <span class="ui-tag">ЛФК</span>
+    <span class="ui-tag">УВТ</span>
+    <span class="ui-tag">Флебология</span>
+    <span class="ui-tag">Травматология</span>
+  </div>
+
+  <h4>Notification Badge</h4>
+  
+  <div class="notification-demo">
+    <button class="ui-btn ui-btn-outline" style="position: relative;">
+      Уведомления
+      <span class="ui-notification-badge">3</span>
+    </button>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;!-- Badge --&gt;
+&lt;span class="ui-badge ui-badge-primary"&gt;Новинка&lt;/span&gt;
+&lt;span class="ui-badge ui-badge-success"&gt;Доступно&lt;/span&gt;
+
+&lt;!-- Tag --&gt;
+&lt;span class="ui-tag"&gt;Физиотерапия&lt;/span&gt;
+
+&lt;!-- Notification Badge --&gt;
+&lt;button style="position: relative;"&gt;
+  Уведомления
+  &lt;span class="ui-notification-badge"&gt;3&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+  </div>
+</div>
+
+---
+
+## 📋 LISTS {#lists}
+
+### List Styles
+
+<div class="component-section">
+  <h4>Icon List</h4>
+  
+  <div class="list-example">
+    <ul class="ui-list ui-list-icon">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Консультация опытного врача</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Современное оборудование</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Индивидуальный подход к каждому пациенту</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Удобное расположение клиники</span>
+      </li>
+    </ul>
+  </div>
+
+  <h4>Numbered List</h4>
+  
+  <div class="list-example">
+    <ol class="ui-list ui-list-numbered">
+      <li>Запишитесь на прием по телефону или онлайн</li>
+      <li>Пройдите консультацию у специалиста</li>
+      <li>Получите индивидуальный план лечения</li>
+      <li>Начните курс процедур</li>
+    </ol>
+  </div>
+
+  <h4>Feature List</h4>
+  
+  <div class="list-example">
+    <div class="ui-feature-list">
+      <div class="ui-feature-item">
+        <div class="ui-feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="ui-feature-content">
+          <h4>Опытные специалисты</h4>
+          <p>Врачи с многолетним стажем и высшей категорией</p>
+        </div>
+      </div>
+
+      <div class="ui-feature-item">
+        <div class="ui-feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m16 15-3-3 3-3"/></svg>
+        </div>
+        <div class="ui-feature-content">
+          <h4>Современное оборудование</h4>
+          <p>Новейшие технологии для эффективного лечения</p>
+        </div>
+      </div>
+
+      <div class="ui-feature-item">
+        <div class="ui-feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </div>
+        <div class="ui-feature-content">
+          <h4>Забота о пациентах</h4>
+          <p>Внимательное отношение и комфортная атмосфера</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;!-- Icon List --&gt;
+&lt;ul class="ui-list ui-list-icon"&gt;
+  &lt;li&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    &lt;span&gt;Текст пункта&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Numbered List --&gt;
+&lt;ol class="ui-list ui-list-numbered"&gt;
+  &lt;li&gt;Первый шаг&lt;/li&gt;
+  &lt;li&gt;Второй шаг&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Feature List --&gt;
+&lt;div class="ui-feature-list"&gt;
+  &lt;div class="ui-feature-item"&gt;
+    &lt;div class="ui-feature-icon"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/div&gt;
+    &lt;div class="ui-feature-content"&gt;
+      &lt;h4&gt;Заголовок&lt;/h4&gt;
+      &lt;p&gt;Описание...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+
+---
+
+## 🏗️ LAYOUT {#layout}
+
+### Section Containers
+
+<div class="component-section">
+  <h4>Hero Section</h4>
+  
+  <div class="layout-example">
+    <section class="ui-hero">
+      <div class="ui-container">
+        <h1 class="ui-hero-title">Клиника «Пчёлка»</h1>
+        <p class="ui-hero-subtitle">Ваше здоровье в надежных руках</p>
+        <div class="ui-hero-actions">
+          <button class="ui-btn ui-btn-primary ui-btn-large">Записаться на прием</button>
+          <button class="ui-btn ui-btn-secondary ui-btn-large">Узнать больше</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <h4>Content Section</h4>
+  
+  <div class="layout-example">
+    <section class="ui-section">
+      <div class="ui-container">
+        <h2 class="ui-section-title">Наши услуги</h2>
+        <p class="ui-section-subtitle">Современные методы лечения и реабилитации</p>
+        <div class="ui-section-content">
+          <p>Здесь размещается контент секции...</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <h4>Two Column Layout</h4>
+  
+  <div class="layout-example">
+    <div class="ui-container">
+      <div class="ui-grid ui-grid-2">
+        <div class="ui-grid-item">
+          <h3>Левая колонка</h3>
+          <p>Контент первой колонки</p>
+        </div>
+        <div class="ui-grid-item">
+          <h3>Правая колонка</h3>
+          <p>Контент второй колонки</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>Three Column Layout</h4>
+  
+  <div class="layout-example">
+    <div class="ui-container">
+      <div class="ui-grid ui-grid-3">
+        <div class="ui-grid-item">
+          <h4>Колонка 1</h4>
+          <p>Контент</p>
+        </div>
+        <div class="ui-grid-item">
+          <h4>Колонка 2</h4>
+          <p>Контент</p>
+        </div>
+        <div class="ui-grid-item">
+          <h4>Колонка 3</h4>
+          <p>Контент</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>HTML код</h4>
+  <div class="code-block">
+    <pre><code>&lt;!-- Hero Section --&gt;
+&lt;section class="ui-hero"&gt;
+  &lt;div class="ui-container"&gt;
+    &lt;h1 class="ui-hero-title"&gt;Заголовок&lt;/h1&gt;
+    &lt;p class="ui-hero-subtitle"&gt;Подзаголовок&lt;/p&gt;
+    &lt;div class="ui-hero-actions"&gt;
+      &lt;button class="ui-btn ui-btn-primary"&gt;CTA&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Content Section --&gt;
+&lt;section class="ui-section"&gt;
+  &lt;div class="ui-container"&gt;
+    &lt;h2 class="ui-section-title"&gt;Заголовок&lt;/h2&gt;
+    &lt;p class="ui-section-subtitle"&gt;Подзаголовок&lt;/p&gt;
+    &lt;div class="ui-section-content"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Grid Layout --&gt;
+&lt;div class="ui-grid ui-grid-2"&gt;
+  &lt;div class="ui-grid-item"&gt;...&lt;/div&gt;
+  &lt;div class="ui-grid-item"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+
+---
+
+**Статус:** UI Kit v1.0 - ЗАВЕРШЕН ✅  
+**Компоненты:** Buttons, Forms, Cards, Navigation, Modals, Badges, Lists, Layout  
+**Готово к применению в demo-mockups**
 
 <style>
 /* Component Section */
@@ -1037,8 +1465,18 @@ permalink: /design/ui-kit/
 }
 
 .ui-card-info-icon {
-  font-size: 48px;
+  color: #C9A961;
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.ui-card-info-icon svg {
+  transition: transform 0.3s;
+}
+
+.ui-card-info:hover .ui-card-info-icon svg {
+  transform: scale(1.1);
 }
 
 .ui-card-info-title {
@@ -1165,6 +1603,683 @@ permalink: /design/ui-kit/
   
   .ui-card-pricing-featured:hover {
     transform: translateY(-5px);
+  }
+}
+
+/* Navigation */
+.nav-example {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 20px 0;
+}
+
+.ui-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.ui-nav-link {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.ui-nav-link:hover {
+  color: #C9A961;
+  border-bottom-color: #C9A961;
+}
+
+.ui-nav-link-active {
+  color: #C9A961;
+  border-bottom-color: #C9A961;
+}
+
+/* Breadcrumbs */
+.ui-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ui-breadcrumb-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.ui-breadcrumb-link:hover {
+  color: #C9A961;
+}
+
+.ui-breadcrumb-separator {
+  color: #999;
+  font-size: 14px;
+}
+
+.ui-breadcrumb-current {
+  color: #C9A961;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Pagination */
+.ui-pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-pagination-btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-pagination-btn:hover:not(:disabled) {
+  border-color: #C9A961;
+  color: #C9A961;
+  background: rgba(201,169,97,0.05);
+}
+
+.ui-pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ui-pagination-active {
+  background: #C9A961;
+  color: #fff;
+  border-color: #C9A961;
+}
+
+.ui-pagination-active:hover {
+  background: #D4AF37;
+  border-color: #D4AF37;
+  color: #fff;
+}
+
+/* Modal */
+.modal-demo-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.ui-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ui-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.ui-modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ui-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 0.3s;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-modal-close:hover {
+  background: rgba(201,169,97,0.1);
+  color: #C9A961;
+}
+
+.ui-modal-title {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.ui-modal-text {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+}
+
+.ui-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Alerts */
+.alerts-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.ui-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.ui-alert-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ui-alert-content {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ui-alert-content strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ui-alert-success {
+  background: #f0f9f4;
+  border-left-color: #28a745;
+  color: #155724;
+}
+
+.ui-alert-success .ui-alert-icon {
+  color: #28a745;
+}
+
+.ui-alert-error {
+  background: #fef5f5;
+  border-left-color: #dc3545;
+  color: #721c24;
+}
+
+.ui-alert-error .ui-alert-icon {
+  color: #dc3545;
+}
+
+.ui-alert-warning {
+  background: #fffbf0;
+  border-left-color: #ffc107;
+  color: #856404;
+}
+
+.ui-alert-warning .ui-alert-icon {
+  color: #ffc107;
+}
+
+.ui-alert-info {
+  background: #f0f8ff;
+  border-left-color: #17a2b8;
+  color: #0c5460;
+}
+
+.ui-alert-info .ui-alert-icon {
+  color: #17a2b8;
+}
+
+/* Badges */
+.badges-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ui-badge-primary {
+  background: linear-gradient(135deg, #C9A961 0%, #D4AF37 100%);
+  color: #fff;
+}
+
+.ui-badge-success {
+  background: #28a745;
+  color: #fff;
+}
+
+.ui-badge-warning {
+  background: #ffc107;
+  color: #333;
+}
+
+.ui-badge-error {
+  background: #dc3545;
+  color: #fff;
+}
+
+.ui-badge-info {
+  background: #17a2b8;
+  color: #fff;
+}
+
+/* Tags */
+.tags-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ui-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: rgba(201,169,97,0.1);
+  color: #C9A961;
+  border: 1px solid rgba(201,169,97,0.3);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.ui-tag:hover {
+  background: rgba(201,169,97,0.2);
+  border-color: #C9A961;
+  transform: translateY(-2px);
+}
+
+/* Notification Badge */
+.notification-demo {
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 20px 0;
+}
+
+.ui-notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #dc3545;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .ui-nav {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .ui-modal-content {
+    padding: 30px 20px;
+  }
+}
+
+/* Lists */
+.list-example {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 20px 0;
+}
+
+.ui-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Icon List */
+.ui-list-icon li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ui-list-icon li:last-child {
+  border-bottom: none;
+}
+
+.ui-list-icon li svg {
+  flex-shrink: 0;
+  color: #C9A961;
+  margin-top: 2px;
+}
+
+.ui-list-icon li span {
+  flex-grow: 1;
+}
+
+/* Numbered List */
+.ui-list-numbered {
+  counter-reset: list-counter;
+  padding-left: 0;
+}
+
+.ui-list-numbered li {
+  counter-increment: list-counter;
+  position: relative;
+  padding: 15px 0 15px 50px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ui-list-numbered li:last-child {
+  border-bottom: none;
+}
+
+.ui-list-numbered li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #C9A961 0%, #D4AF37 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Feature List */
+.ui-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ui-feature-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 25px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s;
+}
+
+.ui-feature-item:hover {
+  border-color: #C9A961;
+  box-shadow: 0 4px 16px rgba(201,169,97,0.1);
+  transform: translateX(5px);
+}
+
+.ui-feature-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: rgba(201,169,97,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A961;
+  transition: all 0.3s;
+}
+
+.ui-feature-item:hover .ui-feature-icon {
+  background: #C9A961;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.ui-feature-content {
+  flex-grow: 1;
+}
+
+.ui-feature-content h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.ui-feature-content p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Layout */
+.layout-example {
+  margin: 20px 0;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ui-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.ui-hero {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.ui-hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: #fff;
+}
+
+.ui-hero-subtitle {
+  font-size: 20px;
+  color: #D4AF37;
+  margin: 0 0 40px 0;
+}
+
+.ui-hero-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Content Section */
+.ui-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.ui-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.ui-section-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0 0 40px 0;
+  text-align: center;
+}
+
+.ui-section-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.ui-grid {
+  display: grid;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.ui-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ui-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ui-grid-item {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+}
+
+.ui-grid-item h3,
+.ui-grid-item h4 {
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.ui-grid-item p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .ui-hero-title {
+    font-size: 32px;
+  }
+  
+  .ui-hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .ui-hero-actions {
+    flex-direction: column;
+  }
+  
+  .ui-section-title {
+    font-size: 28px;
+  }
+  
+  .ui-grid-2,
+  .ui-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .ui-feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .ui-feature-icon {
+    margin: 0 auto;
   }
 }
 </style>
