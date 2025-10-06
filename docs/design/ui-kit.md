@@ -907,8 +907,147 @@ permalink: /design/ui-kit/
 
 ---
 
+## 🌙 DARK THEME {#dark-theme}
+
+### Цветовая схема темной темы
+
+Темная тема основана на дизайне **variant-6-innovate** с эффектом glassmorphism.
+
+<div class="component-section">
+  <h4>Основные цвета темной темы</h4>
+  
+  <div class="color-grid">
+    <div class="color-item">
+      <div class="color-swatch" style="background: #0a0a0a;"></div>
+      <div class="color-info">
+        <strong>Background Start</strong>
+        <code>#0a0a0a</code>
+        <p>Основной фон (градиент начало)</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: #1a1a1a;"></div>
+      <div class="color-info">
+        <strong>Background End</strong>
+        <code>#1a1a1a</code>
+        <p>Основной фон (градиент конец)</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: #ffffff;"></div>
+      <div class="color-info">
+        <strong>Text Primary</strong>
+        <code>#ffffff</code>
+        <p>Основной текст</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: rgba(255, 255, 255, 0.7); border: 1px solid #333;"></div>
+      <div class="color-info">
+        <strong>Text Secondary</strong>
+        <code>rgba(255, 255, 255, 0.7)</code>
+        <p>Вторичный текст (70% прозрачности)</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: rgba(255, 255, 255, 0.5); border: 1px solid #333;"></div>
+      <div class="color-info">
+        <strong>Text Light</strong>
+        <code>rgba(255, 255, 255, 0.5)</code>
+        <p>Светлый текст (50% прозрачности)</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: rgba(255, 255, 255, 0.05); border: 1px solid #333;"></div>
+      <div class="color-info">
+        <strong>Card Background</strong>
+        <code>rgba(255, 255, 255, 0.05)</code>
+        <p>Фон карточек (glassmorphism)</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: #C9A961;"></div>
+      <div class="color-info">
+        <strong>Accent Color</strong>
+        <code>#C9A961</code>
+        <p>Акцентный цвет (золотой)</p>
+      </div>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background: rgba(255, 255, 255, 0.1); border: 1px solid #333;"></div>
+      <div class="color-info">
+        <strong>Border Color</strong>
+        <code>rgba(255, 255, 255, 0.1)</code>
+        <p>Цвет границ (10% прозрачности)</p>
+      </div>
+    </div>
+  </div>
+
+  <h4>CSS Variables для темной темы</h4>
+  <div class="code-block">
+    <pre><code>[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-gradient-start: #0a0a0a;
+  --bg-gradient-end: #1a1a1a;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-light: rgba(255, 255, 255, 0.5);
+  
+  /* Card & Components */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  
+  /* Accent & Borders */
+  --accent-color: #C9A961;
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  /* Code & Quotes */
+  --code-bg: #1a1a1a;
+  --quote-bg: rgba(255, 255, 255, 0.05);
+}</code></pre>
+  </div>
+
+  <h4>Glassmorphism эффект</h4>
+  <p>Темная тема использует эффект glassmorphism для карточек и компонентов:</p>
+  <div class="code-block">
+    <pre><code>.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}</code></pre>
+  </div>
+
+  <h4>Переключение темы</h4>
+  <p>Для переключения между светлой и темной темой используется атрибут <code>data-theme</code> на элементе <code>&lt;body&gt;</code>:</p>
+  <div class="code-block">
+    <pre><code>// JavaScript для переключения темы
+const toggleTheme = () => {
+  const currentTheme = document.body.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+};
+
+// Загрузка сохраненной темы
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.body.setAttribute('data-theme', savedTheme);</code></pre>
+  </div>
+</div>
+
+---
+
 **Статус:** UI Kit v1.0 - ЗАВЕРШЕН ✅  
-**Компоненты:** Buttons, Forms, Cards, Navigation, Modals, Badges, Lists, Layout  
+**Компоненты:** Buttons, Forms, Cards, Navigation, Modals, Badges, Lists, Layout, Dark Theme  
 **Готово к применению в demo-mockups**
 
 <style>
