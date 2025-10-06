@@ -423,15 +423,21 @@
             this.modal = document.getElementById('appointmentModal');
             if (!this.modal) return;
 
-            this.backdrop = this.modal.querySelector('.modal-backdrop');
+            this.overlay = this.modal.querySelector('.modal-overlay');
             this.closeBtn = this.modal.querySelector('.modal-close');
+            this.closeButtons = this.modal.querySelectorAll('[data-modal-close]');
 
             this.setupListeners();
         }
 
         setupListeners() {
-            this.backdrop?.addEventListener('click', () => this.close());
-            this.closeBtn?.addEventListener('click', () => this.close());
+            // Close on overlay click
+            this.overlay?.addEventListener('click', () => this.close());
+            
+            // Close on all close buttons
+            this.closeButtons.forEach(btn => {
+                btn.addEventListener('click', () => this.close());
+            });
 
             // Close on Escape key
             document.addEventListener('keydown', (e) => {
@@ -445,6 +451,12 @@
             this.modal.classList.add('active');
             this.modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+            
+            // Focus first input
+            setTimeout(() => {
+                const firstInput = this.modal.querySelector('input, textarea, select');
+                firstInput?.focus();
+            }, 100);
         }
 
         close() {
@@ -471,14 +483,18 @@
 
             console.log('Form submitted:', data);
 
-            // Show success message
-            alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+            // Show success alert
+            if (window.showAlert) {
+                window.showAlert('success', 'Заявка отправлена!', 'Мы свяжемся с вами в ближайшее время.');
+            }
 
             // Close modal
             window.modalInstance?.close();
 
             // Reset form
-            this.form.reset();
+            setTimeout(() => {
+                this.form.reset();
+            }, 300);
         }
     }
 
@@ -653,6 +669,11 @@
         new SmoothScroll();
         new MobileMenu();
 
+        // Global function for onclick handlers
+        window.openAppointmentModal = function() {
+            window.modalInstance?.open();
+        };
+
         // Add loaded class to body
         document.body.classList.add('loaded');
     }
@@ -671,120 +692,6 @@
         resizeTimeout = setTimeout(() => {
             window.dispatchEvent(new Event('optimizedResize'));
         }, 250);
-    });
-
-    // ===== MODAL FUNCTIONALITY =====
-    class Modal {
-        constructor(modalId) {
-            this.modal = document.getElementById(modalId);
-            if (!this.modal) return;
-            
-            this.overlay = this.modal.querySelector('.modal-overlay');
-            this.closeButtons = this.modal.querySelectorAll('[data-modal-close]');
-            this.form = this.modal.querySelector('form');
-            
-            this.init();
-        }
-        
-        init() {
-            // Close on overlay click
-            this.overlay?.addEventListener('click', () => this.close());
-            
-            // Close on close button click
-            this.closeButtons.forEach(btn => {
-                btn.addEventListener('click', () => this.close());
-            });
-            
-            // Close on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.isOpen()) {
-                    this.close();
-                }
-            });
-            
-            // Prevent body scroll when modal is open
-            this.modal.addEventListener('transitionend', () => {
-                if (this.isOpen()) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
-            });
-            
-            // Form submission
-            if (this.form) {
-                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-            }
-        }
-        
-        open() {
-            this.modal.classList.add('active');
-            this.modal.setAttribute('aria-hidden', 'false');
-            
-            // Focus first input
-            setTimeout(() => {
-                const firstInput = this.modal.querySelector('input, textarea, select');
-                firstInput?.focus();
-            }, 100);
-        }
-        
-        close() {
-            this.modal.classList.remove('active');
-            this.modal.setAttribute('aria-hidden', 'true');
-        }
-        
-        isOpen() {
-            return this.modal.classList.contains('active');
-        }
-        
-        handleSubmit(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this.form);
-            const data = Object.fromEntries(formData);
-            
-            console.log('Form submitted:', data);
-            
-            // Show success alert (will be implemented in next step)
-            this.showSuccessMessage();
-            
-            // Close modal
-            setTimeout(() => {
-                this.close();
-                this.form.reset();
-            }, 1500);
-        }
-        
-        showSuccessMessage() {
-            showAlert('success', 'Заявка отправлена!', 'Мы свяжемся с вами в ближайшее время.');
-        }
-    }
-    
-    // Initialize modal
-    const appointmentModal = new Modal('appointmentModal');
-    
-    // Global function for onclick handlers
-    window.openAppointmentModal = function() {
-        appointmentModal.open();
-    };
-    
-    // Add click handlers to all "Записаться" buttons
-    document.querySelectorAll('[data-modal-open="appointmentModal"]').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            appointmentModal.open();
-        });
-    });
-    
-    // Also handle buttons with text "Записаться"
-    document.querySelectorAll('.btn-primary, .cta-button').forEach(btn => {
-        if (btn.textContent.includes('Записаться')) {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                appointmentModal.open();
-            });
-        }
     });
 
     // ===== ALERT SYSTEM =====
