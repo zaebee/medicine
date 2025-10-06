@@ -671,184 +671,70 @@
         </div>
     </section>
 
-    <!-- Equipment Section (NEW - Premium Feature) -->
-    <section class="equipment" id="equipment">
+    <!-- Hexagon Equipment Gallery (NEW - Premium Feature) -->
+    <section class="hexagon-equipment" id="equipment">
         <div class="container">
             <h2 class="section-title text-center">Современное оборудование</h2>
             <p class="section-subtitle text-center">Диагностическая техника экспертного класса от мировых производителей</p>
             
-            <div class="equipment-grid">
+            <div class="hex-gallery">
                 <!-- Equipment 1 -->
-                <div class="equipment-card">
-                    <div class="equipment-image">
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600" alt="УЗИ аппарат" loading="lazy">
-                        <div class="equipment-badge">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <linearGradient id="hexEquip1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#hexEquip1)" stroke="#2C3E50" stroke-width="1.5"/>
-                                <path d="M20 12l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L13 18l5-1 2-5z" fill="#2C3E50"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="equipment-content">
-                        <h3 class="equipment-title">УЗИ аппарат экспертного класса</h3>
-                        <p class="equipment-manufacturer">Производитель: GE Healthcare</p>
-                        <p class="equipment-description">Высокоточная диагностика с 4D визуализацией. Позволяет выявлять патологии на ранних стадиях.</p>
-                        <ul class="equipment-features">
-                            <li>Разрешение до 0.1 мм</li>
-                            <li>Допплерография</li>
-                            <li>Эластография</li>
-                        </ul>
+                <div class="hex-gallery-item" onclick="openEquipmentModal('equipment1')">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600" alt="УЗИ аппарат" class="hex-gallery-image" loading="lazy">
+                    <div class="hex-gallery-overlay">
+                        <h3 class="hex-gallery-title">УЗИ аппарат экспертного класса</h3>
+                        <p class="hex-gallery-manufacturer">GE Healthcare</p>
+                        <button class="hex-gallery-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Equipment 2 -->
-                <div class="equipment-card">
-                    <div class="equipment-image">
-                        <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="ЭКГ аппарат" loading="lazy">
-                        <div class="equipment-badge">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <linearGradient id="hexEquip2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#hexEquip2)" stroke="#2C3E50" stroke-width="1.5"/>
-                                <path d="M20 12l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L13 18l5-1 2-5z" fill="#2C3E50"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="equipment-content">
-                        <h3 class="equipment-title">Электрокардиограф 12-канальный</h3>
-                        <p class="equipment-manufacturer">Производитель: Philips</p>
-                        <p class="equipment-description">Цифровой ЭКГ с автоматической интерпретацией результатов и выявлением аритмий.</p>
-                        <ul class="equipment-features">
-                            <li>12 отведений</li>
-                            <li>Автоматический анализ</li>
-                            <li>Архив результатов</li>
-                        </ul>
+                <div class="hex-gallery-item" onclick="openEquipmentModal('equipment2')">
+                    <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="ЭКГ аппарат" class="hex-gallery-image" loading="lazy">
+                    <div class="hex-gallery-overlay">
+                        <h3 class="hex-gallery-title">Электрокардиограф 12-канальный</h3>
+                        <p class="hex-gallery-manufacturer">Philips</p>
+                        <button class="hex-gallery-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Equipment 3 -->
-                <div class="equipment-card">
-                    <div class="equipment-image">
-                        <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600" alt="Лабораторное оборудование" loading="lazy">
-                        <div class="equipment-badge">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <linearGradient id="hexEquip3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#hexEquip3)" stroke="#2C3E50" stroke-width="1.5"/>
-                                <path d="M20 12l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L13 18l5-1 2-5z" fill="#2C3E50"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="equipment-content">
-                        <h3 class="equipment-title">Автоматический анализатор крови</h3>
-                        <p class="equipment-manufacturer">Производитель: Sysmex</p>
-                        <p class="equipment-description">Полный анализ крови за 60 секунд с точностью 99.9%. Результаты в день обращения.</p>
-                        <ul class="equipment-features">
-                            <li>30+ параметров</li>
-                            <li>Результат за 1 минуту</li>
-                            <li>Высокая точность</li>
-                        </ul>
+                <div class="hex-gallery-item" onclick="openEquipmentModal('equipment3')">
+                    <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600" alt="Лабораторное оборудование" class="hex-gallery-image" loading="lazy">
+                    <div class="hex-gallery-overlay">
+                        <h3 class="hex-gallery-title">Автоматический анализатор крови</h3>
+                        <p class="hex-gallery-manufacturer">Sysmex</p>
+                        <button class="hex-gallery-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Equipment 4 -->
-                <div class="equipment-card">
-                    <div class="equipment-image">
-                        <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?w=600" alt="Рентген аппарат" loading="lazy">
-                        <div class="equipment-badge">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <linearGradient id="hexEquip4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#hexEquip4)" stroke="#2C3E50" stroke-width="1.5"/>
-                                <path d="M20 12l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L13 18l5-1 2-5z" fill="#2C3E50"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="equipment-content">
-                        <h3 class="equipment-title">Цифровой рентген-аппарат</h3>
-                        <p class="equipment-manufacturer">Производитель: Siemens</p>
-                        <p class="equipment-description">Минимальная лучевая нагрузка, мгновенные результаты в цифровом формате.</p>
-                        <ul class="equipment-features">
-                            <li>Низкая доза облучения</li>
-                            <li>Цифровая обработка</li>
-                            <li>Высокое разрешение</li>
-                        </ul>
+                <div class="hex-gallery-item" onclick="openEquipmentModal('equipment4')">
+                    <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?w=600" alt="Рентген аппарат" class="hex-gallery-image" loading="lazy">
+                    <div class="hex-gallery-overlay">
+                        <h3 class="hex-gallery-title">Цифровой рентген-аппарат</h3>
+                        <p class="hex-gallery-manufacturer">Siemens</p>
+                        <button class="hex-gallery-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Equipment 5 -->
-                <div class="equipment-card">
-                    <div class="equipment-image">
-                        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600" alt="Эндоскоп" loading="lazy">
-                        <div class="equipment-badge">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <linearGradient id="hexEquip5" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#hexEquip5)" stroke="#2C3E50" stroke-width="1.5"/>
-                                <path d="M20 12l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L13 18l5-1 2-5z" fill="#2C3E50"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="equipment-content">
-                        <h3 class="equipment-title">Видеоэндоскопическая система</h3>
-                        <p class="equipment-manufacturer">Производитель: Olympus</p>
-                        <p class="equipment-description">HD-визуализация для точной диагностики заболеваний ЖКТ.</p>
-                        <ul class="equipment-features">
-                            <li>Full HD качество</li>
-                            <li>Узкоспектральная визуализация</li>
-                            <li>Биопсия под контролем</li>
-                        </ul>
+                <div class="hex-gallery-item" onclick="openEquipmentModal('equipment5')">
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600" alt="Эндоскоп" class="hex-gallery-image" loading="lazy">
+                    <div class="hex-gallery-overlay">
+                        <h3 class="hex-gallery-title">Видеоэндоскопическая система</h3>
+                        <p class="hex-gallery-manufacturer">Olympus</p>
+                        <button class="hex-gallery-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Equipment 6 -->
-                <div class="equipment-card">
-                    <div class="equipment-image">
-                        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600" alt="Стоматологическое оборудование" loading="lazy">
-                        <div class="equipment-badge">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <linearGradient id="hexEquip6" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#hexEquip6)" stroke="#2C3E50" stroke-width="1.5"/>
-                                <path d="M20 12l2 5 5 1-3.5 3.5 1 5-4.5-2.5-4.5 2.5 1-5L13 18l5-1 2-5z" fill="#2C3E50"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="equipment-content">
-                        <h3 class="equipment-title">Стерилизационное оборудование</h3>
-                        <p class="equipment-manufacturer">Производитель: Melag</p>
-                        <p class="equipment-description">Автоклавы класса B для полной стерилизации инструментов.</p>
-                        <ul class="equipment-features">
-                            <li>Класс B (высший)</li>
-                            <li>Автоматический цикл</li>
-                            <li>Контроль качества</li>
-                        </ul>
+                <div class="hex-gallery-item" onclick="openEquipmentModal('equipment6')">
+                    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600" alt="Стерилизационное оборудование" class="hex-gallery-image" loading="lazy">
+                    <div class="hex-gallery-overlay">
+                        <h3 class="hex-gallery-title">Стерилизационное оборудование</h3>
+                        <p class="hex-gallery-manufacturer">Melag</p>
+                        <button class="hex-gallery-btn">Подробнее</button>
                     </div>
                 </div>
             </div>
@@ -1989,6 +1875,18 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Equipment Modal -->
+    <div class="equipment-modal" id="equipmentModal">
+        <div class="equipment-modal-content">
+            <button class="equipment-modal-close" onclick="closeEquipmentModal()">&times;</button>
+            <img id="modalImage" src="" alt="" class="equipment-modal-image">
+            <h2 id="modalTitle" class="equipment-modal-title"></h2>
+            <p id="modalManufacturer" class="equipment-modal-manufacturer"></p>
+            <p id="modalDescription" class="equipment-modal-description"></p>
+            <ul id="modalFeatures" class="equipment-modal-features"></ul>
         </div>
     </div>
 
