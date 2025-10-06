@@ -13,33 +13,33 @@ permalink: /
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
     <style>
         :root {
-            /* Light theme variables */
-            --bg-gradient-start: #667eea;
-            --bg-gradient-end: #764ba2;
+            /* Light theme variables - aligned with design system */
+            --bg-gradient-start: #C9A961;
+            --bg-gradient-end: #D4AF37;
             --text-primary: #333;
             --text-secondary: #555;
             --text-light: #666;
             --card-bg: white;
             --card-shadow: rgba(0,0,0,0.1);
-            --accent-color: #667eea;
+            --accent-color: #C9A961;
             --border-color: #ddd;
             --code-bg: #f4f4f4;
-            --quote-bg: #f8f9ff;
+            --quote-bg: #fffbf5;
         }
 
         [data-theme="dark"] {
-            /* Dark theme variables */
-            --bg-gradient-start: #2c3e50;
-            --bg-gradient-end: #34495e;
+            /* Dark theme variables - aligned with design system */
+            --bg-gradient-start: #000000;
+            --bg-gradient-end: #1a1a1a;
             --text-primary: #ecf0f1;
             --text-secondary: #bdc3c7;
             --text-light: #95a5a6;
-            --card-bg: #34495e;
+            --card-bg: #2c2c2c;
             --card-shadow: rgba(0,0,0,0.3);
-            --accent-color: #3498db;
-            --border-color: #4a5f7a;
-            --code-bg: #2c3e50;
-            --quote-bg: #3c5670;
+            --accent-color: #D4AF37;
+            --border-color: #4a4a4a;
+            --code-bg: #1a1a1a;
+            --quote-bg: #2c2c2c;
         }
 
         * {
@@ -49,7 +49,7 @@ permalink: /
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
@@ -71,7 +71,9 @@ permalink: /
         }
 
         .header h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
@@ -118,6 +120,7 @@ permalink: /
         }
 
         .nav-card-title {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--text-primary);
@@ -141,7 +144,7 @@ permalink: /
 
         .nav-card-features li:before {
             content: "✓ ";
-            color: #4caf50;
+            color: var(--accent-color);
             font-weight: bold;
         }
 
@@ -415,6 +418,22 @@ permalink: /
                     <li>Поиск и фильтрация по категориям</li>
                     <li>Копирование кода для Jekyll includes</li>
                     <li>9 тематических категорий</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="navigateTo('{{ "/design/branding-guidelines/" | relative_url }}')">
+                <div class="nav-card-header">
+                    <span class="nav-card-icon">🎨</span>
+                    <h3 class="nav-card-title">Дизайн-система</h3>
+                </div>
+                <p class="nav-card-description">
+                    Полная дизайн-система клиники: брендинг, mood board, UI Kit с готовыми компонентами в геометрическом стиле.
+                </p>
+                <ul class="nav-card-features">
+                    <li>Branding Guidelines (цвета, типографика, иконки)</li>
+                    <li>Mood Board (визуальная концепция, формы)</li>
+                    <li>UI Kit (8 секций готовых компонентов)</li>
+                    <li>Lucide Icons интеграция</li>
                 </ul>
             </div>
         </section>
