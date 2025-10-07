@@ -1,0 +1,34 @@
+# .github/workflows/build-theme-zip.yml
+
+name: Build and Zip WordPress Theme
+
+# This allows the workflow to be triggered manually from the Actions tab on GitHub.
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code so the workflow can access it
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Navigate to the themes directory and create a zip archive of the pchelka-theme folder
+      - name: Zip pchelka-theme directory
+        run: |
+          cd wp-content/themes
+          zip -r pchelka-theme.zip pchelka-theme/
+
+      # Step 3: Upload the generated zip file as a build artifact
+      - name: Upload theme zip as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # The name of the artifact to be uploaded
+          name: pchelka-theme-zip
+          # The path to the file to upload
+          path: wp-content/themes/pchelka-theme.zip
+          # The retention period for the artifact in days. After this period, the artifact is deleted.
+          retention-days: 7

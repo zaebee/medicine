@@ -12,13 +12,12 @@ lang: en
 
 **Welcome, developer!** This guide is your step-by-step manual for building the "Пчёлка" clinic website. It's based on the excellent documentation provided and is designed to be easy to follow, even if you're new to WordPress.
 
-**The Goal:** To build a professional, secure, and fast website using WordPress, a pre-built theme, and several powerful plugins.
+**The Goal:** To build a professional, secure, and fast website using WordPress and our custom-built `pchelka-theme`.
 
 **Your Toolkit (as per the project plan):**
 *   **CMS:** WordPress
-*   **Theme:** MediPlus (or a similar medical theme)
-*   **Page Builder:** Elementor
-*   **Key Plugins:** Custom Post Type UI, Advanced Custom Fields, Wordfence Security, WP Super Cache, Yoast SEO.
+*   **Theme:** `pchelka-theme` (our custom theme)
+*   **Key Plugins:** Advanced Custom Fields, Wordfence Security, WP Super Cache, Yoast SEO.
 
 ---
 
@@ -26,10 +25,10 @@ lang: en
 
 Before you start, familiarize yourself with these key documents:
 
+- **[Custom Theme Guide](/development/custom-theme-guide/)** - **START HERE!** Detailed guide to the `pchelka-theme` structure, CPTs, and ACF fields. ⭐ **NEW**
 - **[WordPress Architecture](/technical/wordpress-architecture/)** - Detailed technical architecture and plugin specifications
 - **[WordPress Solution](/technical/wordpress-solution/)** - Why WordPress was chosen over Django
 - **[WordPress Setup Checklist](/deployment/wordpress-setup-checklist/)** - Detailed deployment checklist for Sprinthost
-- **[Pricing & Packages](/business/wordpress-pricing-simple/)** - Commercial proposal and pricing
 - **[Services Catalog](/business/services-catalog/)** - Complete list of clinic services to add
 - **[User Guide](/user-guide/)** - Guide for clinic administrators (show this to the client)
 
@@ -54,26 +53,26 @@ This phase is about getting your foundation ready.
 
 ---
 
-## Phase 2: Installing the Theme and Essential Plugins
+## Phase 2: Theme Setup and Plugin Installation
 
-Now we add the core functionality and look-and-feel.
+Now we add the core functionality and look-and-feel using our custom theme.
 
-1.  **Install the Theme:**
-    *   The recommended theme is **MediPlus**. You will need to purchase and download the theme's `.zip` file from the theme marketplace (like ThemeForest).
-    *   In the WordPress admin, go to **Appearance > Themes > Add New > Upload Theme**.
-    *   Select the `.zip` file you downloaded and click **Install Now**, then **Activate**.
+1.  **Install the Custom Theme:**
+    *   Follow the detailed instructions in the **[Custom Theme Guide](/development/custom-theme-guide/)**.
+    *   This single step replaces the need for a separate theme, CPT UI plugin, and page builder. Our theme handles all of this.
 
-2.  **Install the Plugins:**
-    *   The architecture document lists many plugins. Let's install them in groups. Go to **Plugins > Add New** for each one.
-    *   **Search, Install, and Activate** the following plugins one by one:
+2.  **Verify Custom Content Types:**
+    *   After activating the theme, you should see new items in the WordPress admin sidebar: **Services, Doctors, Equipment, Loyalty, and Reviews**.
+    *   These are automatically created by the theme. There is no need to use the CPT UI plugin.
 
-    *   **Content Structure:**
-        *   `Custom Post Type UI` (To create "Services" and "Doctors" sections).
-        *   `Advanced Custom Fields` (To add special fields like "Price" to services).
-        *   `Elementor` (The main page builder, the theme may prompt you to install this).
+3.  **Install Essential Plugins:**
+    *   Our theme is lightweight, but we still need a few key plugins. Go to **Plugins > Add New** for each one.
+    *   **Search, Install, and Activate** the following:
+
+    *   **Required for Theme:**
+        *   `Advanced Custom Fields` (The free version from the repository is sufficient).
 
     *   **Functionality:**
-        *   `Contact Form 7` (For creating contact forms).
         *   `WP Mail SMTP` (To make sure emails from forms don't go to spam).
         *   `Click to Chat` (For the WhatsApp button).
 
@@ -87,43 +86,6 @@ Now we add the core functionality and look-and-feel.
 
     *   **SEO:**
         *   `Yoast SEO` (The best plugin for search engine optimization).
-
----
-
-## Phase 3: Creating the Custom Content Structure
-
-This is the most important part of organizing the site's information. We will create dedicated sections for "Services" and "Doctors" so the client can easily manage them.
-
-1.  **Create the "Services" Post Type:**
-    *   Go to the new **CPT UI** menu in the admin panel.
-    *   Click **Add/Edit Post Types**.
-    *   For `Post Type Slug`, enter `service`.
-    *   For `Plural Label`, enter `Services`.
-    *   For `Singular Label`, enter `Service`.
-    *   Scroll down to **Settings**. Find `Has Archive` and set it to `True`.
-    *   Click **Add Post Type**. You should see a new "Services" menu appear in the sidebar!
-
-2.  **Create the "Doctors" Post Type:**
-    *   Repeat the process above.
-    *   Slug: `doctor`, Plural: `Doctors`, Singular: `Doctor`.
-    *   Make sure `Has Archive` is `True`.
-
-3.  **Add Custom Fields to "Services":**
-    *   Go to the new **Custom Fields** menu.
-    *   Click **Add New** to create a Field Group. Name it `Service Fields`.
-    *   Under **Location**, set the rule to `Show this field group if Post Type is equal to Service`.
-    *   Now, add fields by clicking **+ Add Field**. Based on the architecture doc, create fields for:
-        *   `service_price` (Field Type: `Text` or `Number`)
-        *   `service_duration` (Field Type: `Text`)
-        *   And any others listed in the documentation.
-
-4.  **Add Custom Fields to "Doctors":**
-    *   Create another Field Group named `Doctor Fields`.
-    *   Set the Location rule to `Post Type is equal to Doctor`.
-    *   Add fields for:
-        *   `doctor_specialization` (Field Type: `Text`)
-        *   `doctor_experience` (Field Type: `Number`)
-        *   `doctor_photo` (Field Type: `Image`)
 
 ---
 
@@ -142,16 +104,14 @@ With the structure in place, you can now add content and design the pages.
         *   `Contact`
         *   `Privacy Policy`
 
-3.  **Design the Home Page with Elementor:**
-    *   Go to **Pages**, hover over the Home page, and click **Edit with Elementor**.
-    *   Use the Elementor drag-and-drop interface to build the page. Your theme (MediPlus) will provide pre-built "widgets" or "blocks" you can use to quickly add sections for services, doctors, testimonials, etc.
+3.  **Build Out Pages Using Theme Templates:**
+    *   The design of the site is controlled by the PHP template files within the `pchelka-theme` directory (e.g., `front-page.php`, `template-parts/content-service.php`).
+    *   There is no page builder like Elementor. To modify the layout or design, you will need to edit the theme's `.php` and `.css` files directly.
 
-4.  **Set Up Contact Forms:**
-    *   Go to the **Contact** menu. You will see a default form.
-    *   Edit it or create a new one. Name it "Contact Form".
-    *   Go to the **Mail** tab and configure where the email notifications should be sent.
-    *   Save the form. It will give you a **shortcode** (like `[contact-form-7 id="123" title="Contact form 1"]`).
-    *   Edit your "Contact" page and paste this shortcode into the text area. The form will appear on the page.
+4.  **Understand the Contact Form:**
+    *   The contact form is built directly into the theme templates.
+    *   It does **not** use a plugin like Contact Form 7.
+    *   The form submission is handled by a custom AJAX handler defined in `inc/ajax-handlers.php`. Refer to the **[Custom Theme Guide](/development/custom-theme-guide/)** for more details.
 
 5.  **Configure Email Sending (WP Mail SMTP):**
     *   **Critical:** WordPress default email often goes to spam!
