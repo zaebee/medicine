@@ -602,4 +602,156 @@ console.log('%c🐝 Клиника Пчёлка - Premium Version', 'font-size: 
 console.log('%cWebsite developed with modern web standards', 'font-size: 12px; color: #6C757D;');
 console.log('%cAccessibility: WCAG 2.1 AA compliant', 'font-size: 12px; color: #6C757D;');
 
+// ============================================
+// EQUIPMENT MODAL
+// ============================================
+const equipmentData = {
+    equipment1: {
+        title: 'УЗИ аппарат экспертного класса',
+        manufacturer: 'Производитель: GE Healthcare',
+        description: 'Высокоточная диагностика с 4D визуализацией. Позволяет выявлять патологии на ранних стадиях.',
+        features: ['Разрешение до 0.1 мм', 'Допплерография', 'Эластография'],
+        image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800'
+    },
+    equipment2: {
+        title: 'Электрокардиограф 12-канальный',
+        manufacturer: 'Производитель: Philips',
+        description: 'Цифровой ЭКГ с автоматической интерпретацией результатов и выявлением аритмий.',
+        features: ['12 отведений', 'Автоматический анализ', 'Архив результатов'],
+        image: 'https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=800'
+    },
+    equipment3: {
+        title: 'Автоматический анализатор крови',
+        manufacturer: 'Производитель: Sysmex',
+        description: 'Полный анализ крови за 60 секунд с точностью 99.9%. Результаты в день обращения.',
+        features: ['30+ параметров', 'Результат за 1 минуту', 'Высокая точность'],
+        image: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=800'
+    },
+    equipment4: {
+        title: 'Цифровой рентген-аппарат',
+        manufacturer: 'Производитель: Siemens',
+        description: 'Минимальная лучевая нагрузка, мгновенные результаты в цифровом формате.',
+        features: ['Низкая доза облучения', 'Цифровая обработка', 'Высокое разрешение'],
+        image: 'https://images.unsplash.com/photo-1583324113626-70df0f4deaab?w=800'
+    },
+    equipment5: {
+        title: 'Видеоэндоскопическая система',
+        manufacturer: 'Производитель: Olympus',
+        description: 'HD-визуализация для точной диагностики заболеваний ЖКТ.',
+        features: ['Full HD качество', 'Узкоспектральная визуализация', 'Биопсия под контролем'],
+        image: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800'
+    },
+    equipment6: {
+        title: 'Стерилизационное оборудование',
+        manufacturer: 'Производитель: Melag',
+        description: 'Автоклавы класса B для полной стерилизации инструментов.',
+        features: ['Класс B (высший)', 'Автоматический цикл', 'Контроль качества'],
+        image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800'
+    }
+};
+
+function openEquipmentModal(equipmentId) {
+    const modal = document.getElementById('equipmentModal');
+    const data = equipmentData[equipmentId];
+    
+    if (!data) return;
+    
+    document.getElementById('modalImage').src = data.image;
+    document.getElementById('modalImage').alt = data.title;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalManufacturer').textContent = data.manufacturer;
+    document.getElementById('modalDescription').textContent = data.description;
+    
+    const featuresList = document.getElementById('modalFeatures');
+    featuresList.innerHTML = '';
+    data.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEquipmentModal() {
+    const modal = document.getElementById('equipmentModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal on outside click
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('equipmentModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeEquipmentModal();
+            }
+        });
+    }
+});
+
+// Close modal on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeEquipmentModal();
+    }
+});
+
+// ============================================
+// HEXAGON STATS COUNTER
+// ============================================
+function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    
+    const isDecimal = target % 1 !== 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        if (isDecimal) {
+            element.textContent = current.toFixed(1);
+        } else {
+            element.textContent = Math.floor(current).toLocaleString('ru-RU');
+        }
+    }, 16);
+}
+
+// Intersection Observer for stats animation
+document.addEventListener('DOMContentLoaded', function() {
+    const statsSection = document.querySelector('.hexagon-stats');
+    
+    if (!statsSection) return;
+    
+    const statItems = statsSection.querySelectorAll('.stat-item');
+    let animated = false;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animated = true;
+                
+                statItems.forEach(item => {
+                    item.classList.add('animated');
+                    const numberElement = item.querySelector('.stat-number');
+                    const target = parseFloat(item.getAttribute('data-target'));
+                    
+                    animateCounter(numberElement, target);
+                });
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    observer.observe(statsSection);
+});
+
 // END OF SCRIPT
