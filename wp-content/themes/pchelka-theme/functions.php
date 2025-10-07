@@ -79,48 +79,59 @@ require_once get_template_directory() . '/inc/acf-fields.php';
 require_once get_template_directory() . '/inc/ajax-handlers.php';
 
 function pchelka_customize_register( $wp_customize ) {
-    $wp_customize->add_section( 'pchelka_section_titles', ['title' => __( 'Section Titles', 'pchelka' ), 'priority' => 30] );
+    $wp_customize->add_section( 'pchelka_section_titles', array(
+        'title'      => __( 'Section Titles', 'pchelka' ),
+        'priority'   => 30,
+    ) );
 
-    $sections = [
-        'services' => ['title' => 'Наши услуги', 'subtitle' => 'Реабилитация и лечение опорно-двигательного аппарата, флебология'],
-        'about' => ['title' => 'О клинике «Пчёлка»', 'subtitle' => 'Мы создали медицинский центр нового поколения...'],
-        'benefits' => ['title' => 'Почему выбирают нас', 'subtitle' => 'Мы создали все условия для вашего комфорта и здоровья'],
-        'doctors' => ['title' => 'Наши врачи', 'subtitle' => 'Команда профессионалов с многолетним опытом'],
-        'equipment' => ['title' => 'Современное оборудование', 'subtitle' => 'Диагностическая техника экспертного класса от мировых производителей'],
-        'loyalty' => ['title' => 'Программы лояльности', 'subtitle' => 'Выгодные условия для постоянных пациентов и их семей'],
-        'licenses' => ['title' => 'Лицензии и сертификаты', 'subtitle' => 'Вся наша деятельность лицензирована и сертифицирована'],
-        'reviews' => ['title' => 'Отзывы наших пациентов', 'subtitle' => 'Нам доверяют тысячи пациентов'],
-        'pricing' => ['title' => 'Прозрачное ценообразование', 'subtitle' => 'Честные цены без скрытых платежей'],
-        'contact' => ['title' => 'Свяжитесь с нами', 'subtitle' => 'Мы всегда рады ответить на ваши вопросы']
-    ];
+    $sections = array(
+        'services'  => array('title' => 'Наши услуги', 'subtitle' => 'Реабилитация и лечение опорно-двигательного аппарата, флебология'),
+        'about'     => array('title' => 'О клинике «Пчёлка»'),
+        'benefits'  => array('title' => 'Почему выбирают нас', 'subtitle' => 'Мы создали все условия для вашего комфорта и здоровья'),
+        'doctors'   => array('title' => 'Наши врачи', 'subtitle' => 'Команда профессионалов с многолетним опытом'),
+        'equipment' => array('title' => 'Современное оборудование', 'subtitle' => 'Диагностическая техника экспертного класса от мировых производителей'),
+        'loyalty'   => array('title' => 'Программы лояльности', 'subtitle' => 'Выгодные условия для постоянных пациентов и их семей'),
+        'licenses'  => array('title' => 'Лицензии и сертификаты', 'subtitle' => 'Вся наша деятельность лицензирована и сертифицирована'),
+        'reviews'   => array('title' => 'Отзывы наших пациентов', 'subtitle' => 'Нам доверяют тысячи пациентов'),
+        'pricing'   => array('title' => 'Прозрачное ценообразование', 'subtitle' => 'Честные цены без скрытых платежей'),
+        'contact'   => array('title' => 'Свяжитесь с нами', 'subtitle' => 'Мы всегда рады ответить на ваши вопросы')
+    );
 
     foreach ($sections as $slug => $data) {
-        $wp_customize->add_setting( "{$slug}_section_title", ['default' => __( $data['title'], 'pchelka' ), 'sanitize_callback' => 'sanitize_text_field'] );
-        $wp_customize->add_control( "{$slug}_section_title", ['label' => __(ucfirst($slug) . ' Title', 'pchelka' ), 'section' => 'pchelka_section_titles'] );
+        $wp_customize->add_setting( "{$slug}_section_title", array('default' => __( $data['title'], 'pchelka' ), 'sanitize_callback' => 'sanitize_text_field') );
+        $wp_customize->add_control( "{$slug}_section_title", array('label' => __( ucfirst($slug) . ' Title', 'pchelka' ), 'section' => 'pchelka_section_titles') );
         if (isset($data['subtitle'])) {
-            $wp_customize->add_setting( "{$slug}_section_subtitle", ['default' => __( $data['subtitle'], 'pchelka' ), 'sanitize_callback' => 'sanitize_text_field'] );
-            $wp_customize->add_control( "{$slug}_section_subtitle", ['label' => __(ucfirst($slug) . ' Subtitle', 'pchelka' ), 'section' => 'pchelka_section_titles', 'type' => 'textarea'] );
+            $wp_customize->add_setting( "{$slug}_section_subtitle", array('default' => __( $data['subtitle'], 'pchelka' ), 'sanitize_callback' => 'sanitize_text_field') );
+            $wp_customize->add_control( "{$slug}_section_subtitle", array('label' => __( ucfirst($slug) . ' Subtitle', 'pchelka' ), 'section' => 'pchelka_section_titles', 'type' => 'textarea') );
         }
     }
 
     // Hero Section Customization
-    $wp_customize->add_section( 'pchelka_hero_section', ['title' => __( 'Hero Section', 'pchelka' ), 'priority' => 25] );
-    $wp_customize->add_setting( 'hero_type', ['default' => 'slider', 'sanitize_callback' => 'sanitize_text_field'] );
-    $wp_customize->add_control( 'hero_type', ['label' => __( 'Hero Background Type', 'pchelka' ), 'section' => 'pchelka_hero_section', 'type' => 'select', 'choices' => ['slider' => __( 'Image Slider', 'pchelka' ), 'video' => __( 'Video', 'pchelka' )]] );
-    $wp_customize->add_setting( 'hero_video_mp4', ['sanitize_callback' => 'esc_url_raw'] );
-    $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'hero_video_mp4', ['label' => __( 'Upload MP4 Video', 'pchelka' ), 'section' => 'pchelka_hero_section'] ) );
-    $wp_customize->add_setting( 'hero_video_poster', ['sanitize_callback' => 'esc_url_raw'] );
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_video_poster', ['label' => __( 'Video Poster Image', 'pchelka' ), 'section' => 'pchelka_hero_section'] ) );
+    $wp_customize->add_section( 'pchelka_hero_section', array('title' => __( 'Hero Section', 'pchelka' ), 'priority' => 25) );
+    $wp_customize->add_setting( 'hero_type', array('default' => 'slider', 'sanitize_callback' => 'sanitize_text_field') );
+    $wp_customize->add_control( 'hero_type', array('label' => __( 'Hero Background Type', 'pchelka' ), 'section' => 'pchelka_hero_section', 'type' => 'select', 'choices' => array('slider' => __( 'Image Slider', 'pchelka' ), 'video' => __( 'Video', 'pchelka' ))) );
+    $wp_customize->add_setting( 'hero_video_mp4', array('sanitize_callback' => 'esc_url_raw') );
+    $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'hero_video_mp4', array('label' => __( 'Upload MP4 Video', 'pchelka' ), 'section' => 'pchelka_hero_section') ) );
+    $wp_customize->add_setting( 'hero_video_poster', array('sanitize_callback' => 'esc_url_raw') );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_video_poster', array('label' => __( 'Video Poster Image', 'pchelka' ), 'section' => 'pchelka_hero_section') ) );
     for ( $i = 1; $i <= 3; $i++ ) {
-        $wp_customize->add_setting( "hero_slider_image_{$i}", ['sanitize_callback' => 'esc_url_raw'] );
-        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "hero_slider_image_{$i}", ['label' => sprintf( __( 'Slider Image %d', 'pchelka' ), $i ), 'section' => 'pchelka_hero_section'] ) );
+        $wp_customize->add_setting( "hero_slider_image_{$i}", array('sanitize_callback' => 'esc_url_raw') );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "hero_slider_image_{$i}", array('label' => sprintf( __( 'Slider Image %d', 'pchelka' ), $i ), 'section' => 'pchelka_hero_section') ) );
     }
 }
 add_action( 'customize_register', 'pchelka_customize_register' );
 
 function pchelka_widgets_init() {
     for ( $i = 1; $i <= 4; $i++ ) {
-        register_sidebar( [ 'name' => sprintf( esc_html__( 'Footer Column %d', 'pchelka' ), $i ), 'id' => "footer-{$i}", 'description' => esc_html__( 'Add widgets here.', 'pchelka' ), 'before_widget' => '<div id="%1$s" class="widget %2$s">', 'after_widget' => '</div>', 'before_title' => '<h4 class="widget-title footer-title">', 'after_title' => '</h4>'] );
+        register_sidebar( array(
+            'name'          => sprintf( esc_html__( 'Footer Column %d', 'pchelka' ), $i ),
+            'id'            => "footer-{$i}",
+            'description'   => esc_html__( 'Add widgets here.', 'pchelka' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="widget-title footer-title">',
+            'after_title'   => '</h4>',
+        ) );
     }
 }
 add_action( 'widgets_init', 'pchelka_widgets_init' );
