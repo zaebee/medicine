@@ -699,4 +699,59 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+// ============================================
+// HEXAGON STATS COUNTER
+// ============================================
+function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    
+    const isDecimal = target % 1 !== 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        if (isDecimal) {
+            element.textContent = current.toFixed(1);
+        } else {
+            element.textContent = Math.floor(current).toLocaleString('ru-RU');
+        }
+    }, 16);
+}
+
+// Intersection Observer for stats animation
+document.addEventListener('DOMContentLoaded', function() {
+    const statsSection = document.querySelector('.hexagon-stats');
+    
+    if (!statsSection) return;
+    
+    const statItems = statsSection.querySelectorAll('.stat-item');
+    let animated = false;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animated = true;
+                
+                statItems.forEach(item => {
+                    item.classList.add('animated');
+                    const numberElement = item.querySelector('.stat-number');
+                    const target = parseFloat(item.getAttribute('data-target'));
+                    
+                    animateCounter(numberElement, target);
+                });
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    observer.observe(statsSection);
+});
+
 // END OF SCRIPT
