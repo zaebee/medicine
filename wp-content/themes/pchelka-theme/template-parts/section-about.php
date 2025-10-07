@@ -9,10 +9,14 @@
 <section class="about">
     <div class="container">
         <div class="about-content">
-            <div class="about-text">
-                <h2 class="section-title">О клинике «Пчёлка»</h2>
-                <p class="about-description">Мы создали медицинский центр нового поколения, где современные технологии сочетаются с индивидуальным подходом к каждому пациенту. Наша миссия — сделать качественную медицину доступной и комфортной.</p>
-                <p class="about-description">В клинике работают врачи высшей категории с многолетним опытом. Мы используем только проверенные методики лечения и новейшее диагностическое оборудование экспертного класса.</p>
+                <div class="about-text">
+                    <h2 class="section-title"><?php echo esc_html( get_theme_mod( 'about_section_title', __( 'О клинике «Пчёлка»', 'pchelka' ) ) ); ?></h2>
+                    <p class="about-description">
+                        <?php echo esc_html( get_theme_mod( 'about_section_desc_1', __( 'Мы создали медицинский центр нового поколения, где современные технологии сочетаются с индивидуальным подходом к каждому пациенту. Наша миссия — сделать качественную медицину доступной и комфортной.', 'pchelka' ) ) ); ?>
+                    </p>
+                    <p class="about-description">
+                        <?php echo esc_html( get_theme_mod( 'about_section_desc_2', __( 'В клинике работают врачи высшей категории с многолетним опытом. Мы используем только проверенные методики лечения и новейшее диагностическое оборудование экспертного класса.', 'pchelka' ) ) ); ?>
+                    </p>
                 <div class="about-stats">
                     <div class="stat-item"><div class="stat-number">2024</div><div class="stat-label">Год основания</div></div>
                     <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Специалистов</div></div>

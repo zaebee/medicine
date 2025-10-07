@@ -13,8 +13,8 @@ $reviews_query = new WP_Query( $args );
 ?>
 <section class="reviews" id="reviews">
     <div class="container">
-        <h2 class="section-title text-center"><?php esc_html_e( 'Отзывы наших пациентов', 'pchelka' ); ?></h2>
-        <p class="section-subtitle text-center"><?php esc_html_e( 'Нам доверяют тысячи пациентов', 'pchelka' ); ?></p>
+        <h2 class="section-title text-center"><?php echo esc_html( get_theme_mod( 'reviews_section_title', __( 'Отзывы наших пациентов', 'pchelka' ) ) ); ?></h2>
+        <p class="section-subtitle text-center"><?php echo esc_html( get_theme_mod( 'reviews_section_subtitle', __( 'Нам доверяют тысячи пациентов', 'pchelka' ) ) ); ?></p>
 
         <?php if ( $reviews_query->have_posts() ) : ?>
             <div class="reviews-grid">

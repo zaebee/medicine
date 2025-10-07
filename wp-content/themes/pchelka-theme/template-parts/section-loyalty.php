@@ -13,8 +13,8 @@ $loyalty_query = new WP_Query( $args );
 ?>
 <section class="loyalty" id="loyalty">
     <div class="container">
-        <h2 class="section-title text-center"><?php esc_html_e( 'Программы лояльности', 'pchelka' ); ?></h2>
-        <p class="section-subtitle text-center"><?php esc_html_e( 'Выгодные условия для постоянных пациентов и их семей', 'pchelka' ); ?></p>
+        <h2 class="section-title text-center"><?php echo esc_html( get_theme_mod( 'loyalty_section_title', __( 'Программы лояльности', 'pchelka' ) ) ); ?></h2>
+        <p class="section-subtitle text-center"><?php echo esc_html( get_theme_mod( 'loyalty_section_subtitle', __( 'Выгодные условия для постоянных пациентов и их семей', 'pchelka' ) ) ); ?></p>
 
         <?php if ( $loyalty_query->have_posts() ) : ?>
             <div class="loyalty-grid">

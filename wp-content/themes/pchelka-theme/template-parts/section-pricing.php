@@ -8,8 +8,8 @@
 ?>
 <section class="pricing" id="pricing">
     <div class="container">
-        <h2 class="section-title text-center"><?php esc_html_e( 'Прозрачное ценообразование', 'pchelka' ); ?></h2>
-        <p class="section-subtitle text-center"><?php esc_html_e( 'Честные цены без скрытых платежей', 'pchelka' ); ?></p>
+        <h2 class="section-title text-center"><?php echo esc_html( get_theme_mod( 'pricing_section_title', __( 'Прозрачное ценообразование', 'pchelka' ) ) ); ?></h2>
+        <p class="section-subtitle text-center"><?php echo esc_html( get_theme_mod( 'pricing_section_subtitle', __( 'Честные цены без скрытых платежей', 'pchelka' ) ) ); ?></p>
 
         <?php
         $price_categories = get_terms( array(

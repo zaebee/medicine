@@ -13,8 +13,8 @@ $doctors_query = new WP_Query( $args );
 ?>
 <section class="doctors" id="doctors">
     <div class="container">
-        <h2 class="section-title text-center"><?php esc_html_e( 'Наши врачи', 'pchelka' ); ?></h2>
-        <p class="section-subtitle text-center"><?php esc_html_e( 'Команда профессионалов с многолетним опытом', 'pchelka' ); ?></p>
+        <h2 class="section-title text-center"><?php echo esc_html( get_theme_mod( 'doctors_section_title', __( 'Наши врачи', 'pchelka' ) ) ); ?></h2>
+        <p class="section-subtitle text-center"><?php echo esc_html( get_theme_mod( 'doctors_section_subtitle', __( 'Команда профессионалов с многолетним опытом', 'pchelka' ) ) ); ?></p>
 
         <?php if ( $doctors_query->have_posts() ) : ?>
             <div class="doctors-grid">

@@ -13,8 +13,8 @@ $equipment_query = new WP_Query( $args );
 ?>
 <section class="equipment" id="equipment">
     <div class="container">
-        <h2 class="section-title text-center"><?php esc_html_e( 'Современное оборудование', 'pchelka' ); ?></h2>
-        <p class="section-subtitle text-center"><?php esc_html_e( 'Диагностическая техника экспертного класса от мировых производителей', 'pchelka' ); ?></p>
+        <h2 class="section-title text-center"><?php echo esc_html( get_theme_mod( 'equipment_section_title', __( 'Современное оборудование', 'pchelka' ) ) ); ?></h2>
+        <p class="section-subtitle text-center"><?php echo esc_html( get_theme_mod( 'equipment_section_subtitle', __( 'Диагностическая техника экспертного класса от мировых производителей', 'pchelka' ) ) ); ?></p>
 
         <?php if ( $equipment_query->have_posts() ) : ?>
             <div class="equipment-grid">

@@ -16,59 +16,28 @@
     <!-- Footer from mockup -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-content">
-                <!-- Footer Column 1: About -->
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Клиника Пчёлка Медик" class="footer-logo-image" width="100" height="auto">
-                    </div>
-                    <p class="footer-description">
-                        Премиальная медицинская клиника с индивидуальным подходом к каждому пациенту. Современное оборудование и опытные врачи.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="ВКонтакте"><svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#4680C2"/><path d="M16.8 22h-1.2c-4.8 0-7.6-3.3-7.7-8.8h2.4c.1 4 1.8 5.7 3.2 6v-6h2.2v3.5c1.4-.2 2.8-1.7 3.3-3.5h2.2c-.4 2.1-1.9 3.7-3 4.3 1.1.5 2.8 1.9 3.5 4.5h-2.4c-.5-1.7-1.8-3-3.5-3.2V22z" fill="white"/></svg></a>
-                        <a href="#" class="social-link" aria-label="Telegram"><svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#0088cc"/><path d="M22.5 10.5l-2.8 13.2c-.2.9-.7 1.1-1.4.7l-3.9-2.9-1.9 1.8c-.2.2-.4.4-.8.4l.3-4 7.5-6.8c.3-.3-.1-.4-.5-.2l-9.3 5.8-4-1.2c-.9-.3-.9-.9.2-1.3l15.6-6c.7-.3 1.4.2 1.1 1.3z" fill="white"/></svg></a>
-                        <a href="#" class="social-link" aria-label="WhatsApp"><svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#25D366"/><path d="M23 13.5c0 3.9-3.1 7-7 7-.9 0-1.8-.2-2.6-.5l-3.4.9.9-3.3c-.4-.8-.6-1.7-.6-2.6 0-3.9 3.1-7 7-7s7 3.1 7 7zm-7-5.5c-3 0-5.5 2.5-5.5 5.5 0 1 .3 2 .8 2.8l-.5 1.9 2-.5c.8.5 1.7.8 2.7.8 3 0 5.5-2.5 5.5-5.5S19 8 16 8z" fill="white"/></svg></a>
-                    </div>
-                </div>
-
-                <!-- Footer Column 2: Navigation -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Навигация</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#doctors">Врачи</a></li>
-                        <li><a href="#equipment">Оборудование</a></li>
-                        <li><a href="#loyalty">Программы лояльности</a></li>
-                        <li><a href="#pricing">Цены</a></li>
-                        <li><a href="#contact">Контакты</a></li>
-                    </ul>
-                </div>
-
-                <!-- Footer Column 3: Services -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Услуги</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services">Терапия</a></li>
-                        <li><a href="#services">Кардиология</a></li>
-                        <li><a href="#services">Неврология</a></li>
-                        <li><a href="#services">Эндокринология</a></li>
-                        <li><a href="#services">Педиатрия</a></li>
-                        <li><a href="#services">Диагностика</a></li>
-                    </ul>
-                </div>
-
-                <!-- Footer Column 4: Contact -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Контакты</h4>
-                    <ul class="footer-contacts">
-                        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M14 6.67c0 4.67-6 8.67-6 8.67s-6-4-6-8.67a6 6 0 0112 0z"/><circle cx="8" cy="6.67" r="2"/></svg><span>г. Москва, ул. Примерная, д. 123</span></li>
-                        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M14.67 11.28v2a1.33 1.33 0 01-1.45 1.33 13.19 13.19 0 01-5.75-2.05 13 13 0 01-4-4 13.19 13.19 0 01-2.05-5.78A1.33 1.33 0 012.74 1.33h2a1.33 1.33 0 011.33 1.15c.08.64.24 1.27.47 1.87a1.33 1.33 0 01-.3 1.41l-.85.84a10.67 10.67 0 004 4l.85-.85a1.33 1.33 0 011.4-.3c.61.23 1.24.39 1.88.47a1.33 1.33 0 011.14 1.35z"/></svg><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
-                        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2.67 2.67h10.66c.74 0 1.34.6 1.34 1.33v8c0 .74-.6 1.33-1.34 1.33H2.67c-.74 0-1.34-.59-1.34-1.33V4c0-.73.6-1.33 1.34-1.33z"/><path d="M14.67 4L8 8.67 1.33 4" stroke="white" stroke-width="1.5" fill="none"/></svg><a href="mailto:info@pchelka-clinic.ru">info@pchelka-clinic.ru</a></li>
-                        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="6.67"/><path d="M8 4v4l2.67 1.33" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg><span>Пн-Вс: 8:00 — 21:00</span></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+                    <?php dynamic_sidebar( 'footer-1' ); ?>
+                <?php endif; ?>
             </div>
+            <div class="footer-column">
+                <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
+                    <?php dynamic_sidebar( 'footer-2' ); ?>
+                <?php endif; ?>
+            </div>
+            <div class="footer-column">
+                <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
+                    <?php dynamic_sidebar( 'footer-3' ); ?>
+                <?php endif; ?>
+            </div>
+            <div class="footer-column">
+                <?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
+                    <?php dynamic_sidebar( 'footer-4' ); ?>
+                <?php endif; ?>
+            </div>
+        </div>
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p class="footer-copyright">© <?php echo date('Y'); ?> Клиника «Пчёлка». Все права защищены.</p>
